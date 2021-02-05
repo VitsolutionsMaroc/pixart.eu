@@ -66,9 +66,9 @@ export default {
         Number: "",
         Box: "",
         Zip: "",
-        // City: "",
-        // CountryId: 3,
-        // PrivateTel: "",
+        City: "",
+        CountryId: 3,
+        PrivateTel: "",
         // PrivateEmail: "test@test.com",
         // AgreementEmail: true,
         // AgreementSms: true,
@@ -79,7 +79,7 @@ export default {
         // AgreementMailingCampaign: true,
         // LanguageId: "en-GB",
         EstateIds: [3515113],
-        OfficeIds: [4381],
+        OfficeIds: [6644],
 
         CountryId: 1,
         StatusId: 1,
@@ -93,8 +93,8 @@ export default {
   methods: {
     addContact() {
       let authCredentials = {
-        ClientId: 445,
-        OfficeId: 4381
+        ClientId: 4668,
+        OfficeId: 6644
       };
 
       let apiToken =
@@ -127,7 +127,7 @@ export default {
             Name: "New contact",
             PrivateEmail: "test_contact@whise.mail",
             EstateIds: [3515113],
-            OfficeIds: [4381],
+            OfficeIds: [6644],
             CountryId: 1,
             StatusId: 1,
             LanguageId: "fr-BE"

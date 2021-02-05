@@ -66,7 +66,7 @@
                 value="id"
                 v-model="filters.categories"
                 :options="categories"
-                :close-on-select="false"
+                :close-on-select="true"
                 :show-labels="false"
                 :clear-on-select="false"
               >
@@ -100,7 +100,7 @@
                 value="id"
                 v-model="filters.countries"
                 :options="countries"
-                :close-on-select="false"
+                :close-on-select="true"
                 :show-labels="false"
                 :clear-on-select="false"
               >
@@ -183,7 +183,7 @@
                     value="ZipID"
                     v-model="filters.zipCodes"
                     :options="zipCodes"
-                    :close-on-select="false"
+                    :close-on-select="true"
                     :show-labels="false"
                     :clear-on-select="false"
                   >
@@ -217,7 +217,7 @@
                     value="id"
                     v-model="filters.subcategories"
                     :options="subcategories"
-                    :close-on-select="false"
+                    :close-on-select="true"
                     :show-labels="false"
                     :clear-on-select="false"
                   >

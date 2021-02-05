@@ -27,14 +27,14 @@
         id="menu"
       >
         <li class="mb-2 md:mb-0">
-          <router-link to="/" class="lg:mx-4 mx-2">Home</router-link>
+          <router-link to="/" class="lg:mx-4 mx-2">HOME</router-link>
         </li>
         <li class="mb-2 md:mb-0">
-          <router-link to="/about" class="lg:mx-4 mx-2">About</router-link>
+          <router-link to="/about" class="lg:mx-4 mx-2">ABOUT</router-link>
         </li>
         <li class="mb-6 md:mb-0">
           <router-link to="/properties" class="lg:mx-4 mx-2"
-            >Properties
+            >PROPERTIES
           </router-link>
         </li>
         <li class="mb-6 md:mb-0">
@@ -44,7 +44,7 @@
         </li>
         <li class="mb-6 md:mb-0">
           <router-link to="/contact" class="lg:mx-4 mx-2"
-            >Contact Us
+            >CONTACT
           </router-link>
         </li>
         <li class="mb-2 md:mb-0">
