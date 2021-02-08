@@ -20,7 +20,7 @@
             name="shortDescription"
             id=""
             class="px-3 py-2 my-2 border block w-full"
-            :class="contact.ContactTitleId ? '' : 'greyed-slect'"
+            :class="contact.ContactTitleId ? '' : 'greyed-select'"
             required
             v-model="contact.ContactTitleId"
           >
@@ -109,7 +109,7 @@
             name=""
             id=""
             class="px-3 py-2 my-2 border block w-full"
-            :class="contact.TransactionType ? '' : 'greyed-slect'"
+            :class="contact.TransactionType ? '' : 'greyed-select'"
             required
             v-model="contact.TransactionType"
           >
@@ -125,7 +125,7 @@
             name=""
             id="mySelect"
             class="px-3 py-2 my-2 border block w-full"
-            :class="contact.PropertyType ? '' : 'greyed-slect'"
+            :class="contact.PropertyType ? '' : 'greyed-select'"
             required
             v-model="contact.PropertyType"
           >
@@ -394,7 +394,7 @@ option {
 option [disabled] {
   color: grey;
 }
-.greyed-slect {
+.greyed-select {
   color: grey !important;
 }
 
