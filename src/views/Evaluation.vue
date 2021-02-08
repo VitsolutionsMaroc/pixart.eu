@@ -16,7 +16,23 @@
       <div class="grid grid-cols-2 gap-4">
         <div>
           <label class="my-2">Gender</label>
-          <select
+          <multiselect
+            class="mt-2 mb-3"
+            required
+            v-model="contact.ContactTitleId"
+            label="name"
+            track-by="gender.shortDescription"
+            item-value="id"
+            :show-labels="false"
+            :searchable="false"
+            :value="gender.id"
+            v-for="gender in genders"
+            :key="gender.id"
+            placeholder="For Sale / For Rent "
+            :close-on-select="true"
+          >
+          </multiselect>
+          <!-- <select
             name="shortDescription"
             id=""
             class="px-3 py-2 my-2 border block w-full"
@@ -28,7 +44,7 @@
             <option :value="gender.id" v-for="gender in genders" :key="gender.id"
               >{{ gender.shortDescription }}
             </option>
-          </select>
+          </select> -->
         </div>
         <div>
           <label class="my-2">Name</label>
@@ -76,7 +92,7 @@
             type="text"
             placeholder="Number .."
             class="px-3 py-2 my-2 border block w-full"
-            v-model="contact.PrivateTel"
+            v-model="contact.Number"
           />
         </div>
         <div>
@@ -105,7 +121,21 @@
       <div class="grid grid-cols-2 gap-2">
         <div>
           <label class="my-2">Transaction type</label>
-          <select
+          <multiselect
+            class="mt-2 mb-3"
+            required
+            v-model="contact.TransactionType"
+            label="name"
+            track-by="name"
+            item-value="id"
+            :show-labels="false"
+            :searchable="false"
+            :options="$t('transactions')"
+            placeholder="For Sale / For Rent "
+            :close-on-select="true"
+          >
+          </multiselect>
+          <!-- <select
             name=""
             id=""
             class="px-3 py-2 my-2 border block w-full"
@@ -117,11 +147,26 @@
             <option v-for="transaction in $t('transactions')" :key="transaction.id">{{
               transaction.name
             }}</option>
-          </select>
+          </select> -->
         </div>
         <div>
           <label class="my-2">Property type</label>
-          <select
+          <multiselect
+            class="mt-2 mb-3"
+            required
+            v-model="contact.PropertyType"
+            label="name"
+            track-by="name"
+            item-value="id"
+            :show-labels="false"
+            :searchable="false"
+            :options="$t('categories')"
+            placeholder="Your Property type "
+            :close-on-select="true"
+          >
+          </multiselect>
+
+          <!-- <select
             name=""
             id="mySelect"
             class="px-3 py-2 my-2 border block w-full"
@@ -133,7 +178,7 @@
             <option v-for="category in $t('categories')" :key="category.id">{{
               category.name
             }}</option>
-          </select>
+          </select> -->
         </div>
 
         <div>
@@ -156,7 +201,21 @@
         </div>
         <div>
           <label class="my-2">Country</label>
-          <v-select
+          <multiselect
+            class="mt-2 mb-3"
+            required
+            v-model="selected"
+            label="name"
+            track-by="name"
+            item-value="id"
+            :show-labels="false"
+            :options="$t('countries')"
+            placeholder="Countries..."
+            :close-on-select="true"
+          >
+          </multiselect>
+
+          <!-- <v-select
             id=""
             class="px-3 py-2 my-2 border block w-full"
             required
@@ -173,7 +232,7 @@
             <template v-slot:selected-option="option">
               {{ option.name }}
             </template>
-          </v-select>
+          </v-select> -->
         </div>
         <div class="col-span-2 my-2">
           <label>Comments</label>
@@ -193,14 +252,12 @@ import Footer from "@/components/Footer.vue";
 import axios from "axios";
 import Multiselect from "vue-multiselect";
 import _ from "lodash";
-import vSelect from "vue-select";
 
 export default {
   name: "Evaluation",
   components: {
     Multiselect,
     Footer,
-    vSelect,
   },
   data() {
     return {
@@ -243,6 +300,7 @@ export default {
       categories: [],
       genders: [],
       countries: [],
+      value: null,
     };
   },
 
@@ -319,7 +377,7 @@ export default {
             FirstName: this.contact.FirstName,
             Address1: this.contact.Address1,
             Address2: "",
-            Number: this.contact.PrivateTel,
+            Number: this.contact.Number,
             Box: "",
             Zip: this.contact.Zip,
             City: this.contact.City,
@@ -384,8 +442,9 @@ export default {
   },
 };
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
-<style>
+<style scoped>
 select,
 option {
   color: black;
@@ -396,23 +455,5 @@ option [disabled] {
 }
 .greyed-select {
   color: grey !important;
-}
-
-#mySelect .v-select .dropdown-toggle {
-  border: none;
-  background: #df9523;
-}
-
-#vs1__combobox {
-  border: none !important;
-}
-.vs__selected-options .vs__search {
-  color: #7f8c9b;
-}
-.vs__actions .vs__clear {
-  color: black;
-}
-.v-list-item:hover:before {
-  opacity: 0.14;
 }
 </style>

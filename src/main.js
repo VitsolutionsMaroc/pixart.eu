@@ -32,17 +32,7 @@ new Vue({
 
 const iconOpen = document.querySelector("#iconOpen");
 const menu = document.querySelector("#menu");
-$(".mySelect")
-  .change(function() {
-    $(this)
-      .find("option")
-      .css("background-color", "transparent");
-    $(this)
-      .find("option:selected")
-      .css("background-color", "red");
-  })
-  .trigger("change");
-  
+
 iconOpen.addEventListener("click", () => {
   if (menu.classList.contains("hidden")) {
     menu.classList.remove("hidden");
