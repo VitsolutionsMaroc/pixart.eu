@@ -17,13 +17,14 @@
         <div>
           <label class="my-2">Gender</label>
           <select
-            name=""
+            name="shortDescription"
             id=""
             class="px-3 py-2 my-2 border block w-full"
+            :class="contact.ContactTitleId ? '' : 'greyed-slect'"
             required
             v-model="contact.ContactTitleId"
           >
-            <option value="undefined" disabled selected hidden >Mr/Mlle</option>
+            <option value="" disabled selected hidden>Mr/Mlle</option>
             <option :value="gender.id" v-for="gender in genders" :key="gender.id"
               >{{ gender.shortDescription }}
             </option>
@@ -108,28 +109,28 @@
             name=""
             id=""
             class="px-3 py-2 my-2 border block w-full"
+            :class="contact.TransactionType ? '' : 'greyed-slect'"
             required
             v-model="contact.TransactionType"
           >
-            <option value="undefined" disabled selected hidden 
-              >For Sale/ For Rent
-            </option>
+            <option value="undefined" disabled selected hidden>For Sale/ For Rent </option>
             <option v-for="transaction in $t('transactions')" :key="transaction.id">{{
               transaction.name
             }}</option>
           </select>
         </div>
-        <div >
+        <div>
           <label class="my-2">Property type</label>
           <select
             name=""
-            id=""
+            id="mySelect"
             class="px-3 py-2 my-2 border block w-full"
+            :class="contact.PropertyType ? '' : 'greyed-slect'"
             required
             v-model="contact.PropertyType"
           >
             <option value="undefined" disabled selected hidden>Your Property type </option>
-            <option class="" v-for="category in $t('categories')" :key="category.id">{{
+            <option v-for="category in $t('categories')" :key="category.id">{{
               category.name
             }}</option>
           </select>
@@ -156,7 +157,7 @@
         <div>
           <label class="my-2">Country</label>
           <v-select
-            id="mySelect"
+            id=""
             class="px-3 py-2 my-2 border block w-full"
             required
             label="Country"
@@ -207,6 +208,10 @@ export default {
         keyword: "",
         countries: [],
       },
+      styleOption: {
+        color: "black",
+      },
+
       contact: {
         Name: "",
         FirstName: "",
@@ -218,7 +223,7 @@ export default {
         City: "",
         CountryId: "",
         PrivateTel: "",
-        ContactTitleId: [],
+        ContactTitleId: "",
         ContactTypeIds: [178477],
         AgreementEmail: true,
         AgreementSms: true,
@@ -320,7 +325,7 @@ export default {
             City: this.contact.City,
             CountryId: this.selected,
             PrivateTel: this.contact.PrivateTel,
-            ContactTitleId: [],
+            ContactTitleId: "",
             ContactTypeIds: [178477],
             Comments:
               this.contact.TransactionType +
@@ -381,25 +386,25 @@ export default {
 </script>
 
 <style>
-select:required:invalid:disabled {
-  color: gray;
+select,
+option {
+  color: black;
 }
-select, option {
-  color:black;
+.select,
+option [disabled] {
+  color: grey;
 }
-select, option [diasbled]{
-  color: #7f8c9b;
+.greyed-slect {
+  color: grey !important;
 }
+
 #mySelect .v-select .dropdown-toggle {
   border: none;
+  background: #df9523;
 }
-.v-select__selection,
-.v-select__selection--comma,
-.v-select.v-text-field input {
-  color: blue !important;
-}
+
 #vs1__combobox {
-  border: none;
+  border: none !important;
 }
 .vs__selected-options .vs__search {
   color: #7f8c9b;
@@ -407,7 +412,7 @@ select, option [diasbled]{
 .vs__actions .vs__clear {
   color: black;
 }
-.select .placeholder {
-  color: gray;
+.v-list-item:hover:before {
+  opacity: 0.14;
 }
 </style>
