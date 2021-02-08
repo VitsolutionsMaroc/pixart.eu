@@ -23,7 +23,7 @@
             required
             v-model="contact.ContactTitleId"
           >
-            <option value="undefined" disabled selected hidden>Mr/Mlle</option>
+            <option  disabled selected hidden value="">Mr/Mlle</option>
             <option :value="gender.id" v-for="gender in genders" :key="gender.id"
               >{{ gender.shortDescription }}
             </option>
@@ -111,7 +111,7 @@
             required
             v-model="contact.TransactionType"
           >
-            <option value="undefined" disabled selected hidden class="placeholder"
+            <option value="undefined" disabled selected hidden 
               >For Sale/ For Rent
             </option>
             <option v-for="transaction in $t('transactions')" :key="transaction.id">{{
@@ -119,7 +119,7 @@
             }}</option>
           </select>
         </div>
-        <div>
+        <div >
           <label class="my-2">Property type</label>
           <select
             name=""
@@ -381,15 +381,14 @@ export default {
 </script>
 
 <style>
-select:required:invalid {
+select:required:invalid:disabled {
   color: gray;
 }
-.option[value="undefined"][disabled] [selected] [hidden] [class="placeholder"] {
-  display: none;
-  color: gray !important;
+select, option {
+  color:black;
 }
-option {
-  color: black;
+select, option [diasbled]{
+  color: #7f8c9b;
 }
 #mySelect .v-select .dropdown-toggle {
   border: none;
@@ -403,7 +402,7 @@ option {
   border: none;
 }
 .vs__selected-options .vs__search {
-  color: #a2afbe;
+  color: #7f8c9b;
 }
 .vs__actions .vs__clear {
   color: black;
