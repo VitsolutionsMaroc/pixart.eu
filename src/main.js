@@ -32,15 +32,6 @@ new Vue({
 
 const iconOpen = document.querySelector("#iconOpen");
 const menu = document.querySelector("#menu");
-  var toggleMask = function() {
-    var option = this.options[this.selectedIndex];
-    var disabledMask = document.getElementById("disabledMask");
-    disabledMask.style.display = option.disabled ? "block" : "none";
-  };
-
-  var mySelect = document.getElementById("mySelect");
-  mySelect.addEventListener("change", toggleMask);
-  toggleMask.bind(mySelect)();
 
 iconOpen.addEventListener("click", () => {
   if (menu.classList.contains("hidden")) {

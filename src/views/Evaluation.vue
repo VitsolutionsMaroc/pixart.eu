@@ -23,7 +23,7 @@
             required
             v-model="contact.ContactTitleId"
           >
-            <option  disabled selected hidden value="">Mr/Mlle</option>
+            <option value="undefined" disabled selected hidden >Mr/Mlle</option>
             <option :value="gender.id" v-for="gender in genders" :key="gender.id"
               >{{ gender.shortDescription }}
             </option>
