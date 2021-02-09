@@ -1,5 +1,13 @@
 <template>
   <div class="">
+    <div class="text-center flex justify-center	">
+      <p
+        class="font-bold text-l md:text-xl text-center	m-0 mt-10 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex"
+        v-if="showMsg"
+      >
+        Thank you for subscribing. We will contact you as soon as possible.
+      </p>
+    </div>
     <h2 class="font-bold text-xl md:text-4xl text-center p-10 py-10 md:py-16">
       EVALUATION
     </h2>
@@ -16,21 +24,21 @@
       <div class="grid grid-cols-2 gap-4">
         <div>
           <label class="my-2">Gender</label>
-            <multiselect
-              class="mt-2 mb-3"
-              required
-              v-model="ContactTitleId"
-              label="shortDescription"
-              track-by="shortDescription"
-              item-value="id"
-              :show-labels="false"
-              :searchable="false"       
-              :options="genders"
-              placeholder="Mlle / Mr"
-              :close-on-select="true"
-            >
-            </multiselect>
-          
+          <multiselect
+            class="mt-2 mb-3"
+            required
+            v-model="ContactTitleId"
+            label="shortDescription"
+            track-by="shortDescription"
+            item-value="id"
+            :show-labels="false"
+            :searchable="false"
+            :options="genders"
+            placeholder="Mlle / Mr"
+            :close-on-select="true"
+          >
+          </multiselect>
+
           <!-- <select
             name="shortDescription"
             id=""
@@ -237,7 +245,7 @@
         </div>
         <div class="col-span-2 my-2">
           <label>Comments</label>
-          <textarea class="w-full border border-2 h-32" v-model="Comments"></textarea>
+          <textarea class="w-full border border-2 h-32 px-3 py-2" v-model="Comments"></textarea>
         </div>
       </div>
       <button class="bg-yellow-500 text-white px-4 py-2 mx-auto text-center ">
@@ -269,6 +277,7 @@ export default {
       styleOption: {
         color: "black",
       },
+      showMsg: false,
 
       contact: {
         Name: "",
@@ -292,8 +301,8 @@ export default {
         Name: "",
         PrivateEmail: "",
         selected: "",
-      },       
-     ContactTitleId: "",
+      },
+      ContactTitleId: "",
       Comments: "",
 
       selected: "",
@@ -302,7 +311,6 @@ export default {
       categories: [],
       genders: [],
       countries: [],
-    
     };
   },
 
@@ -389,7 +397,7 @@ export default {
             Comments:
               this.contact.TransactionType.name +
               ", " +
-              this.contact.PropertyType.name+
+              this.contact.PropertyType.name +
               ", " +
               this.contact.ConstructionYear +
               ", " +
@@ -409,6 +417,8 @@ export default {
           axios
             .post("https://api.whise.eu/v1/contacts/create", contact, config)
             .then((response) => {
+              this.showMsg = true;
+
               (this.contact.ContactTitleId = ""),
                 (this.contact.ContactTypeIds = ""),
                 (this.selected = ""),
@@ -433,6 +443,7 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+      window.scrollTo(0, 0);
     },
   },
 
