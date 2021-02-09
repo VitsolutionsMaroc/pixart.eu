@@ -95,15 +95,17 @@
             placeholder="Address"
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.Address1"
+            required
           />
         </div>
         <div>
           <label class="my-2">Number *</label>
           <input
-            type="text"
+            type="number"
             placeholder="Number .."
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.Number"
+            required
           />
         </div>
         <div>
@@ -113,6 +115,7 @@
             placeholder="City .."
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.City"
+            required
           />
         </div>
         <div>
@@ -122,6 +125,7 @@
             placeholder="Postcode .."
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.Zip"
+            required
           />
         </div>
       </div>
