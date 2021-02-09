@@ -22,7 +22,9 @@
 .VueCarousel-dot-container button {
   margin: 0 !important;
 }
-
+.multiselect__tags {
+  border-radius: 0px;
+}
 .VueCarousel-pagination {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -30,10 +32,9 @@
 
 .vselect #vs1__combobox {
   border: none !important;
-  
 }
-.v-select #vs2__combobox{
-  border:none !important;
+.v-select #vs2__combobox {
+  border: none !important;
 }
 /*.VueCarousel-navigation-prev {
   transform: scaleY(1) !important;

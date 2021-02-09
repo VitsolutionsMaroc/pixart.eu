@@ -16,22 +16,21 @@
       <div class="grid grid-cols-2 gap-4">
         <div>
           <label class="my-2">Gender</label>
-          <multiselect
-            class="mt-2 mb-3"
-            required
-            v-model="contact.ContactTitleId"
-            label="name"
-            track-by="gender.shortDescription"
-            item-value="id"
-            :show-labels="false"
-            :searchable="false"
-            :value="gender.id"
-            v-for="gender in genders"
-            :key="gender.id"
-            placeholder="For Sale / For Rent "
-            :close-on-select="true"
-          >
-          </multiselect>
+            <multiselect
+              class="mt-2 mb-3"
+              required
+              v-model="ContactTitleId"
+              label="shortDescription"
+              track-by="shortDescription"
+              item-value="id"
+              :show-labels="false"
+              :searchable="false"       
+              :options="genders"
+              placeholder="Mlle / Mr"
+              :close-on-select="true"
+            >
+            </multiselect>
+          
           <!-- <select
             name="shortDescription"
             id=""
@@ -135,6 +134,7 @@
             :close-on-select="true"
           >
           </multiselect>
+
           <!-- <select
             name=""
             id=""
@@ -212,6 +212,7 @@
             :options="$t('countries')"
             placeholder="Countries..."
             :close-on-select="true"
+            open-direction="bottom"
           >
           </multiselect>
 
@@ -236,7 +237,7 @@
         </div>
         <div class="col-span-2 my-2">
           <label>Comments</label>
-          <textarea class="w-full border border-2 h-32" v-model="contact.Comments"></textarea>
+          <textarea class="w-full border border-2 h-32" v-model="Comments"></textarea>
         </div>
       </div>
       <button class="bg-yellow-500 text-white px-4 py-2 mx-auto text-center ">
@@ -280,12 +281,10 @@ export default {
         City: "",
         CountryId: "",
         PrivateTel: "",
-        ContactTitleId: "",
         ContactTypeIds: [178477],
         AgreementEmail: true,
         AgreementSms: true,
         AgreementMailingCampaign: true,
-        Comments: "",
         PrivateMobile: "",
         OfficeIds: [6644],
         StatusId: 1,
@@ -293,14 +292,17 @@ export default {
         Name: "",
         PrivateEmail: "",
         selected: "",
-      },
+      },       
+     ContactTitleId: "",
+      Comments: "",
+
       selected: "",
       options: [],
       transactions: [],
       categories: [],
       genders: [],
       countries: [],
-      value: null,
+    
     };
   },
 
@@ -381,14 +383,13 @@ export default {
             Box: "",
             Zip: this.contact.Zip,
             City: this.contact.City,
-            CountryId: this.selected,
             PrivateTel: this.contact.PrivateTel,
-            ContactTitleId: "",
+            ContactTitleId: this.ContactTitleId.id,
             ContactTypeIds: [178477],
             Comments:
-              this.contact.TransactionType +
+              this.contact.TransactionType.name +
               ", " +
-              this.contact.PropertyType +
+              this.contact.PropertyType.name+
               ", " +
               this.contact.ConstructionYear +
               ", " +
@@ -408,8 +409,6 @@ export default {
           axios
             .post("https://api.whise.eu/v1/contacts/create", contact, config)
             .then((response) => {
-              console.log(this.selected);
-              console.log(response);
               (this.contact.ContactTitleId = ""),
                 (this.contact.ContactTypeIds = ""),
                 (this.selected = ""),
