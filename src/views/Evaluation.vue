@@ -20,6 +20,7 @@
     </div>
     <!-- form -->
     <form @submit.prevent="addContact()" class="px-4 md:px-16 lg:px-36 my-4 text-sm">
+     
       <h2 class="text-center font-bold text-xl my-4">Contact</h2>
       <div class="grid grid-cols-2 gap-4">
         <div>
@@ -54,21 +55,23 @@
           </select> -->
         </div>
         <div>
-          <label class="my-2">Name</label>
+          <label class="my-2">Name *</label>
           <input
             type="text"
             placeholder="Your Full name .."
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.Name"
+            required
           />
         </div>
         <div>
           <label class="my-2">Email *</label>
           <input
-            type="text"
+            type="email"
             placeholder="Your Email address .."
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.PrivateEmail"
+            required
           />
         </div>
         <div>
@@ -78,6 +81,7 @@
             placeholder="Your Phone Number .."
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.PrivateMobile"
+            required
           />
         </div>
       </div>
@@ -304,7 +308,6 @@ export default {
       },
       ContactTitleId: "",
       Comments: "",
-
       selected: "",
       options: [],
       transactions: [],
@@ -315,6 +318,7 @@ export default {
   },
 
   methods: {
+   
     getGenders() {
       let authCredentials = {
         ClientId: 4668,
@@ -374,7 +378,6 @@ export default {
         .post("https://api.whise.eu/v1/admin/clients/token", authCredentials, config)
         .then((response) => {
           let token = response.data.token;
-          console.log(token);
           const config = {
             headers: {
               Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
@@ -444,7 +447,11 @@ export default {
           console.log(error);
         });
       window.scrollTo(0, 0);
+
+
+      
     },
+    
   },
 
   mounted() {
