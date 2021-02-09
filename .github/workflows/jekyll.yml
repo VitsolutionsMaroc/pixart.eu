@@ -36,5 +36,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6b2a91f385984d80acbde62f9c64d9e8faca434a
