@@ -10,7 +10,7 @@
       <p>+32 04333333</p>
     </div>
     <div>
-      <input type="text" placeholder="Max Price" class="px-3 py-2 border" />
+      <input type="text" placeholder="Search..." class="px-3 py-2 border" />
       <button class="bg-yellow-500 p-2 m-2">Submit</button>
       <p>
         PIXART is committed to delivering a high level of expertise, customer

@@ -23,6 +23,7 @@
     "lodash": "^4.17.20",
     "mapbox-gl": "^2.0.1",
     "postcss": "^7.0.35",
+    "pretty-checkbox-vue": "^1.1.9",
     "swiper": "^6.4.5",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "vue": "^2.6.11",

@@ -7,6 +7,8 @@ import * as VueGoogleMaps from "vue2-google-maps";
 import Eagle from "eagle.js";
 import VModal from "vue-js-modal";
 import i18n from "./i18n";
+    import PrettyCheckbox from "pretty-checkbox-vue";
+
 
 // import animate.css for slide transition
 import "animate.css";
@@ -15,6 +17,7 @@ Vue.use(Eagle);
 Vue.use(VModal, { componentName: "v-modal" });
 
 Vue.config.productionTip = false;
+Vue.use(PrettyCheckbox);
 
 Vue.use(VueGoogleMaps, {
   load: {

@@ -5,6 +5,11 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+.multiselect{
+      cursor: pointer !important;
+
+}
+
 .multiselect__option--highlight {
   background: #df9523 !important;
 }
@@ -14,6 +19,8 @@
 
 .multiselect__tag:hover {
   background: #df9523 !important;
+    cursor: pointer !important;
+
 }
 .multiselect__option--highlight:after {
   background: #f59e0b !important;
@@ -23,7 +30,7 @@
   margin: 0 !important;
 }
 .multiselect__tags {
-  border-radius: 0px;
+  border-radius: 0px !important;
 }
 .VueCarousel-pagination {
   padding-top: 5px;

@@ -1,4 +1,8 @@
 {
+  "BaseContactTypes": [
+    { "id": 4, "name": "Potential buyer" },
+    { "id": 5, "name": "Potential tenant" }
+  ],
   "transactions": [
     { "id": 1, "name": "For sale" },
     { "id": 2, "name": "For rent" },
@@ -7,11 +11,11 @@
   "categories": [
     { "id": 1, "name": "House" },
     { "id": 2, "name": "Flat" },
+    { "id": 5, "name": "Commercial" },
+    { "id": 7, "name": "Garage / Parking" },
     { "id": 3, "name": "Plot" },
     { "id": 4, "name": "Office" },
-    { "id": 5, "name": "Commercial" },
-    { "id": 6, "name": "Industrial" },
-    { "id": 7, "name": "Garage / Parking" }
+    { "id": 6, "name": "Industrial" }
   ],
   "countries": [
     { "id": 1, "name": "Belgium" },

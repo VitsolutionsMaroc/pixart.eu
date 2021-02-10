@@ -146,7 +146,7 @@
             :show-labels="false"
             :searchable="false"
             :options="$t('transactions')"
-            placeholder="For Sale / For Rent "
+            placeholder="For Sale / For Rent"
             :close-on-select="true"
           >
           </multiselect>
@@ -177,7 +177,7 @@
             :show-labels="false"
             :searchable="false"
             :options="$t('categories')"
-            placeholder="Your Property type "
+            placeholder="Your Property type"
             :close-on-select="true"
           >
           </multiselect>
@@ -261,6 +261,8 @@
       </button>
     </form>
     <!-- form -->
+        <Footer />
+
   </div>
 </template>
 
@@ -306,7 +308,6 @@ export default {
         OfficeIds: [6644],
         StatusId: 1,
         LanguageId: "fr-BE",
-        Name: "",
         PrivateEmail: "",
         selected: "",
       },
