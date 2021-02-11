@@ -10,7 +10,7 @@
               <label class="text-gray-600 text-transparent">.</label>
               <multiselect
                 class="flex items-center mt-2 mb-6 shadow-all bg-white "
-                v-model="contact.TransactionType"
+                v-model="contact.TransactionType.id"
                 label="name"
                 track-by="name"
                 item-value="id"
@@ -46,24 +46,18 @@
             </div>
           </div>
           <div class="grid grid-cols-2 gap-6">
-            <div>
-              <multiselect
-                class="flex items-center mt-2 mb-6 shadow-all bg-white  "
-                label="name"
-                track-by="name"
-                item-value="id"
-                :show-labels="false"
-                :searchable="false"
-                :options="$t('transactions')"
-                placeholder="Region"
-                :close-on-select="true"
-              >
-              </multiselect>
+            <div class="flex items-center mt-2 mb-6">
+             <input
+                  type="number"
+                  class="w-full pr-10 pl-4 py-3 shadow-all text-gray-700 h-11  ring-4	"
+                  v-model="contact.ZipCodes"
+                  placeholder="Zip Code"
+                />           
             </div>
 
             <div>
               <multiselect
-                class="flex items-center mt-2 mb-6 shadow-all"
+                class="flex items-center mt-2 mb-6 shadow-all  "
                 v-model="selected"
                 label="name"
                 track-by="name"
@@ -88,11 +82,12 @@
                 <input
                   :value="category.id"
                   :id="category.id"
-                  type="checkbox"
-                  class=" checkbox h-4 w-4 text-gray-500 border  mr-2"
+                  name="category"
+                  type="radio"
+                  class="check h-4 w-4 text-gray-700 border  mr-2"
                   v-model="checked"
                 />
-                <label class="text-gray-600 font-semibold" :for="category.id">{{
+                <label class=" checkboxLabel text-gray-600 font-semibold" :for="category.id">{{
                   category.name
                 }}</label>
               </div>
@@ -176,12 +171,17 @@ import Footer from "@/components/Footer.vue";
 import axios from "axios";
 import Multiselect from "vue-multiselect";
 import _ from "lodash";
+import $ from "jquery";
+import JQuery from "jquery";
+import PrettyCheckbox from "pretty-checkbox-vue";
 
 export default {
   name: "Evaluation",
   components: {
     Multiselect,
     Footer,
+    JQuery,
+    PrettyCheckbox,
   },
   data() {
     return {
@@ -197,7 +197,6 @@ export default {
       contact: {
         Name: "",
         FirstName: "",
-        Zip: "",
         CountryId: "",
         ContactTypeIds: "",
         AgreementEmail: true,
@@ -206,10 +205,11 @@ export default {
         PrivateMobile: "",
         OfficeIds: [6644],
         StatusId: 1,
+        TransactionType: { id: "" },
         LanguageId: "fr-BE",
         PrivateEmail: "",
         selected: "",
-        checked: [],
+        checked: "",
 
         SearchCriteria: [
           {
@@ -217,7 +217,7 @@ export default {
             CategoryId: "",
             PriceMax: "",
             PriceMin: "",
-            ZipCodes: "",
+            ZipCodes: [""],
           },
         ],
       },
@@ -226,18 +226,20 @@ export default {
       transactions: [],
       categories: [],
       countries: [],
-      checked: [],
+      checked: "",
     };
   },
 
-  getTransactionType() {
-    if (value.TransactionType.id == 2) {
-      this.ContactTypeId == 5;
-    } else {
-      this.ContactTypeId == 4;
-    }
-  },
   methods: {
+    getTransactionType(id) {
+      if (id === 2) {
+        return 5;
+      } else if (id === 1) {
+        return 4;
+      } else if (id === 3) {
+        return 4;
+      }
+    },
     addContact() {
       let authCredentials = {
         ClientId: 4668,
@@ -254,7 +256,6 @@ export default {
         },
       };
 
-   
       axios
         .post("https://api.whise.eu/v1/admin/clients/token", authCredentials, config)
         .then((response) => {
@@ -265,22 +266,22 @@ export default {
               "Content-Type": "application/json",
             },
           };
-
+          
           let contact = {
             Name: this.contact.Name,
             FirstName: this.contact.FirstName,
             Zip: this.contact.Zip,
-            ContactTypeIds: this.ContactTypeId,
             SearchCriteria: [
               {
-                PurposeId: this.contact.TransactionType.id,
+                 CountryId: this.selected.id,
+                PurposeId: this.contact.TransactionType.id.id,
                 CategoryId: this.checked,
                 PriceMax: this.contact.PriceMax,
                 PriceMin: this.contact.PriceMin,
-                ZipCodes: "",
+                ZipCodes: this.contact.ZipCodes,
               },
             ],
-
+            ContactTypeIds: this.getTransactionType(this.contact.TransactionType.id.id),
             PrivateMobile: this.contact.PrivateMobile,
             OfficeIds: [6644],
             CountryId: this.selected.id,
@@ -291,15 +292,14 @@ export default {
             AgreementSms: true,
             AgreementMailingCampaign: true,
           };
+
           console.log(contact);
 
-          getTransactionType();
           axios
             .post("https://api.whise.eu/v1/contacts/create", contact, config)
             .then((response) => {
               this.showMsg = true;
-              console.log(this.contact.TransactionType.id);
-              console.log(this.ContactTypeId);
+              console.log(this.contact.ContactTypeIds);
               (this.contact.ContactTitleId = ""),
                 (this.contact.ContactTypeIds = ""),
                 (this.selected = ""),
@@ -348,11 +348,21 @@ option [disabled] {
 }
 .multiselect__placeholder {
   color: black !important;
+  font-size:larger !important;
 }
-.checkbox {
-  filter: hue-rotate(174deg);
+.check {
+  filter: hue-rotate(172deg);
 }
-input[type="checkbox"] {
+input[type="radio"] {
   cursor: pointer;
+  border: 0px;
+}
+.check:checked + .checkboxLabel {
+  color: #d97706 !important;
+}
+input[type="radio"] {
+  -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+  -moz-appearance: checkbox; /* Firefox */
+  -ms-appearance: checkbox; /* not currently supported */
 }
 </style>
