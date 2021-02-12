@@ -256,7 +256,7 @@
           <textarea class="w-full border border-2 h-32 px-3 py-2" v-model="Comments"></textarea>
         </div>
       </div>
-      <button class="bg-yellow-500 text-white px-4 py-2 mx-auto text-center ">
+      <button class="text-center px-5 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ...">
         Submit
       </button>
     </form>

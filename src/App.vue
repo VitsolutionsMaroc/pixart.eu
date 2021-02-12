@@ -50,7 +50,7 @@
         <li class="mb-2 md:mb-0">
           <router-link
             to="/lookingfor"
-            class="lookingFor bg-yellow-500 p-2 md:p-4 lg:mx-4 mx-2"
+            class="lookingFor bg-yellow-500 p-2 md:p-4 lg:mx-4 mx-2 "
             >Looking for ?</router-link
           >
         </li>
@@ -84,6 +84,13 @@
       text-underline-position: under;
     }
   }
+}
+#nav a.lookingFor.routerlink-active,
+#nav a.lookingFor.router-link-exact-active{
+  color:white;
+   text-decoration: underline solid white;
+      text-decoration-thickness: 3px;
+      text-underline-position: under;
 }
 .navList {
   line-height: 61px;

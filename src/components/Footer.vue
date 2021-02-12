@@ -9,9 +9,9 @@
       <p>info@pixart.be</p>
       <p>+32 04333333</p>
     </div>
-    <div>
-      <input type="text" placeholder="Search..." class="px-3 py-2 border" />
-      <button class="bg-yellow-500 p-2 m-2">Submit</button>
+    <div class="mr-5 pr-12">
+      <input type="text" placeholder="Search..." class="px-3 py-2 border pr-12" />
+      <button class="bg-yellow-500 p-2 py-2">Submit</button>
       <p>
         PIXART is committed to delivering a high level of expertise, customer
         Service, and attention to details to the marketing and sales of luxury
@@ -25,3 +25,9 @@ export default {
   name: "footer"
 };
 </script>
+<style >
+.input{
+  height:60px !important;
+}
+  
+</style>

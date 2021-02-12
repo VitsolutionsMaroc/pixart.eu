@@ -1,6 +1,14 @@
 <template>
   <main class="bg-gray-100">
     <div class="container max-w-screen-md mx-auto py-6">
+      <div class="text-center flex justify-center	">
+        <p
+          class="font-bold text-l md:text-xl text-center	m-0 mt-5 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex mb-5"
+          v-if="showMsg"
+        >
+          Thank you for subscribing. We will contact you as soon as possible.
+        </p>
+      </div>
       <h3 class="text-center font-semibold text-3xl">Search</h3>
       <div class="mt-2 mx-auto w-12 h-2 bg-yellow-600"></div>
       <form @submit.prevent="addContact()" class="mt-5">
@@ -9,6 +17,7 @@
             <div class="col-span-2">
               <label class="text-gray-600 text-transparent">.</label>
               <multiselect
+                required
                 class="flex items-center mt-2 mb-6 shadow-all bg-white "
                 v-model="contact.TransactionType.id"
                 label="name"
@@ -17,42 +26,43 @@
                 :show-labels="false"
                 :searchable="false"
                 :options="$t('transactions')"
-                placeholder="Transaction "
+                placeholder="Transaction *"
                 :close-on-select="true"
               >
               </multiselect>
             </div>
             <div>
-              <label class="text-gray-600">Min Price</label>
+              <label class="text-gray-600">Min Price *</label>
               <div class="flex items-center mt-2 mb-6  bg-white priceInput">
                 <input
+                  required
                   type="number"
                   class="w-full pr-10 pl-4 py-3  shadow-all text-gray-700 h-11 "
                   v-model="contact.PriceMin"
                 />
-                <span class="-ml-6 z-10">$</span>
               </div>
             </div>
             <div>
-              <label class="text-gray-600">Max Price</label>
+              <label class="text-gray-600">Max Price *</label>
               <div class="flex items-center mt-2 mb-6  priceInput">
                 <input
+                  required
                   type="number"
                   class="w-full pr-10 pl-4 py-3 shadow-all text-gray-700 h-11"
                   v-model="contact.PriceMax"
                 />
-                <span class="-ml-6 z-10">$</span>
               </div>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-6">
             <div class="flex items-center mt-2 mb-6">
-             <input
-                  type="number"
-                  class="w-full pr-10 pl-4 py-3 shadow-all text-gray-700 h-11  ring-4	"
-                  v-model="contact.ZipCodes"
-                  placeholder="Zip Code"
-                />           
+              <input
+                required
+                type="number"
+                class="w-full pr-10 pl-4 py-3 shadow-all text-gray-700 h-11  ring-4	"
+                v-model="contact.ZipCodes"
+                placeholder="Zip Code *"
+              />
             </div>
 
             <div>
@@ -72,7 +82,7 @@
             </div>
           </div>
           <div class="mt-6">
-            <h4 class="text-lg font-meduim mb-4">Type:</h4>
+            <h4 class="text-lg font-meduim mb-4">Type : *</h4>
             <div class="px-9 grid grid-cols-4 gap-3">
               <div
                 class="flex items-center"
@@ -80,6 +90,7 @@
                 :key="category.id"
               >
                 <input
+                  required
                   :value="category.id"
                   :id="category.id"
                   name="category"
@@ -102,9 +113,10 @@
           <div class="mt-5">
             <div class="grid grid-cols-2 gap-6">
               <div>
-                <label class="text-gray-600">First Name</label>
+                <label class="text-gray-600">First Name *</label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
+                    required
                     type="text"
                     placeholder="Your first name..."
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
@@ -113,9 +125,10 @@
                 </div>
               </div>
               <div>
-                <label class="text-gray-600">Last Name</label>
+                <label class="text-gray-600">Last Name *</label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
+                    required
                     type="text"
                     placeholder="Your last name..."
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
@@ -124,9 +137,10 @@
                 </div>
               </div>
               <div>
-                <label class="text-gray-600">E-mail</label>
+                <label class="text-gray-600">E-mail *</label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
+                    required
                     type="email"
                     placeholder="Your E-mail address..."
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
@@ -135,9 +149,10 @@
                 </div>
               </div>
               <div>
-                <label class="text-gray-600">Phone Number</label>
+                <label class="text-gray-600">Phone Number *</label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
+                    required
                     type="number"
                     placeholder="Your phone number address..."
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
@@ -147,9 +162,14 @@
               </div>
             </div>
             <div class="text-center mt-4">
-              <button class="text-center px-5 py-2 font-semibold bg-yellow-500 text-white">
+              <button class="text-center px-5 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ...">
                 Send
               </button>
+              <!-- <button type="button" class="bg-rose-600 ..." v-if="isLoaded">
+  <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+  </svg>
+  Processing
+</button> -->
             </div>
           </div>
         </div>
@@ -171,7 +191,6 @@ import Footer from "@/components/Footer.vue";
 import axios from "axios";
 import Multiselect from "vue-multiselect";
 import _ from "lodash";
-import $ from "jquery";
 import JQuery from "jquery";
 import PrettyCheckbox from "pretty-checkbox-vue";
 
@@ -181,7 +200,6 @@ export default {
     Multiselect,
     Footer,
     JQuery,
-    PrettyCheckbox,
   },
   data() {
     return {
@@ -193,6 +211,8 @@ export default {
         color: "black",
       },
       showMsg: false,
+       isLoaded: false,
+
 
       contact: {
         Name: "",
@@ -217,7 +237,7 @@ export default {
             CategoryId: "",
             PriceMax: "",
             PriceMin: "",
-            ZipCodes: [""],
+            ZipCodes: [],
           },
         ],
       },
@@ -266,19 +286,19 @@ export default {
               "Content-Type": "application/json",
             },
           };
-          
+
           let contact = {
             Name: this.contact.Name,
             FirstName: this.contact.FirstName,
             Zip: this.contact.Zip,
             SearchCriteria: [
               {
-                 CountryId: this.selected.id,
+                CountryId: this.selected.id,
                 PurposeId: this.contact.TransactionType.id.id,
                 CategoryId: this.checked,
                 PriceMax: this.contact.PriceMax,
                 PriceMin: this.contact.PriceMin,
-                ZipCodes: this.contact.ZipCodes,
+                ZipCodes: [this.contact.ZipCodes],
               },
             ],
             ContactTypeIds: this.getTransactionType(this.contact.TransactionType.id.id),
@@ -298,6 +318,7 @@ export default {
           axios
             .post("https://api.whise.eu/v1/contacts/create", contact, config)
             .then((response) => {
+              this.isLoaded = true;
               this.showMsg = true;
               console.log(this.contact.ContactTypeIds);
               (this.contact.ContactTitleId = ""),
@@ -348,7 +369,7 @@ option [disabled] {
 }
 .multiselect__placeholder {
   color: black !important;
-  font-size:larger !important;
+  font-size: larger !important;
 }
 .check {
   filter: hue-rotate(172deg);
@@ -364,5 +385,21 @@ input[type="radio"] {
   -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
   -moz-appearance: checkbox; /* Firefox */
   -ms-appearance: checkbox; /* not currently supported */
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+input[type="radio"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  -ms-appearance: checkbox;     /* not currently supported */
+  -o-appearance: checkbox;      /* not currently supported */
+}
+
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }
 </style>
