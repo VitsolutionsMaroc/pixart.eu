@@ -1,9 +1,14 @@
 <template>
   <div
+    class="items mt-8 grid md:grid-cols-2 "
     :class="
       activeMap
-        ? 'items mt-8 grid md:grid-cols-2  gap-12 text-xl md:gap-6 h-auto'
-        : 'items mt-8 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-4  lg:gap-10 text-xl'
+        ? ' gap-12 text-xl md:gap-6 h-auto'
+        : 'lg:grid-cols-' +
+          estatesPerRow +
+          ' xl:grid-cols-' +
+          estatesPerRow +
+          'md:gap-4  lg:gap-10 text-xl'
     "
     style=""
   >
@@ -13,16 +18,10 @@
       class="estateCard relative mb-6 md:mb-4 overflow-hidden shadow-md"
     >
       <div @click="displayDetails(estate)" v-if="estate.pictures[0]">
-        <img
-          :src="estate.pictures[0].Url"
-          class="w-full h-52 sm:h-48 object-cover"
-        />
+        <img :src="estate.pictures[0].Url" class="w-full h-52 sm:h-48 object-cover" />
       </div>
       <div @click="displayDetails(estate)" v-else>
-        <img
-          src="../assets/img/notavailable.png"
-          class="w-full h-52 sm:h-48 object-cover"
-        />
+        <img src="../assets/img/notavailable.png" class="w-full h-52 sm:h-48 object-cover" />
       </div>
       <!--<carousel :navigationEnabled="true" :paginationEnabled="false" :perPage="1">
         <slide v-for="picture in estate.pictures" v-bind:key="picture.PictureID">
@@ -70,10 +69,7 @@
         </div>
         <h2 class="text-black text-sm lg:text-base font-bold block">
           {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
-          {{
-            estate.categoryName.charAt(0).toUpperCase() +
-              estate.categoryName.slice(1)
-          }}
+          {{ estate.categoryName.charAt(0).toUpperCase() + estate.categoryName.slice(1) }}
         </h2>
 
         <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
@@ -110,10 +106,7 @@
       :scrollable="true"
       name="estate-details"
     >
-      <estate-modal
-        :estate="selectedEstate"
-        :key="'modal-key-' + selectedEstate.EstateID"
-      />
+      <estate-modal :estate="selectedEstate" :key="'modal-key-' + selectedEstate.EstateID" />
     </v-modal>
   </div>
 </template>
@@ -127,22 +120,26 @@ export default {
   components: {
     EstateModal,
     Carousel,
-    Slide
+    Slide,
   },
   data: function() {
     return {
       selectedEstate: {
         estate: null,
-        relatedEstates: null
-      }
+        relatedEstates: null,
+        count: 4,
+      },
     };
+  },
+  mounted() {
+    this.count = this.estatesPerRow;
   },
   computed: {
     defaultEstatePicure() {
       return {
-        backgroundImage: `url${require("../assets/img/notavailable.png")}`
+        backgroundImage: `url${require("../assets/img/notavailable.png")}`,
       };
-    }
+    },
   },
   methods: {
     displayDetails(estate) {
@@ -152,18 +149,22 @@ export default {
       // this.$router.push()
       this.$router.push({
         name: "properties.details",
-        params: { estateId: estate.EstateID }
+        params: { estateId: estate.EstateID },
       });
     },
     displayName() {
       this.estate.Name.substring(1, 2);
-    }
+    },
   },
   props: {
     estates: null,
-    activeMap: false
+    activeMap: false,
+    estatesPerRow:{
+      type:Number,
+      default:4
+    },
   },
-  name: "estateBlog"
+  name: "estateBlog",
 };
 </script>
 

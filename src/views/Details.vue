@@ -323,18 +323,18 @@ export default {
     },
     addContact() {
       let authCredentials = {
-        ClientId: 445,
-        OfficeId: 4381
+        ClientId: 4668,
+        OfficeId: 6644,
       };
 
       let apiToken =
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMDkyOTE0M30.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MTE2LCJ0eXBlSWQiOjIsImNsaWVudElkIjozMjUyfQ.wBJavsF3YRYI1FU-a0xYvSLNnaObs_bt7YahP3V82qM";
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTQ3Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.gDNwAXok3Fr4AR4kuJ12vVcytlmr0--bInx65euVxos";
 
       const config = {
         headers: {
           Authorization: `Bearer ${apiToken}`,
-          "Content-Type": "application/json"
-        }
+          "Content-Type": "application/json",
+        },
       };
 
       axios
@@ -344,23 +344,27 @@ export default {
           config
         )
         .then(response => {
-          let token = response.data.token;
-          console.log(token);
+         let token = response.data.token;
           const config = {
             headers: {
-              Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMTA2MjI1N30.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NDV9.lsZ7HrGZ-vU0kh6xBcavI2Y-UP1BM4a8NnIAKcY33Fk`,
-              "Content-Type": "application/json"
-            }
+              Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
+              "Content-Type": "application/json",
+            },
           };
-
           let contact = {
-            Name: "New contact",
-            PrivateEmail: "test_contact@whise.mail",
-            EstateIds: [3515113],
-            OfficeIds: [4381],
-            CountryId: 1,
+             Name: this.contact.Name,
+            FirstName: this.contact.FirstName,
+            PrivateMobile: this.contact.PrivateMobile,
+            OfficeIds: [6644],
             StatusId: 1,
-            LanguageId: "fr-BE"
+            CountryId: 1,
+            LanguageId: "fr-BE",
+            Comments: this.contact.Comments,
+            PrivateEmail: this.contact.PrivateEmail,
+            AgreementEmail: this.contact.Newsletter,
+            AgreementSms: this.contact.Newsletter,
+            EstateIds: [ this.$route.params.estateId],
+         
           };
           axios
             .post("https://api.whise.eu/v1/contacts/create", contact, config)

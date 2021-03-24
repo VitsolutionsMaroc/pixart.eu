@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav" class="bg-gray-900 md:flex justify-between mb-4">
+    <div id="nav" class=" stroke bg-gray-900 md:flex justify-between mb-4">
       <div class="flex justify-between items-center">
         <img src="./assets/img/logo.png" />
 
@@ -27,23 +27,23 @@
         id="menu"
       >
         <li class="mb-2 md:mb-0">
-          <router-link to="/" class="lg:mx-4 mx-2">HOME</router-link>
+          <router-link to="/" class=" other lg:mx-4 mx-2 ">HOME</router-link>
         </li>
-        <li class="mb-2 md:mb-0">
-          <router-link to="/about" class="lg:mx-4 mx-2">ABOUT</router-link>
+        <li class="mb-2 md:mb-0 ">
+          <router-link to="/about" class=" other lg:mx-4 mx-2">ABOUT</router-link>
         </li>
         <li class="mb-6 md:mb-0">
-          <router-link to="/properties" class="lg:mx-4 mx-2"
+          <router-link to="/properties" class=" other lg:mx-4 mx-2"
             >PROPERTIES
           </router-link>
         </li>
         <li class="mb-6 md:mb-0">
-          <router-link to="/evaluation" class="lg:mx-4 mx-2"
+          <router-link to="/evaluation" class=" other lg:mx-4 mx-2"
             >EVALUATION
           </router-link>
         </li>
         <li class="mb-6 md:mb-0">
-          <router-link to="/contact" class="lg:mx-4 mx-2"
+          <router-link to="/contact" class=" other lg:mx-4 mx-2 font-thin"
             >CONTACT
           </router-link>
         </li>
@@ -70,12 +70,13 @@
 }
 
 #nav {
-  padding: 25px;
+  padding: 15px;
   margin: 0px;
 
   a {
-    font-weight: bold;
+    font-weight:400;
     color: #fff;
+    font-size: 19px;
 
     &.router-link-exact-active {
       color: #df9523;
@@ -92,6 +93,19 @@
       text-decoration-thickness: 3px;
       text-underline-position: under;
 }
+#nav a.lookingFor:hover{
+  color:white !important;
+    text-decoration: underline solid white;
+      text-decoration-thickness: 3px;
+      text-underline-position: under;
+
+}
+
+#nav a:hover{
+        color: #df9523;
+
+}
+
 .navList {
   line-height: 61px;
 }

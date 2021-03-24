@@ -55,7 +55,7 @@
           </select> -->
         </div>
         <div>
-          <label class="my-2">Name *</label>
+          <label class="my-2">Full Name *</label>
           <input
             type="text"
             placeholder="Your Full name .."
@@ -98,12 +98,12 @@
             required
           />
         </div>
-        <div>
+        <div class>
           <label class="my-2">Number *</label>
           <input
             type="number"
             placeholder="Number .."
-            class="px-3 py-2 my-2 border block w-full"
+            class="px-3 py-2 my-2 border block w-full "
             v-model="contact.Number"
             required
           />
@@ -253,12 +253,16 @@
         </div>
         <div class="col-span-2 my-2">
           <label>Comments</label>
-          <textarea class="w-full border border-2 h-32 px-3 py-2" v-model="Comments"></textarea>
+          <textarea class="w-full border border-2 h-32 px-3 py-2 mt-3" v-model="Comments"></textarea>
         </div>
       </div>
-      <button class="text-center px-5 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ...">
+      <div class="text-center mt-4 mb-12">
+         <button 
+            class="text-center px-24 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ...">
         Submit
       </button>
+      </div>
+     
     </form>
     <!-- form -->
         <Footer />
@@ -466,16 +470,49 @@ export default {
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
+
 <style scoped>
+.shadow-all {
+  -webkit-box-shadow: 0px 0px 3px gray;
+  -moz-box-shadow: 0px 0px 4px gray;
+  box-shadow: 0px 0px 4px gray;
+}
+</style>
+<style scoped>
+.placeholder{
+  color: darkslategray;
+}
 select,
 option {
   color: black;
 }
 .select,
 option [disabled] {
-  color: grey;
+  color: darkslategray;
 }
 .greyed-select {
-  color: grey !important;
+  color: darkslategray !important;
 }
+input:focus, .input:active, .input.active, .input:focus:active {
+  outline: 0;
+  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0,0,0,.075),0 0 5px rgba(223, 149, 35, 0.75);
+  box-shadow: inset 0  0.5px 0.5px rgba(0,0,0,.075),0 0 5px rgba(223, 149, 35, 0.75);
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+label{
+color:black;
+}
+
+button:focus,
+.button:active,
+.button.active,
+.button:focus:active {
+  outline: 0;
+  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+}
+
 </style>

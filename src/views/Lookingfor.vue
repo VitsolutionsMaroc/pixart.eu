@@ -11,7 +11,7 @@
       </div>
       <h3 class="text-center font-semibold text-3xl">Search</h3>
       <div class="mt-2 mx-auto w-12 h-2 bg-yellow-600"></div>
-      <form @submit.prevent="addContact()" class="mt-5">
+      <form @submit.prevent="addContact()" class="mt-5" ref="clear">
         <div>
           <div class="grid grid-cols-4 gap-6">
             <div class="col-span-2">
@@ -67,6 +67,7 @@
 
             <div>
               <multiselect
+                required
                 class="flex items-center mt-2 mb-6 shadow-all  "
                 v-model="selected"
                 label="name"
@@ -161,15 +162,17 @@
                 </div>
               </div>
             </div>
-            <div class="text-center mt-4">
-              <button class="text-center px-5 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ...">
+            <div class="text-center mt-5 mb-5">
+              <button
+                class="text-center px-24 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ..."
+              >
                 Send
               </button>
               <!-- <button type="button" class="bg-rose-600 ..." v-if="isLoaded">
-  <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-  </svg>
-  Processing
-</button> -->
+                  <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+                  </svg>
+                  Processing
+              </button> -->
             </div>
           </div>
         </div>
@@ -192,7 +195,6 @@ import axios from "axios";
 import Multiselect from "vue-multiselect";
 import _ from "lodash";
 import JQuery from "jquery";
-import PrettyCheckbox from "pretty-checkbox-vue";
 
 export default {
   name: "Evaluation",
@@ -211,8 +213,7 @@ export default {
         color: "black",
       },
       showMsg: false,
-       isLoaded: false,
-
+      isLoaded: false,
 
       contact: {
         Name: "",
@@ -260,7 +261,9 @@ export default {
         return 4;
       }
     },
-    addContact() {
+
+    addContact: function() {
+      console.log(event.target);
       let authCredentials = {
         ClientId: 4668,
         OfficeId: 6644,
@@ -301,6 +304,7 @@ export default {
                 ZipCodes: [this.contact.ZipCodes],
               },
             ],
+
             ContactTypeIds: this.getTransactionType(this.contact.TransactionType.id.id),
             PrivateMobile: this.contact.PrivateMobile,
             OfficeIds: [6644],
@@ -320,20 +324,35 @@ export default {
             .then((response) => {
               this.isLoaded = true;
               this.showMsg = true;
-              console.log(this.contact.ContactTypeIds);
-              (this.contact.ContactTitleId = ""),
-                (this.contact.ContactTypeIds = ""),
-                (this.selected = ""),
-                (this.contact.Name = "");
-              this.contact.PrivateEmail = "";
-              this.contact.PrivateMobile = "";
-              this.contact.FirstName = "";
-              (this.contact.PrivateTel = ""),
-                (this.contact.City = ""),
-                (this.contact.Zip = ""),
-                (this.contact.Comments = "");
-              this.contact.TransactionType = "";
-              this.contact.PropertyType = "";
+              (this.contact = {
+                Name: "",
+                FirstName: "",
+                CountryId: "",
+                ContactTypeIds: "",
+                AgreementEmail: true,
+                AgreementSms: true,
+                AgreementMailingCampaign: true,
+                PrivateMobile: "",
+                OfficeIds: [6644],
+                StatusId: 1,
+                TransactionType: { id: "" },
+                LanguageId: "fr-BE",
+                PrivateEmail: "",
+                selected: "",
+                checked: "",
+                SearchCriteria: [
+                  {
+                    PurposeId: "",
+                    CategoryId: "",
+                    PriceMax: "",
+                    PriceMin: "",
+                    ZipCodes: [],
+                  },
+                ],
+              }),
+                console.log(this.contact.ContactTypeIds);
+
+              // this.contact.TransactionType = "";
             })
             .catch((error) => {
               console.log(error);
@@ -374,12 +393,20 @@ option [disabled] {
 .check {
   filter: hue-rotate(172deg);
 }
+.check:checked {
+  outline: 0;
+  box-shadow: none;
+}
 input[type="radio"] {
   cursor: pointer;
   border: 0px;
+  outline: 0;
+  box-shadow: none;
 }
 .check:checked + .checkboxLabel {
   color: #d97706 !important;
+  outline: 0;
+  box-shadow: none;
 }
 input[type="radio"] {
   -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
@@ -388,18 +415,42 @@ input[type="radio"] {
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0; 
+  -webkit-appearance: none;
+  margin: 0;
 }
 input[type="radio"] {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
-  -ms-appearance: checkbox;     /* not currently supported */
-  -o-appearance: checkbox;      /* not currently supported */
+  -ms-appearance: checkbox; /* not currently supported */
+  -o-appearance: checkbox; /* not currently supported */
 }
 
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+input:focus,
+.input:active,
+.input.active,
+.input:focus:active {
+  outline: 0;
+  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+}
+input[type="radio"]:focus,
+.input[type="radio"]:active,
+.input[type="radio"].active,
+.input[type="radio"]:focus:active {
+  outline: 0;
+  -webkit-box-shadow: 0;
+  box-shadow: none;
+}
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+button:focus,
+.button:active,
+.button.active,
+.button:focus:active {
+  outline: 0;
+  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
 }
 </style>
