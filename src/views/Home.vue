@@ -318,51 +318,7 @@ export default {
       this.page = page;
       this.getEstates();
     },
-     getEstates() {
-      this.filterFromQueryString();
-      this.loading = true;
-      let countries = _.map(this.filters.countries, "id");
-      let categories = _.map(this.filters.categories, "id");
-      let subcategories = _.map(this.filters.subcategories, "id");
-      let zipCodes = _.map(this.filters.zipCodes, "Zip");
-      let countriesQueryString = utils.arrayToQueryString(countries, "countries");
-      let categoriesQueryString = utils.arrayToQueryString(categories, "categories");
-      let subcategoriesQueryString = utils.arrayToQueryString(subcategories, "subcategories");
-      let zipCodesQueryString = utils.arrayToQueryString(zipCodes, "zipCodes");
-      let filtersQueryString = `page=${this.page}&keyword=${this.filters.keyword}&purpose=${
-        this.filters.purpose
-      }&parking=${this.filters.parking ? 1 : 0}&minPrice=${this.filters.minPrice}&maxPrice=${
-        this.filters.maxPrice
-      }&minArea=${this.filters.minArea}&maxArea=${this.filters.maxArea}&rooms=${
-        this.filters.rooms
-      }&bathrooms=${this.filters.bathrooms}
-      &terrace=${this.filters.terrace ? 1 : 0}
-      &furnished=${this.filters.furnished ? 1 : 0}
-      &garden=${this.filters.garden ? 1 : 0}
-      &sort_by_price=${this.filters.sortByPrice}
-      &sort_by_date=${this.filters.sortByDate}
-      &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
-      let _self_ = this;
-      axios
-        .get(`https://apivitexport.azurewebsites.net/api/estates?${filtersQueryString}`)
-        .then((response) => {
-          _self_.estates = response.data.data;
-          _self_.pagination = {
-            current_page: response.data.current_page,
-            first_page_url: response.data.first_page_url,
-            from: response.data.from,
-            to: response.data.to,
-            last_page: response.data.last_page,
-          };
-          _self_.totalEstates = response.data.total;
-          _self_.loading = false;
-        })
-        .catch((error) => {
-          _self_.loading = false;
-          console.log(error);
-        });
-    },
-    // getEstates() {
+    //  getEstates() {
     //   this.filterFromQueryString();
     //   this.loading = true;
     //   let countries = _.map(this.filters.countries, "id");
@@ -375,12 +331,20 @@ export default {
     //   let zipCodesQueryString = utils.arrayToQueryString(zipCodes, "zipCodes");
     //   let filtersQueryString = `page=${this.page}&keyword=${this.filters.keyword}&purpose=${
     //     this.filters.purpose
-    //   } 
-    //   &estatesOfTheMonth=${(this.filters.estatesOfTheMonth = 3)}
+    //   }&parking=${this.filters.parking ? 1 : 0}&minPrice=${this.filters.minPrice}&maxPrice=${
+    //     this.filters.maxPrice
+    //   }&minArea=${this.filters.minArea}&maxArea=${this.filters.maxArea}&rooms=${
+    //     this.filters.rooms
+    //   }&bathrooms=${this.filters.bathrooms}
+    //   &terrace=${this.filters.terrace ? 1 : 0}
+    //   &furnished=${this.filters.furnished ? 1 : 0}
+    //   &garden=${this.filters.garden ? 1 : 0}
+    //   &sort_by_price=${this.filters.sortByPrice}
+    //   &sort_by_date=${this.filters.sortByDate}
     //   &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
     //   let _self_ = this;
     //   axios
-    //     .get(`https://apivitexport.azurewebsites.net/api/estatesOfTheMonth?${filtersQueryString}`)
+    //     .get(`https://apivitexport.azurewebsites.net/api/estates?${filtersQueryString}`)
     //     .then((response) => {
     //       _self_.estates = response.data.data;
     //       _self_.pagination = {
@@ -398,6 +362,42 @@ export default {
     //       console.log(error);
     //     });
     // },
+    getEstates() {
+      this.filterFromQueryString();
+      this.loading = true;
+      let countries = _.map(this.filters.countries, "id");
+      let categories = _.map(this.filters.categories, "id");
+      let subcategories = _.map(this.filters.subcategories, "id");
+      let zipCodes = _.map(this.filters.zipCodes, "Zip");
+      let countriesQueryString = utils.arrayToQueryString(countries, "countries");
+      let categoriesQueryString = utils.arrayToQueryString(categories, "categories");
+      let subcategoriesQueryString = utils.arrayToQueryString(subcategories, "subcategories");
+      let zipCodesQueryString = utils.arrayToQueryString(zipCodes, "zipCodes");
+      let filtersQueryString = `page=${this.page}&keyword=${this.filters.keyword}&purpose=${
+        this.filters.purpose
+      } 
+      &estatesOfTheMonth=${(this.filters.estatesOfTheMonth = 2)}
+      &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
+      let _self_ = this;
+      axios
+        .get(`https://apivitexport.azurewebsites.net/api/estatesOfTheMonth?${filtersQueryString}`)
+        .then((response) => {
+          _self_.estates = response.data.data;
+          _self_.pagination = {
+            current_page: response.data.current_page,
+            first_page_url: response.data.first_page_url,
+            from: response.data.from,
+            to: response.data.to,
+            last_page: response.data.last_page,
+          };
+          _self_.totalEstates = response.data.total;
+          _self_.loading = false;
+        })
+        .catch((error) => {
+          _self_.loading = false;
+          console.log(error);
+        });
+    },
     filterFromQueryString() {
       let params = this.$route.query;
       if (params.keyword) {

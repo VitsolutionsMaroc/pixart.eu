@@ -473,7 +473,7 @@
             </button>
             <!--<div class="dropdown">-->
             <button
-              @click="togglesOrderByDate()"
+              @click="togglesOrderByUpdateDate()"
               class="mr-3 md:mr-6 cursor-pointer text-sm md:text-base xl:text-xl"
             >
               <span class="text-sm sm:text-base xl:text-xl" v-if="filters.sortByDate == 'asc'">
