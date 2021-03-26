@@ -554,12 +554,13 @@ export default {
   },
   data() {
     return {
-      estatesPerRow:4,
+      estatesPerRow: 4,
       loading: false,
       checkbox: false,
       message: false,
       show: true,
       grid: "",
+      sortBy: "price",
       filters: {
         keyword: "",
         purpose: "for rent",
@@ -595,6 +596,7 @@ export default {
       parking: null,
     };
   },
+
   computed: {
     subcategories() {
       return _.flatten(this.filters.categories.map((category) => category.subcategories));
@@ -615,10 +617,13 @@ export default {
     },
     togglesOrderByPrice() {
       this.filters.sortByPrice = this.filters.sortByPrice == "desc" ? "asc" : "desc";
+      this.sortBy = "price";
+
       this.getEstates();
     },
     togglesOrderByUpdateDate() {
       this.filters.sortByDate = this.filters.sortByDate == "desc" ? "asc" : "desc";
+      this.sortBy = "date";
       this.getEstates();
     },
     paginate(page) {
@@ -626,6 +631,17 @@ export default {
       this.getEstates();
     },
     getEstates() {
+      var sortByPrice = null;
+      var sortByDate = null;
+
+      switch (this.sortBy) {
+        case "date":
+          sortByDate = this.filters.sortByDate;
+          break;
+        case "price":
+          sortByPrice = this.filters.sortByPrice;
+          break;
+      }
       this.filterFromQueryString();
       this.loading = true;
       let countries = _.map(this.filters.countries, "id");
@@ -646,8 +662,8 @@ export default {
       &terrace=${this.filters.terrace ? 1 : 0}
       &furnished=${this.filters.furnished ? 1 : 0}
       &garden=${this.filters.garden ? 1 : 0}
-      &sort_by_price=${this.filters.sortByPrice}
-      &sort_by_date=${this.filters.sortByDate}
+      &sort_by_price=${sortByPrice}
+      &sort_by_date=${sortByDate}
       &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
       let _self_ = this;
       axios
