@@ -8,7 +8,7 @@
       </div>
       <div class="filters md:px-40">
 
-      <div class="flex xl:w-11/12 block">
+      <div class="flex xl:w-11/12 block m-4">
         <button
           class="border-2 px-7 p-1 text-black bg-white"
           @click="togglePurpose()"
@@ -28,11 +28,11 @@
           Rental
         </button>
       </div>
-      <div class="grid md:grid-cols-7  xl:grid-cols- xl:gap-3 gap-2">
+      <div class="grid md:grid-cols-8  xl:grid-cols- xl:gap-4 gap-8">
 
-        <div class="flex   border-grey-light bg-white border mb-2 ">
+        <div class="flex xl:col-span-2  border-grey-light bg-white border  ">
           <button>
-            <span class="w-auto flex justify-end items-center text-grey p-2">
+            <span class="w-auto xl:col-span-2 flex justify-end items-center text-grey p-2">
               <svg
                 class="w-6 h-6 bg-yelleow-500"
                 fill="none"
@@ -121,13 +121,11 @@
               </template>
             </multiselect>
           </div>
-
-          <br />
-          <div class="grid grid-cols-2 gap-2">
-            <div class="text-center ">
+          <div class="xl:col-span-2">
+            <div class="text-center">
               <button
                 @click="search()"
-                class="text-center px-24 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ..."
+                class="text-center px-28 py-2  font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 "
               >
                 Search
               </button>
