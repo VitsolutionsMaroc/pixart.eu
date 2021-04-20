@@ -554,16 +554,16 @@ export default {
   },
   data() {
     return {
-      estatesPerRow: 4,
+      estatesPerRow: 5,
       loading: false,
       checkbox: false,
       message: false,
       show: true,
       grid: "",
-      sortBy: "price",
+      sortBy: "date",
       filters: {
         keyword: "",
-        purpose: "for rent",
+        purpose: "for sale",
         minPrice: "",
         maxPrice: "",
         countries: [],
@@ -582,7 +582,7 @@ export default {
         parking: false,
         desc: false,
         sortByPrice: "asc",
-        sortByDate: "asc",
+        sortByDate: "desc",
       },
       estates: [],
       totalEstates: 0,

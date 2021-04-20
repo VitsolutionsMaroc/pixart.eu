@@ -137,7 +137,7 @@
 
     <!-- Services -->
     <div class="services text-center p-16">
-      <h2 class="text-2xl text-black my-2">Our services for you</h2>
+      <h2 class="text-2xl text-black my-2">OUR SERVICES FOR YOU</h2>
       <p class="text-lg my-8">
         Highlight the best of your properties by using the list category shortcake. You can list
         categories, types, cities, areas and states of your choice.
@@ -179,11 +179,25 @@
     <!-- Services -->
     <!-- New Estates -->
     <div class="mt-8 m-4 p-4 md:grid-cols-3 gap-4">
-      <div :class="activeMap ? 'grid md:grid-cols-2' : ''">
-        <Estates :activeMap="activeMap" :estates="estatesLimited" :estatesPerRow="estatesPerRow" />
+      <div :class="activeMap ? 'grid md:grid-cols-2' : ''">     
+          <div class="text-center p-8">
+         <h2 class="text-2xl  text-uppercase">THE NEWEST LISTING ON THE MARKET</h2>
+        </div>
+        <div class="owl-carousel">
+
+
+        <Estates :activeMap="activeMap" :estates="estates" :estatesPerRow="estatesPerRow" />
+        </div>
       </div>
     </div>
 
+      <estate-pagination
+        class="mt-3"
+        v-if="pagination"
+        :pagination="pagination"
+        @paginate="paginate($event)"
+        :offset="4"
+      />
     <!-- New Estates -->
 
     <!-- about section -->
@@ -214,6 +228,7 @@
 <script>
 import Estates from "@/components/Estates.vue";
 import EstatePagination from "@/components/EstatePagination.vue";
+import { Carousel, Slide } from "vue-carousel";
 import utils from "@/helpers/utils";
 import Footer from "@/components/Footer.vue";
 import axios from "axios";
@@ -227,14 +242,16 @@ export default {
     Footer,
     Estates,
     EstatePagination,
+    Carousel,
+    Slide,
   },
   data() {
     return {
-      estatesPerRow: 3,
-
+      estatesPerRow: 4,
+       sortBy: "date",
       filters: {
         keyword: "",
-        purpose: "for rent",
+        purpose: "for sale",
         minPrice: "",
         maxPrice: "",
         countries: [],
@@ -253,7 +270,7 @@ export default {
         parking: false,
         desc: false,
         sortByPrice: "asc",
-        sortByDate: "asc",
+        sortByDate: "desc",
       },
       estates: [],
       totalEstates: 0,
@@ -268,9 +285,7 @@ export default {
     };
   },
   computed: {
-    estatesLimited() {
-      return this.estates.slice(0, 3);
-    },
+  
   },
   methods: {
     togglePurpose() {
@@ -318,6 +333,7 @@ export default {
     },
   
     getEstates() {
+      var sortByDate = this.filters.sortByDate;
       this.filterFromQueryString();
       this.loading = true;
       let countries = _.map(this.filters.countries, "id");
@@ -330,8 +346,8 @@ export default {
       let zipCodesQueryString = utils.arrayToQueryString(zipCodes, "zipCodes");
       let filtersQueryString = `page=${this.page}&keyword=${this.filters.keyword}&purpose=${
         this.filters.purpose
-      } 
-      &estatesOfTheMonth=${(this.filters.estatesOfTheMonth = 2)}
+      }&estatesOfTheMonth=${(this.filters.estatesOfTheMonth = 3)}
+      &sort_by_date= desc
       &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
       let _self_ = this;
       axios
@@ -378,9 +394,33 @@ export default {
     await this.getCountries();
     await this.getCategories();
     this.getEstates();
+    this.$nextTick(() => {
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:false
+        }
+    }
+})
+ });
   },
+  
 };
 </script>
+
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style scoped>
 .slide {
