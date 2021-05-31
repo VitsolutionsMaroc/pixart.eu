@@ -484,22 +484,20 @@
               >
             </button>
 
-            <button
+            <!-- <button
               @click="activeMap = !activeMap"
               class="md:mr-4 cursor-pointer sm:text-sm md:text-base xl:text-xl text-yellow-500"
             >
               Map view
             </button>
-            <!-- test -->
             <div class="panel panel-default md:text-base">
               <div class="panel-body">
-                <!--Only code you need is this label-->
                 <label class="switch">
                   <input type="checkbox" @click="toggleCheckbox" />
                   <div class="slider round"></div>
                 </label>
               </div>
-            </div>
+            </div> -->
             <!-- test -->
           </div>
         </div>

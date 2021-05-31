@@ -7,7 +7,12 @@ import * as VueGoogleMaps from "vue2-google-maps";
 import Eagle from "eagle.js";
 import VModal from "vue-js-modal";
 import i18n from "./i18n";
-    import PrettyCheckbox from "pretty-checkbox-vue";
+import PrettyCheckbox from "pretty-checkbox-vue";
+import './assets/css/owl.carousel.min.css';
+import './assets/css/owl.theme.default.min.css';
+import './assets/js/owl.carousel.js';
+import './assets/js/owl.carousel.min.js';
+    
 
 
 // import animate.css for slide transition

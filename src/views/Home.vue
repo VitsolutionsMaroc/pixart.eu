@@ -177,29 +177,19 @@
       </div>
     </div>
     <!-- Services -->
-    <!-- New Estates -->
+    <!-- New Estates -->   <div class="text-center p-8">
+         <h2 class="text-2xl  text-uppercase">THE NEWEST LISTING ON THE MARKET</h2>
+        </div>     
+
     <div class="mt-8 m-4 p-4 md:grid-cols-3 gap-4">
       <div :class="activeMap ? 'grid md:grid-cols-2' : ''">     
-          <div class="text-center p-8">
-         <h2 class="text-2xl  text-uppercase">THE NEWEST LISTING ON THE MARKET</h2>
-        </div>
-        <div class="owl-carousel">
-
-
-        <Estates :activeMap="activeMap" :estates="estates" :estatesPerRow="estatesPerRow" />
-        </div>
+        <EstatesSlider v-if="displaydivestaeslider" :activeMap="activeMap" :estates="estates" :estatesPerRow="estatesPerRow" @paginateForSlider="paginateForSlider($event)" />
+    
       </div>
     </div>
 
-      <estate-pagination
-        class="mt-3"
-        v-if="pagination"
-        :pagination="pagination"
-        @paginate="paginate($event)"
-        :offset="4"
-      />
     <!-- New Estates -->
-
+ 
     <!-- about section -->
     <div class="grid lg:grid-cols-2 gap-10 px-16 py-8">
       <div>
@@ -226,7 +216,7 @@
 </template>
 
 <script>
-import Estates from "@/components/Estates.vue";
+import EstatesSlider from "@/components/EstatesSlider.vue";
 import EstatePagination from "@/components/EstatePagination.vue";
 import { Carousel, Slide } from "vue-carousel";
 import utils from "@/helpers/utils";
@@ -235,15 +225,17 @@ import axios from "axios";
 import Multiselect from "vue-multiselect";
 import _ from "lodash";
 
+
 export default {
   name: "Home",
   components: {
     Multiselect,
-    Footer,
-    Estates,
     EstatePagination,
+    Footer,
+    EstatesSlider,
     Carousel,
     Slide,
+
   },
   data() {
     return {
@@ -282,6 +274,7 @@ export default {
       messagePopup: false,
       activeMap: false,
       parking: null,
+      displaydivestaeslider:false,
     };
   },
   computed: {
@@ -327,11 +320,33 @@ export default {
       };
       this.$router.push({ name: "properties", query: filterParams });
     },
-    paginate(page) {
+    paginateForSlider(isnext) {
+      
+      let totalpages = this.pagination.last_page;
+      let Currentpages = this.pagination.current_page;
+      if(Currentpages<=totalpages){
+        if(Currentpages==totalpages && totalpages>1 && !isnext)
+         {
+            this.page = Currentpages-1;
+            this.displaydivestaeslider=false;
+            this.getEstates();
+         }
+        else if(Currentpages==1 && !isnext)
+           this.page =1;
+        else
+        {
+            this.page = (isnext) ? Currentpages+1 : Currentpages-1;
+            this.displaydivestaeslider=false;
+            this.getEstates();
+        }
+        
+      }
+
+    },
+     paginate(page) {
       this.page = page;
       this.getEstates();
     },
-  
     getEstates() {
       var sortByDate = this.filters.sortByDate;
       this.filterFromQueryString();
@@ -354,7 +369,7 @@ export default {
         .get(`https://apivitexport.azurewebsites.net/api/estatesOfTheMonth?${filtersQueryString}`)
         .then((response) => {
           _self_.estates = response.data.data;
-          _self_.pagination = {
+           _self_.pagination = {
             current_page: response.data.current_page,
             first_page_url: response.data.first_page_url,
             from: response.data.from,
@@ -363,6 +378,7 @@ export default {
           };
           _self_.totalEstates = response.data.total;
           _self_.loading = false;
+          _self_.displaydivestaeslider=true;
         })
         .catch((error) => {
           _self_.loading = false;
@@ -394,34 +410,21 @@ export default {
     await this.getCountries();
     await this.getCategories();
     this.getEstates();
-    this.$nextTick(() => {
-  $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
-})
- });
+    // $(".owl-carousel").owlCarousel({
+    //       loop: false,
+    //       nav: true,
+    //       center: true,
+    //       dots: false,
+    //       margin: 110,
+    //       responsive: { }
+    //     });
   },
   
 };
 </script>
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+
 <style scoped>
 .slide {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),

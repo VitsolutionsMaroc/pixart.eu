@@ -1,24 +1,9 @@
 <template>   
-
-  <div
-    class="items mt-8 grid md:grid-cols-2 "
-    :class="
-      activeMap
-        ? ' gap-12 text-xl md:gap-6 h-auto'
-        : 'lg:grid-cols-' +
-          estatesPerRow +
-          ' xl:grid-cols-' +
-          estatesPerRow +
-          'md:gap-4  lg:gap-10 text-xl'
-    "
-    style=""
-  >
-
+<section>
     <div
-      v-for="estate in estates"
-      :key="estate.EstateID"
-      class="estateCard relative mb-6 md:mb-4 overflow-hidden shadow-md"
-    >
+    class="owl-carousel owl-theme box-slide items  mt-8 grid md:grid-cols-2 "
+    :class="activeMap? ' gap-12 text-xl md:gap-6 h-auto': 'lg:grid-cols-' +estatesPerRow +' xl:grid-cols-' +estatesPerRow +'md:gap-4  lg:gap-10 text-xl'" id="owlmycar">
+    <div v-for="estate in estates" :key="estate.EstateID" class="estateCard relative mb-6 md:mb-4 overflow-hidden shadow-md" >
       <div @click="displayDetails(estate)" v-if="estate.pictures[0]">
         <img :src="estate.pictures[0].Url" class="w-full h-52 sm:h-48 object-cover" />
       </div>
@@ -28,14 +13,8 @@
 
       <div class="h-32  sm:h-40 p-3 relative">
         <div class="mb-4 truncate">
-          <span v-if="estate.Price" class="text-black font-bold text-lg"
-            >{{ estate.Price }} {{ estate.Currency }}</span
-          >
-          <button
-            @click="displayDetails(estate)"
-            class="float-right px-2 py-1 rounded-full font-bold text-sm block text-white"
-            style="background:#fbf0df;color:#df9639"
-          >
+          <span v-if="estate.Price" class="text-black font-bold text-lg">{{ estate.Price }} {{ estate.Currency }}</span>
+          <button @click="displayDetails(estate)" class="float-right px-2 py-1 rounded-full font-bold text-sm block text-white" style="background:#fbf0df;color:#df9639" >
             Details
           </button>
         </div>
@@ -45,9 +24,7 @@
         </h2>
 
         <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
-        <div
-          class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0"
-        >
+        <div class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0">
           <span v-if="estate.Rooms" class="">
             <i class="fas fa-bed  text-yellow-500 mr-2"></i>
             {{ estate.Rooms }}
@@ -62,35 +39,31 @@
           </span>
         </div>
       </div>
-      <div
-        class="bg-gray-200 text-green-700 text-xs font-bold rounded-full absolute top-0 ml-2 mt-2 px-2 py-1 text-base"
-      >
+      <div class="bg-gray-200 text-green-700 text-xs font-bold rounded-full absolute top-0 ml-2 mt-2 px-2 py-1 text-base">
         <span v-if="estate.purpose === 'for rent'">Rent</span>
         <span v-else-if="estate.purpose === 'for sale'">Sale</span>
       </div>
     </div>
+  </div> 
+  <!-- <div class="owl-nav">
+        <div class="owl-prev" style="cursor:pointer;"><span v-on:click="changePage(false)">Previous page</span></div>
+        <div class="owl-next" style="cursor:pointer;"><span v-on:click="changePage(true)">Next page</span></div>
+    </div>   -->
 
-    <!-- Estate Modal -->
-    <v-modal
-      height="auto"
-      :adaptive="true"
-      :min-width="870"
-      :scrollable="true"
-      name="estate-details"
-    >
-      <estate-modal :estate="selectedEstate" :key="'modal-key-' + selectedEstate.EstateID" />
-    </v-modal>
-  </div>
+</section> 
 </template>
 
 <script>
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import EstateModal from "@/components/EstateModal.vue";
+import EstatePagination from "@/components/EstatePagination.vue";
+
 
 export default {
   components: {
-    EstateModal
+    EstateModal,
+    EstatePagination,
   },
   data: function() {
     return {
@@ -101,15 +74,19 @@ export default {
       },
     };
   },
-  mounted() {
-    this.count = this.estatesPerRow;
-    this.$nextTick(() => {
-        $(".box-slide").owlCarousel({
-          loop: true,
-          nav: true,
-          center: true,
+  async updated() {
+       await   this.$nextTick(() => {
+          
+           var $owlCar = $("#owlmycar").owlCarousel({
+          loop: false,
+          stagePadding: 20,
+          nav: true,          
+          items:3,
+          center: false,
           dots: true,
-          margin: 110,
+          margin: 60,
+              responsiveClass:true,
+
           responsive: {
             0: {
               items: 1
@@ -118,12 +95,61 @@ export default {
               items: 1
             },
             1000: {
-              items: 3
+              items: 4
+            }
+          }
+        });
+
+        $owlCar.trigger('destroy.owl.carousel');
+        $owlCar.owlCarousel({
+          loop: false,
+          stagePadding: 20,
+          items:3,
+           nav: true,
+          center: false,
+          dots: true,
+          margin: 60,
+              responsiveClass:true,
+          responsive: {
+            0: {
+              items: 1,
+              nav:true
+            },
+            600: {
+              items: 3,
+              nav:false
+            },
+            500: {
+              items: 4,
+              nav:true
+            },
+                  onInitialized:setDots,
+      onChanged:setDots
+            }
+            });
+            
+      });
+},
+  async mounted() {
+    this.count = this.estatesPerRow;
+    this.$nextTick(() => {
+       $("#owlmycar").owlCarousel({
+          loop: false,
+          stagePadding: 50,
+          nav: true,
+          navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+          items:3,
+          center: false,
+          dots: true,
+          margin: 60,
+         responsiveClass:true,
+          responsive: {
+            600: {
+              items: 4
             }
           }
         });
       });
-  
   },
   computed: {
     defaultEstatePicure() {
@@ -146,6 +172,9 @@ export default {
     displayName() {
       this.estate.Name.substring(1, 2);
     },
+      changePage(eventname) {
+      this.$emit("paginateForSlider", eventname);
+    }
   },
   props: {
     estates: null,
@@ -195,4 +224,5 @@ h2 {
 .noImage {
   background-image: url("../assets/img/avatar.svg");
 }
+
 </style>
