@@ -12,7 +12,7 @@ import './assets/css/owl.carousel.min.css';
 import './assets/css/owl.theme.default.min.css';
 import './assets/js/owl.carousel.js';
 import './assets/js/owl.carousel.min.js';
-    
+  
 
 
 // import animate.css for slide transition

@@ -1,10 +1,13 @@
 <template>
   <div class="home">
     <div class="slide md:h-screen p-4 lg:px-16 relative">
-      <div class="text-white xl:text-6xl text-center mt-4">
-        <p>Real estate advisor & property investment</p>
-        <p>Development & consulting</p>
-        <p>Expert investment</p>
+      <div class="info_line text-white xl:text-6xl text-center mt-4">
+       <p class="mt-20 mb-20" style="line-height: 1.6; padding:0 15px;">         
+         PIXART is committed to delivering a high level  <br>
+          of real estate & advisory services via our<br>
+          global experts' network
+
+       </p>
       </div>
       <div class="filters md:px-40">
 
@@ -28,7 +31,7 @@
           Rental
         </button>
       </div>
-      <div class="grid md:grid-cols-8  xl:grid-cols- xl:gap-4 gap-8">
+      <div class="grid xl:grid-cols-8  xl:grid-cols- xl:gap-4 gap-8">
 
         <div class="flex xl:col-span-2  border-grey-light bg-white border  ">
           <button>
@@ -134,50 +137,21 @@
         </div>
      </div>
     </div>
-
-    <!-- Services -->
+    <!-- carousel_service -->
     <div class="services text-center p-16">
-      <h2 class="text-2xl text-black my-2">OUR SERVICES FOR YOU</h2>
-      <p class="text-lg my-8">
-        Highlight the best of your properties by using the list category shortcake. You can list
-        categories, types, cities, areas and states of your choice.
-      </p>
-      <div class="grid lg:grid-cols-3 gap-10">
-        <div class="text-center bg-white p-8 m-2">
-          <img class="m-auto mb-4" src="../assets/img/icon1.png" />
-          <h3 class="m-auto text-xl text-black">
-            Investment Consulting Development
-          </h3>
-          <p class="m-auto mt-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aperiam maiores
-            quibusdam exercitationem, aliquam voluptate sint dolores iure non at quo, soluta facilis
-            recusandae autem aut adipisci veniam cum ab!
-          </p>
-        </div>
-
-        <div class="text-center bg-white p-8 m-2">
-          <img class="m-auto mb-4" src="../assets/img/icon2.png" />
-          <h3 class="m-auto text-xl text-black">Relocation</h3>
-          <p class="m-auto mt-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aperiam maiores
-            quibusdam exercitationem, aliquam voluptate sint dolores iure non at quo, soluta facilis
-            recusandae autem aut adipisci veniam cum ab!
-          </p>
-        </div>
-
-        <div class="text-center bg-white p-8 m-2">
-          <img class="m-auto mb-4" src="../assets/img/icon3.png" />
-          <h3 class="m-auto text-xl text-black">Maison de vacance au soleil</h3>
-          <p class="m-auto mt-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aperiam maiores
-            quibusdam exercitationem, aliquam voluptate sint dolores iure non at quo, soluta facilis
-            recusandae autem aut adipisci veniam cum ab!
-          </p>
-        </div>
-      </div>
+     <div class="info_carousel mb-20">
+        <h2 class="text-2xl text-center text-black my-2 mt-15 mb-10" style="font-size:2rem;font-weight:bold">OUR SERVICES FOR YOU</h2>
+        <p>Highlight the best of your properties by using the list category shortcake. You can list
+        categories, types, cities, areas and states of your choice.</p>
+     </div>
+   <ServiceOwl />
     </div>
+    <!-- end_carousel_service -->
+    
+    
     <!-- Services -->
-    <!-- New Estates -->   <div class="text-center p-8">
+    <!-- New Estates -->   
+    <div class="text-center p-8">
          <h2 class="text-2xl  text-uppercase">THE NEWEST LISTING ON THE MARKET</h2>
         </div>     
 
@@ -193,22 +167,28 @@
     <!-- about section -->
     <div class="grid lg:grid-cols-2 gap-10 px-16 py-8">
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6">PIXART REAL ESTAT</h1>
-        <p class="text-sm lg:text-2xl md:text-lg mb-4 leading-loose">
-          With Over $2 Billion In Sales, Sam Davis Is The Industry’s Top Luxury Producer With Over
-          27 Years Of Experience In Marketing South Florida’s Most Prestigious Waterfront
-          Properties. Due To His Unparalleled Results, Expertise And Dedication, Sam Ranks Amongst
-          The Top 6 Agents In Florida And Is An Elite Member To Corcoran’s Presidents Council.
+        <h1 class="text-4xl md:text-2xl mb-6">Investment step by step</h1>
+        <p>
+        I.B.P.Greece follows a well-designed process for finding, developing and utilizing investment property,
+         based on our team’s many years of experience in this field. The is how we “build” our investment services:<br>
+        • After discussing in detail with the prospective investor, we determine the parameters of the investment,
+        such as the size of the budget, the type of property, its use, the time horizon of the investment (long or short term), the location and so on.
+        This is how we define our investment strategy to meet the expectations and potential of each investor.<br>
+        • Our development department tracks down investment opportunities and prepares a cost-benefit analysis 
+        for each of the potential investments.<br>
+        • Our company’s executives monitor all legal, financial, architectural and other parameters of the investment.<br>
+        • We prepare all the documents and follow all the necessary procedures so that our clients can get the property they want in the allotted time and the expected condition.
+        Investors from around the world choose I.B.P.Greece to trust their property investment plans.<br>
+        Our experienced executives work with a network of reliable partners to guarantee the best possible outcome!
+
         </p>
-        <button class="bg-yellow-500 px-8 py-4 text-xl text-white">
-          Read More
-        </button>
       </div>
       <div>
-        <img class="w-full" src="../assets/img/welcom.png" alt="" />
+        <img class="w-full" src="../assets/img/handshake.jpg" alt="<a href='https://fr.freepik.com/photos/affaires'>Affaires photo créé par pressfoto - fr.freepik.com</a>" />
       </div>
     </div>
 
+   
     <!-- about section -->
 
     <Footer />
@@ -221,8 +201,10 @@ import EstatePagination from "@/components/EstatePagination.vue";
 import { Carousel, Slide } from "vue-carousel";
 import utils from "@/helpers/utils";
 import Footer from "@/components/Footer.vue";
+import ServiceOwl from "@/views/serviceCarl.vue";
 import axios from "axios";
 import Multiselect from "vue-multiselect";
+import 'vueperslides/dist/vueperslides.css';
 import _ from "lodash";
 
 
@@ -230,11 +212,13 @@ export default {
   name: "Home",
   components: {
     Multiselect,
+    ServiceOwl,
     EstatePagination,
     Footer,
     EstatesSlider,
     Carousel,
     Slide,
+   
 
   },
   data() {
@@ -275,6 +259,12 @@ export default {
       activeMap: false,
       parking: null,
       displaydivestaeslider:false,
+       slides: [
+    {
+      title: 'Slide #1',
+      content: 'Slide content.'
+    }
+  ]
     };
   },
   computed: {
@@ -445,5 +435,21 @@ input:focus,
 .input:focus:active {
   outline: 0;
   box-shadow: none;
+}
+.item p{
+  font-size:0.8rem;
+}
+.services .owl-carousel .owl-item .item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none;background-color:white;padding: 20px;height:500px;}
+.services .owl-carousel .owl-item img{display:block;width:auto}
+.filters button{
+  outline: none;
+}
+.info_line p{
+  font-size: 3rem;
+}
+@media only screen and (min-width: 261px)and (max-width:600px) {
+ .info_line p{
+  font-size: 1.5rem;
+}
 }
 </style>

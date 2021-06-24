@@ -484,7 +484,7 @@
               >
             </button>
 
-            <!-- <button
+            <button
               @click="activeMap = !activeMap"
               class="md:mr-4 cursor-pointer sm:text-sm md:text-base xl:text-xl text-yellow-500"
             >
@@ -497,7 +497,7 @@
                   <div class="slider round"></div>
                 </label>
               </div>
-            </div> -->
+            </div>
             <!-- test -->
           </div>
         </div>

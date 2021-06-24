@@ -10,6 +10,22 @@ const routes = [
     name: "Home",
     component: Home
   },
+ 
+  {
+    path: "/corporate",
+    name: "corporate",
+    component: () => import("../components/shared/Corporate.vue")
+  },
+  {
+    path: "/strategy",
+    name: "strategy",
+    component: () => import("../components/shared/Strategy.vue")
+  },
+  {
+    path: "/assurance",
+    name: "asurance",
+    component: () => import("../components/shared/Assurance.vue")
+  },
   {
     path: "/about",
     name: "About",
@@ -36,6 +52,12 @@ const routes = [
     component: () => import("../views/Lookingfor.vue")
   },
   {
+    path: "/golden",
+    name: "golden",
+    component: () => import("../views/Golden.vue")
+  },
+
+  {
     path: "/contact",
     name: "contact",
     component: () => import("../views/Contactus.vue")
@@ -46,5 +68,6 @@ const router = new VueRouter({
   mode: "hash",
   routes
 });
+
 
 export default router;

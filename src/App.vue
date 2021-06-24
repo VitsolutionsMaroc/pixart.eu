@@ -42,6 +42,11 @@
             >EVALUATION
           </router-link>
         </li>
+         <li class="mb-6 md:mb-0">
+          <router-link to="/golden" class=" other lg:mx-4 mx-2"
+            >GOLDEN VISA
+          </router-link>
+        </li>
         <li class="mb-6 md:mb-0">
           <router-link to="/contact" class=" other lg:mx-4 mx-2 font-thin"
             >CONTACT
@@ -76,7 +81,7 @@
   a {
     font-weight:400;
     color: #fff;
-    font-size: 19px;
+    font-size: 15px;
 
     &.router-link-exact-active {
       color: #df9523;
