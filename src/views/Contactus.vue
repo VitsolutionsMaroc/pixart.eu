@@ -1,6 +1,6 @@
 <template>
   <main class="bg-gray-100">
-    <div class="container max-w-screen-md mx-auto py-6">
+    <div class="container max-w-screen-md mx-auto px-6">
       <div class="text-center flex justify-center	">
         <p
           class="font-bold text-l md:text-xl text-center	m-0 mt-8 mb-6 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex"
@@ -113,7 +113,7 @@
           aria-hidden="false"
           tabindex="0"
         ></iframe>
-        <div class="shadow-all bg-white absolute w-96 m-24 top-0 left-0">
+        <div class="shadow-all bg-white absolute w-70 m-24 top-0 left-0">
           <h3 class="bg-gray-200 font-bold text-xl w-full px-4 py-6 text-center border-b">
             Contact
           </h3>
@@ -130,14 +130,14 @@
                 class=" mb-4 mr-4 w-5 h-5 md:w-10 md:h-10"
                 src="../assets/img/iconmonstr-phone-1-96.png"
               />
-              <li class="mb-2">+32 04333333</li>
+              <li class="mb-2">+352661373707</li>
             </div>
             <div class="flex just ">
               <img
                 class=" mb-4 mr-4 w-5 h-5 md:w-10 md:h-10"
                 src="../assets/img/iconmonstr-building-18-96.png"
               />
-              <li class="mb-2 mt-2">Rue la neige Bruxelles</li>
+              <li class="mb-2 mt-2">8  Grand Rue Clervaux   -   L -9711 Luxembourg</li>
             </div>
           </ul>
           <h3 class="font-bold text-lg px-5 py-3 ml-8">Opening Hours</h3>
@@ -158,6 +158,8 @@
         </div>
       </div>
     </div>
+
+    <Footer />
   </main>
 </template>
 
@@ -176,12 +178,13 @@ import _ from "lodash";
 import JQuery from "jquery";
 
 export default {
-  name: "Evaluation",
+  name: "Contactus",
   components: {
     Multiselect,
     Footer,
     JQuery,
   },
+  
   data() {
     return {
       filters: {

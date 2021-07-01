@@ -1,6 +1,6 @@
 <template>
   <main class="bg-gray-100">
-    <div class="container max-w-screen-md mx-auto py-6">
+    <div class="container max-w-screen-md mx-auto px-6">
       <div class="text-center flex justify-center	">
         <p
           class="font-bold text-l md:text-xl text-center	m-0 mt-5 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex mb-5"

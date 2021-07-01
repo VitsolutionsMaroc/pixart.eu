@@ -1,111 +1,300 @@
 <template>
   <div>
-    <div class="slide h-72 lg:h-screen flex justify-center items-center">
+    <div class="slide  lg:h-screen flex justify-center items-center">
       <div
-        class="textHeader text-white text-lg md:text-4xl lg:text-6xl text-center uppercase"
+        class="textHeader text-white text-lg md:text-4xl lg:text-6xl text-center "
       >
-        <p>Une agence immobiliére</p>
-        <p>qui aime son métier et ses</p>
-        <p>clients</p>
-      </div>
-    </div>
-    <!-- Vision section -->
-    <div class="text-center py-4 px-4 md:px-32">
-      <h2 class="text-xl md:text-4xl font-bold my-2">Our vision</h2>
-      <p class="text-sm text-justify md:text-center">
-        There are many variations of passages of Lorem Ipsum available, but the
-        majority have suffered alteration in some form, by injected humour, or
-        randomised words which don’t look even slightly believable. If you are
-        going to use a passage of Lorem Ipsum, you need to be sure there isn’t
-        anything embarrassing hidden in the middle of text. All the Lorem Ipsum
-        generators on the Internet tend to repeat predefined chunks as
-        necessary, making this the first true generator on the Internet. It uses
-        a dictionary of over 200 Latin words, combined with a handful of model
-        sentence structures, to generate Lorem Ipsum which looks reasonable. The
-        generated Lorem Ipsum is therefore always free from repetition, injected
-        humour, or non-characteristic words etc.
-      </p>
-    </div>
-    <!-- Vision section -->
-    <!-- Services -->
-    <div class="services text-center p-16" style="background:#EFEAEA">
-      <h2 class="text-xl md:text-4xl text-black my-2 font-bold">
-        Our services for you
-      </h2>
-      <p class="text-lg my-8">
-        Highlight the best of your properties by using the list category
-        shortcake. You can list categories, types, cities, areas and states of
-        your choice.
-      </p>
-      <div class="grid lg:grid-cols-3 gap-10">
-        <div class="text-center bg-white p-8 m-2">
-          <img
-            class="m-auto mb-4 w-16 h-16 md:w-24 md:h-24"
-            src="../assets/img/icon1.png"
-          />
-          <h3 class="m-auto text-xl font-bold text-black">
-            Investment Consulting Development
-          </h3>
-          <p class="m-auto mt-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            aperiam maiores quibusdam exercitationem, aliquam voluptate sint
-            dolores iure non at quo, soluta facilis recusandae autem aut
-            adipisci veniam cum ab!
-          </p>
-        </div>
+        <p style="font-size:2rem;padding:30px 20px;">
+          Your real estate investment, our commitment !<br>
+          Our professionals are ready to assist you through our <br>
+          offices in Belgium, Luxembourg, Greece, Dubai and Miami. 
 
-        <div class="text-center bg-white p-8 m-2">
-          <img
-            class="m-auto mb-4 w-16 h-16 md:w-24 md:h-24"
-            src="../assets/img/icon2.png"
-          />
-          <h3 class="m-auto text-xl font-bold text-black">Relocation</h3>
-          <p class="m-auto mt-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            aperiam maiores quibusdam exercitationem, aliquam voluptate sint
-            dolores iure non at quo, soluta facilis recusandae autem aut
-            adipisci veniam cum ab!
-          </p>
-        </div>
-
-        <div class="text-center bg-white p-8 m-2">
-          <img
-            class="m-auto mb-4 w-16 h-16 md:w-24 md:h-24"
-            src="../assets/img/icon3.png"
-          />
-          <h3 class="m-auto text-xl font-bold text-black">
-            Maison de vacance au soleil
-          </h3>
-          <p class="m-auto mt-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            aperiam maiores quibusdam exercitationem, aliquam voluptate sint
-            dolores iure non at quo, soluta facilis recusandae autem aut
-            adipisci veniam cum ab!
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Services -->
-    <div class="grid md:grid-cols-2 gap-4 p-4">
-      <div>
-        <img src="../assets/img/welcome.jpg" />
-      </div>
-      <div class="p-12">
-        <h2 class="text-xl md:text-2xl lg:text-4xl font-bold mb-4">
-          PIXART REAL ESTAT
-        </h2>
-        <p class="text-base lg:text-lg">
-          With Over $2 Billion In Sales, Sam Davis Is The Industry’s Top Luxury
-          Producer With Over 27 Years Of Experience In Marketing South Florida’s
-          Most Prestigious Waterfront Properties. Due To His Unparalleled
-          Results, Expertise And Dedication, Sam Ranks Amongst The Top 6 Agents
-          In Florida And Is An Elite Member To Corcoran’s Presidents Council.
         </p>
-        <button>Get Free evaluation</button>
       </div>
     </div>
+    <!-- Vision section -->
+    <div class="text-center py-4 px-4 md:px-32 mt-20 mb-20">
+      <h2 class="text-xl md:text-4xl font-bold my-2 mb-10">OUR TEAM</h2>
+      <p class="text-sm text-justify md:text-center" style="font-size:1.3rem;line-height: 1.6">
+        Pixart Real Estate consists of licensed real estate professionals with a
+         common denominator : passion & expertise in real estate. For several years
+          on the Benelux market, offers a real realty advisory service and legal 
+          assistance supported by lawyers specializing in real estate law,  for the
+           residential real estate and  business real estate. Company is supported
+            by a local, multilingual, Belgian, Greek, Luxembourg, Russian, Chinese or 
+          Dubai team
+      </p>
+    </div>
+    <!-- Vision section -->
+    <!-- fees -->
+      <div class="text-center py-4 px-4 md:px-32 mt-20 mb-20" style="background:rgb(207 206 206)">
+        <div>
+          <h2 class="text-xl md:text-4xl font-bold my-2 mb-10">OUR FEES</h2>
+        <p>Pixart Real Estate makes a point of reserving preferential fees for its clients, investors, buyers, and sellers. 
+        We are much more than an intermediary, we are your real estate partner !</p>
+        </div>
+         
+    <!-- about section -->
+    <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
+      <div>
+        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">Looking for a way to invest your money?</h1>
+        <p style="text-align: justify;">
+       For most investors, the real estate market is the preferred choice as it is a 
+       tangible asset that cannot be stolen or hacked. Everyone needs a property to live in,
+        whether they rent or own a home, this is a basic human need.
+        Reading the presentation below, you can find out why the demand for investment in Greek real 
+        estate is increasing by attracting continuously, investors from all over the world.
+
+
+        </p>
+      </div>
+      <div>
+        <img class="w-full" src="../assets/img/invest.jpg" alt="<a href='https://fr.freepik.com/photos/ville'>Ville photo créé par jcomp - fr.freepik.com</a>" />
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
+      <div>
+        <img class="w-full" src="../assets/img/investers.jpg" alt="<a href='https://fr.freepik.com/photos/carte-visite'>Carte de visite photo créé par rawpixel.com - fr.freepik.com</a>" />
+      </div>
+      <div>
+        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">Why invest in Greece?</h1>
+        <p style="text-align: justify;">
+       The Greek real estate market is a safe and promising sector with unique opportunities in
+        real estate development, especially in areas such as tourism, culture, entrepreneurship, 
+        holiday homes, logistics services and more.
+The Greek real estate market is one of the few remaining markets in Europe where there are still
+ high-profit margins. Suffice it to say that 2020 real estate prices in Greece are on average 21% 
+ lower in comparison with 2007 prices. This, coupled with the steady increase in tourism, and the 
+ generous incentives designed for the development of the construction sector, pledge the maximum return on investment.
+
+
+
+        </p>
+      </div>
+      
+    </div>
+    <!-- about section -->
+     
+      </div>
+
+    <!-- end_fees -->
+    <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
+      
+      <div>
+        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">WHY I.B.P.Greece ?</h1>
+        <p style="text-align: justify;">
+      I.B.P.Greece is here to help you make your next successful investment in the real estate market, starting from scratch, by covering all stages, from design and implementation to delivery and utilization.
+      Our team is staffed by highly experienced executives (engineers, accountants, lawyers, economists, notaries, brokers), and works with a network of trusted associates to cover extra services that may be required.
+      We stand by you every step of the way, providing the best solutions for every emerging need.
+        </p>
+      </div>
+      <div>
+        <img class="w-full" src="../assets/img/main1.jpg" alt="<a href='https://www.freepik.com/photos/house'>House photo created by freepik - www.freepik.com</a>"/>
+      </div>
+    </div>
+    <!-- Services -->
+   
+    <Footer />
   </div>
 </template>
+<script>
+import Footer from "@/components/Footer.vue";
+import axios from "axios";
+import Multiselect from "vue-multiselect";
+import _ from "lodash";
+
+export default {
+  name: "About",
+  components: {
+    Multiselect,
+    Footer,
+  },
+  data() {
+    return {
+      filters: {
+        keyword: "",
+        countries: [],
+      },
+      styleOption: {
+        color: "black",
+      },
+      showMsg: false,
+
+      contact: {
+        Name: "",
+        FirstName: "",
+        Address1: "",
+        Address2: "",
+        Number: "",
+        Box: "",
+        Zip: "",
+        City: "",
+        CountryId: "",
+        PrivateTel: "",
+        ContactTypeIds: [178477],
+        AgreementEmail: true,
+        AgreementSms: true,
+        AgreementMailingCampaign: true,
+        PrivateMobile: "",
+        OfficeIds: [6644],
+        StatusId: 1,
+        LanguageId: "fr-BE",
+        PrivateEmail: "",
+        selected: "",
+      },
+      ContactTitleId: "",
+      Comments: "",
+      selected: "",
+      options: [],
+      transactions: [],
+      categories: [],
+      genders: [],
+      countries: [],
+    };
+  },
+
+  methods: {
+   
+    getGenders() {
+      let authCredentials = {
+        ClientId: 4668,
+        OfficeId: 6644,
+      };
+
+      let apiToken =
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTQ3Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.gDNwAXok3Fr4AR4kuJ12vVcytlmr0--bInx65euVxos";
+      const config = {
+        headers: {
+          Authorization: `Bearer ${apiToken}`,
+          "Content-Type": "application/json",
+        },
+      };
+      axios
+        .post("https://api.whise.eu/v1/admin/clients/token", authCredentials, config)
+        .then((response) => {
+          let token = response.data.token;
+          const config = {
+            headers: {
+              Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
+              "Content-Type": "application/json",
+            },
+          };
+
+          axios
+            .post("https://api.whise.eu/v1/contacts/titles/list", authCredentials, config)
+            .then((response) => {
+              this.genders = response.data.contactTitles;
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        })
+
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    addContact() {
+      let authCredentials = {
+        ClientId: 4668,
+        OfficeId: 6644,
+      };
+
+      let apiToken =
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTQ3Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.gDNwAXok3Fr4AR4kuJ12vVcytlmr0--bInx65euVxos";
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${apiToken}`,
+          "Content-Type": "application/json",
+        },
+      };
+
+      axios
+        .post("https://api.whise.eu/v1/admin/clients/token", authCredentials, config)
+        .then((response) => {
+          let token = response.data.token;
+          const config = {
+            headers: {
+              Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
+              "Content-Type": "application/json",
+            },
+          };
+
+          let contact = {
+            Name: this.contact.Name,
+            FirstName: this.contact.FirstName,
+            Address1: this.contact.Address1,
+            Address2: "",
+            Number: this.contact.Number,
+            Box: "",
+            Zip: this.contact.Zip,
+            City: this.contact.City,
+            PrivateTel: this.contact.PrivateTel,
+            ContactTitleId: this.ContactTitleId.id,
+            ContactTypeIds: [178477],
+            Comments:
+              this.contact.TransactionType.name +
+              ", " +
+              this.contact.PropertyType.name +
+              ", " +
+              this.contact.ConstructionYear +
+              ", " +
+              this.contact.Surface +
+              "m²",
+            PrivateMobile: this.contact.PrivateMobile,
+            OfficeIds: [6644],
+            CountryId: this.selected.id,
+            StatusId: 1,
+            LanguageId: "fr-BE",
+            PrivateEmail: this.contact.PrivateEmail,
+            AgreementEmail: true,
+            AgreementSms: true,
+            AgreementMailingCampaign: true,
+          };
+          console.log(contact);
+          axios
+            .post("https://api.whise.eu/v1/contacts/create", contact, config)
+            .then((response) => {
+              this.showMsg = true;
+
+              (this.contact.ContactTitleId = ""),
+                (this.contact.ContactTypeIds = ""),
+                (this.selected = ""),
+                (this.contact.Name = "");
+              this.contact.PrivateEmail = "";
+              this.contact.PrivateMobile = "";
+              this.contact.FirstName = "";
+              (this.contact.Address1 = ""),
+                (this.contact.PrivateTel = ""),
+                (this.contact.City = ""),
+                (this.contact.Zip = ""),
+                (this.contact.Comments = "");
+              this.contact.TransactionType = "";
+              this.contact.PropertyType = "";
+              this.contact.Year = "";
+              this.contact.Surface = "";
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      window.scrollTo(0, 0);
+
+
+      
+    },
+    
+  },
+
+  mounted() {
+    this.getGenders();
+  },
+};
+</script>
 <style scoped>
 .slide {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),

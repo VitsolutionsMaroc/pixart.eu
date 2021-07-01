@@ -484,7 +484,7 @@
               >
             </button>
 
-            <!-- <button
+            <button
               @click="activeMap = !activeMap"
               class="md:mr-4 cursor-pointer sm:text-sm md:text-base xl:text-xl text-yellow-500"
             >
@@ -497,7 +497,7 @@
                   <div class="slider round"></div>
                 </label>
               </div>
-            </div> -->
+            </div>
             <!-- test -->
           </div>
         </div>
@@ -665,7 +665,7 @@ export default {
       &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
       let _self_ = this;
       axios
-        .get(`https://apivitexport.azurewebsites.net/api/estates?${filtersQueryString}`)
+        .get(`https://vitexportapi.azurewebsites.net/api/estates?${filtersQueryString}`)
         .then((response) => {
           _self_.estates = response.data.data;
           _self_.pagination = {
@@ -684,11 +684,11 @@ export default {
         });
     },
     async getCategories() {
-      const response = await axios.get(`https://apivitexport.azurewebsites.net/api/categories`);
+      const response = await axios.get(`https://vitexportapi.azurewebsites.net/api/categories`);
       this.categories = response.data.data;
     },
     async getCountries() {
-      const response = await axios.get(`https://apivitexport.azurewebsites.net/api/countries`);
+      const response = await axios.get(`https://vitexportapi.azurewebsites.net/api/countries`);
       this.countries = response.data.data;
     },
     applyExtraFilters() {
