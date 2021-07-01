@@ -188,7 +188,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 html {
   font-family: serif;
 }
@@ -224,5 +224,15 @@ h2 {
 .noImage {
   background-image: url("../assets/img/avatar.svg");
 }
-
+.owl-theme .owl-nav .owl-prev, .owl-next{
+          position: absolute!important;
+        }
+        .owl-theme .owl-nav .owl-next{
+        right:-35px!important;
+          top:190px!important;
+        }
+      .owl-theme .owl-nav .owl-prev{
+         left:-35px!important;
+          top:190px!important;
+        }
 </style>

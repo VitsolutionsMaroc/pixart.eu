@@ -268,7 +268,7 @@ export default {
       estate: null,
       loadingRelatedEstates: false,
       relatedEstates: [],
-      relatedEstateApiUrl: `https://apivitexport.azurewebsites.net/api/estates/${this.$route.params.estateId}/related-estates`,
+      relatedEstateApiUrl: `https://vitexportapi.azurewebsites.net/api/estates/${this.$route.params.estateId}/related-estates`,
       bookTour: false,
       date: "2019-01-01",
       picSwiper: null,
@@ -382,7 +382,7 @@ export default {
     loadEstate() {
       let estateId = this.$route.params.estateId;
       axios
-        .get(`https://apivitexport.azurewebsites.net/api/estates/${estateId}`)
+        .get(`https://vitexportapi.azurewebsites.net/api/estates/${estateId}`)
         .then(response => {
           this.estate = response.data;
         })
@@ -428,7 +428,7 @@ export default {
     "$route.params": {
       handler(params) {
         this.loadEstate();
-        this.relatedEstateApiUrl = `https://apivitexport.azurewebsites.net/api/estates/${params.estateId}/related-estates`;
+        this.relatedEstateApiUrl = `https://vitexportapi.azurewebsites.net/api/estates/${params.estateId}/related-estates`;
         this.relatedEstates = [];
         this.loadRelatedEstates();
       },
