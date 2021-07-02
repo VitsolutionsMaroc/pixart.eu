@@ -144,9 +144,18 @@ export default {
           margin: 60,
          responsiveClass:true,
           responsive: {
+           0: {
+              items: 1,
+              nav:false
+            },
             600: {
-              items: 4
-            }
+              items: 3,
+              nav:true
+            },
+            500: {
+              items: 4,
+              nav:true
+            },
           }
         });
       });

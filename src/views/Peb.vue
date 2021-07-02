@@ -36,6 +36,6 @@ export default {
 <style>
 .peb img {
   width: 66px;
-  margin-bottom: 40px;
+  margin-top: 20px;
 }
 </style>

@@ -30,7 +30,7 @@
         />
       </div>
 
-      <div class="h-32  sm:h-40 p-3 relative">
+      <div class="h-40  sm:h-40 p-3 relative">
         <div class="mb-4 truncate">
           <span v-if="estate.Price" class="text-black font-bold text-lg"
             >{{ estate.Price }} {{ estate.Currency }}</span
@@ -47,13 +47,17 @@
           <img :src="estate.EnergyClass" alt="" style=" width:30px;">
        
         </div> -->
-        <h2 class="text-black text-sm lg:text-base font-bold block" style="font-size:0.7rem">
-          {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
-          {{
-            estate.categoryName.slice(1) + estate.categoryName.slice(1)
-          }}
+        <h2
+          class="text-black text-sm lg:text-base font-bold block"
+          style="font-size:0.7rem"
+        >
+        <div v-if="estate.Name.length>40" >{{estate.Name.substr(0,30)}} ...</div>
+        <div v-else>{{estate.Name}}</div>
+  
+          <!-- {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
+          {{ estate.categoryName.slice(1) + estate.categoryName.slice(1) }} -->
         </h2>
-        <Peb v-bind="EnergyClassName" />
+        <Peb v-bind:EnergyClassName="estate.EnergyClass" />
         <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
         <div
           class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0"
