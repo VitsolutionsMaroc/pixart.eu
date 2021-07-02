@@ -133,7 +133,7 @@
     </div>
     
      <div class="video text-center">
-       <h1 class="text-xl md:text-4xl font-bold my-2 mb-10 mt-10">GREECE 365 DAY DESTINATION !!!</h1>
+       <h1 class="text-xl md:text-4xl font-bold my-2 mb-10 mt-10">GREECE 365 DAYS DESTINATION !!!</h1>
      </div>
     <iframe class="xl:w-3/6" src="https://www.youtube.com/embed/fL3Cy7VJEHU" title="YouTube video player" frameborder="0" style="margin:0 auto;padding-bottom:50px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <Footer />

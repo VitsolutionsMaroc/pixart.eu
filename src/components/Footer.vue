@@ -1,7 +1,7 @@
 <template>
   <div>
      <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px;margin-bottom:50px">
-      <h1 style="font-size:2rem">OUR PARTNERS</h1>
+      <h1 style="font-size:2rem">OUR EXPERT</h1>
     </div>
     <div class="caroussel_footer px-20 " style="text-align:center;">
        <div class="owl-carousel owl-theme footer_owl">
@@ -40,7 +40,7 @@
                     
         </div>
     </div>
-    <div class="bg-gray-900 p-10 text-white">
+    <div class="bg-gray-900 p-10 text-white" style="position:relative;z-index:99999;">
      <div class="grid md:grid-cols-3 bg-gray-900 p-10 text-white">
        <div class="logo">
          <div  class="mt-10 mb-20"> <img class="" src="../assets/img/logo.png"  style="width:20%;"/></div>
