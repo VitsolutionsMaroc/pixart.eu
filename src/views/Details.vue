@@ -204,25 +204,29 @@
               </button>
             </div>
             <h2 class="text-black text-sm font-bold mb-4 block">
-              {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
+              <!-- {{ relatedEstate.Name }} <span v-if="relatedEstate.Name && relatedEstate.Name">-</span>
               {{
-                estate.categoryName.charAt(0).toUpperCase() +
-                  estate.categoryName.slice(1)
-              }}
+                relatedEstate.categoryName.charAt(0).toUpperCase() +
+                  relatedEstate.categoryName.slice(1)
+              }} -->
+               <div v-if="relatedEstate.Name.length > 40">
+            {{ relatedEstate.Name.substr(0, 30) }} ...
+          </div>
+          <div v-else>{{ relatedEstate.Name }}</div>
             </h2>
-            <Peb v-bind:EnergyClassName="estate.EnergyClass" />
+            <Peb v-bind:EnergyClassName="relatedEstate.EnergyClass" />
             <span class="block text-black text-sm md:text-base my-2">
-              <span v-if="estate.Rooms" class="lg:mr-2 xl:mr-2 md:mr-10">
+              <span v-if="relatedEstate.Rooms" class="lg:mr-2 xl:mr-2 md:mr-10">
                 <i class="fas fa-bed  text-yellow-500"></i>
-                {{ estate.Rooms }}
+                {{ relatedEstate.Rooms }}
               </span>
-              <span v-if="estate.Bathrooms" class="lg:mr-2 xl:mr-2 md:mr-10">
+              <span v-if="relatedEstate.Bathrooms" class="lg:mr-2 xl:mr-2 md:mr-10">
                 <i class="fas fa-sink   text-yellow-500"></i>
-                {{ estate.Bathrooms }}
+                {{relatedEstate.Bathrooms }}
               </span>
-              <span v-if="estate.Area" class="lg:mr-2 xl:mr-2 md:mr-10">
+              <span v-if="relatedEstate.Area" class="lg:mr-2 xl:mr-2 md:mr-10">
                 <i class="fas fa-ruler-combined  text-yellow-500"></i>
-                {{ estate.Area }}
+                {{ relatedEstate.Area }}
               </span>
             </span>
           </router-link>

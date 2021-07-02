@@ -47,7 +47,7 @@
        </div>
        <div>
          <ul
-        class="md:block z-40 mt-2 md:mt-0 bg-gray-900"
+        class=" mt-2 md:mt-0 bg-gray-900"
         id="menu"
       >
         <li class="mb-2 md:mb-0">
@@ -136,6 +136,7 @@ mounted(){
 
 #menu{
   line-height: 2;
+  overflow: hidden;
 }
 #menu ul li:hover{
   color:orange;
@@ -144,9 +145,5 @@ mounted(){
 .owl-theme .owl-nav owl-prev, owl-next{
   display:none!important;
 }
-@media only screen and (min-width: 261px) and (max-width: 600px) {
-  .logo img {
-    margin: 0 100px;
-  }
-}
+
 </style>

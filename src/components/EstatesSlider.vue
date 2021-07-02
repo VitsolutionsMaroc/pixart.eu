@@ -45,11 +45,15 @@
             </button>
           </div>
           <h2 class="text-black text-sm lg:text-base font-bold block">
-            {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
+            <!-- {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
             {{
               estate.categoryName.charAt(0).toUpperCase() +
                 estate.categoryName.slice(1)
-            }}
+            }} -->
+             <div v-if="estate.Name.length > 40">
+            {{ estate.Name.substr(0, 30) }} ...
+          </div>
+          <div v-else>{{ estate.Name }}</div>
           </h2>
 
           <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
