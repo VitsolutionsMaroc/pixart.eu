@@ -7,7 +7,7 @@
             class="border-2 px-7 p-1 text-black"
             @click="togglePurpose()"
             :class="{
-              'bg-yellow-500 border-yellow-500': filters.purpose == 'for sale',
+              'bg-yellow-500 border-yellow-500': filters.purpose == 'for sale'
             }"
           >
             Buy
@@ -16,7 +16,7 @@
             class="border-2 px-5 p-1 text-black"
             @click="togglePurpose()"
             :class="{
-              'bg-yellow-500 border-yellow-500': filters.purpose == 'for rent',
+              'bg-yellow-500 border-yellow-500': filters.purpose == 'for rent'
             }"
           >
             Rental
@@ -24,7 +24,9 @@
         </div>
         <!-- search input -->
 
-        <div class="flex xl:w-11/12 border-grey-light border mb-2 bg-white block">
+        <div
+          class="flex xl:w-11/12 border-grey-light border mb-2 bg-white block"
+        >
           <button>
             <span class="w-auto flex justify-end items-center text-grey p-2">
               <svg
@@ -226,7 +228,9 @@
                     >
                       <template v-if="!isOpen && values.length">
                         {{ values.length }}
-                        {{ values.length > 1 ? "subcategories" : "subcategory" }}
+                        {{
+                          values.length > 1 ? "subcategories" : "subcategory"
+                        }}
                         selected
                       </template>
                     </div>
@@ -455,7 +459,9 @@
 
       <div class="p-2">
         <div class="w-full md:grid grid-cols-2">
-          <div class="sm:mb-0 mb-2 xl:text-xl">Results ({{ totalEstates }})</div>
+          <div class="sm:mb-0 mb-2 xl:text-xl">
+            Results ({{ totalEstates }})
+          </div>
           <div class="flex md:justify-end sm:mt-2">
             <!--<span class="mr-6 cursor-pointer xl:text-xl"
               ><i class="fas fa-check-double text-yellow-500"></i> Select</span
@@ -464,10 +470,14 @@
               class="mr-4 md:mr-6 cursor-pointer sm:text-sm md:text-base xl:text-xl"
               @click="togglesOrderByPrice()"
             >
-              <span class="text-sm sm:text-base xl:text-xl" v-if="filters.sortByPrice == 'asc'"
+              <span
+                class="text-sm sm:text-base xl:text-xl"
+                v-if="filters.sortByPrice == 'asc'"
                 >Price <i class="fas fa-arrow-down text-yellow-500 "></i
               ></span>
-              <span class="text-sm sm:text-base xl:text-xl" v-if="filters.sortByPrice == 'desc'"
+              <span
+                class="text-sm sm:text-base xl:text-xl"
+                v-if="filters.sortByPrice == 'desc'"
                 >Price <i class="fas fa-arrow-up text-yellow-500"></i
               ></span>
             </button>
@@ -476,15 +486,21 @@
               @click="togglesOrderByUpdateDate()"
               class="mr-3 md:mr-6 cursor-pointer text-sm md:text-base xl:text-xl"
             >
-              <span class="text-sm sm:text-base xl:text-xl" v-if="filters.sortByDate == 'asc'">
+              <span
+                class="text-sm sm:text-base xl:text-xl"
+                v-if="filters.sortByDate == 'asc'"
+              >
                 <i class="far fa-clock text-yellow-500"></i> Update</span
               >
-              <span class="text-sm sm:text-base xl:text-xl" v-if="filters.sortByDate == 'desc'">
+              <span
+                class="text-sm sm:text-base xl:text-xl"
+                v-if="filters.sortByDate == 'desc'"
+              >
                 <i class="far fa-clock text-yellow-500"></i> Update</span
               >
             </button>
 
-            <button
+            <!-- <button
               @click="activeMap = !activeMap"
               class="md:mr-4 cursor-pointer sm:text-sm md:text-base xl:text-xl text-yellow-500"
             >
@@ -497,7 +513,7 @@
                   <div class="slider round"></div>
                 </label>
               </div>
-            </div>
+            </div> -->
             <!-- test -->
           </div>
         </div>
@@ -508,7 +524,11 @@
           <div v-if="activeMap">
             <BaseMap />
           </div>
-          <Estates :activeMap="activeMap" :estates="estates" :estatesPerRow="estatesPerRow" />
+          <Estates
+            :activeMap="activeMap"
+            :estates="estates"
+            :estatesPerRow="estatesPerRow"
+          />
         </div>
       </div>
 
@@ -548,7 +568,7 @@ export default {
     Map,
     BaseMap,
     Carousel,
-    Slide,
+    Slide
   },
   data() {
     return {
@@ -580,7 +600,7 @@ export default {
         parking: false,
         desc: false,
         sortByPrice: "asc",
-        sortByDate: "desc",
+        sortByDate: "desc"
       },
       estates: [],
       totalEstates: 0,
@@ -591,17 +611,19 @@ export default {
       popup: false,
       messagePopup: false,
       activeMap: false,
-      parking: null,
+      parking: null
     };
   },
 
   computed: {
     subcategories() {
-      return _.flatten(this.filters.categories.map((category) => category.subcategories));
+      return _.flatten(
+        this.filters.categories.map(category => category.subcategories)
+      );
     },
     zipCodes() {
-      return _.flatten(this.filters.countries.map((country) => country.zipCodes));
-    },
+      return _.flatten(this.filters.countries.map(country => country.zipCodes));
+    }
   },
   methods: {
     toggleCheckbox() {
@@ -610,17 +632,20 @@ export default {
       this.activeMap = !this.activeMap;
     },
     togglePurpose() {
-      this.filters.purpose = this.filters.purpose == "for rent" ? "for sale" : "for rent";
+      this.filters.purpose =
+        this.filters.purpose == "for rent" ? "for sale" : "for rent";
       this.getEstates();
     },
     togglesOrderByPrice() {
-      this.filters.sortByPrice = this.filters.sortByPrice == "desc" ? "asc" : "desc";
+      this.filters.sortByPrice =
+        this.filters.sortByPrice == "desc" ? "asc" : "desc";
       this.sortBy = "price";
 
       this.getEstates();
     },
     togglesOrderByUpdateDate() {
-      this.filters.sortByDate = this.filters.sortByDate == "desc" ? "asc" : "desc";
+      this.filters.sortByDate =
+        this.filters.sortByDate == "desc" ? "asc" : "desc";
       this.sortBy = "date";
       this.getEstates();
     },
@@ -646,13 +671,24 @@ export default {
       let categories = _.map(this.filters.categories, "id");
       let subcategories = _.map(this.filters.subcategories, "id");
       let zipCodes = _.map(this.filters.zipCodes, "Zip");
-      let countriesQueryString = utils.arrayToQueryString(countries, "countries");
-      let categoriesQueryString = utils.arrayToQueryString(categories, "categories");
-      let subcategoriesQueryString = utils.arrayToQueryString(subcategories, "subcategories");
+      let countriesQueryString = utils.arrayToQueryString(
+        countries,
+        "countries"
+      );
+      let categoriesQueryString = utils.arrayToQueryString(
+        categories,
+        "categories"
+      );
+      let subcategoriesQueryString = utils.arrayToQueryString(
+        subcategories,
+        "subcategories"
+      );
       let zipCodesQueryString = utils.arrayToQueryString(zipCodes, "zipCodes");
-      let filtersQueryString = `page=${this.page}&keyword=${this.filters.keyword}&purpose=${
-        this.filters.purpose
-      }&parking=${this.filters.parking ? 1 : 0}&minPrice=${this.filters.minPrice}&maxPrice=${
+      let filtersQueryString = `page=${this.page}&keyword=${
+        this.filters.keyword
+      }&purpose=${this.filters.purpose}&parking=${
+        this.filters.parking ? 1 : 0
+      }&minPrice=${this.filters.minPrice}&maxPrice=${
         this.filters.maxPrice
       }&minArea=${this.filters.minArea}&maxArea=${this.filters.maxArea}&rooms=${
         this.filters.rooms
@@ -665,30 +701,36 @@ export default {
       &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
       let _self_ = this;
       axios
-        .get(`https://vitexportapi.azurewebsites.net/api/estates?${filtersQueryString}`)
-        .then((response) => {
+        .get(
+          `https://vitexportapi.azurewebsites.net/api/estates?${filtersQueryString}`
+        )
+        .then(response => {
           _self_.estates = response.data.data;
           _self_.pagination = {
             current_page: response.data.current_page,
             first_page_url: response.data.first_page_url,
             from: response.data.from,
             to: response.data.to,
-            last_page: response.data.last_page,
+            last_page: response.data.last_page
           };
           _self_.totalEstates = response.data.total;
           _self_.loading = false;
         })
-        .catch((error) => {
+        .catch(error => {
           _self_.loading = false;
           console.log(error);
         });
     },
     async getCategories() {
-      const response = await axios.get(`https://vitexportapi.azurewebsites.net/api/categories`);
+      const response = await axios.get(
+        `https://vitexportapi.azurewebsites.net/api/categories`
+      );
       this.categories = response.data.data;
     },
     async getCountries() {
-      const response = await axios.get(`https://vitexportapi.azurewebsites.net/api/countries`);
+      const response = await axios.get(
+        `https://vitexportapi.azurewebsites.net/api/countries`
+      );
       this.countries = response.data.data;
     },
     applyExtraFilters() {
@@ -705,21 +747,23 @@ export default {
           break;
         case "categories":
           this.filters.categories = this.filters.categories.filter(
-            (category) => category[key] !== value
+            category => category[key] !== value
           );
           break;
         case "subcategories":
           this.filters.subcategories = this.filters.subcategories.filter(
-            (subcategory) => subcategory[key] !== value
+            subcategory => subcategory[key] !== value
           );
           break;
         case "countries":
           this.filters.countries = this.filters.countries.filter(
-            (country) => country[key] !== value
+            country => country[key] !== value
           );
           break;
         case "zipCodes":
-          this.filters.zipCodes = this.filters.zipCodes.filter((zipCode) => zipCode[key] !== value);
+          this.filters.zipCodes = this.filters.zipCodes.filter(
+            zipCode => zipCode[key] !== value
+          );
           break;
         case "minArea":
           this.filters.minArea = 0;
@@ -756,21 +800,30 @@ export default {
       }
     },
     isCountrySelected(currentCountry) {
-      return this.filters.countries.filter((country) => country.id === currentCountry).length > 0;
+      return (
+        this.filters.countries.filter(country => country.id === currentCountry)
+          .length > 0
+      );
     },
     isCategorySelected(currentCategory) {
       return (
-        this.filters.categories.filter((category) => category.id === currentCategory).length > 0
+        this.filters.categories.filter(
+          category => category.id === currentCategory
+        ).length > 0
       );
     },
     isSubCategorySelected(currentSubcategory) {
       return (
-        this.filters.subcategories.filter((subcategory) => subcategory.id === currentSubcategory)
-          .length > 0
+        this.filters.subcategories.filter(
+          subcategory => subcategory.id === currentSubcategory
+        ).length > 0
       );
     },
     isZipCodeSelected(currentZipCode) {
-      return this.filters.zipCodes.filter((zipCode) => zipCode.id === currentZipCode).length > 0;
+      return (
+        this.filters.zipCodes.filter(zipCode => zipCode.id === currentZipCode)
+          .length > 0
+      );
     },
     hideExtraFilters() {
       this.popup = false;
@@ -785,13 +838,17 @@ export default {
       }
       if (params.countries) {
         this.filters.countries = _.isArray(params.countries)
-          ? _.filter(this.countries, (item) => utils.inArray(params.countries, item.id))
-          : _.filter(this.countries, (item) => item.id == params.countries);
+          ? _.filter(this.countries, item =>
+              utils.inArray(params.countries, item.id)
+            )
+          : _.filter(this.countries, item => item.id == params.countries);
       }
       if (params.categories) {
         this.filters.categories = _.isArray(params.categories)
-          ? _.filter(this.categories, (item) => utils.inArray(params.categories, item.id))
-          : _.filter(this.categories, (item) => item.id == params.categories);
+          ? _.filter(this.categories, item =>
+              utils.inArray(params.categories, item.id)
+            )
+          : _.filter(this.categories, item => item.id == params.categories);
       }
       if (params.purpose) {
         console.log(this.filters.purpose);
@@ -800,7 +857,7 @@ export default {
     },
     openModal() {
       this.$modal.show("example");
-    },
+    }
   },
   watch: {
     "filters.keyword"() {
@@ -809,12 +866,12 @@ export default {
         countries: _.map(this.filters.countries, "id"),
         categories: _.map(this.filters.categories, "id"),
         keyword: this.filters.keyword,
-        purpose: this.filters.purpose,
+        purpose: this.filters.purpose
       };
 
       this.$router
         .replace({
-          query: newQueryString,
+          query: newQueryString
         })
         .catch(() => {});
     },
@@ -827,15 +884,15 @@ export default {
           countries: _.map(this.filters.countries, "id"),
           categories: _.map(this.filters.categories, "id"),
           keyword: this.filters.keyword,
-          purpose: this.filters.purpose,
+          purpose: this.filters.purpose
         };
 
         this.$router
           .replace({
-            query: newQueryString,
+            query: newQueryString
           })
           .catch(() => {});
-      },
+      }
     },
     "filters.countries"() {
       console.log("country");
@@ -843,12 +900,12 @@ export default {
         countries: _.map(this.filters.countries, "id"),
         categories: _.map(this.filters.categories, "id"),
         keyword: this.filters.keyword,
-        purpose: this.filters.purpose,
+        purpose: this.filters.purpose
       };
 
       this.$router
         .replace({
-          query: newQueryString,
+          query: newQueryString
         })
         .catch(() => {});
     },
@@ -858,21 +915,21 @@ export default {
         countries: _.map(this.filters.countries, "id"),
         categories: _.map(this.filters.categories, "id"),
         keyword: this.filters.keyword,
-        purpose: this.filters.purpose,
+        purpose: this.filters.purpose
       };
 
       this.$router
         .replace({
-          query: newQueryString,
+          query: newQueryString
         })
         .catch(() => {});
-    },
+    }
   },
   async mounted() {
     await this.getCategories();
     await this.getCountries();
     this.getEstates();
-  },
+  }
 };
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>

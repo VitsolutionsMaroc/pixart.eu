@@ -1,5 +1,4 @@
-<template>   
-
+<template>
   <div
     class="items mt-8 grid md:grid-cols-2 "
     :class="
@@ -13,18 +12,23 @@
     "
     style=""
   >
-
     <div
       v-for="estate in estates"
       :key="estate.EstateID"
       class="estateCard relative mb-6 md:mb-4 overflow-hidden shadow-md"
     >
       <div @click="displayDetails(estate)" v-if="estate.pictures[0]">
-        <img :src="estate.pictures[0].Url" class="w-full h-52 sm:h-48 object-cover" />
+        <img
+          :src="estate.pictures[0].Url"
+          class="w-full h-52 sm:h-48 object-cover"
+        />
       </div>
       <div @click="displayDetails(estate)" v-else>
-        <img src="../assets/img/notavailable.png" class="w-full h-52 sm:h-48 object-cover" />
-      </div>  
+        <img
+          src="../assets/img/notavailable.png"
+          class="w-full h-52 sm:h-48 object-cover"
+        />
+      </div>
 
       <div class="h-32  sm:h-40 p-3 relative">
         <div class="mb-4 truncate">
@@ -39,11 +43,17 @@
             Details
           </button>
         </div>
-        <h2 class="text-black text-sm lg:text-base font-bold block">
+        <!-- <div class="p-3 relative">
+          <img :src="estate.EnergyClass" alt="" style=" width:30px;">
+       
+        </div> -->
+        <h2 class="text-black text-sm lg:text-base font-bold block" style="font-size:0.7rem">
           {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
-          {{ estate.categoryName.charAt(0).toUpperCase() + estate.categoryName.slice(1) }}
+          {{
+            estate.categoryName.slice(1) + estate.categoryName.slice(1)
+          }}
         </h2>
-
+        <Peb v-bind="EnergyClassName" />
         <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
         <div
           class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0"
@@ -78,59 +88,62 @@
       :scrollable="true"
       name="estate-details"
     >
-      <estate-modal :estate="selectedEstate" :key="'modal-key-' + selectedEstate.EstateID" />
+      <estate-modal
+        :estate="selectedEstate"
+        :key="'modal-key-' + selectedEstate.EstateID"
+      />
     </v-modal>
   </div>
 </template>
 
 <script>
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel';
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel";
 import EstateModal from "@/components/EstateModal.vue";
-
+import Peb from "@/views/Peb.vue";
 export default {
   components: {
-    EstateModal
+    EstateModal,
+    Peb
   },
   data: function() {
     return {
       selectedEstate: {
         estate: null,
         relatedEstates: null,
-        count: 4,
-      },
+        count: 4
+      }
     };
   },
   mounted() {
     this.count = this.estatesPerRow;
     this.$nextTick(() => {
-        $(".box-slide").owlCarousel({
-          loop: true,
-          nav: true,
-          center: true,
-          dots: true,
-          margin: 110,
-          responsive: {
-            0: {
-              items: 1
-            },
-            600: {
-              items: 1
-            },
-            1000: {
-              items: 3
-            }
+      $(".box-slide").owlCarousel({
+        loop: true,
+        nav: true,
+        center: true,
+        dots: true,
+        margin: 110,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 1
+          },
+          1000: {
+            items: 3
           }
-        });
+        }
       });
-  
+    });
   },
   computed: {
     defaultEstatePicure() {
       return {
-        backgroundImage: `url${require("../assets/img/notavailable.png")}`,
+        backgroundImage: `url${require("../assets/img/notavailable.png")}`
       };
-    },
+    }
   },
   methods: {
     displayDetails(estate) {
@@ -140,22 +153,22 @@ export default {
       // this.$router.push()
       this.$router.push({
         name: "properties.details",
-        params: { estateId: estate.EstateID },
+        params: { estateId: estate.EstateID }
       });
     },
     displayName() {
       this.estate.Name.substring(1, 2);
-    },
+    }
   },
   props: {
     estates: null,
     activeMap: false,
-    estatesPerRow:{
-      type:Number,
-      default:4
-    },
+    estatesPerRow: {
+      type: Number,
+      default: 4
+    }
   },
-  name: "estateBlog",
+  name: "estateBlog"
 };
 </script>
 
