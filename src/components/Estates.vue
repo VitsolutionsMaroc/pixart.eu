@@ -51,9 +51,11 @@
           class="text-black text-sm lg:text-base font-bold block"
           style="font-size:0.7rem"
         >
-        <div v-if="estate.Name.length>40" >{{estate.Name.substr(0,30)}} ...</div>
-        <div v-else>{{estate.Name}}</div>
-  
+          <div v-if="estate.Name.length > 40">
+            {{ estate.Name.substr(0, 30) }} ...
+          </div>
+          <div v-else>{{ estate.Name }}</div>
+
           <!-- {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
           {{ estate.categoryName.slice(1) + estate.categoryName.slice(1) }} -->
         </h2>

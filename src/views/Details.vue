@@ -89,6 +89,7 @@
           <span class="my-2 block text-black font-bold text-xl"
             >{{ estate.Name }}
           </span>
+               <Peb v-bind:EnergyClassName="estate.EnergyClass" />
           <span class="my-2 block"> {{ estate.CategoryName }} </span>
           <span class="block my-2 text-gray-400">{{ estate.Address1 }}</span>
 
@@ -209,6 +210,7 @@
                   estate.categoryName.slice(1)
               }}
             </h2>
+            <Peb v-bind:EnergyClassName="estate.EnergyClass" />
             <span class="block text-black text-sm md:text-base my-2">
               <span v-if="estate.Rooms" class="lg:mr-2 xl:mr-2 md:mr-10">
                 <i class="fas fa-bed  text-yellow-500"></i>
@@ -247,6 +249,7 @@ import ContactModal from "@/components/ContactModal.vue";
 import DatePick from "vue-date-pick";
 import "vue-date-pick/dist/vueDatePick.css";
 import Loader from "@/components/shared/Loader.vue";
+import Peb from "@/views/Peb.vue";
 import Swiper from "swiper";
 import "swiper/swiper-bundle.css";
 import axios from "axios";
@@ -257,6 +260,7 @@ export default {
     VueEnglishdatepicker,
     DatePick,
     Loader,
+    Peb,
     Carousel,
     Slide,
     ToorModal,

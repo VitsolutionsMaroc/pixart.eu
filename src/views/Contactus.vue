@@ -105,6 +105,89 @@
         </div>
       </form>
     </div>
+    <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px">
+      <h1 style="font-size:2rem">OUR ADRESSES</h1>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-10 px-16 py-8 mt-10 infos">
+       <div>
+       <i class="fas fa-map-marker-alt"></i>
+         <h1> BELGIUM</h1>
+        <p>
+           277 Av. d’Auderghem – 1040 Brussels – Belgium<br>
+             <i
+                class="fas fa-mobile"
+                style="color:orange; margin-right:10px"
+              ></i>
+              +3227430380
+        </p>
+         <a
+              target="_blank"
+              rel="noopener noreferrer"
+              class=" text-base-2 text-yellow-500"
+              style="font-size:0.8rem"
+              href="https://www.ibp.be/"
+              >www.ibp.be</a
+            >
+      </div>
+
+      <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <h1>Dubai - UAE</h1>
+        <p>
+         ICON TOWER - Office 1003<br />
+            AL Thanyah First
+        </p>
+      </div>
+      
+      <div>
+       <i class="fas fa-map-marker-alt"></i>
+         <h1>GREECE</h1>
+        <p>
+          Kolokotroni 9 –Kifisia 14562 & Agiou Alexandrou 7 –Paleo Faliro
+            17561– Greece, Kολοκοτρώνη 9 -Kηφισιά 14562 & Αγίου Αλεξάνδρου 7,
+            175 61 Παλαιό Φάληρο<br />
+            <span
+              ><i
+                class="fas fa-mobile"
+                style="color:orange; margin-right:10px"
+              ></i>
+              +30 2106918330</span
+            >
+        </p>
+      </div>
+      <div>
+       <i class="fas fa-map-marker-alt"></i>
+         <h1>Luxembourg</h1>
+        <p>
+        8 Grand Rue Clervaux - L -9711 Luxembourg<br />
+            <span
+              ><i
+                class="fas fa-mobile"
+                style="color:orange; margin-right:10px"
+              ></i
+              >+352661373707</span
+            >
+        </p>
+      </div>
+      <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <h1> MANELIS luxury Properties</h1>
+        <p>    
+           Grece Psychiko / Ψυχικό<br />
+            <span
+              ><i
+                class="fas fa-mobile"
+                style="color:orange; margin-right:10px"
+              ></i>
+              +30 698 419 4332</span
+            >
+    
+        </p>
+      </div>
+     
+      
+      
+      </div>
     <div class="my-6">
       <div class="w-full relative" style="height: 600px;">
         <iframe
@@ -158,7 +241,10 @@
         </div>
       </div>
     </div>
-
+     <div>
+   
+     
+    </div>
     <Footer />
   </main>
 </template>
@@ -374,5 +460,13 @@ textarea:focus,
   outline: 0;
   -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
   box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+}
+
+.infos p{
+  line-height: 1.8;
+}
+.infos i{
+  margin-bottom:10px;
+ font-size: 1.25rem;
 }
 </style>
