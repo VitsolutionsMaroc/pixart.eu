@@ -77,7 +77,7 @@
         
  
        </div>
-       <div class="mr-5 pr-12 mt-15S">
+       <div class="mr-5 pr-12 mt-15S form_footer">
           <input type="text" placeholder="Search..." class="px-3 py-2 border mr-5" />
           <button class="bg-yellow-500 p-3 py-2" style="outline: none;">Submit</button>
           <p class="mt-5" style="line-height:1.6">
@@ -132,7 +132,7 @@ mounted(){
   padding: 0 20px;
 }
 .logo{
-  width:30%;
+  width:20%;
 }
 #menue{
   line-height: 2;
@@ -140,12 +140,15 @@ mounted(){
   display: flex;
   flex-direction: column;
  box-sizing: border-box;
-width: 87%;
+width: 39%;
 border: none;
 padding: 0; 
 }
 #menue ul li:hover{
   color:orange;
+}
+.form_footer{
+  width:66%;
 }
 .caroussel_footer .footer_owl .owl-carousel .owl-item img{display:block;width:15%!important;}
 .owl-theme .owl-nav owl-prev, owl-next{
