@@ -340,7 +340,7 @@ export default {
       //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTQ3Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.gDNwAXok3Fr4AR4kuJ12vVcytlmr0--bInx65euVxos";
       const config = {
         headers: {
-           Authorization: `Bearer`+ DefaultdataJson.Whise.AuthToken,
+           Authorization: `Bearer `+ DefaultdataJson.Whise.AuthToken,
           "Content-Type": "application/json",
         },
       };
@@ -348,13 +348,13 @@ export default {
         .post(DefaultdataJson.Whise.Url + "admin/clients/token", authCredentials, config)
         .then((response) => {
           let token = response.data.token;
-          const config = {
-            headers: {
-              // Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
-              Authorization: `Bearer`+ DefaultdataJson.Whise.AuthToken,
-              "Content-Type": "application/json",
-            },
-          };
+          // const config = {
+          //   headers: {
+          //     // Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
+          //     Authorization: `Bearer `+ DefaultdataJson.Whise.AuthToken,
+          //     "Content-Type": "application/json",
+          //   },
+          // };
 
           axios
             .post(DefaultdataJson.Whise.Url + "contacts/titles/list", authCredentials, config)
@@ -381,7 +381,7 @@ export default {
 
       const config = {
         headers: {
-          Authorization: `Bearer`+ DefaultdataJson.Whise.AuthToken,
+          Authorization: `Bearer `+ DefaultdataJson.Whise.AuthToken,
           "Content-Type": "application/json",
         },
       };

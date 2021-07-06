@@ -275,22 +275,22 @@ export default {
 
       const config = {
         headers: {
-          Authorization: `Bearer`+ DefaultdataJson.Whise.AuthToken,
+          Authorization: `Bearer `+ DefaultdataJson.Whise.AuthToken,
           "Content-Type": "application/json",
         },
       };
 
       axios
-        .post("https://api.whise.eu/v1/admin/clients/token", authCredentials, config)
+        .post(DefaultdataJson.Whise.Url + "admin/clients/token", authCredentials, config)
         .then((response) => {
           let token = response.data.token;
-          const config = {
-            headers: {
-              // Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
-              Authorization: `Bearer`+ DefaultdataJson.Whise.AuthToken,
-              "Content-Type": "application/json",
-            },
-          };
+          // const config = {
+          //   headers: {
+          //     // Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
+          //     Authorization: `Bearer `+ DefaultdataJson.Whise.AuthToken,
+          //     "Content-Type": "application/json",
+          //   },
+          // };
 
           let contact = {
             Name: this.contact.Name,
