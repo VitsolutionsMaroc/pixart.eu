@@ -354,7 +354,7 @@ export default {
           console.log(contact);
 
           axios
-            .post(DefaultdataJson.Whise.Url+"contacts/create", contact, config)
+            .post(DefaultdataJson.Whise.Url + "contacts/create", contact, config)
             .then((response) => {
               this.isLoaded = true;
               this.showMsg = true;

@@ -373,18 +373,18 @@ export default {
         OfficeId: 6644,
       };
 
-      let apiToken =
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTQ3Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.gDNwAXok3Fr4AR4kuJ12vVcytlmr0--bInx65euVxos";
+      // let apiToken =
+      //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTQ3Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.gDNwAXok3Fr4AR4kuJ12vVcytlmr0--bInx65euVxos";
 
       const config = {
         headers: {
-          Authorization: `Bearer ${apiToken}`,
+          Authorization: `Bearer`+ DefaultdataJson.Whise.AuthToken,
           "Content-Type": "application/json",
         },
       };
 
       axios
-        .post("https://api.whise.eu/v1/admin/clients/token", authCredentials, config)
+        .post(DefaultdataJson.Whise.Url + "admin/clients/token", authCredentials, config)
         .then((response) => {
           let token = response.data.token;
           const config = {
@@ -427,7 +427,7 @@ export default {
           };
           console.log(contact);
           axios
-            .post("https://api.whise.eu/v1/contacts/create", contact, config)
+            .post( DefaultdataJson.Whise.Url + "contacts/create", contact, config)
             .then((response) => {
               this.showMsg = true;
 
