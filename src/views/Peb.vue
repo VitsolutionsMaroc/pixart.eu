@@ -33,7 +33,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .peb img {
   width: 66px;
   margin-top: 20px;
