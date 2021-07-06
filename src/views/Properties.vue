@@ -725,13 +725,13 @@ export default {
     },
     async getCategories() {
       const response = await axios.get(
-        `https://vitexportapi.azurewebsites.net/api/categories`
+        DefaultdataJson.VitExportApi.Url + `categories`
       );
       this.categories = response.data.data;
     },
     async getCountries() {
       const response = await axios.get(
-        `https://vitexportapi.azurewebsites.net/api/countries`
+        DefaultdataJson.VitExportApi.Url + `countries`
       );
       this.countries = response.data.data;
     },

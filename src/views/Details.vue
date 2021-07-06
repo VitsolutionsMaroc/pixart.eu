@@ -155,7 +155,9 @@
           </p>
         </div>
         <!-- Property details -->
-
+         <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px;margin-bottom:50px">
+            <h1 style="font-size:2rem">You Will Like Also</h1>
+        </div>
         <!-- Related Estates -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
           <router-link
