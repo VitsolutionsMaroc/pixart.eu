@@ -275,6 +275,8 @@ import Footer from "@/components/Footer.vue";
 import axios from "axios";
 import Multiselect from "vue-multiselect";
 import _ from "lodash";
+let DefaultdataJson = require('../config/default.json');
+
 
 export default {
   name: "Evaluation",
@@ -334,27 +336,28 @@ export default {
         OfficeId: 6644,
       };
 
-      let apiToken =
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTQ3Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.gDNwAXok3Fr4AR4kuJ12vVcytlmr0--bInx65euVxos";
+      // let apiToken =
+      //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTQ3Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.gDNwAXok3Fr4AR4kuJ12vVcytlmr0--bInx65euVxos";
       const config = {
         headers: {
-          Authorization: `Bearer ${apiToken}`,
+           Authorization: `Bearer`+ DefaultdataJson.Whise.AuthToken,
           "Content-Type": "application/json",
         },
       };
       axios
-        .post("https://api.whise.eu/v1/admin/clients/token", authCredentials, config)
+        .post(DefaultdataJson.Whise.Url + "admin/clients/token", authCredentials, config)
         .then((response) => {
           let token = response.data.token;
           const config = {
             headers: {
-              Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
+              // Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
+              Authorization: `Bearer`+ DefaultdataJson.Whise.AuthToken,
               "Content-Type": "application/json",
             },
           };
 
           axios
-            .post("https://api.whise.eu/v1/contacts/titles/list", authCredentials, config)
+            .post(DefaultdataJson.Whise.Url + "contacts/titles/list", authCredentials, config)
             .then((response) => {
               this.genders = response.data.contactTitles;
             })

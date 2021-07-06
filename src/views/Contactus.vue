@@ -320,13 +320,13 @@ export default {
 
       const config = {
         headers: {
-          Authorization: 'Bearer'+ DefaultdataJson.Whise.AuthToken,
+          Authorization: `Bearer`+ DefaultdataJson.Whise.AuthToken,
           "Content-Type": "application/json",
         },
       };
 
       axios
-        .post(DefaultdataJson.Whise.Url+"admin/clients/token", authCredentials, config)
+        .post(DefaultdataJson.Whise.Url + "admin/clients/token", authCredentials, config)
         .then((response) => {
           let token = response.data.token;
           const config = {
