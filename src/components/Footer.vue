@@ -139,10 +139,10 @@ mounted(){
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-    width: 87%;
-    border: none;
-    padding: 5px;
+ box-sizing: border-box;
+width: 87%;
+border: none;
+padding: 0; 
 }
 #menue ul li:hover{
   color:orange;
