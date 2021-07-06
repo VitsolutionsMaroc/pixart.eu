@@ -292,5 +292,9 @@ export default {
 ::-webkit-scrollbar-thumb:hover {
   background: #ecd6ae; 
 }
+@media only screen and (min-width: 261px) and (max-width: 900px) {
+  
+.testimonial .owl-carousel .owl-item .item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none;background-color:white;padding: 20px;height:400px;padding-bottom: 30px;font-size: 0.9rem;overflow-x:auto}
 
+}
 </style>
