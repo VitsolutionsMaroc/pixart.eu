@@ -25,6 +25,7 @@
             <span class="text-gray-400 xl:text-xl md:text-base">
               Pixart User
             </span>
+           
           </div>
           <button
             @click="displayContactModal"
@@ -154,6 +155,7 @@
           </p>
         </div>
         <!-- Property details -->
+
         <!-- Related Estates -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
           <router-link
@@ -258,6 +260,8 @@ import Swiper from "swiper";
 import "swiper/swiper-bundle.css";
 import axios from "axios";
 import { Carousel, Slide } from "vue-carousel";
+let DefaultdataJson = require('../config/default.json');
+
 
 export default {
   components: {
@@ -276,7 +280,7 @@ export default {
       estate: null,
       loadingRelatedEstates: false,
       relatedEstates: [],
-      relatedEstateApiUrl: `https://vitexportapi.azurewebsites.net/api/estates/${this.$route.params.estateId}/related-estates`,
+      relatedEstateApiUrl: DefaultdataJson.VitExportApi.Url + `estates/${this.$route.params.estateId}/related-estates`,
       bookTour: false,
       date: "2019-01-01",
       picSwiper: null,
@@ -335,19 +339,19 @@ export default {
         OfficeId: 6644,
       };
 
-      let apiToken =
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTQ3Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.gDNwAXok3Fr4AR4kuJ12vVcytlmr0--bInx65euVxos";
+      // let apiToken =
+      //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTQ3Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.gDNwAXok3Fr4AR4kuJ12vVcytlmr0--bInx65euVxos";
 
       const config = {
         headers: {
-          Authorization: `Bearer ${apiToken}`,
+           Authorization: `Bearer `+  DefaultdataJson.Whise.AuthToken,
           "Content-Type": "application/json",
         },
       };
 
       axios
         .post(
-          "https://api.whise.eu/v1/admin/clients/token",
+          DefaultdataJson.Whise.Url + "admin/clients/token",
           authCredentials,
           config
         )
@@ -355,11 +359,12 @@ export default {
          let token = response.data.token;
           const config = {
             headers: {
-              Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
+              Authorization: `Bearer `+  DefaultdataJson.Whise.AuthToken,
               "Content-Type": "application/json",
             },
           };
           let contact = {
+           
              Name: this.contact.Name,
             FirstName: this.contact.FirstName,
             PrivateMobile: this.contact.PrivateMobile,
@@ -375,9 +380,10 @@ export default {
          
           };
           axios
-            .post("https://api.whise.eu/v1/contacts/create", contact, config)
+            .post(DefaultdataJson.VitExportApi.Url + "contacts/create", contact, config)
             .then(response => {
               console.log(response);
+               
             })
             .catch(error => {
               console.log(error);
@@ -390,7 +396,7 @@ export default {
     loadEstate() {
       let estateId = this.$route.params.estateId;
       axios
-        .get(`https://vitexportapi.azurewebsites.net/api/estates/${estateId}`)
+        .get(DefaultdataJson.VitExportApi.Url + `estates/${estateId}`)
         .then(response => {
           this.estate = response.data;
         })
@@ -436,7 +442,7 @@ export default {
     "$route.params": {
       handler(params) {
         this.loadEstate();
-        this.relatedEstateApiUrl = `https://vitexportapi.azurewebsites.net/api/estates/${params.estateId}/related-estates`;
+        this.relatedEstateApiUrl = DefaultdataJson.VitExportApi.Url + `estates/${params.estateId}/related-estates`;
         this.relatedEstates = [];
         this.loadRelatedEstates();
       },
