@@ -1,100 +1,149 @@
 <template>
- <div class="bg-gray-900 p-10 text-white footer_info">
-     <div>
-       <ul class="flex grid md:grid-cols-3">
-         <li>
-           <div  class="mt-10 mb-10"> <img class="" src="../assets/img/ibp.png"  style="width:20%;"/>
-            <p>BELGIUM <br>
-            277 Av. d’Auderghem – 1040 Brussels – Belgium<br>
-            <span><i class="fas fa-mobile" style="color:orange; margin-right:10px"></i> +3227430380</span>
-            </p>
-            <div>
-                  <a target="_blank" rel="noopener noreferrer" class="p-2 md:p-4 text-base-2 text-yellow-500" style="font-size:0.8rem"  href="https://www.ibp.be/">www.ibp.be</a>
-            </div>
-            </div>
-         </li>
-         <li>
-           <div  class="mt-19 mb-10"> <img src="../assets/img/dubai.png"  style="width:20%;"/>
-            <p> Dubai - UAE<br>
-            ICON TOWER - Office 1003<br>
-              AL Thanyah First<br>
-              </p>
-            </div>
-         </li>
-         <li>
-            <div class="mb-10"> <img src="../assets/img/ibpGr.jpg"  class="mt-19 mb-10" style="width:20%;"/>
-            <p>GREECE  <br> 
-            Kolokotroni 9 –Kifisia 14562 &  Agiou Alexandrou 7 –Paleo Faliro 17561– Greece,
-            Kολοκοτρώνη 9 -Kηφισιά 14562 &  Αγίου Αλεξάνδρου 7, 175 61 Παλαιό Φάληρο<br>
-              <span><i class="fas fa-mobile" style="color:orange; margin-right:10px"></i> +30 2106918330</span>
-            </p>
-            </div>
-         </li>
-         <li>
-             <div  class="mt-20 mb-10"> <img class="" src="../assets/img/logo.png"  style="width:15%;"/>
-                   <p style="margin-bottom:10px">
-                    Luxembourg <br>
-                    8  Grand Rue Clervaux   -   L -9711 Luxembourg<br>
-                    <span><i class="fas fa-mobile" style="color:orange; margin-right:10px"></i>+352661373707</span>
-
-                  </p>
-              </div>
-         </li>
-         <li>
-           <div  class="mt-20 mb-10"> <img class="" src="../assets/img/logo_footer.png"  style="width:28%;"/>
-           <p style="margin-bottom:10px">
-          MANELIS luxury Properties<br>
-          Grece Psychiko / Ψυχικό<br>
-            <span><i class="fas fa-mobile" style="color:orange; margin-right:10px"></i>	+30 698 419 4332</span>
-
-          </p>
-          </div>
-         </li>
-         <li>
-            
-         <div class="mr-5 mt-20 pr-12 mt-15S grid justify-items-center ...">
-          <div class="flex">
-             <input type="text" placeholder="Search..." class="px-3 py-2 border " />
-             <button class="bg-yellow-500 p-3 py-2" style="outline: none;">Submit</button>
-          </div>
-      <p class="mt-5" style="line-height:1.6">
-        PIXART is committed to delivering a high level of expertise, customer
-        Service, and attention to details to the marketing and sales of luxury
-        real Estate, and rental properties.
-      </p>
+  <div>
+     <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px;margin-bottom:50px">
+      <h1 style="font-size:2rem">OUR EXPERT</h1>
     </div>
-         </li>
-       </ul>
-      
-      
+    <div class="caroussel_footer px-20 " style="text-align:center;">
+       <div class="owl-carousel owl-theme footer_owl">
+            
+                    <div>
+                      <div class="owl-item">
+                         <img class="m-auto mb-4" style="width:20%;margin-bottom:20px" src="../assets/img/dubai.png" />
+                         <h4 class="text-xl font-bold">Dubai - UAE</h4>
+                      </div>
+                    </div>
+                     <div>
+                      <div class="owl-item">
+                         <img class="m-auto mb-4" style="width:20%;margin-bottom:20px" src="../assets/img/ibp.png" />
+                         <h4 class="text-xl font-bold"> BELGIUM | IBP</h4>
+                      </div>
+                    </div>
+                     <div>
+                      <div class="owl-item">
+                         <img class="m-auto mb-4" style="width:20%" src="../assets/img/ibpGr.jpg" />
+                         <h4 class="text-xl font-bold"> GREECE</h4>
+                      </div>
+                    </div>
+                     <div>
+                      <div class="owl-item">
+                         <img class="m-auto mb-4" style="width:30%;margin-bottom:20px" src="../assets/img/favicone.png" />
+                         <h4 class="text-xl font-bold"> Luxembourg | Pixart</h4>
+                      </div>
+                    </div>
+                     <div>
+                      <div class="owl-item">
+                         <img class="m-auto mb-4" style="width:35%;margin-bottom:45px" src="../assets/img/logo_footer.png" />
+                         <h4 class="text-xl font-bold"> MANELIS luxury Properties</h4>
+                      </div>
+                    </div>
+                   
+                    
+        </div>
+    </div>
+    <div class="bg-gray-900 p-10 text-white" style="position:relative;z-index:99999;">
+     <div class="grid md:grid-cols-3 bg-gray-900 p-10 text-white">
+       <div class="logo">
+         <div  class="mt-10 mb-20"> <img class="" src="../assets/img/logo.png"  style="width:20%;"/></div>
+       </div>
+       <div>
+         <ul
+        class=" mt-2 md:mt-0 bg-gray-900"
+        id="menu"
+      >
+        <li class="mb-2 md:mb-0">
+          <router-link to="/" class=" other lg:mx-4 mx-2 ">HOME</router-link>
+        </li>
+        <li class="mb-2 md:mb-0 ">
+          <router-link to="/about" class=" other lg:mx-4 mx-2">ABOUT</router-link>
+        </li>
+        <li class="mb-6 md:mb-0">
+          <router-link to="/properties" class=" other lg:mx-4 mx-2"
+            >PROPERTIES
+          </router-link>
+        </li>
+        <li class="mb-6 md:mb-0">
+          <router-link to="/evaluation" class=" other lg:mx-4 mx-2"
+            >EVALUATION
+          </router-link>
+        </li>
+         <li class="mb-6 md:mb-0">
+          <router-link to="/golden" class=" other lg:mx-4 mx-2"
+            >GOLDEN VISA
+          </router-link>
+        </li>
+        <li class="mb-6 md:mb-0">
+          <router-link to="/contact" class=" other lg:mx-4 mx-2 font-thin"
+            >CONTACT
+          </router-link>
+        </li>
+        
+      </ul>
+       </div>
+       <div class="mr-5 pr-12 mt-15S">
+          <input type="text" placeholder="Search..." class="px-3 py-2 border mr-5" />
+          <button class="bg-yellow-500 p-3 py-2" style="outline: none;">Submit</button>
+          <p class="mt-5" style="line-height:1.6">
+            PIXART is committed to delivering a high level of expertise, customer
+            Service, and attention to details to the marketing and sales of luxury
+            real Estate, and rental properties.
+          </p>
+       </div>
      </div>
-     <div></div>
-   </div>
-  
+  </div>
+  </div>
 </template>
 <script>
 export default {
-  name: "footer"
+  name: "footer",
+mounted(){
+     this.$nextTick(() => {
+        $(".footer_owl").owlCarousel({
+          loop: true,
+          center: true,
+          dotsEach: true,
+          margin: 20,
+          nav: false,
+          responsive: {
+            0: {
+              items: 1
+            },
+            600: {
+              items: 1
+            },
+            1000: {
+              items: 3
+            }
+          }
+        });
+        
+      });
+ 
+    
+  },
 };
 </script>
-<style >
-.input{
-  height:60px !important;
+<style>
+.input {
+  height: 60px !important;
 }
-.info_footer p{
-  font-size:1rem;
+.info_footer p {
+  font-size: 1rem;
   padding: 0 20px;
 }
-.info_footer h3{
+.info_footer h3 {
   padding: 0 20px;
 }
-.logo img{
-  margin: 0 auto;
-  } 
 
-@media  screen and (min-width: 261px)and (max-width:768px) {
- .footer_info ul li{
-   list-style-type: disc;
- }
+#menu{
+  line-height: 2;
+  overflow: hidden;
 }
+#menu ul li:hover{
+  color:orange;
+}
+.caroussel_footer .footer_owl .owl-carousel .owl-item img{display:block;width:15%!important;}
+.owl-theme .owl-nav owl-prev, owl-next{
+  display:none!important;
+}
+
 </style>

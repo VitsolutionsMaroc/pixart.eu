@@ -19,9 +19,15 @@
         The Golden Visa is valid for a period of 5 years and is renewable. No residency obligation exists to date. 
         Hence, you become the owner of real estate in Greece, and enjoy a rental yield guaranteed by us. We also take
         care of the rental management. 
-    
+         
       </p>
-        
+         <button class="Creat  p-2 md:p-4 lg:mx-4 mx-2 ">
+
+            <router-link
+            to="/contact"
+            >Creat Your Golden Visa</router-link
+          >
+         </button>
     </div>
     <!-- exemple_models -->
 <div class="video text-center">
@@ -55,6 +61,7 @@
         <div class="inline-flex space-x-4 ">
          <i class="fas fa-check-circle mt-2"></i><p>parents of the spouse of the owner of the property</p>
         </div>
+           
       </div>
     </div>
     <div style="text-align:center;font-size:1.5rem;font-weight:bold">
@@ -133,7 +140,7 @@
     </div>
     
      <div class="video text-center">
-       <h1 class="text-xl md:text-4xl font-bold my-2 mb-10 mt-10">GREECE 365 DAY DESTINATION !!!</h1>
+       <h1 class="text-xl md:text-4xl font-bold my-2 mb-10 mt-10">GREECE 365 DAYS DESTINATION !!!</h1>
      </div>
     <iframe class="xl:w-3/6" src="https://www.youtube.com/embed/fL3Cy7VJEHU" title="YouTube video player" frameborder="0" style="margin:0 auto;padding-bottom:50px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <Footer />
@@ -191,6 +198,12 @@ color:orange;
 }
 .needs p{
   font-size: 1rem;
+}
+.Creat{
+  color:orange;
+  font-weight:bold;
+   margin-top:20px;
+  font-size: 1.25rem;
 }
 @media (min-width: 1024px) {
   .textHeader {
