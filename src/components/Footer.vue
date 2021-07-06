@@ -43,7 +43,7 @@
     <div class="bg-gray-900 p-10 text-white footer_main" style="position:relative;z-index:99999;">
      <div class="grid md:grid-cols-3 bg-gray-900 p-10 text-white">
        <div class="logo">
-         <div  class="mt-10 mb-20"> <img class="" src="../assets/img/logo.png"  style="width:20%;"/></div>
+         <div  class="mt-10 mb-20"> <img class="" src="../assets/img/logo.png"  style="width:100%;"/></div>
        </div>
        <div  class=" mt-2 md:mt-0 bg-gray-900"
         id="menue">
@@ -131,12 +131,18 @@ mounted(){
 .info_footer h3 {
   padding: 0 20px;
 }
-
+.logo{
+  width:30%;
+}
 #menue{
   line-height: 2;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+    width: 87%;
+    border: none;
+    padding: 5px;
 }
 #menue ul li:hover{
   color:orange;
