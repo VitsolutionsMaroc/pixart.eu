@@ -55,7 +55,9 @@
           </div>
           <div v-else>{{ estate.Name }}</div>
           </h2>
-
+          <section style="width: 15%;">
+             <Peb v-bind:EnergyClassName="estate.EnergyClass" />
+             </section>
           <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
           <div
             class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0"
@@ -94,11 +96,13 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel";
 import EstateModal from "@/components/EstateModal.vue";
 import EstatePagination from "@/components/EstatePagination.vue";
+import Peb from "@/views/Peb.vue";
 
 export default {
   components: {
     EstateModal,
-    EstatePagination
+    EstatePagination,
+    Peb
   },
   data: function() {
     return {
