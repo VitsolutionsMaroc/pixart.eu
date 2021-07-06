@@ -40,44 +40,42 @@
                     
         </div>
     </div>
-    <div class="bg-gray-900 p-10 text-white" style="position:relative;z-index:99999;">
+    <div class="bg-gray-900 p-10 text-white footer_main" style="position:relative;z-index:99999;">
      <div class="grid md:grid-cols-3 bg-gray-900 p-10 text-white">
        <div class="logo">
          <div  class="mt-10 mb-20"> <img class="" src="../assets/img/logo.png"  style="width:20%;"/></div>
        </div>
-       <div>
-         <ul
-        class=" mt-2 md:mt-0 bg-gray-900"
-        id="menu"
-      >
-        <li class="mb-2 md:mb-0">
+       <div  class=" mt-2 md:mt-0 bg-gray-900"
+        id="menue">
+         
+        <span class="mb-2 md:mb-0">
           <router-link to="/" class=" other lg:mx-4 mx-2 ">HOME</router-link>
-        </li>
-        <li class="mb-2 md:mb-0 ">
+        </span>
+        <span class="mb-2 md:mb-0 ">
           <router-link to="/about" class=" other lg:mx-4 mx-2">ABOUT</router-link>
-        </li>
-        <li class="mb-6 md:mb-0">
+        </span>
+        <span class="mb-6 md:mb-0">
           <router-link to="/properties" class=" other lg:mx-4 mx-2"
             >PROPERTIES
           </router-link>
-        </li>
-        <li class="mb-6 md:mb-0">
+        </span>
+        <span class="mb-6 md:mb-0">
           <router-link to="/evaluation" class=" other lg:mx-4 mx-2"
             >EVALUATION
           </router-link>
-        </li>
-         <li class="mb-6 md:mb-0">
+        </span>
+         <span class="mb-6 md:mb-0">
           <router-link to="/golden" class=" other lg:mx-4 mx-2"
             >GOLDEN VISA
           </router-link>
-        </li>
-        <li class="mb-6 md:mb-0">
+        </span>
+        <span class="mb-6 md:mb-0">
           <router-link to="/contact" class=" other lg:mx-4 mx-2 font-thin"
             >CONTACT
           </router-link>
-        </li>
+        </span>
         
-      </ul>
+ 
        </div>
        <div class="mr-5 pr-12 mt-15S">
           <input type="text" placeholder="Search..." class="px-3 py-2 border mr-5" />
@@ -134,16 +132,19 @@ mounted(){
   padding: 0 20px;
 }
 
-#menu{
+#menue{
   line-height: 2;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-#menu ul li:hover{
+#menue ul li:hover{
   color:orange;
 }
 .caroussel_footer .footer_owl .owl-carousel .owl-item img{display:block;width:15%!important;}
 .owl-theme .owl-nav owl-prev, owl-next{
   display:none!important;
 }
+
 
 </style>
