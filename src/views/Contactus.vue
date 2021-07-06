@@ -130,14 +130,7 @@
             >
       </div>
 
-      <div>
-        <i class="fas fa-map-marker-alt"></i>
-        <h1>Dubai - UAE</h1>
-        <p>
-         ICON TOWER - Office 1003<br />
-            AL Thanyah First
-        </p>
-      </div>
+     
       
       <div>
        <i class="fas fa-map-marker-alt"></i>
@@ -174,17 +167,18 @@
         <h1> MANELIS luxury Properties</h1>
         <p>    
            Grece Psychiko / Ψυχικό<br />
-            <span
-              ><i
-                class="fas fa-mobile"
-                style="color:orange; margin-right:10px"
-              ></i>
-              +30 698 419 4332</span
-            >
+           
     
         </p>
       </div>
-     
+      <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <h1>Dubai - UAE</h1>
+        <p>
+         ICON TOWER - Office 1003<br />
+            AL Thanyah First
+        </p>
+      </div>
       
       
       </div>
@@ -223,21 +217,8 @@
               <li class="mb-2 mt-2">8  Grand Rue Clervaux   -   L -9711 Luxembourg</li>
             </div>
           </ul>
-          <h3 class="font-bold text-lg px-5 py-3 ml-8">Opening Hours</h3>
-          <div class="px-5 mb-5 ml-8 mr-10">
-            <div class="flex just justify-between mb-2">
-              <span>Monday -Friday</span>
-              <span>10:00 - 19:00</span>
-            </div>
-            <div class="flex just justify-between mb-2">
-              <span>Saturday</span>
-              <span>10:00 - 14:00</span>
-            </div>
-            <div class="flex just justify-between mb-2">
-              <span>Sunday</span>
-              <span>Closed</span>
-            </div>
-          </div>
+          
+         
         </div>
       </div>
     </div>
