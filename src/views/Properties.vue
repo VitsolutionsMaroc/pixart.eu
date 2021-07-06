@@ -556,6 +556,7 @@ import _ from "lodash";
 import utils from "@/helpers/utils";
 import BaseMap from "@/components/BaseMap.vue";
 import { Carousel, Slide } from "vue-carousel";
+let DefaultdataJson = require('../config/default.json');
 
 export default {
   name: "properties",
@@ -702,7 +703,8 @@ export default {
       let _self_ = this;
       axios
         .get(
-          `https://vitexportapi.azurewebsites.net/api/estates?${filtersQueryString}`
+          //  `https://vitexportapi.azurewebsites.net/api/estates?${filtersQueryString}`
+          DefaultdataJson.VitExportApi.Url+`estates?${filtersQueryString}`
         )
         .then(response => {
           _self_.estates = response.data.data;
