@@ -101,6 +101,9 @@
           <span class="my-2 block text-black font-bold text-xl"
             >{{ estate.Name }}
           </span>
+          <div>
+            <span style="font-size:0.8rem">{{ estate.EstateID }}</span>
+          </div>
                <Peb v-bind:EnergyClassName="estate.EnergyClass" />
           <span class="my-2 block"> {{ estate.CategoryName }} </span>
           <span class="block my-2 text-gray-400">{{ estate.Address1 }}</span>
