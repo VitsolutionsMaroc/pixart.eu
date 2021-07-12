@@ -275,7 +275,7 @@ export default {
       background: #f59e0b !important; }
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
@@ -285,7 +285,7 @@ export default {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #f59e0b; 
+  background: #f59f0bb2; 
 }
 
 /* Handle on hover */

@@ -120,7 +120,7 @@ export default {
         loop: false,
         stagePadding: 20,
         nav: true,
-        items: 3,
+        items: 4,
         center: false,
         dots: true,
         margin: 60,
@@ -143,7 +143,7 @@ export default {
       $owlCar.owlCarousel({
         loop: false,
         stagePadding: 20,
-        items: 3,
+        items: 4,
         nav: true,
         center: false,
         dots: true,
@@ -190,7 +190,7 @@ export default {
             nav: false
           },
           600: {
-            items: 3,
+            items: 4,
             nav: true
           },
           500: {
