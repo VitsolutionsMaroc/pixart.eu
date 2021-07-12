@@ -44,6 +44,17 @@
         >
           <contact-modal />
         </v-modal>
+        <div class="mt-20">
+          <hr>
+          <div class="p-10">
+            <ul>
+              <li><a target="_blank" :href="'https://www.facebook.com/sharer.php?u='+ getURL()"  rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"><i class="fa fa-facebook-square"></i> Share on Facebook </a></li>
+              <li><i class="fas fa-envelope  mr-5"></i><a :href="'mailto:?body='+getURL()">Send To a Friend</a></li>
+              <li onclick="window.print()"><i class="fas fa-print  mr-5"></i>Print</li>
+            </ul>
+          </div>
+          <hr>
+        </div>
       </div>
       <!-- Contact section -->
 
@@ -320,6 +331,9 @@ export default {
     };
   },
   methods: {
+    getURL() {
+        return window.location.href;
+    },
     displayToor() {
       this.$modal.show("toor");
     },
@@ -453,7 +467,7 @@ export default {
   },
   mounted() {
     this.initSwiper();
-  }
+  },
 };
 </script>
 
