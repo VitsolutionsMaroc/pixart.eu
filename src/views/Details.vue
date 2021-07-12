@@ -102,7 +102,7 @@
             >{{ estate.Name }}
           </span>
           <div>
-            <span style="font-size:0.8rem">{{ estate.EstateID }}</span>
+            <span style="font-size:0.8rem">Reference ID : {{ estate.EstateID }}</span>
           </div>
                <Peb v-bind:EnergyClassName="estate.EnergyClass" />
           <span class="my-2 block"> {{ estate.CategoryName }} </span>

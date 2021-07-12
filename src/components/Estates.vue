@@ -48,7 +48,7 @@
        
         </div> -->
           <div>
-            <span style="font-size:0.8rem">{{ estate.EstateID }}</span>
+            <span style="font-size:0.8rem">Reference ID : {{ estate.EstateID }}</span>
           </div>
         <h2
           class="text-black text-sm lg:text-base font-bold block"
