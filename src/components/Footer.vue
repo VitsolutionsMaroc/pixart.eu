@@ -5,15 +5,8 @@
     </div>
     <div class="caroussel_footer px-20 " style="text-align:center;">
        <div class="owl-carousel owl-theme footer_owl">
-            
-                    <div>
-                      <div class="owl-item">
-                         <img class="m-auto mb-4" style="width:20%;margin-bottom:20px" src="../assets/img/dubai.png" />
-                         <h4 class="text-xl font-bold">Dubai - UAE</h4>
-                      </div>
-                    </div>
                      <div>
-                      <div class="owl-item">
+                      <div class="owl-item" style="margin-left: 15%;">
                           <a
                             target="_blank"
                             rel="noopener noreferrer"
@@ -26,22 +19,29 @@
                              <h4 class="text-xl font-bold"> BELGIUM | IBP</h4>
                       </div>
                     </div>
+                   
+                     <div>
+                      <div class="owl-item" style="margin-left: 29%;">
+                         <img class="m-auto mb-4" style="width:30%;margin-bottom:30px;" src="../assets/img/favicone.png" />
+                         <h4 class="text-xl font-bold"> Luxembourg | Pixart</h4>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="owl-item">
+                         <img class="m-auto mb-4" style="width:20%;margin-bottom:20px" src="../assets/img/dubai.png" />
+                         <h4 class="text-xl font-bold">Dubai - UAE</h4>
+                      </div>
+                    </div>
+                     <div>
+                      <div class="owl-item" style="margin-left: 15%;">
+                         <img class="m-auto mb-4" style="width:40%;margin-bottom:45px" src="../assets/img/logo_footer.png" />
+                         <h4 class="text-xl font-bold"> MANELIS luxury Properties</h4>
+                      </div>
+                    </div>
                      <div>
                       <div class="owl-item">
                          <img class="m-auto mb-4" style="width:20%" src="../assets/img/ibpGr.jpg" />
                          <h4 class="text-xl font-bold"> GREECE</h4>
-                      </div>
-                    </div>
-                     <div>
-                      <div class="owl-item">
-                         <img class="m-auto mb-4" style="width:30%;margin-bottom:30px" src="../assets/img/favicone.png" />
-                         <h4 class="text-xl font-bold"> Luxembourg | Pixart</h4>
-                      </div>
-                    </div>
-                     <div>
-                      <div class="owl-item">
-                         <img class="m-auto mb-4" style="width:40%;margin-bottom:45px" src="../assets/img/logo_footer.png" />
-                         <h4 class="text-xl font-bold"> MANELIS luxury Properties</h4>
                       </div>
                     </div>
                    
@@ -86,7 +86,7 @@
  
        </div>
        <div class="mr-5 pr-12 mt-15S form_footer">
-          <input type="text" placeholder="Search..." class="px-3 py-2 border" />
+          <input type="text" placeholder="Search..." class="px-3 py-2 border mr-5" />
           <button class="bg-yellow-500 p-3 py-2" style="outline: none;">Submit</button>
           <p class="mt-5" style="line-height:1.6">
             PIXART is committed to delivering a high level of expertise, customer
@@ -162,6 +162,8 @@ padding: 0;
 .owl-theme .owl-nav owl-prev, owl-next{
   display:none!important;
 }
-
+.caroussel_footer .footer_owl .owl-carousel .owl-item{
+  margin-left: 10%!important;
+}
 
 </style>
