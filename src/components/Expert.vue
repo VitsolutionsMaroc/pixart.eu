@@ -27,13 +27,13 @@
                             </div>
                             </div>
                             <div>
-                            <div class="owl-item">
+                            <div class="owl-item" style="margin-left:5%;">
                                 <img class="m-auto mb-4" style="width:20%;margin-bottom:20px" src="../assets/img/dubai.png" />
                                 <h4 class="text-xl font-bold">Dubai - UAE</h4>
                             </div>
                             </div>
                             <div>
-                            <div class="owl-item" style="margin-left: 15%;">
+                            <div class="owl-item" style="margin-left: 18%;">
                                 <img class="m-auto mb-4" style="width:40%;margin-bottom:45px" src="../assets/img/logo_footer.png" />
                                 <h4 class="text-xl font-bold"> MANELIS luxury Properties</h4>
                             </div>
