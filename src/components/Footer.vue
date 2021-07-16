@@ -3,7 +3,7 @@
     <div class="bg-gray-900 p-10 text-white footer_main" style="position:relative;z-index:99999;">
      <div class="grid md:grid-cols-3 bg-gray-900 p-10 text-white">
        <div class="logo">
-         <div  class="mt-10 mb-20"> <img class="" src="../assets/img/logo.png"  style="width:100%;"/></div>
+         <div  class="mt-10 mb-20"> <img class="" src="../assets/img/logo.png"  /></div>
        </div>
        <div  class=" mt-2 md:mt-0 bg-gray-900"
         id="menue">
@@ -38,7 +38,7 @@
  
        </div>
        <div class="form_footer">
-          <input type="text" placeholder="Search..." class="px-3 py-2 border mr-5" />
+          <input type="text" placeholder="Search..." class="px-2 py-2 border" />
           <button class="bg-yellow-500 p-3 py-2" style="outline: none;">Submit</button>
           <p class="mt-5" style="line-height:1.6">
             PIXART is committed to delivering a high level of expertise, customer
@@ -81,7 +81,8 @@ export default {
   display: flex;
   flex-direction: column;
  box-sizing: border-box;
-width: 39%;
+  justify-content: center;
+    align-items: center;
 border: none;
 padding: 0; 
 }
@@ -96,5 +97,15 @@ padding: 0;
   color:rgb(180, 175, 175);
   text-align:center
 }
-
+.logo img{
+  width:100%;
+}
+@media only screen and (max-width: 767px){
+  .logo img{
+    width:100%;
+  }
+   .logo{
+    margin:0 auto;
+  }
+}
 </style>
