@@ -28,19 +28,20 @@
                             </div>
                             <div>
                             <div class="owl-item" id="dubai">
-                                <img class="m-auto mb-4" style="width:20%;margin-bottom:20px" src="../assets/img/dubai.png" />
+                                <img class="m-auto mb-4" style="width:20%;margin-bottom:45px" src="../assets/img/dubai.png" />
                                 <h4 class="text-xl font-bold">Dubai - UAE</h4>
                             </div>
                             </div>
                             <div>
                             <div class="owl-item" id="manalies">
                                 <img class="m-auto mb-4" style="width:40%;margin-bottom:45px" src="../assets/img/logo_footer.png" />
-                                <h4 class="text-xl font-bold"> MANELIS luxury Properties</h4>
+                                <h4 class="text-xl font-bold"> MANELIS<br>
+                                 Luxury Properties</h4>
                             </div>
                             </div>
                             <div>
-                            <div class="owl-item">
-                                <img class="m-auto mb-4" style="width:20%" src="../assets/img/ibpGr.jpg" />
+                            <div class="owl-item" id="greece">
+                                <img class="m-auto mb-4" style="width:20%;margin-bottom:44px" src="../assets/img/ibpGr.jpg" />
                                 <h4 class="text-xl font-bold"> GREECE</h4>
                             </div>
                             </div>
@@ -85,22 +86,21 @@ mounted(){
 };
 </script>
 <style>
-  #manalies{
+ #manalies{
     margin-left: 18%;
   }
-  #ibp{
-    margin-left: 15%;
-  }
+ 
   #pixart{
     margin-left: 31%;
   }
-  #dubai{
-    margin-left: 4%;
-  }
+ 
   @media only screen and (max-width: 1024px){
-   #manalies ,  #ibp ,  #pixart ,  #dubai {
+   #manalies ,  #ibp  ,  #dubai {
      margin-left: 0;
      
+   }
+   #pixart{
+     margin-left: 33px;
    }
    #manalies h4{
      font-size:0.9rem;
@@ -114,5 +114,16 @@ mounted(){
     #dubai h4{
      font-size:0.9rem;
    }
+   #greece h4{
+     font-size:0.9rem;
+   }
+  }
+  @media only screen and (max-width: 1050px){
+    #pixart{
+    margin-left: 21%;
+  }
+  #manalies{
+    margin-left:32px;
+  }
   }
 </style>
