@@ -73,8 +73,9 @@ export default {
   padding: 0 20px;
 }
 .logo{
-  width:20%;
-}
+    margin:0 auto;
+     width:20%;
+  }
 #menue{
   line-height: 2;
   overflow: hidden;
@@ -91,6 +92,7 @@ padding: 0;
 }
 .form_footer{
   width:66%;
+  margin:0 auto;
 }
 .policy h6{
   font-size:0.8rem;
@@ -100,12 +102,5 @@ padding: 0;
 .logo img{
   width:100%;
 }
-@media only screen and (max-width: 767px){
-  .logo img{
-    width:100%;
-  }
-   .logo{
-    margin:0 auto;
-  }
-}
+
 </style>
