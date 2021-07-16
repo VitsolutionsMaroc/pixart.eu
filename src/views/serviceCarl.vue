@@ -34,8 +34,8 @@
                             to analyze the existing plans and
                           documents… rolling out its service so that the sale is carried out in the most optimal way possible.
                            </span><br>
-                           <span v-if="readMore1==false" @click="readMoreEvent(1)" style="color:orange;curser:pointer">read more</span>
-                           <span  v-if="readMore1==true" @click="readMoreEvent(1)" style="color:orange;curser:pointer">read less</span>
+                           <span v-if="readMore1==false" @click="readMoreEvent(1)" style="color:orange;curser:pointer">Read More</span>
+                           <span  v-if="readMore1==true" @click="readMoreEvent(1)" style="color:orange;curser:pointer">Read Less</span>
                         </p>
                     </div>
               </div>
@@ -173,8 +173,8 @@
                               class="golden  p-2 md:p-4 lg:mx-4 mx-2 text-yellow-500"
                               >Read More</router-link>
                           </div></span><br>
-                           <span v-if="readMore2==false" @click="readMoreEvent(2)" style="color:orange;curser:pointer">read more</span>
-                      <span  v-if="readMore2==true" @click="readMoreEvent(2)" style="color:orange;curser:pointer">read less</span>
+                           <span v-if="readMore2==false" @click="readMoreEvent(2)" style="color:orange;curser:pointer">Read More</span>
+                      <span  v-if="readMore2==true" @click="readMoreEvent(2)" style="color:orange;curser:pointer">Read Less</span>
                   </div>
               </div>
               <div>
@@ -186,9 +186,12 @@
                         Protection of your home against all dangers.<br>
                         • Civil Liability Insurance.<br>
                         • Moreover we protect our little friends with Pet insurance.<br>
+                         <span v-if="readMore3 == true">
                         • Ofcourse we protect your car  with  Car insurance solution, which covers every need with unique flexibility.<br>
                         • We secure full coverage in all the sectors of Hospital Care, Out of Hospital Care and Prevention.<br>
-
+                        </span>
+                        <span v-if="readMore3==false" @click="readMoreEvent(3)" style="color:orange;curser:pointer">Read More</span>
+                           <span  v-if="readMore3==true" @click="readMoreEvent(3)" style="color:orange;curser:pointer">Read Less</span>
 
                     </p>
                     <div>
@@ -211,7 +214,8 @@ export default {
 data(){
 return {
   readMore1:false,
- readMore2:false
+ readMore2:false,
+ readMore3:false
 }
 },
 methods:{
@@ -220,6 +224,8 @@ if(nbr==1)
 this.readMore1=!this.readMore1;
 if(nbr==2)
 this.readMore2=!this.readMore2;
+if(nbr==3)
+this.readMore3=!this.readMore3;
 }
 
 },
