@@ -6,7 +6,7 @@
         <div class="caroussel_footer px-20 " style="text-align:center;">
             <div class="owl-carousel owl-theme footer_owl">
                             <div>
-                            <div class="owl-item" style="margin-left: 15%;">
+                            <div class="owl-item" id="ibp">
                                 <a
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -21,26 +21,27 @@
                             </div>
                         
                             <div>
-                            <div class="owl-item" style="margin-left: 29%;">
+                            <div class="owl-item" id="pixart">
                                 <img class="m-auto mb-4" style="width:30%;margin-bottom:30px;" src="../assets/img/favicone.png" />
                                 <h4 class="text-xl font-bold"> Luxembourg | Pixart</h4>
                             </div>
                             </div>
                             <div>
-                            <div class="owl-item" style="margin-left:5%;">
-                                <img class="m-auto mb-4" style="width:20%;margin-bottom:20px" src="../assets/img/dubai.png" />
+                            <div class="owl-item" id="dubai">
+                                <img class="m-auto mb-4" style="width:20%;margin-bottom:45px" src="../assets/img/dubai.png" />
                                 <h4 class="text-xl font-bold">Dubai - UAE</h4>
                             </div>
                             </div>
                             <div>
-                            <div class="owl-item" style="margin-left: 18%;">
+                            <div class="owl-item" id="manalies">
                                 <img class="m-auto mb-4" style="width:40%;margin-bottom:45px" src="../assets/img/logo_footer.png" />
-                                <h4 class="text-xl font-bold"> MANELIS luxury Properties</h4>
+                                <h4 class="text-xl font-bold"> MANELIS<br>
+                                 Luxury Properties</h4>
                             </div>
                             </div>
                             <div>
-                            <div class="owl-item">
-                                <img class="m-auto mb-4" style="width:20%" src="../assets/img/ibpGr.jpg" />
+                            <div class="owl-item" id="greece">
+                                <img class="m-auto mb-4" style="width:20%;margin-bottom:44px" src="../assets/img/ibpGr.jpg" />
                                 <h4 class="text-xl font-bold"> GREECE</h4>
                             </div>
                             </div>
@@ -70,7 +71,7 @@ mounted(){
               items: 1
             },
             600: {
-              items: 1
+              items: 3
             },
             1000: {
               items: 3
@@ -84,3 +85,45 @@ mounted(){
   },
 };
 </script>
+<style>
+ #manalies{
+    margin-left: 18%;
+  }
+ 
+  #pixart{
+    margin-left: 31%;
+  }
+ 
+  @media only screen and (max-width: 1024px){
+   #manalies ,  #ibp  ,  #dubai {
+     margin-left: 0;
+     
+   }
+   #pixart{
+     margin-left: 33px;
+   }
+   #manalies h4{
+     font-size:0.9rem;
+   }
+    #ibp h4{
+     font-size:0.9rem;
+   }
+    #pixart h4{
+     font-size:0.9rem;
+   }
+    #dubai h4{
+     font-size:0.9rem;
+   }
+   #greece h4{
+     font-size:0.9rem;
+   }
+  }
+  @media only screen and (max-width: 1050px){
+    #pixart{
+    margin-left: 21%;
+  }
+  #manalies{
+    margin-left:32px;
+  }
+  }
+</style>

@@ -35,7 +35,7 @@
             :show-labels="false"
             :searchable="false"
             :options="genders"
-            placeholder="Mlle / Mr"
+            placeholder="Mrs / Mr"
             :close-on-select="true"
           >
           </multiselect>
@@ -92,7 +92,7 @@
           <label class="my-2">Address *</label>
           <input
             type="text"
-            placeholder="Address"
+            placeholder="Street"
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.Address1"
             required

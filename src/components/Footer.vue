@@ -48,6 +48,11 @@
        </div>
      </div>
     </div>
+    <div class="policy px-10 py-3">
+      <h6>
+        IPI-authorized real estate agent : IPI N° 103.124 -  500 272 - Enterprise number : BE-0463.031.676 - Supervisory authority: BIV, rue du Luxemburg 16B, 1000 Brussels - www.IPI.be  RC: 623517  -  RC professionnelle et cautionnement via AXA Belgium SA – police n°
+      </h6>
+    </div>
   </div>
 </template>
 <script>
@@ -85,6 +90,11 @@ padding: 0;
 }
 .form_footer{
   width:66%;
+}
+.policy h6{
+  font-size:0.8rem;
+  color:rgb(180, 175, 175);
+  text-align:center
 }
 
 </style>

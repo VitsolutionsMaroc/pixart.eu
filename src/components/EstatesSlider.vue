@@ -31,7 +31,7 @@
           />
         </div>
 
-        <div class="h-40  sm:h-40 p-3 relative">
+        <div class=" p-3 relative" style="height:200px">
           <div class="mb-4 truncate">
             <span v-if="estate.Price" class="text-black font-bold text-lg"
               >{{ estate.Price }} {{ estate.Currency }}</span
@@ -43,6 +43,9 @@
             >
               Details
             </button>
+          </div>
+          <div>
+            <span style="font-size:0.8rem">Reference ID : {{ estate.EstateID }}</span>
           </div>
           <h2 class="text-black text-sm lg:text-base font-bold block"
           style="font-size:0.7rem">
