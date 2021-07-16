@@ -25,9 +25,9 @@
                           Pixart Real Estate analyzes your real estate portfolio, with reference to
                           its proven expertise, and in-depth knowledge of the market in which your real
                           estate is located. Depending on the objective pursued, we advise you to renovate
-                          the property somewhat to gain real added value during the sale, to introduce a
+                          the property somewhat to gain real added value during the sale, to introduce 
                            <span v-if="readMore1==true">
-                          regularization permit or a building permit to maximize the sale, to negotiate with the
+                         a regularization permit or a building permit to maximize the sale, to negotiate with the
                           municipal, town planning or regional authorities in order to constitute a complete file
                           for the various stakeholders, to ‘cut up’ the property, by selling it to the cut up in order
                           to extract the best price for the selling owner, to negotiate hard with the buyer and seller,
@@ -148,7 +148,11 @@
               </div>
                <div>
                  <div class="item" style=" overflow:auto;">
-                      <img class="m-auto mb-4" src="../assets/img/icon11.png" />
+                   <router-link
+                              to="/Golden"
+                              class="golden text-yellow-500"
+                              > <img class="m-auto mb-4" src="../assets/img/icon11.png" /></router-link>
+                     
                       <h4 class="text-xl font-bold"> GOLDEN VISA</h4>
                       <h6>Benefits of obtaining a Greek Golden Visa</h6>
                       <p class="m-auto mt-8" style="text-align:justify;">
@@ -163,43 +167,37 @@
                         • No obligation to reside in Greece in order to extend the residence permit<br>
                         • After 7 years from the date of obtaining a residence permit, subject to a number of additional conditions,<br>
                         the investor acquires the right to apply for the citizenship of the Hellenic Republic<br>
-                        • Possibility of establishing a joint stock company and doing business<br></span>
+                        • Possibility of establishing a joint stock company and doing business<br>
+                        </span>
                          
                       </p>
-                      <span v-if="readMore2 == true">
-                      <div>
-                            <router-link
-                              to="/Golden"
-                              class="golden  p-2 md:p-4 lg:mx-4 mx-2 text-yellow-500"
-                              >Read More</router-link>
-                          </div></span><br>
+                     <br>
                            <span v-if="readMore2==false" @click="readMoreEvent(2)" style="color:orange;curser:pointer">Read More</span>
-                      <span  v-if="readMore2==true" @click="readMoreEvent(2)" style="color:orange;curser:pointer">Read Less</span>
+                      <span  v-if="readMore2==true" @click="readMoreEvent(2)" style="color:brown;curser:pointer">Read Less</span>
                   </div>
               </div>
               <div>
-                  <div class="item">
-                    <img class="m-auto mb-4" src="../assets/img/icon12.png" />
+                  <div class="item" style=" overflow:auto;">
+                     <router-link
+                              to="/Assurance"
+                              class="assurance text-yellow-500"
+                              ><img class="m-auto mb-4" src="../assets/img/icon12.png" /></router-link>
+                    
                     <h4 class="text-xl font-bold"> We assist all your needs by providing insurances for</h4>
                     <p class="m-auto mt-8" style="text-align:justify">
                        • Legal Protection is provided to apartment, shop and plot owners to resolve disputes, including with their tenants,arising from rent adjustment, non-payment of rent, damage to the apartment or shop, eviction lawsuit.<br>
                         Protection of your home against all dangers.<br>
                         • Civil Liability Insurance.<br>
+                        <span  v-if="readMore3==true">
                         • Moreover we protect our little friends with Pet insurance.<br>
-                         <span v-if="readMore3 == true">
                         • Ofcourse we protect your car  with  Car insurance solution, which covers every need with unique flexibility.<br>
                         • We secure full coverage in all the sectors of Hospital Care, Out of Hospital Care and Prevention.<br>
-                        </span>
-                        <span v-if="readMore3==false" @click="readMoreEvent(3)" style="color:orange;curser:pointer">Read More</span>
-                           <span  v-if="readMore3==true" @click="readMoreEvent(3)" style="color:orange;curser:pointer">Read Less</span>
-
+                      </span>
+                         
                     </p>
-                    <div>
-                            <router-link
-                              to="/Assurance"
-                              class="assurance  p-2 md:p-4 lg:mx-4 mx-2 text-yellow-500"
-                              >Read More</router-link>
-                          </div>
+                 
+                          <span v-if="readMore3==false" @click="readMoreEvent(3)" style="color:orange;curser:pointer">Read More</span>
+                      <span  v-if="readMore3==true" @click="readMoreEvent(3)" style="color:brown;curser:pointer;text-align:justify">Read Less</span>
                 </div>
               </div>
 
@@ -214,8 +212,8 @@ export default {
 data(){
 return {
   readMore1:false,
- readMore2:false,
- readMore3:false
+  readMore2:false,
+  readMore3:false
 }
 },
 methods:{
@@ -232,24 +230,32 @@ this.readMore3=!this.readMore3;
   mounted(){
      this.$nextTick(() => {
         $(".box-slide").owlCarousel({
-          loop: true,
-          center: true,
-          dots:false,
-          dotsEach: false,
-          margin: 80,
-          nav: true,
-          navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-          responsive: {
-            0: {
-              items: 1
-            },
-            600: {
-              items: 1
-            },
-            1000: {
-              items: 3
-            }
+     loop: false,
+        stagePadding: 50,
+        nav: true,
+        navText: [
+          "<i class='fa fa-chevron-left'></i>",
+          "<i class='fa fa-chevron-right'></i>"
+        ],
+        items: 3,
+        center: false,
+        dots: false,
+        margin: 60,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false
+          },
+          600: {
+            items: 3,
+            nav: true
+          },
+          500: {
+            items: 3,
+            nav: true
           }
+        }
         });
 
       });
