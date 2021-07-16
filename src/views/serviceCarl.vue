@@ -302,7 +302,7 @@ this.readMore3=!this.readMore3;
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 
 /* Track */
