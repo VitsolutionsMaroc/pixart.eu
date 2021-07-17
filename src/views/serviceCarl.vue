@@ -299,7 +299,14 @@ this.readMore3=!this.readMore3;
       border-radius: 30px; }
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
       background: #f59e0b !important; }
+.golden img:hover{
 
+ transform: scale(1.3);
+}
+.assurance img:hover{
+
+ transform: scale(1.3);
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
