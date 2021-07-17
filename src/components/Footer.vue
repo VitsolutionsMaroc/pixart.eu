@@ -102,5 +102,11 @@ padding: 0;
 .logo img{
   width:100%;
 }
-
+@media only screen and (max-width: 767px){
+  
+   .form_footer{
+  width:66%;
+  margin:0;
+}
+}
 </style>

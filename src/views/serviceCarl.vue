@@ -13,7 +13,7 @@
                         out within 48 hours by a senior real estate expert. A detailed report will be drawn
                         up by one of our experts allowing you to safely take your real estate decisions for
                         a successful sale. The ‘fair’ price for your property is undoubtedly the most essential criterion for
-                      a quick and realistic sale. For more information click here (-) estimate request and realty analysis.
+                      a quick and realistic sale.
                       </p>
                   </div>
               </div>

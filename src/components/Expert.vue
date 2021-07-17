@@ -54,7 +54,7 @@ mounted(){
           center: true,
           dotsEach: false,
           dots:false,
-          margin: 20,
+          margin: 10,
           nav: false,
          autoplay:true,
         autoplayTimeout:2000,
