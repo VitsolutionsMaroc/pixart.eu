@@ -30,13 +30,18 @@
               </div>
                <div>
                   <div class="item" id="manelis">
+
                       <img class="m-auto mb-4"  style="margin-bottom:45px" src="../assets/img/logo_footer.png" />
-                      <h4 class="text-xl font-bold"> MANELIS<br>Luxury Properties</h4>
+                      <h4 class="text-xl font-bold"> GREECE</h4>
                   </div>
               </div>
               <div>
                   <div class="item">
-                      <img class="m-auto mb-4"  style="margin-bottom:35px" src="../assets/img/ibpGr.jpg" />
+                      <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.ibp.be/en/List/Abroad/27 ">
+                      <img class="m-auto mb-4"  style="margin-bottom:35px" src="../assets/img/ibpGr.jpg" /></a>
                       <h4 class="text-xl font-bold"> GREECE</h4>
                   </div>
               </div>
