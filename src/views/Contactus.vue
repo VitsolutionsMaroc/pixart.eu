@@ -111,9 +111,9 @@
     <div class="grid lg:grid-cols-3 gap-10 px-16 py-8 mt-10 infos">
        <div>
        <i class="fas fa-map-marker-alt"></i>
-         <h1> BELGIUM</h1>
+         <h1> IBP sa</h1>
         <p>
-           277 Av. d’Auderghem – 1040 Brussels – Belgium<br>
+           277 Av. d’Auderghem – 1040 Brussels <br>
              <i
                 class="fas fa-mobile"
                 style="color:orange; margin-right:10px"
@@ -134,10 +134,10 @@
       
       <div>
        <i class="fas fa-map-marker-alt"></i>
-         <h1>GREECE</h1>
+         <h1>IBPG</h1>
         <p>
           Kolokotroni 9 –Kifisia 14562 & Agiou Alexandrou 7 –Paleo Faliro
-            17561– Greece, Kολοκοτρώνη 9 -Kηφισιά 14562 & Αγίου Αλεξάνδρου 7,
+            17561–  Kολοκοτρώνη 9 -Kηφισιά 14562 & Αγίου Αλεξάνδρου 7,
             175 61 Παλαιό Φάληρο<br />
             <span
               ><i
@@ -150,7 +150,7 @@
       </div>
       <div>
        <i class="fas fa-map-marker-alt"></i>
-         <h1>Luxembourg</h1>
+         <h1>Pixart</h1>
         <p>
         8 Grand Rue Clervaux - L -9711 Luxembourg<br />
             <span
@@ -160,15 +160,6 @@
               ></i
               >+352661373707</span
             >
-        </p>
-      </div>
-      <div>
-        <i class="fas fa-map-marker-alt"></i>
-        <h1> MANELIS luxury Properties</h1>
-        <p>    
-           Grece Psychiko / Ψυχικό<br />
-           
-    
         </p>
       </div>
       <div>

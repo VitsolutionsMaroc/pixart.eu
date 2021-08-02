@@ -25,7 +25,7 @@
 
             <router-link
             to="/contact"
-            >Creat Your Golden Visa</router-link
+            >Create Your Golden Visa</router-link
           >
          </button>
     </div>
