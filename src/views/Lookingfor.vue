@@ -155,7 +155,7 @@
                   <input
                     required
                     type="number"
-                    placeholder="Your phone number address..."
+                    placeholder="Your phone number ..."
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
                     v-model="contact.PrivateMobile"
                   />

@@ -1,7 +1,7 @@
 <template>
      <div>
         <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px;margin-bottom:50px">
-           <h1 style="font-size:2rem">OUR EXPERT</h1>
+           <h1 style="font-size:2rem">OUR EXPERTS</h1>
         </div>
          <div class="caroussel_footer md:container md:mx-auto">
            <div class="owl-carousel owl-theme footer_owl">
@@ -26,6 +26,12 @@
                   <div class="item">
                       <img class="m-auto mb-4"  style="margin-bottom:33px" src="../assets/img/dubai.png" />
                       <h4 class="text-xl font-bold"> Dubai - UAE</h4>
+                  </div>
+              </div>
+               <div>
+                  <div class="item">
+                      <img class="m-auto mb-4"  style="margin-bottom:58px" src="../assets/img/alfa.png" />
+                      <h4 class="text-xl font-bold"> ALPHA </h4>
                   </div>
               </div>
                <div>
