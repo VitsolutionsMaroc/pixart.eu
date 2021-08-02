@@ -556,7 +556,7 @@ import _ from "lodash";
 import utils from "@/helpers/utils";
 import BaseMap from "@/components/BaseMap.vue";
 import { Carousel, Slide } from "vue-carousel";
-let DefaultdataJson = require('../config/default.json');
+let DefaultdataJson = require("../config/default.json");
 
 export default {
   name: "properties",
@@ -699,12 +699,13 @@ export default {
       &garden=${this.filters.garden ? 1 : 0}
       &sort_by_price=${sortByPrice}
       &sort_by_date=${sortByDate}
+      &displaystatus=[2,3,4]
       &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
       let _self_ = this;
       axios
         .get(
           //  `https://vitexportapi.azurewebsites.net/api/estates?${filtersQueryString}`
-          DefaultdataJson.VitExportApi.Url+`estates?${filtersQueryString}`
+          DefaultdataJson.VitExportApi.Url + `estates?${filtersQueryString}`
         )
         .then(response => {
           _self_.estates = response.data.data;
