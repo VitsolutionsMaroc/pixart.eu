@@ -29,8 +29,8 @@
                            <span v-if="readMore1==true">
                          a regularization permit or a building permit to maximize the sale, to negotiate with the
                           municipal, town planning or regional authorities in order to constitute a complete file
-                          for the various stakeholders, to ‘cut up’ the property, by selling it to the cut up in order
-                          to extract the best price for the selling owner, to negotiate hard with the buyer and seller,
+                          for the various stakeholders, to ‘cut up’ the property, by unit selling in order to extract the best price
+                           for the selling owner, to negotiate hard with the buyer and seller,
                             to analyze the existing plans and
                           documents… rolling out its service so that the sale is carried out in the most optimal way possible.
                            </span><br>
