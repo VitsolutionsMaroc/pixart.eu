@@ -1,3 +1,4 @@
+const path=require('path');
 module.exports = {
   lintOnSave: false,
   publicPath: "/pixart.eu/",
@@ -14,5 +15,15 @@ module.exports = {
       localeDir: "locales",
       enableInSFC: true,
     },
+
+    configureWebpack: {
+      resolve: {
+        extensions:['.js','.vue','.json'],
+        '@':path.resolve('src'),
+      },
+      externals: {
+        vue: 'Vue'
+      }
+    }
   },
 };

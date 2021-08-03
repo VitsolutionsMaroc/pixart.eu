@@ -217,7 +217,7 @@
 
     <!-- about section -->
     <Expert />
-    <Footer />
+    <footerComp />
   </div>
 </template>
 
@@ -226,7 +226,7 @@ import EstatesSlider from "@/components/EstatesSlider.vue";
 import EstatePagination from "@/components/EstatePagination.vue";
 import { Carousel, Slide } from "vue-carousel";
 import utils from "@/helpers/utils";
-import Footer from "@/components/Footer.vue";
+import footerComp from "@/components/Footer.vue";
 import  Expert from "@/components/Expert.vue";
 import ServiceOwl from "@/views/serviceCarl.vue";
 import axios from "axios";
@@ -240,7 +240,7 @@ export default {
     Multiselect,
     ServiceOwl,
     EstatePagination,
-    Footer,
+    footerComp,
     Expert,
     EstatesSlider,
     Carousel,
