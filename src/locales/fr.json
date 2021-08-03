@@ -268,14 +268,14 @@
     { "id": 255, "name": "Belarus" }
   ],
   "Header":{
-    "Home":"HOME",
-    "About":"ABOUT",
-    "Properties":"PROPERTIES",
-    "evaluation":"EVALUATION",
+    "Home":"ACCUEIL",
+    "About":"A PROPOS",
+    "Properties":"PROPRIÉTÉS",
+    "evaluation":"ÉVALUATION",
     "GoldenVisa":"GOLDEN VISA",
     "Contact":"CONTACT"
   },
   "Contact":{
-    "ContactUs":"Contact Us"
+    "ContactUs":"Nous contacter"
   }
 }

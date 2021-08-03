@@ -27,44 +27,72 @@
         id="menu"
       >
         <li class="mb-2 md:mb-0">
-          <router-link to="/" class=" other lg:mx-4 mx-2 ">HOME</router-link>
+          <router-link to="/" class=" other lg:mx-4 mx-2 "> {{ $t("Header.Home") }}</router-link>
         </li>
         <li class="mb-2 md:mb-0 ">
-          <router-link to="/about" class=" other lg:mx-4 mx-2">ABOUT</router-link>
+          <router-link to="/about" class=" other lg:mx-4 mx-2"> {{ $t("Header.About") }}</router-link>
         </li>
         <li class="mb-6 md:mb-0">
-          <router-link to="/properties" class=" other lg:mx-4 mx-2"
-            >PROPERTIES
+          <router-link to="/properties" class=" other lg:mx-4 mx-2"> 
+          {{ $t("Header.Properties") }}
           </router-link>
         </li>
         <li class="mb-6 md:mb-0">
-          <router-link to="/evaluation" class=" other lg:mx-4 mx-2"
-            >EVALUATION
+          <router-link to="/evaluation" class=" other lg:mx-4 mx-2"> 
+          {{ $t("Header.evaluation") }}
           </router-link>
         </li>
          <li class="mb-6 md:mb-0">
-          <router-link to="/golden" class=" other lg:mx-4 mx-2"
-            >GOLDEN VISA
+          <router-link to="/golden" class=" other lg:mx-4 mx-2"> 
+          {{ $t("Header.GoldenVisa") }}
           </router-link>
         </li>
         <li class="mb-6 md:mb-0">
-          <router-link to="/contact" class=" other lg:mx-4 mx-2 font-thin"
-            >CONTACT
+          <router-link to="/contact" class=" other lg:mx-4 mx-2 font-thin"> 
+            {{ $t("Header.Contact") }}
           </router-link>
         </li>
         <li class="mb-2 md:mb-0">
-          <router-link
-            to="/lookingfor"
-            class="lookingFor bg-yellow-500 p-2 md:p-4 lg:mx-4 mx-2 "
-            >Looking for ?</router-link
-          >
+          <router-link to="/lookingfor" class="lookingFor bg-yellow-500 p-2 md:p-4 lg:mx-4 mx-2 ">
+          Looking for ?
+          </router-link>
+        </li>
+        <li class="mb-2 md:mb-0">
+          <select name="language" id="language" v-model="languageId" @change="switchLanguage()">
+            <option value="en"> English </option>
+            <option value="fr"> Français </option>
+          </select>
         </li>
       </ul>
     </div>
     <router-view />
   </div>
 </template>
-
+<script>
+import VueRouter from 'vue-router'
+export default {
+  name: "App",
+  data: function() {
+    return{
+      languageId:null
+    }
+  },
+  props: {
+  },
+  created(){
+    if(this.languageId == null)
+    this.languageId="en";
+  },
+  methods: {
+      switchLanguage() {
+      let locale = this.languageId.toLowerCase();
+      if (this.$i18n.locale !== locale) {
+        this.$i18n.locale = locale;
+      }
+    },
+  }
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
