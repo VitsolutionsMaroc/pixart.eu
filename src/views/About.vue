@@ -14,7 +14,7 @@
     </div>
     <!-- Vision section -->
     <div class="text-center py-4 px-4 md:px-32 mt-20 mb-20">
-      <h2 class="text-xl md:text-4xl font-bold my-2 mb-10">OUR TEAM</h2>
+      <h2 class="text-xl md:text-4xl font-bold my-2 mb-10">{{$t("Apropos.OUR_TEAM")}}</h2>
       <p class="text-sm text-justify md:text-center" style="font-size:1.3rem;line-height: 1.6">
         Pixart Real Estate consists of licensed real estate professionals with a
          common denominator : passion & expertise in real estate. For several years
