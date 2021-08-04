@@ -34,6 +34,12 @@
                       <h4 class="text-xl font-bold"> ALPHA </h4>
                   </div>
               </div>
+              <div>
+                  <div class="item" id="ideal">
+                      <img class="m-auto mb-4"   style="margin-bottom:58px" src="../assets/img/ideal.png" />
+                      <h4 class="text-xl font-bold">IDEAL ASSURANCE<br>REAL ESTATE </h4>
+                  </div>
+              </div>
                <div>
                   <div class="item" id="manelis">
 
@@ -110,5 +116,8 @@ mounted(){
 }
 #manelis img{
   width:150px!important;
+}
+#ideal img{
+   width:150px!important;
 }
 </style>
