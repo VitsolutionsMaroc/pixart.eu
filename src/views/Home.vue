@@ -149,7 +149,7 @@
           OUR SERVICES FOR YOU
         </h2>
         <p>
-          Highlight the best of your properties by using the list category
+          Highlight the best of Our properties by using the list category
           shortcake. You can list categories, types, cities, areas and states of
           your choice.
         </p>

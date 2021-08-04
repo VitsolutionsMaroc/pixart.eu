@@ -33,7 +33,7 @@
       <div class="p-3 relative" style="height:200px">
         <div class="mb-4 truncate">
           <span v-if="estate.Price" class="text-black font-bold text-lg"
-            >{{ estate.Price }} {{ estate.Currency }}</span
+            >{{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}</span
           >
           <button
             @click="displayDetails(estate)"

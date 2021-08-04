@@ -91,7 +91,7 @@
         <div class="section-right p-4">
           <div class="font-bold text-xl py-2 mb-8">
             <span v-if="estate.Price" class="">
-              Price : {{ estate.Price }} {{ estate.Currency }}
+              Price : {{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}
             </span>
             <span class="float-right capitalize" style="color:#39D47A">{{
               estate.purpose
