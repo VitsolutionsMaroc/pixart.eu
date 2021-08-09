@@ -121,8 +121,8 @@ export default {
     await this.$nextTick(() => {
       var $owlCar = $("#owlmycar").owlCarousel({
         loop: false,
-        stagePadding: 20,
-        nav: true,
+       
+        nav: false,
         items: 4,
         center: false,
         dots: true,
@@ -134,10 +134,13 @@ export default {
             items: 1
           },
           600: {
-            items: 1
+            items: 1,
+             nav: true,
           },
           1000: {
-            items: 4
+            items: 1,
+             nav:true,
+            stagePadding: 20,
           }
         }
       });
@@ -146,7 +149,7 @@ export default {
       $owlCar.owlCarousel({
         loop: false,
         stagePadding: 20,
-        items: 4,
+      
         nav: true,
         center: false,
         dots: true,
@@ -155,13 +158,18 @@ export default {
         responsive: {
           0: {
             items: 1,
-            nav: true
+            nav: true,
+            stagePadding: 0,
+
+
           },
           600: {
-            items: 3,
-            nav: false
+            items: 1,
+            nav: false,
+            stagePadding: 0,
+
           },
-          500: {
+          1000: {
             items: 4,
             nav: true
           },
@@ -193,10 +201,10 @@ export default {
             nav: false
           },
           600: {
-            items: 4,
-            nav: true
+            items: 1,
+            nav: false
           },
-          500: {
+          1000: {
             items: 4,
             nav: true
           }
