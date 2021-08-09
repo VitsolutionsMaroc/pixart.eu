@@ -232,26 +232,28 @@ this.readMore3=!this.readMore3;
         $(".box-slide").owlCarousel({
      loop: false,
         stagePadding: 50,
-        nav: true,
+        nav: false,
         navText: [
           "<i class='fa fa-chevron-left'></i>",
           "<i class='fa fa-chevron-right'></i>"
         ],
         items: 3,
-        center: false,
+        
         dots: false,
         margin: 60,
         responsiveClass: true,
         responsive: {
           0: {
             items: 1,
-            nav: false
+            nav: false,
+            dots:true,
+            stagePadding: 0,
           },
           600: {
-            items: 3,
+            items: 1,
             nav: true
           },
-          500: {
+          1000: {
             items: 3,
             nav: true
           }
@@ -329,6 +331,8 @@ this.readMore3=!this.readMore3;
 @media only screen and (min-width: 261px) and (max-width: 900px) {
 
 .testimonial .owl-carousel .owl-item .item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none;background-color:white;padding: 20px;height:400px;padding-bottom: 30px;font-size: 0.9rem;overflow-x:auto}
-
+.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
+  display:none;
+}
 }
 </style>

@@ -73,7 +73,7 @@ export default {
   padding: 0 20px;
 }
 .logo{
-    margin:0 auto;
+   
      width:20%;
   }
 #menue{
@@ -82,8 +82,7 @@ export default {
   display: flex;
   flex-direction: column;
  box-sizing: border-box;
-  justify-content: center;
-    align-items: center;
+ 
 border: none;
 padding: 0; 
 }
@@ -92,7 +91,7 @@ padding: 0;
 }
 .form_footer{
   width:66%;
-  margin:0 auto;
+
 }
 .policy h6{
   font-size:0.8rem;
