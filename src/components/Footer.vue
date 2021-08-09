@@ -102,10 +102,21 @@ padding: 0;
   width:100%;
 }
 @media only screen and (max-width: 767px){
-  
-   .form_footer{
-  width:66%;
+  .logo{
+    width:100%;
+  }
+  .logo img{
+    width:90px
+  }
+#menue{
+  width:100%;
+}
+.form_footer{
+  width:100%;
   margin:0;
+}
+.form_footer input[type="text"]{
+      width: 100%;
 }
 }
 </style>
