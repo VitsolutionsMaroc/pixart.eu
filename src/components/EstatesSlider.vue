@@ -31,7 +31,7 @@
           />
         </div>
 
-        <div class=" p-3 relative" style="height:280px">
+        <div class=" p-3 relative" style="height:280px;margin-bottom:20px">
           <div class="mb-4 truncate">
             <span v-if="estate.Price" class="text-black font-bold text-lg"
               >{{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}</span
@@ -68,7 +68,8 @@
           </section>
           <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
           <div
-            class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0"
+            class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute "
+            style="bottom:-19px"
           >
             <span v-if="estate.Rooms" class="">
               <i class="fas fa-bed  text-yellow-500 mr-2"></i>
@@ -188,7 +189,7 @@ export default {
     this.$nextTick(() => {
       $("#owlmycar").owlCarousel({
         loop: false,
-        stagePadding: 50,
+        
         nav: true,
         navText: [
           "<i class='fa fa-chevron-left'></i>",
@@ -210,7 +211,8 @@ export default {
           },
           1000: {
             items: 4,
-            nav: true
+            nav: true,
+            stagePadding: 50,
           }
         }
       });
