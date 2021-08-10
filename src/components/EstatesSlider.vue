@@ -31,7 +31,7 @@
           />
         </div>
 
-        <div class=" p-3 relative" style="height:200px">
+        <div class=" p-3 relative" style="height:280px">
           <div class="mb-4 truncate">
             <span v-if="estate.Price" class="text-black font-bold text-lg"
               >{{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}</span
@@ -45,23 +45,27 @@
             </button>
           </div>
           <div>
-            <span style="font-size:0.8rem">Reference ID : {{ estate.EstateID }}</span>
+            <span style="font-size:0.77rem"> {{ estate.City }}  - {{ estate.countryName }}</span>
           </div>
-          <h2 class="text-black text-sm lg:text-base font-bold block"
+          <!-- <h2 class="text-black text-sm lg:text-base font-bold block"
           style="font-size:0.7rem">
-            <!-- {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
+             {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
             {{
               estate.categoryName.charAt(0).toUpperCase() +
                 estate.categoryName.slice(1)
             }} -->
-             <div v-if="estate.Name.length > 40">
+             <!-- <div v-if="estate.Name.length > 40">
             {{ estate.Name.substr(0, 30) }} ...
           </div>
           <div v-else>{{ estate.Name }}</div>
-          </h2>
-          <section style="width: 15%;">
+          </h2>  -->
+             <div v-if="estate.Description.length > 110" >
+                 <p style="font-size:0.8rem"> {{ estate.Description.substr(0, 90) }} ...</p>
+            </div>
+           <div v-else>{{ estate.Description }}</div>
+          <section style="width: 20%; margin-bottom:20px">
              <Peb v-bind:EnergyClassName="estate.EnergyClass" />
-             </section>
+          </section>
           <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
           <div
             class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0"
