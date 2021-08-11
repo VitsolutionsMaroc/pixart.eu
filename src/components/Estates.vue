@@ -62,10 +62,12 @@
           <!-- {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
           {{ estate.categoryName.slice(1) + estate.categoryName.slice(1) }} -->
         <!-- </h2> -->
-        <div v-if="estate.Description.length > 110" >
-          <p style="font-size:0.8rem"> {{ estate.Description.substr(0, 90) }} ...</p>
-        </div>
-        <div v-else>{{ estate.Description }}</div>
+        <section v-if="estate.Description!= null || estate.Description!= undefined ">
+          <div v-if="estate.Description.length > 110" >
+            <p  class="des-cole"> {{ estate.Description.substr(0, 90) }} ...</p>
+          </div>
+          <div class="des-cole" v-else>{{ estate.Description }}</div>
+        </section>
        <Peb v-bind:EnergyClassName="estate.EnergyClass" />
 
         <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
@@ -198,6 +200,9 @@ h2 {
   background-size: cover;
   background-position: center;
 }*/
+.des-cole{
+font-size:0.8rem!important;
+}
 .multiselect__option--highlight {
   background: #df9523 !important;
 }
