@@ -5,7 +5,7 @@
         <div class="RentBuy flex justify-start mb-2">
           <button
             class="border-2 px-7 p-1 text-black"
-            @click="togglePurpose()"
+            @click="togglePurpose('for sale')"
             :class="{
               'bg-yellow-500 border-yellow-500': filters.purpose == 'for sale'
             }"
@@ -14,7 +14,7 @@
           </button>
           <button
             class="border-2 px-5 p-1 text-black"
-            @click="togglePurpose()"
+            @click="togglePurpose('for rent')"
             :class="{
               'bg-yellow-500 border-yellow-500': filters.purpose == 'for rent'
             }"
@@ -556,7 +556,7 @@ import _ from "lodash";
 import utils from "@/helpers/utils";
 import BaseMap from "@/components/BaseMap.vue";
 import { Carousel, Slide } from "vue-carousel";
-let DefaultdataJson = require('../config/default.json');
+let DefaultdataJson = require("../config/default.json");
 
 export default {
   name: "properties",
@@ -632,9 +632,10 @@ export default {
       this.$emit("setCheckboxVal", this.checkbox);
       this.activeMap = !this.activeMap;
     },
-    togglePurpose() {
-      this.filters.purpose =
-        this.filters.purpose == "for rent" ? "for sale" : "for rent";
+    togglePurpose(name) {
+      this.filters.purpose = name;
+        // this.filters.purpose == "for rent" ? "for rent" : "for sale";
+
       this.getEstates();
     },
     togglesOrderByPrice() {
@@ -699,14 +700,16 @@ export default {
       &garden=${this.filters.garden ? 1 : 0}
       &sort_by_price=${sortByPrice}
       &sort_by_date=${sortByDate}
+      &displaystatus=[2,3,4]
       &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
       let _self_ = this;
       axios
         .get(
           //  `https://vitexportapi.azurewebsites.net/api/estates?${filtersQueryString}`
-          DefaultdataJson.VitExportApi.Url+`estates?${filtersQueryString}`
+          DefaultdataJson.VitExportApi.Url + `estates?${filtersQueryString}`
         )
         .then(response => {
+          // debugger
           _self_.estates = response.data.data;
           _self_.pagination = {
             current_page: response.data.current_page,
