@@ -64,7 +64,7 @@
         <!-- </h2> -->
         <section v-if="estate.Description!= null || estate.Description!= undefined ">
           <div v-if="estate.Description.length > 110" >
-            <p  class="des-cole"> {{ estate.Description.substr(0, 90) }} ...</p>
+            <p  class="des-cole"> {{ estate.Description.substr(0, 80) }} ...</p>
           </div>
           <div class="des-cole" v-else>{{ estate.Description }}</div>
         </section>
