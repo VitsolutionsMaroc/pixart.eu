@@ -34,9 +34,12 @@ export default {
 };
 </script>
 <style scoped>
+.peb{
+  position: absolute;
+  bottom: 39px;
+  margin: 10px 0;
+}
 .peb img {
   width: 66px;
-  margin-top: 20px;
-
 }
 </style>
