@@ -34,9 +34,8 @@ export default {
 };
 </script>
 <style scoped>
-.peb img {
-  width: 66px;
-  margin-top: 20px;
 
+.peb img {
+  width: 66px!important;
 }
 </style>

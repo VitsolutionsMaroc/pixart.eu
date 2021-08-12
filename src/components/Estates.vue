@@ -68,8 +68,10 @@
           </div>
           <div class="des-cole" v-else>{{ estate.Description }}</div>
         </section>
-       <Peb v-bind:EnergyClassName="estate.EnergyClass" />
-
+       
+       <div class="peb_slide">
+          <Peb v-bind:EnergyClassName="estate.EnergyClass" />
+       </div>
         <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
         <div
           class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0 ms:mt-20"
@@ -200,6 +202,14 @@ h2 {
   background-size: cover;
   background-position: center;
 }*/
+.peb_slide{
+  position: absolute;
+  bottom: 33px;
+  margin: 10px 0;
+}
+.peb_slide img {
+  width: 66px!important;
+}
 .des-cole{
 font-size:0.8rem!important;
 }

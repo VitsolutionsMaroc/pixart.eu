@@ -63,7 +63,7 @@
                  <p style="font-size:0.8rem"> {{ estate.Description.substr(0, 90) }} ...</p>
             </div>
            <div v-else>{{ estate.Description }}</div>
-          <section style="width: 20%; margin-bottom:20px">
+          <section class="peb_slide">
              <Peb v-bind:EnergyClassName="estate.EnergyClass" />
           </section>
           <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
@@ -267,6 +267,14 @@ h2 {
   background-size: cover;
   background-position: center;
 }*/
+.peb_slide{
+  position: absolute;
+  bottom: 20px;
+  margin: 10px 0;
+}
+.peb_slide img {
+  width: 66px!important;
+}
 .multiselect__option--highlight {
   background: #df9523 !important;
 }
