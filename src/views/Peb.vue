@@ -22,6 +22,9 @@
       <div v-if="EnergyClassName == 'G'">
         <img src="../assets/img/peb-g.png" alt="" />
       </div>
+       <div v-if="EnergyClassName == 'D'">
+        <img src="../assets/img/peb-d.png" alt="" />
+      </div>
     </div>
   </section>
 </template>
