@@ -97,6 +97,9 @@
               estate.purpose
             }}</span>
           </div>
+          <div class="ref">
+            <span>Reference : {{estate.EstateID}}</span>
+          </div>
 
           <span class="my-2 block text-black font-bold text-xl"
             >{{ estate.Name }}
