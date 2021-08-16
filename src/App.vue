@@ -42,11 +42,11 @@
           {{ $t("Header.evaluation") }}
           </router-link>
         </li>
-         <li class="mb-6 md:mb-0">
+         <!-- <li class="mb-6 md:mb-0">
           <router-link to="/golden" class=" other lg:mx-4 mx-2"> 
           {{ $t("Header.GoldenVisa") }}
           </router-link>
-        </li>
+        </li> -->
         <li class="mb-6 md:mb-0">
           <router-link to="/contact" class=" other lg:mx-4 mx-2 font-thin"> 
             {{ $t("Header.Contact") }}
@@ -58,10 +58,13 @@
           </router-link>
         </li>
         <li class="mb-2 md:mb-0">
-          <select name="language" id="language" v-model="languageId" @change="switchLanguage()">
-            <option value="en"> English </option>
-            <option value="fr"> Français </option>
-          </select>
+         <div>
+            <select name="language" id="language" v-model="languageId" @change="switchLanguage()">
+              <option class="english" value="en"> En  </option>
+              <option value="fr"> Fr </option>
+            </select>
+         </div>
+         
         </li>
       </ul>
     </div>
@@ -142,4 +145,33 @@ export default {
 .navList {
   line-height: 61px;
 }
+#language{
+  
+  outline: none;
+  border:none;
+  background:#111827;
+  color:white;
+}
+#language:focus{
+  border: none;
+   list-style: none;
+   outline: none;
+}
+#language option{
+  width:50px;
+  padding:20px
+}
+  select,
+option:focus{
+   padding:20px 30px!important;
+   border: none!important;;
+   list-style: none!important;;
+   outline: none!important;;
+
+ 
+
+}
+
+
+
 </style>
