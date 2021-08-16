@@ -217,11 +217,7 @@
 
     <!-- about section -->
     <Expert />
-    <<<<<<< HEAD
-    <footerComp />
-    =======
     <FooterCompt />
-    >>>>>>> master
   </div>
 </template>
 
