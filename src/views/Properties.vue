@@ -273,7 +273,7 @@
                   <span
                     ><label class="m-2"> Parking</label>
                     <input
-                      @click="checkParking"
+                    
                       type="checkbox"
                       value="1"
                       v-model="filters.parking"
@@ -623,6 +623,7 @@ export default {
       );
     },
     zipCodes() {
+      debugger
       return _.flatten(this.filters.countries.map(country => country.zipCodes));
     }
   },
@@ -736,6 +737,7 @@ export default {
       const response = await axios.get(
         DefaultdataJson.VitExportApi.Url + `countries`
       );
+      debugger
       this.countries = response.data.data;
     },
     applyExtraFilters() {

@@ -58,12 +58,29 @@
           </router-link>
         </li>
         <li class="mb-2 md:mb-0">
-         <div>
+         <!-- <div>
             <select name="language" id="language" v-model="languageId" @change="switchLanguage()">
               <option class="english" value="en"> En  </option>
               <option value="fr"> Fr </option>
             </select>
-         </div>
+         </div> -->
+         <div class="text-gray-100">
+
+            <div class="dropdown inline-block relative">
+              <button class=" py-2 px-4 rounded inline-flex items-center" >
+                   <li v-if="languageId=='en'"><img src="./assets/img/united-kingdom.png"  style="width:20px;margin-right:1rem" alt=""></li>
+                    <li v-if="languageId=='fr'"><img src="./assets/img/france.png" style="width:20px;margin-right:1rem" alt=""></li>
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+              </button>
+                 <ul class="dropdown-menu absolute hidden text-gray-700  pt-1" style="background-color:#111827">
+                    <li class=""><a class=" px-4 py-2  block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('en')"><img src="./assets/img/united-kingdom.png"  style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">En</i></a></li>
+                    <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('fr')"><img src="./assets/img/france.png" style="width:20px;margin-right:1rem" alt="">
+                 <i class="hover:text-gray-100"> Fr</i></a></li>
+              </ul>
+            </div>
+
+          </div>
+
          
         </li>
       </ul>
@@ -77,7 +94,7 @@ export default {
   name: "App",
   data: function() {
     return{
-      languageId:null
+      languageId:"en"
     }
   },
   props: {
@@ -87,7 +104,8 @@ export default {
     this.languageId="en";
   },
   methods: {
-      switchLanguage() {
+      switchLanguage(code) {
+        this.languageId=code;
       let locale = this.languageId.toLowerCase();
       if (this.$i18n.locale !== locale) {
         this.$i18n.locale = locale;
@@ -171,7 +189,16 @@ option:focus{
  
 
 }
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu li a:hover{
+  background-color:#df9523;
+   color:white!important
+}
 
-
-
+.dropdown button:focus {
+    outline: none;
+   
+}
 </style>
