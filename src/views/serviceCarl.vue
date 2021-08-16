@@ -29,8 +29,8 @@
                            <span v-if="readMore1==true">
                          a regularization permit or a building permit to maximize the sale, to negotiate with the
                           municipal, town planning or regional authorities in order to constitute a complete file
-                          for the various stakeholders, to ‘cut up’ the property, by selling it to the cut up in order
-                          to extract the best price for the selling owner, to negotiate hard with the buyer and seller,
+                          for the various stakeholders, to ‘cut up’ the property, by unit selling in order to extract the best price
+                           for the selling owner, to negotiate hard with the buyer and seller,
                             to analyze the existing plans and
                           documents… rolling out its service so that the sale is carried out in the most optimal way possible.
                            </span><br>
@@ -232,26 +232,28 @@ this.readMore3=!this.readMore3;
         $(".box-slide").owlCarousel({
      loop: false,
         stagePadding: 50,
-        nav: true,
+        nav: false,
         navText: [
           "<i class='fa fa-chevron-left'></i>",
           "<i class='fa fa-chevron-right'></i>"
         ],
         items: 3,
-        center: false,
+        
         dots: false,
         margin: 60,
         responsiveClass: true,
         responsive: {
           0: {
             items: 1,
-            nav: false
+            nav: false,
+            dots:true,
+            stagePadding: 0,
           },
           600: {
-            items: 3,
+            items: 1,
             nav: true
           },
-          500: {
+          1000: {
             items: 3,
             nav: true
           }
@@ -329,6 +331,8 @@ this.readMore3=!this.readMore3;
 @media only screen and (min-width: 261px) and (max-width: 900px) {
 
 .testimonial .owl-carousel .owl-item .item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none;background-color:white;padding: 20px;height:400px;padding-bottom: 30px;font-size: 0.9rem;overflow-x:auto}
-
+.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
+  display:none;
+}
 }
 </style>

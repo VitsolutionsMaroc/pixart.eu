@@ -149,7 +149,7 @@
           OUR SERVICES FOR YOU
         </h2>
         <p>
-          Highlight the best of your properties by using the list category
+          Highlight the best of Our properties by using the list category
           shortcake. You can list categories, types, cities, areas and states of
           your choice.
         </p>
@@ -214,10 +214,14 @@
         />
       </div>
     </div>
-
+     
     <!-- about section -->
     <Expert />
+<<<<<<< HEAD
     <footerComp />
+=======
+    <FooterCompt />
+>>>>>>> master
   </div>
 </template>
 
@@ -226,7 +230,7 @@ import EstatesSlider from "@/components/EstatesSlider.vue";
 import EstatePagination from "@/components/EstatePagination.vue";
 import { Carousel, Slide } from "vue-carousel";
 import utils from "@/helpers/utils";
-import footerComp from "@/components/Footer.vue";
+import FooterCompt from "@/components/Footer.vue";
 import  Expert from "@/components/Expert.vue";
 import ServiceOwl from "@/views/serviceCarl.vue";
 import axios from "axios";
@@ -240,7 +244,7 @@ export default {
     Multiselect,
     ServiceOwl,
     EstatePagination,
-    footerComp,
+    FooterCompt,
     Expert,
     EstatesSlider,
     Carousel,

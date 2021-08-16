@@ -30,10 +30,10 @@
         />
       </div>
 
-      <div class="p-3 relative" style="height:200px">
+      <div class="p-3 relative" style="height:250px">
         <div class="mb-4 truncate">
           <span v-if="estate.Price" class="text-black font-bold text-lg"
-            >{{ estate.Price }} {{ estate.Currency }}</span
+            >{{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}</span
           >
           <button
             @click="displayDetails(estate)"
@@ -48,26 +48,33 @@
        
         </div> -->
           <div>
-            <span style="font-size:0.8rem">Reference ID : {{ estate.EstateID }}</span>
+            <span style="font-size:0.77rem"> {{ estate.City }}  - {{ estate.countryName }}</span>
           </div>
-        <h2
+        <!-- <h2
           class="text-black text-sm lg:text-base font-bold block"
           style="font-size:0.7rem"
         >
           <div v-if="estate.Name.length > 40">
             {{ estate.Name.substr(0, 30) }} ...
           </div>
-          <div v-else>{{ estate.Name }}</div>
+          <div v-else>{{ estate.Name }}</div> -->
 
           <!-- {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
           {{ estate.categoryName.slice(1) + estate.categoryName.slice(1) }} -->
-        </h2>
-        
-        <Peb v-bind:EnergyClassName="estate.EnergyClass" />
-
+        <!-- </h2> -->
+        <section v-if="estate.Description!= null || estate.Description!= undefined ">
+          <div v-if="estate.Description.length > 110" >
+            <p  class="des-cole"> {{ estate.Description.substr(0, 70) }} ...</p>
+          </div>
+          <div class="des-cole" v-else>{{ estate.Description }}</div>
+        </section>
+       
+       <div class="peb_slide">
+          <Peb v-bind:EnergyClassName="estate.EnergyClass" />
+       </div>
         <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
         <div
-          class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0"
+          class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0 ms:mt-20"
         >
           <span v-if="estate.Rooms" class="">
             <i class="fas fa-bed  text-yellow-500 mr-2"></i>
@@ -195,6 +202,17 @@ h2 {
   background-size: cover;
   background-position: center;
 }*/
+.peb_slide{
+  position: absolute;
+  bottom: 33px;
+  margin: 10px 0;
+}
+.peb_slide img {
+  width: 66px!important;
+}
+.des-cole{
+font-size:0.8rem!important;
+}
 .multiselect__option--highlight {
   background: #df9523 !important;
 }

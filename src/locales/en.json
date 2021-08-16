@@ -278,7 +278,9 @@
   "Contact":{
     "ContactUs":"Contact Us"
   },
-  "Apropos":{
-    "OUR_TEAM":"OUR TEAM"
-  }
+  "ComponantAssurance":{
+    "ComponatAssuranceTitle":"We assist all your needs by providing insurances for",
+     "ADDITIONALSERVICES":"ADDITIONAL SERVICES",
+     "ADDITIONAL":"• WARRANTY SECURITY <br />• PUBLIC TENDER SECURITY <br />• LEGAL PROTECTION <br />• CIVIL LIABILITY OF DIVING SCHOOLS <br />• TRANSPORT <br />"
+    }
 }

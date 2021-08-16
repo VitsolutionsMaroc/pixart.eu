@@ -57,7 +57,7 @@
 </template>
 <script>
 export default {
-  name: "footerComp",
+  name: "FooterCompt",
 
 };
 </script>
@@ -73,7 +73,7 @@ export default {
   padding: 0 20px;
 }
 .logo{
-    margin:0 auto;
+   
      width:20%;
   }
 #menue{
@@ -82,8 +82,7 @@ export default {
   display: flex;
   flex-direction: column;
  box-sizing: border-box;
-  justify-content: center;
-    align-items: center;
+ 
 border: none;
 padding: 0; 
 }
@@ -92,7 +91,7 @@ padding: 0;
 }
 .form_footer{
   width:66%;
-  margin:0 auto;
+
 }
 .policy h6{
   font-size:0.8rem;
@@ -103,10 +102,21 @@ padding: 0;
   width:100%;
 }
 @media only screen and (max-width: 767px){
-  
-   .form_footer{
-  width:66%;
+  .logo{
+    width:100%;
+  }
+  .logo img{
+    width:90px
+  }
+#menue{
+  width:100%;
+}
+.form_footer{
+  width:100%;
   margin:0;
+}
+.form_footer input[type="text"]{
+      width: 100%;
 }
 }
 </style>

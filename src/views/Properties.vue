@@ -5,7 +5,7 @@
         <div class="RentBuy flex justify-start mb-2">
           <button
             class="border-2 px-7 p-1 text-black"
-            @click="togglePurpose()"
+            @click="togglePurpose('for sale')"
             :class="{
               'bg-yellow-500 border-yellow-500': filters.purpose == 'for sale'
             }"
@@ -14,7 +14,7 @@
           </button>
           <button
             class="border-2 px-5 p-1 text-black"
-            @click="togglePurpose()"
+            @click="togglePurpose('for rent')"
             :class="{
               'bg-yellow-500 border-yellow-500': filters.purpose == 'for rent'
             }"
@@ -273,7 +273,7 @@
                   <span
                     ><label class="m-2"> Parking</label>
                     <input
-                      @click="checkParking"
+                    
                       type="checkbox"
                       value="1"
                       v-model="filters.parking"
@@ -623,6 +623,7 @@ export default {
       );
     },
     zipCodes() {
+      debugger
       return _.flatten(this.filters.countries.map(country => country.zipCodes));
     }
   },
@@ -632,9 +633,10 @@ export default {
       this.$emit("setCheckboxVal", this.checkbox);
       this.activeMap = !this.activeMap;
     },
-    togglePurpose() {
-      this.filters.purpose =
-        this.filters.purpose == "for rent" ? "for sale" : "for rent";
+    togglePurpose(name) {
+      this.filters.purpose = name;
+        // this.filters.purpose == "for rent" ? "for rent" : "for sale";
+
       this.getEstates();
     },
     togglesOrderByPrice() {
@@ -708,6 +710,7 @@ export default {
           DefaultdataJson.VitExportApi.Url + `estates?${filtersQueryString}`
         )
         .then(response => {
+          // debugger
           _self_.estates = response.data.data;
           _self_.pagination = {
             current_page: response.data.current_page,
@@ -734,6 +737,7 @@ export default {
       const response = await axios.get(
         DefaultdataJson.VitExportApi.Url + `countries`
       );
+      debugger
       this.countries = response.data.data;
     },
     applyExtraFilters() {

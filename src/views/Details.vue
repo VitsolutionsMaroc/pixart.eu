@@ -91,20 +91,23 @@
         <div class="section-right p-4">
           <div class="font-bold text-xl py-2 mb-8">
             <span v-if="estate.Price" class="">
-              Price : {{ estate.Price }} {{ estate.Currency }}
+              Price : {{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}
             </span>
             <span class="float-right capitalize" style="color:#39D47A">{{
               estate.purpose
             }}</span>
           </div>
+          <div class="ref">
+            <span>Reference : {{estate.EstateID}}</span>
+          </div>
 
           <span class="my-2 block text-black font-bold text-xl"
             >{{ estate.Name }}
           </span>
-          <div>
-            <span style="font-size:0.8rem">Reference ID : {{ estate.EstateID }}</span>
-          </div>
-               <Peb v-bind:EnergyClassName="estate.EnergyClass" />
+              <div class="peb_details">
+                 <Peb v-bind:EnergyClassName="estate.EnergyClass" />
+              </div>
+
           <span class="my-2 block"> {{ estate.CategoryName }} </span>
           <span class="block my-2 text-gray-400">{{ estate.Address1 }}</span>
 
@@ -232,7 +235,9 @@
           </div>
           <div v-else>{{ relatedEstate.Name }}</div>
             </h2>
-            <Peb v-bind:EnergyClassName="relatedEstate.EnergyClass" />
+           <div>
+              <Peb v-bind:EnergyClassName="relatedEstate.EnergyClass" />
+           </div>
             <span class="block text-black text-sm md:text-base my-2">
               <span v-if="relatedEstate.Rooms" class="lg:mr-2 xl:mr-2 md:mr-10">
                 <i class="fas fa-bed  text-yellow-500"></i>
@@ -502,6 +507,13 @@ export default {
 .curser_print:hover{
 cursor: pointer;
 }
+
+.peb_details{
+  position:inherit;
+  width: 66px!important;
+
+}
+
 /*.VueCarousel-navigation-prev {
   transform: scaleY(1) !important;
   background-color: #f59e0b !important;
