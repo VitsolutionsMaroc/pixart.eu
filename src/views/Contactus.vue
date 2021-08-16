@@ -9,7 +9,7 @@
           Thank you for subscribing. We will contact you as soon as possible.
         </p>
       </div>
-      <h3 class="text-center font-semibold text-3xl mt-4">Contact Us</h3>
+      <h3 class="text-center font-semibold text-3xl mt-4">{{ $t("Contact.ContactUs") }}</h3>
       <div class="mt-2 mx-auto w-12 h-2 bg-yellow-600"></div>
       <form @submit.prevent="addContact()" class="mt-12">
         <div class="grid grid-cols-2 gap-6">
@@ -55,7 +55,7 @@
               <input
                 required
                 type="number"
-                placeholder="Your phone number address..."
+                placeholder="Your phone number ..."
                 class="w-full pr-10 pl-4 py-3 text-gray-700"
                 v-model="contact.PrivateMobile"
               />

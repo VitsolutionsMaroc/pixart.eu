@@ -57,7 +57,7 @@
 </template>
 <script>
 export default {
-  name: "footer",
+  name: "FooterCompt",
 
 };
 </script>
