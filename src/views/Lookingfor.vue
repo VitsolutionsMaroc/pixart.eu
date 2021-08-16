@@ -99,9 +99,11 @@
                   class="check h-4 w-4 text-gray-700 border  mr-2"
                   v-model="checked"
                 />
-                <label class=" checkboxLabel text-gray-600 font-semibold" :for="category.id">{{
-                  category.name
-                }}</label>
+                <label
+                  class=" checkboxLabel text-gray-600 font-semibold"
+                  :for="category.id"
+                  >{{ category.name }}</label
+                >
               </div>
             </div>
           </div>
@@ -195,23 +197,23 @@ import axios from "axios";
 import Multiselect from "vue-multiselect";
 import _ from "lodash";
 import JQuery from "jquery";
-let DefaultdataJson = require('../config/default.json');
+let DefaultdataJson = require("../config/default.json");
 
 export default {
   name: "Evaluation",
   components: {
     Multiselect,
     Footer,
-    JQuery,
+    JQuery
   },
   data() {
     return {
       filters: {
         keyword: "",
-        countries: [],
+        countries: []
       },
       styleOption: {
-        color: "black",
+        color: "black"
       },
       showMsg: false,
       isLoaded: false,
@@ -239,16 +241,16 @@ export default {
             CategoryId: "",
             PriceMax: "",
             PriceMin: "",
-            ZipCodes: [],
-          },
-        ],
+            ZipCodes: []
+          }
+        ]
       },
       selected: "",
       options: [],
       transactions: [],
       categories: [],
       countries: [],
-      checked: "",
+      checked: ""
     };
   },
 
@@ -267,7 +269,7 @@ export default {
       console.log(event.target);
       let authCredentials = {
         ClientId: 4668,
-        OfficeId: 6644,
+        OfficeId: 6644
       };
 
       // let apiToken =
@@ -275,14 +277,18 @@ export default {
 
       const config = {
         headers: {
-          Authorization: `Bearer `+ DefaultdataJson.Whise.AuthToken,
-          "Content-Type": "application/json",
-        },
+          Authorization: `Bearer ` + DefaultdataJson.Whise.AuthToken,
+          "Content-Type": "application/json"
+        }
       };
 
       axios
-        .post(DefaultdataJson.Whise.Url + "admin/clients/token", authCredentials, config)
-        .then((response) => {
+        .post(
+          DefaultdataJson.Whise.Url + "admin/clients/token",
+          authCredentials,
+          config
+        )
+        .then(response => {
           let token = response.data.token;
           // const config = {
           //   headers: {
@@ -303,11 +309,13 @@ export default {
                 CategoryId: this.checked,
                 PriceMax: this.contact.PriceMax,
                 PriceMin: this.contact.PriceMin,
-                ZipCodes: [this.contact.ZipCodes],
-              },
+                ZipCodes: [this.contact.ZipCodes]
+              }
             ],
 
-            ContactTypeIds: this.getTransactionType(this.contact.TransactionType.id.id),
+            ContactTypeIds: this.getTransactionType(
+              this.contact.TransactionType.id.id
+            ),
             PrivateMobile: this.contact.PrivateMobile,
             OfficeIds: [6644],
             CountryId: this.selected.id,
@@ -316,14 +324,18 @@ export default {
             PrivateEmail: this.contact.PrivateEmail,
             AgreementEmail: true,
             AgreementSms: true,
-            AgreementMailingCampaign: true,
+            AgreementMailingCampaign: true
           };
 
           console.log(contact);
 
           axios
-            .post(DefaultdataJson.Whise.Url + "contacts/create", contact, config)
-            .then((response) => {
+            .post(
+              DefaultdataJson.Whise.Url + "contacts/create",
+              contact,
+              config
+            )
+            .then(response => {
               this.isLoaded = true;
               this.showMsg = true;
               (this.contact = {
@@ -348,24 +360,24 @@ export default {
                     CategoryId: "",
                     PriceMax: "",
                     PriceMin: "",
-                    ZipCodes: [],
-                  },
-                ],
+                    ZipCodes: []
+                  }
+                ]
               }),
                 console.log(this.contact.ContactTypeIds);
 
               // this.contact.TransactionType = "";
             })
-            .catch((error) => {
+            .catch(error => {
               console.log(error);
             });
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error);
         });
       window.scrollTo(0, 0);
-    },
-  },
+    }
+  }
 };
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
@@ -435,8 +447,10 @@ input:focus,
 .input.active,
 .input:focus:active {
   outline: 0;
-  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
-  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
+    0 0 5px rgba(223, 149, 35, 0.75);
+  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
+    0 0 5px rgba(223, 149, 35, 0.75);
 }
 input[type="radio"]:focus,
 .input[type="radio"]:active,
@@ -452,7 +466,9 @@ button:focus,
 .button.active,
 .button:focus:active {
   outline: 0;
-  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
-  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
+    0 0 5px rgba(223, 149, 35, 0.75);
+  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
+    0 0 5px rgba(223, 149, 35, 0.75);
 }
 </style>

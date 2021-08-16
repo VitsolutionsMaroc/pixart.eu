@@ -214,14 +214,14 @@
         />
       </div>
     </div>
-     
+
     <!-- about section -->
     <Expert />
-<<<<<<< HEAD
+    <<<<<<< HEAD
     <footerComp />
-=======
+    =======
     <FooterCompt />
->>>>>>> master
+    >>>>>>> master
   </div>
 </template>
 
@@ -231,7 +231,7 @@ import EstatePagination from "@/components/EstatePagination.vue";
 import { Carousel, Slide } from "vue-carousel";
 import utils from "@/helpers/utils";
 import FooterCompt from "@/components/Footer.vue";
-import  Expert from "@/components/Expert.vue";
+import Expert from "@/components/Expert.vue";
 import ServiceOwl from "@/views/serviceCarl.vue";
 import axios from "axios";
 import Multiselect from "vue-multiselect";

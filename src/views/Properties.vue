@@ -273,7 +273,6 @@
                   <span
                     ><label class="m-2"> Parking</label>
                     <input
-                    
                       type="checkbox"
                       value="1"
                       v-model="filters.parking"
@@ -623,7 +622,7 @@ export default {
       );
     },
     zipCodes() {
-      debugger
+      debugger;
       return _.flatten(this.filters.countries.map(country => country.zipCodes));
     }
   },
@@ -635,7 +634,7 @@ export default {
     },
     togglePurpose(name) {
       this.filters.purpose = name;
-        // this.filters.purpose == "for rent" ? "for rent" : "for sale";
+      // this.filters.purpose == "for rent" ? "for rent" : "for sale";
 
       this.getEstates();
     },
@@ -737,7 +736,7 @@ export default {
       const response = await axios.get(
         DefaultdataJson.VitExportApi.Url + `countries`
       );
-      debugger
+      debugger;
       this.countries = response.data.data;
     },
     applyExtraFilters() {
