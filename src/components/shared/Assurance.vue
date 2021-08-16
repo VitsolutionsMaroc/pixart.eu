@@ -10,11 +10,12 @@
          <h1>ADDITIONAL SERVICES</h1>
         <p>
           
-            • WARRANTY SECURITY <br>
+            <!-- • WARRANTY SECURITY <br>
             • PUBLIC TENDER SECURITY<br>
             • LEGAL PROTECTION<br>
             • CIVIL LIABILITY OF DIVING SCHOOLS<br>
-            • TRANSPORT<br>
+            • TRANSPORT<br> -->
+           <section v-html="$t('ComponantAssurance.ADDITIONAL')"></section>
 
         
 
