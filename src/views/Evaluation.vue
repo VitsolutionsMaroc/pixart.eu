@@ -5,7 +5,7 @@
         class="font-bold text-l md:text-xl text-center	m-0 mt-10 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex"
         v-if="showMsg"
       >
-        Thank you for subscribing. We will contact you as soon as possible.
+       {{ $t("Contact.SuccessMessage") }}
       </p>
     </div>
     <h2 class="font-bold text-xl md:text-4xl text-center p-10 py-10 md:py-16">
