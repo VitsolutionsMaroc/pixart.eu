@@ -3,9 +3,8 @@
     <div class="slide md:h-screen p-4 lg:px-16 relative">
       <div class="info_line text-white xl:text-6xl text-center mt-4">
         <p class="mt-20 mb-20" style="line-height: 1.6; padding:0 15px;">
-          PIXART is committed to delivering a high level <br />
-          of real estate & advisory services via our<br />
-          global experts' network
+         
+          <section v-html="$t('Home.TitleHome')"></section>
         </p>
       </div>
       <div class="filters md:px-40">
@@ -17,7 +16,7 @@
               'bg-yellow-500 border-yellow-500': filters.purpose == 'for sale'
             }"
           >
-            Buy
+            {{ $t("FilterHome.Buy") }}
           </button>
           <button
             class="border-2 px-5 p-1 text-black bg-white"
@@ -26,7 +25,7 @@
               'bg-yellow-500 border-yellow-500': filters.purpose == 'for rent'
             }"
           >
-            Rental
+          {{ $t("FilterHome.Rentale") }}
           </button>
         </div>
         <div class="grid xl:grid-cols-8  xl:grid-cols- xl:gap-4 gap-8">
@@ -60,7 +59,7 @@
           </div>
           <div class="xl:col-span-2">
             <multiselect
-              placeholder="Categories"
+              placeholder=" Categories"
               label="name"
               track-by="name"
               :multiple="true"
@@ -132,7 +131,7 @@
                 @click="search()"
                 class="text-center px-28 py-2  font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 "
               >
-                Search
+                {{ $t("FilterHome.Search") }}
               </button>
             </div>
           </div>
@@ -146,12 +145,10 @@
           class="text-2xl text-center text-black my-2 mt-15 mb-10"
           style="font-size:2rem;font-weight:bold"
         >
-          OUR SERVICES FOR YOU
+         {{ $t("Home.Services") }}
         </h2>
         <p>
-          Highlight the best of Our properties by using the list category
-          shortcake. You can list categories, types, cities, areas and states of
-          your choice.
+           {{ $t("Home.serviceDescription") }}
         </p>
       </div>
       <ServiceOwl />
@@ -161,7 +158,7 @@
     <!-- Services -->
     <!-- New Estates -->
     <div class="text-center p-8">
-      <h2 class="text-2xl  text-uppercase">THE NEWEST LISTING ON THE MARKET</h2>
+      <h2 class="text-2xl  text-uppercase">{{$t("Home.titleHiglighte")}}</h2>
     </div>
 
     <div class="mt-8 m-4 p-4 md:grid-cols-3 gap-4">
@@ -181,29 +178,9 @@
     <!-- about section -->
     <div class="grid lg:grid-cols-2 gap-10 px-16 py-8">
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6">Investment step by step</h1>
+        <h1 class="text-4xl md:text-2xl mb-6">{{$t("Home.investement")}}</h1>
         <p>
-          I.B.P.Greece follows a well-designed process for finding, developing
-          and utilizing investment property, based on our team’s many years of
-          experience in this field. The is how we “build” our investment
-          services:<br />
-          • After discussing in detail with the prospective investor, we
-          determine the parameters of the investment, such as the size of the
-          budget, the type of property, its use, the time horizon of the
-          investment (long or short term), the location and so on. This is how
-          we define our investment strategy to meet the expectations and
-          potential of each investor.<br />
-          • Our development department tracks down investment opportunities and
-          prepares a cost-benefit analysis for each of the potential
-          investments.<br />
-          • Our company’s executives monitor all legal, financial, architectural
-          and other parameters of the investment.<br />
-          • We prepare all the documents and follow all the necessary procedures
-          so that our clients can get the property they want in the allotted
-          time and the expected condition. Investors from around the world
-          choose I.B.P.Greece to trust their property investment plans.<br />
-          Our experienced executives work with a network of reliable partners to
-          guarantee the best possible outcome!
+           <section v-html="$t('Home.investmentText')"></section>
         </p>
       </div>
       <div>

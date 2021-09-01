@@ -54,7 +54,8 @@
         </li>
         <li class="mb-2 md:mb-0">
           <router-link to="/lookingfor" class="lookingFor bg-yellow-500 p-2 md:p-4 lg:mx-4 mx-2 ">
-          Looking for ?
+          
+          {{ $t("Header.Looking") }}
           </router-link>
         </li>
         <li class="mb-2 md:mb-0">
@@ -70,12 +71,16 @@
               <button class=" py-2 px-4 rounded inline-flex items-center" style="overflow:auto">
                    <li v-if="languageId=='en'"><img src="./assets/img/united-kingdom.png"  style="width:20px;margin-right:1rem" alt=""></li>
                     <li v-if="languageId=='fr'"><img src="./assets/img/france.png" style="width:20px;margin-right:1rem" alt=""></li>
+                    <li v-if="languageId=='rs'"><img src="./assets/img/russie.png"  style="width:20px;margin-right:1rem" alt=""></li>
+
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
               </button>
                  <ul class="dropdown-menu absolute hidden text-gray-700  pt-1" style="background-color:#111827" >
                     <li class=""><a class=" px-4 py-2  block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('en')"><img src="./assets/img/united-kingdom.png"  style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">En</i></a></li>
                     <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('fr')"><img src="./assets/img/france.png" style="width:20px;margin-right:1rem" alt="">
                  <i class="hover:text-gray-100"> Fr</i></a></li>
+                <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('rs')"><img src="./assets/img/russie.png" style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">Rs</i></a></li>
+
               </ul>
             </div>
 

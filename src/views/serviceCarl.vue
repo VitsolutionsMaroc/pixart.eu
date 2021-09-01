@@ -6,143 +6,106 @@
               <div>
                   <div class="item">
                       <img class="m-auto mb-4" src="../assets/img/icon10.png" />
-                      <h4 class="text-xl font-bold"> REALTY ASSESSMENT-PROPERTY CONSULTANCY</h4>
+                      <h4 class="text-xl font-bold">{{$t("Home.ASSESSMENT")}}</h4>
                       <p class="m-auto mt-8">
-                      Pixart Real Estate offers you an evaluation service based on the reality of
-                        the local market.  This service is free, and without obligation to sell, carried
-                        out within 48 hours by a senior real estate expert. A detailed report will be drawn
-                        up by one of our experts allowing you to safely take your real estate decisions for
-                        a successful sale. The ‘fair’ price for your property is undoubtedly the most essential criterion for
-                      a quick and realistic sale.
+                     {{$t("Home.assessmentText")}}
                       </p>
                   </div>
               </div>
               <div>
                      <div class="item" style=" overflow:auto;">
                         <img class="m-auto mb-4" src="../assets/img/icon5.png" />
-                        <h4 class="text-xl font-bold"> REALTY ANALYSIS</h4>
+                        <h4 class="text-xl font-bold">  {{ $t("Home.REALTYANALYSIS") }}</h4>
                         <p class="m-auto mt-8">
-                          Pixart Real Estate analyzes your real estate portfolio, with reference to
-                          its proven expertise, and in-depth knowledge of the market in which your real
-                          estate is located. Depending on the objective pursued, we advise you to renovate
-                          the property somewhat to gain real added value during the sale, to introduce 
+                           <section v-html="$t('Home.TextRealityAnalise')"></section>
                            <span v-if="readMore1==true">
-                         a regularization permit or a building permit to maximize the sale, to negotiate with the
-                          municipal, town planning or regional authorities in order to constitute a complete file
-                          for the various stakeholders, to ‘cut up’ the property, by unit selling in order to extract the best price
-                           for the selling owner, to negotiate hard with the buyer and seller,
-                            to analyze the existing plans and
-                          documents… rolling out its service so that the sale is carried out in the most optimal way possible.
+                           <section v-html="$t('Home.TextRealityAnalise2')"></section>
                            </span><br>
-                           <span v-if="readMore1==false" @click="readMoreEvent(1)" style="color:orange;curser:pointer">Read More</span>
-                           <span  v-if="readMore1==true" @click="readMoreEvent(1)" style="color:orange;curser:pointer">Read Less</span>
+                           <span v-if="readMore1==false" @click="readMoreEvent(1)" style="color:orange;curser:pointer">{{ $t("Home.ReadMore") }}</span>
+                           <span  v-if="readMore1==true" @click="readMoreEvent(1)" style="color:orange;curser:pointer">{{ $t("Home.ReadLess") }}</span>
                         </p>
                     </div>
               </div>
               <div>
                 <div class="item">
                     <img class="m-auto mb-4" src="../assets/img/icon8.png" />
-                    <h4 class="text-xl font-bold"> RELOCATION</h4>
+                    <h4 class="text-xl font-bold">{{ $t("Home.RELOCATION") }} </h4>
                     <p class="m-auto mt-8">
-                      A relocation service has also emerged, with full
-                      support for expatriates through the relocation service in Belgium, but also in Greece, Luxembourg and Dubai !
 
+                     {{ $t("Home.TextRELOCATION") }}
                     </p>
-                    <div>
+                    <div class="mt-5">
                           <router-link
                     to="/lookingfor"
                     class="lookingFor  p-2 md:p-4 lg:mx-4 mx-2 text-yellow-500"
-                    >More Info</router-link>
+                    >{{$t("Home.MoreInfo")}}</router-link>
                         </div>
                  </div>
               </div>
               <div>
                 <div class="item">
                       <img class="m-auto mb-4" src="../assets/img/icon4.png" />
-                      <h4 class="text-xl font-bold"> REAL ESTATE STRATEGY</h4>
+                      <h4 class="text-xl font-bold"> {{ $t("Home.STRATEGY") }}</h4>
                       <p class="m-auto mt-8">
-                      Pixart Real Estate has become one of the references in real estate strategy, in building real estate
-                      portfolios, in Belgium, Grand Duchy of Luxembourg, and more recently in Dubai !  Pixart Real Estate
-                      meets the targeted expectations of its clients, by advising and supporting them throughout the process
-                      of selling residential buildings, offices, hotels, plots, etc….or investment buildings generating a
-                        return on investment and profitability guaranteed by the rental department of Pixart Real Estate.
+                      {{$t("Home.STRATEGYText")}}
                       </p>
                       <div>
                             <router-link
                               to="/strategy"
                               class="strategy  p-2 md:p-4 lg:mx-4 mx-2 text-yellow-500"
-                              >Read More</router-link>
+                              >{{ $t("Home.ReadMore") }}</router-link>
                           </div>
                 </div>
               </div>
               <div>
                 <div class="item">
                     <img class="m-auto mb-4" src="../assets/img/icon6.png" />
-                    <h4 class="text-xl font-bold"> OFF MARKET PROPERTY SALES</h4>
+                    <h4 class="text-xl font-bold">{{ $t("Home.PROPERTYSALES") }}</h4>
                     <p class="m-auto mt-8">
-                      Every year, we promote several sales of properties in ‘confidential’ mode, i.e without any
-                      publication on social networks, or real estate platforms. We contact our portfolio of buyers
-                      and investors, and present them in complete confidentiality, and in priority, exceptional properties,
-                      rare, with high added value, or extremely coveted by their top location and urban profile.
+                      {{ $t("Home.PROPERTYSALESText") }}
                     </p>
                 </div>
               </div>
               <div>
                 <div class="item">
                     <img class="m-auto mb-4" src="../assets/img/icon7.png" />
-                    <h4 class="text-xl font-bold">RENOVATION WORKS</h4>
+                    <h4 class="text-xl font-bold">{{ $t("Home.RENOVATION") }}</h4>
                     <p class="m-auto mt-8">
-                    We support buyers and investors in all their efforts to renovate, bring up to date
-                      or embellish property acquired through us.  We challenge the offers of several contractors
-                      and partners in order to guarantee our customers the best quality/price ratio.
-                        We can take charge and supervise, as owner, all the work to be undertaken regarding
-                        the acquired properties. Our teams and partners are made up of contractors,
-                          skilled workers, architects, interior designers, stability
-                    engineers, civil engineers in construction, carpenters, electricians, painters, etc.
+                   {{ $t("Home.RENOVATIOnText") }}
                     </p>
                  </div>
               </div>
               <div>
                 <div class="item">
                     <img class="m-auto mb-4" src="../assets/img/icon9.png" />
-                    <h4 class="text-xl font-bold"> CORPORATE REAL ESTATE (Offices – Retail – Warehouses – Workshops – Hotels - Logistics)</h4>
+                    <h4 class="text-xl font-bold">{{ $t("Home.CORPORATE") }}</h4>
                     <p class="m-auto mt-8">
-                    We are empowered in the search for ‘corporate’ or ‘industrial’ properties, and in the
-                    management of your real estate portfolio. We are looking for real estate sites to rehabilitate,
-                    building lands for our customers and we actively participate in
-                      the development of ‘new’ real estate projects (profitability study & feasibility study)
+                   {{ $t("Home.CorporateText") }}
 
                     </p>
                     <div>
                           <router-link
                     to="/corporate"
                     class="Corporate  p-2 md:p-4 lg:mx-4 mx-2 text-yellow-500"
-                    >Read More</router-link>
+                    >{{ $t("Home.ReadMore") }}</router-link>
                     </div>
                  </div>
               </div>
               <div>
                   <div class="item">
                     <img class="m-auto mb-4" src="../assets/img/icon2.png" />
-                    <h4 class="text-xl font-bold"> RESIDENTIAL REAL ESTATE</h4>
+                    <h4 class="text-xl font-bold"> {{ $t("Home.RESIDENTIAL") }}</h4>
                     <p class="m-auto mt-8">
-                    If you are looking for a safe, defensive, and sustainable investment, Pixart Real Estate
-                    assists you in all steps of the sale process or acquisition process of the desired property.
-                    Residential real estate is more than ever, in our time, in post-Covid period, a safe haven for many
-                    investors or ‘buyers beware’. We negotiate the best price for you and assure you an upward residential yield.
-                    The growth of the residential real estate market will never tend to decline over the coming years.
-                    
+                    {{ $t("Home.ResidentialText") }}
                     </p>
                 </div>
               </div>
               <div>
                  <div class="item">
                       <img class="m-auto mb-4" src="../assets/img/icon3.png" />
-                      <h4 class="text-xl font-bold"> NEW PROJECTS</h4>
+                      <h4 class="text-xl font-bold">{{ $t("Home.NEWPROJECTS") }}</h4>
                       <p class="m-auto mt-8">
-                        Pixart Real Estate introduces a ‘legitimate’ and dynamic approach to the promotion
-                        and marketing of new properties, real estate projects and challenges. We offer a varied offer, corresponding
-                        to all budgets, justified by well-crafted and transparent sales files.
+                         {{ $t("Home.ProjectText") }}
                       </p>
                   </div>
               </div>
@@ -153,27 +116,19 @@
                               class="golden text-yellow-500"
                               > <img class="m-auto mb-4" src="../assets/img/icon11.png" /></router-link>
                      
-                      <h4 class="text-xl font-bold"> GOLDEN VISA</h4>
-                      <h6>Benefits of obtaining a Greek Golden Visa</h6>
+                      <h4 class="text-xl font-bold"> {{$t("Home.GOLDEn")}}</h4>
+                      <h6>{{$t("Home.GOLDEnt")}}</h6>
                       <p class="m-auto mt-8" style="text-align:justify;">
-                       • One of the lowest thresholds for real estate investment in Europe<br>
-                        • A wide range of persons acquiring the right to a residence permit along with the owner of the object<br>
-                        • Possibility of purchasing several residential or commercial real estate<br>
-                        • Possibility of commercial use and leasing of real estate upon acquisition<br>
+                        <section v-html="$t('Home.GoldenText')"></section>
                         <span v-if="readMore2 == true">
-                        • The right to reside in Greece all year round<br>
-                        • The right to unimpeded access to countries - members of the Schengen area<br>
-                        • Unlimited extension of the residence permit, subject to confirmation of the ownership of the property<br>
-                        • No obligation to reside in Greece in order to extend the residence permit<br>
-                        • After 7 years from the date of obtaining a residence permit, subject to a number of additional conditions,<br>
-                        the investor acquires the right to apply for the citizenship of the Hellenic Republic<br>
-                        • Possibility of establishing a joint stock company and doing business<br>
+                          <section v-html="$t('Home.GoldenText2')"></section>
+                       
                         </span>
                          
                       </p>
                      <br>
-                           <span v-if="readMore2==false" @click="readMoreEvent(2)" style="color:orange;curser:pointer">Read More</span>
-                      <span  v-if="readMore2==true" @click="readMoreEvent(2)" style="color:brown;curser:pointer">Read Less</span>
+                           <span v-if="readMore2==false" @click="readMoreEvent(2)" style="color:orange;curser:pointer">{{ $t("Home.ReadMore") }}</span>
+                      <span  v-if="readMore2==true" @click="readMoreEvent(2)" style="color:brown;curser:pointer">{{ $t("Home.ReadLess") }}</span>
                   </div>
               </div>
               <div>
@@ -183,21 +138,19 @@
                               class="assurance text-yellow-500"
                               ><img class="m-auto mb-4" src="../assets/img/icon12.png" /></router-link>
                     
-                    <h4 class="text-xl font-bold"> We assist all your needs by providing insurances for</h4>
+                    <h4 class="text-xl font-bold"> {{$t("Home.insurances")}}</h4>
                     <p class="m-auto mt-8" style="text-align:justify">
-                       • Legal Protection is provided to apartment, shop and plot owners to resolve disputes, including with their tenants,arising from rent adjustment, non-payment of rent, damage to the apartment or shop, eviction lawsuit.<br>
-                        Protection of your home against all dangers.<br>
-                        • Civil Liability Insurance.<br>
+                       <section v-html="$t('Home.insurancesText')"></section>
+                      
                         <span  v-if="readMore3==true">
-                        • Moreover we protect our little friends with Pet insurance.<br>
-                        • Ofcourse we protect your car  with  Car insurance solution, which covers every need with unique flexibility.<br>
-                        • We secure full coverage in all the sectors of Hospital Care, Out of Hospital Care and Prevention.<br>
+                           <section v-html="$t('Home.insurancesText2')"></section>
+                       
                       </span>
                          
                     </p>
                  
-                          <span v-if="readMore3==false" @click="readMoreEvent(3)" style="color:orange;curser:pointer">Read More</span>
-                      <span  v-if="readMore3==true" @click="readMoreEvent(3)" style="color:brown;curser:pointer;text-align:justify">Read Less</span>
+                          <span v-if="readMore3==false" @click="readMoreEvent(3)" style="color:orange;curser:pointer">{{ $t("Home.ReadMore") }}</span>
+                      <span  v-if="readMore3==true" @click="readMoreEvent(3)" style="color:brown;curser:pointer;text-align:justify">{{ $t("Home.ReadLess") }}</span>
                 </div>
               </div>
 

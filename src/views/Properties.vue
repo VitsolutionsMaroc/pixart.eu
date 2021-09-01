@@ -623,7 +623,7 @@ export default {
       );
     },
     zipCodes() {
-      debugger
+      // debugger
       return _.flatten(this.filters.countries.map(country => country.zipCodes));
     }
   },
