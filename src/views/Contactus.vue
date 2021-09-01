@@ -6,7 +6,7 @@
           class="font-bold text-l md:text-xl text-center	m-0 mt-8 mb-6 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex"
           v-if="showMsg"
         >
-          Thank you for subscribing. We will contact you as soon as possible.
+         {{ $t("Contact.SuccessMessage") }}
         </p>
       </div>
       <h3 class="text-center font-semibold text-3xl mt-4">{{ $t("Contact.ContactUs") }}</h3>
@@ -14,7 +14,7 @@
       <form @submit.prevent="addContact()" class="mt-12">
         <div class="grid grid-cols-2 gap-6">
           <div>
-            <label class="text-gray-600">First Name *</label>
+            <label class="text-gray-600">{{ $t("Contact.FirstName") }} *</label>
             <div class="flex items-center my-2 shadow-all">
               <input
                 required

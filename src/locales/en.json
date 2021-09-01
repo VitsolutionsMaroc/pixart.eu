@@ -327,5 +327,23 @@
  "FooterComponant":{
   "Submit":"Envoyer",
   "FooterText":" PIXART is committed to delivering a high level of expertise, customer Service, and attention to details to the marketing and sales of luxury real Estate, and rental properties."
-  }
+  },
+  "expertComponant":{
+    "Expert":"OUR EXPERTS"
+   },
+   "About":{
+    "titleAbout":"Your real estate investment, our commitment !<br> Our professionals are ready to assist you through our <br> offices in Belgium, Luxembourg, Greece, Dubai and Miami.",
+     "OURTEAM":"OUR TEAM",
+      "Team":" Pixart Real Estate consists of licensed real estate professionals with a common denominator : passion & expertise in real estate. For several years on the Benelux market, offers a real realty advisory service and legal  assistance supported by lawyers specializing in real estate law, for the  residential real estate and  business real estate. Company is supported by a local, multilingual, Belgian, Greek, Luxembourg, Russian, Chinese or Dubai team",
+      "OURFEES":"OUR FEES",
+      "FeesText":"Pixart Real Estate makes a point of reserving preferential fees for its clients, investors, buyers, and sellers.  We are much more than an intermediary, we are your real estate partner !",
+      "Investyourmoney":"Looking for a way to invest your money?",
+      "MoneyText":" For most investors, the real estate market is the preferred choice as it is a tangible asset that cannot be stolen or hacked. Everyone needs a property to live in, whether they rent or own a home, this is a basic human need. Reading the presentation below, you can find out why the demand for investment in Greek real estate is increasing by attracting continuously, investors from all over the world.",
+    "Greese":"Why invest in Greece?",
+    "GreesetEXT":"  The Greek real estate market is a safe and promising sector with unique opportunities in real estate development, especially in areas such as tourism, culture, entrepreneurship, holiday homes, logistics services and more. The Greek real estate market is one of the few remaining markets in Europe where there are still high-profit margins. Suffice it to say that 2020 real estate prices in Greece are on average 21%  lower in comparison with 2007 prices. This, coupled with the steady increase in tourism, and the generous incentives designed for the development of the construction sector, pledge the maximum return on investment.",
+     "iBPGreese":"WHY I.B.P.Greece ?",
+      "IBPText":"I.B.P.Greece is here to help you make your next successful investment in the real estate market, starting from scratch, by covering all stages, from design and implementation to delivery and utilization.Our team is staffed by highly experienced executives (engineers, accountants, lawyers, economists, notaries, brokers), and works with a network of trusted associates to cover extra services that may be required. We stand by you every step of the way, providing the best solutions for every emerging need."
+     
+}
+
 }
