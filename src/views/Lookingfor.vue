@@ -6,16 +6,16 @@
           class="font-bold text-l md:text-xl text-center	m-0 mt-5 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex mb-5"
           v-if="showMsg"
         >
-          Thank you for subscribing. We will contact you as soon as possible.
+           {{ $t("Contact.SuccessMessage") }}
         </p>
       </div>
-      <h3 class="text-center font-semibold text-3xl">Search</h3>
+      <h3 class="text-center font-semibold text-3xl">{{ $t("FilterHome.Search") }}</h3>
       <div class="mt-2 mx-auto w-12 h-2 bg-yellow-600"></div>
       <form @submit.prevent="addContact()" class="mt-5" ref="clear">
         <div>
           <div class="grid grid-cols-4 gap-6">
             <div class="col-span-2">
-              <label class="text-gray-600 text-transparent">.</label>
+              <label class="text-gray-600 text-transparent"></label>
               <multiselect
                 required
                 class="flex items-center mt-2 mb-6 shadow-all bg-white "
@@ -32,7 +32,7 @@
               </multiselect>
             </div>
             <div>
-              <label class="text-gray-600">Min Price *</label>
+              <label class="text-gray-600">{{ $t("EsatateFilter.MinPrice") }} </label>
               <div class="flex items-center mt-2 mb-6  bg-white priceInput">
                 <input
                   required
@@ -43,7 +43,7 @@
               </div>
             </div>
             <div>
-              <label class="text-gray-600">Max Price *</label>
+              <label class="text-gray-600">{{ $t("EsatateFilter.MaxPrice") }} </label>
               <div class="flex items-center mt-2 mb-6  priceInput">
                 <input
                   required
@@ -83,7 +83,7 @@
             </div>
           </div>
           <div class="mt-6">
-            <h4 class="text-lg font-meduim mb-4">Type : *</h4>
+            <h4 class="text-lg font-meduim mb-4">{{ $t("LookingFor.Type") }}</h4>
             <div class="px-9 grid grid-cols-4 gap-3">
               <div
                 class="flex items-center"
@@ -108,13 +108,13 @@
         </div>
         <div>
           <h3 class="text-center font-semibold text-3xl mt-12">
-            Your Contact Details
+            {{ $t("LookingFor.YourContactDetails") }}
           </h3>
           <div class="mt-2 mx-auto w-16 h-2 bg-yellow-600"></div>
           <div class="mt-5">
             <div class="grid grid-cols-2 gap-6">
               <div>
-                <label class="text-gray-600">First Name *</label>
+                <label class="text-gray-600">{{ $t("Contact.FirstName") }} *</label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
                     required
@@ -126,7 +126,7 @@
                 </div>
               </div>
               <div>
-                <label class="text-gray-600">Last Name *</label>
+                <label class="text-gray-600">{{ $t("Contact.LastName") }} *</label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
                     required
@@ -138,7 +138,7 @@
                 </div>
               </div>
               <div>
-                <label class="text-gray-600">E-mail *</label>
+                <label class="text-gray-600">{{ $t("Contact.Email") }} </label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
                     required
@@ -150,7 +150,7 @@
                 </div>
               </div>
               <div>
-                <label class="text-gray-600">Phone Number *</label>
+                <label class="text-gray-600">{{ $t("Contact.PhoneNumber") }} </label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
                     required
@@ -166,7 +166,7 @@
               <button
                 class="text-center px-24 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ..."
               >
-                Send
+               {{ $t("FooterComponant.Submit") }}
               </button>
               <!-- <button type="button" class="bg-rose-600 ..." v-if="isLoaded">
                   <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">

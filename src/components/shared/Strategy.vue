@@ -3,23 +3,9 @@
    
     <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">ASSET PROPERTY MANAGEMENT</h1>
+        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">{{ $t("StrategyComponant.ASSETPROPERTY") }}</h1>
         <p style="text-align: justify;">
-             Pixart Real Estate has become one of the references in real estate strategy, in building real estate 
-             portfolios, in Belgium, Grand Duchy of Luxembourg, and more recently in Dubai !  Pixart Real Estate 
-             meets the targeted expectations of its clients, by advising and supporting them throughout the process 
-             of selling residential buildings, offices, hotels, plots, etc….or investment buildings generating a
-              return on investment and profitability guaranteed by the rental department of Pixart Real Estate.<br>
-                            
-                Adapting to constant market demands, Pixart Real Estate offers its large portfolio of 
-                foreign and expatriate investors valuable advice inherent in building up a portfolio of 
-                varied and reliable real estate assets on the European markets. The sales and purchase
-                processes of real estate and asset companies,
-                as well as real estate portfolios, are now a growing segment of their core business 
-
-
-
-
+            <section v-html="$t('StrategyComponant.ASSETPROPERTYText')"></section>
         </p>
       </div>
       <div>

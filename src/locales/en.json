@@ -277,7 +277,21 @@
     "Looking":"Looking for ?"
   },
   "Contact":{
-    "ContactUs":"Contact Us"
+    "ContactUs":"Contact Us",
+    "SuccessMessage":"Thank you for subscribing. We will contact you as soon as possible.",
+   "FirstName":"First Name",
+   "PlaceHolderName":"Your first name...",
+   "LastName":"Last Name",
+   "PlaceHolderLast":"Your last name...",
+   "Email":"E-mail",
+   "EmailHolder":"Your E-mail address...",
+   "PhoneNumber":"Phone Number",
+   "textTel":"Your phone number ...",
+   "Message":"Message",
+   "Register":"Register for news letter",
+   "Accept":"Accept our terms",
+   "Send":"Send",
+   "OURADRESSES":"OUR ADRESSES"
   },
   "Home":{
     "TitleHome":"PIXART is committed to delivering a high level <br/>of real estate & advisory services via our<br/>global experts' network",
@@ -327,5 +341,97 @@
  "FooterComponant":{
   "Submit":"Envoyer",
   "FooterText":" PIXART is committed to delivering a high level of expertise, customer Service, and attention to details to the marketing and sales of luxury real Estate, and rental properties."
-  }
+  },
+  "expertComponant":{
+    "Expert":"OUR EXPERTS"
+   },
+   "About":{
+    "titleAbout":"Your real estate investment, our commitment !<br> Our professionals are ready to assist you through our <br> offices in Belgium, Luxembourg, Greece, Dubai and Miami.",
+     "OURTEAM":"OUR TEAM",
+      "Team":" Pixart Real Estate consists of licensed real estate professionals with a common denominator : passion & expertise in real estate. For several years on the Benelux market, offers a real realty advisory service and legal  assistance supported by lawyers specializing in real estate law, for the  residential real estate and  business real estate. Company is supported by a local, multilingual, Belgian, Greek, Luxembourg, Russian, Chinese or Dubai team",
+      "OURFEES":"OUR FEES",
+      "FeesText":"Pixart Real Estate makes a point of reserving preferential fees for its clients, investors, buyers, and sellers.  We are much more than an intermediary, we are your real estate partner !",
+      "Investyourmoney":"Looking for a way to invest your money?",
+      "MoneyText":" For most investors, the real estate market is the preferred choice as it is a tangible asset that cannot be stolen or hacked. Everyone needs a property to live in, whether they rent or own a home, this is a basic human need. Reading the presentation below, you can find out why the demand for investment in Greek real estate is increasing by attracting continuously, investors from all over the world.",
+    "Greese":"Why invest in Greece?",
+    "GreesetEXT":"  The Greek real estate market is a safe and promising sector with unique opportunities in real estate development, especially in areas such as tourism, culture, entrepreneurship, holiday homes, logistics services and more. The Greek real estate market is one of the few remaining markets in Europe where there are still high-profit margins. Suffice it to say that 2020 real estate prices in Greece are on average 21%  lower in comparison with 2007 prices. This, coupled with the steady increase in tourism, and the generous incentives designed for the development of the construction sector, pledge the maximum return on investment.",
+     "iBPGreese":"WHY I.B.P.Greece ?",
+      "IBPText":"I.B.P.Greece is here to help you make your next successful investment in the real estate market, starting from scratch, by covering all stages, from design and implementation to delivery and utilization.Our team is staffed by highly experienced executives (engineers, accountants, lawyers, economists, notaries, brokers), and works with a network of trusted associates to cover extra services that may be required. We stand by you every step of the way, providing the best solutions for every emerging need."
+     
+},
+    "CorporateComponant":{
+      "titleREALESTATESTRATEGY":"REAL ESTATE STRATEGY",
+      "StrategyText":" Pixart Real Estate controls sales through direct acquisition of assets, land (asset deal) and share deal (acquisition of the company that owns the assets). We analyze the profile of the company in the event of  a share deal, and set up contractual mechanisms to control all aspect.",
+    "PROPERTYMANAGEMENT":"ASSET PROPERTY MANAGEMENT",
+    "MANAGEMENTText":" Pixart Real Estate supports you in the management of your real estate management limiting real estate unemployment, analyzes all rental leases, negotiates contracts with suppliers, external stakeholders, takes protective measures when they are necessary, replaces you in all your obligations inherent to the lessor."
+    },
+    "StrategyComponant":{
+    "ASSETPROPERTY":"ASSET PROPERTY MANAGEMENT",
+    "ASSETPROPERTYText":" Pixart Real Estate has become one of the references in real estate strategy, in building real estate portfolios, in Belgium, Grand Duchy of Luxembourg, and more recently in Dubai !  Pixart Real Estate  meets the targeted expectations of its clients, by advising and supporting them throughout the process of selling residential buildings, offices, hotels, plots, etc….or investment buildings generating a return on investment and profitability guaranteed by the rental department of Pixart Real Estate.<br> Adapting to constant market demands, Pixart Real Estate offers its large portfolio of  foreign and expatriate investors valuable advice inherent in building up a portfolio of  varied and reliable real estate assets on the European markets. The sales and purchase processes of real estate and asset companies, as well as real estate portfolios, are now a growing segment of their core business"
+    },
+    "LookingFor":{
+      
+      "Type":"Type : *",
+      "YourContactDetails":"Your Contact Details"
+     
+    },
+    "EsatateFilter":{
+      "Selected":"selected",
+      "Countries":"Countries",
+      "Categories":"Categories",
+      "MinPrice":"Min Price",
+      "MaxPrice":"Max Price",
+       "More":"More",
+       "Apply":"Apply",
+      "zipCodes":"zipCodes",
+      "subcategories":"subcategories",
+      "MinArea":"Min Area",
+      "MaxArea":"Max Area",
+      "Numberrooms":"Number rooms",
+      "Numberbathrooms":"Number bathrooms",
+      "Parking":"Parking",
+      "Terrace":"Terrace",
+      "Furnished":"Furnished",
+      "Garden":"Garden",
+      "Rooms":"Rooms",
+      "Bathrooms":"Bathrooms",
+      "Results":"Results",
+      "Price":"Price",
+       "Update":"Update"
+},
+"Evaluation":{
+  "EVALUATION":"EVALUATION",
+  "Q1":"Do you want to sell your property ?",
+  "R":"Our experts provide an accurate evaluation based on the market trends and their experience",
+  "R2":"Fill out the form below and we will contact you promptly",
+  "Contact":"Contact",
+  "Gender":"Gender",
+   "FullName":"Full Name",
+     "PlaceHolderLast":"Your last Full name...",
+     "Email":"E-mail",
+     "EmailHolder":"Your E-mail address...",
+     "PhoneNumber":"Phone Number",
+     "textTel":"Your phone number ...",
+     "Address":"Address",
+     "Street":"Street",
+     "Number":"Number",
+     "NumberText":"Number ..",
+     "City":"City",
+     "CityText":"City ..",
+     "PostCode":"PostCode",
+     "PostCodeText":"PostCode ..",
+     "Propertydescription":"Property description",
+     "Transactiontype":"Transaction type",
+     "ForSaleOrForRent":"For Sale / For Rent",
+     "Propertytype":"Property type",
+     "PlaceHolderMsg":"Your Property type",
+     "ConstructionYear":"Construction Year",
+     "Year":"Year",
+     "Surface":"Surface",
+     "Country":"Country",
+     "PlaceHolderCountry":"Countries...",
+     "Comments":"Comments",
+     "Submit":"Submit"
+}
+
 }

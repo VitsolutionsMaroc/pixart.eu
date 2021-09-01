@@ -2,12 +2,9 @@
   <div>
    <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">REAL ESTATE STRATEGY</h1>
+        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">{{ $t("CorporateComponant.titleREALESTATESTRATEGY") }}</h1>
         <p style="text-align: justify;">
-            Pixart Real Estate controls sales through direct acquisition of assets, 
-            land (asset deal) and share deal (acquisition of the company that owns the assets). 
-            We analyze the profile of the company in the event of 
-            a share deal, and set up contractual mechanisms to control all aspect.
+        {{ $t("CorporateComponant.StrategyText") }}
 
 
         </p>
@@ -21,14 +18,9 @@
         <img class="w-full" src="../../assets/img/residance.jpg" alt="<a href='https://fr.freepik.com/photos/ordinateur'>Ordinateur photo créé par pch.vector - fr.freepik.com</a>" />
       </div>
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">ASSET PROPERTY MANAGEMENT</h1>
+        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">{{ $t("CorporateComponant.PROPERTYMANAGEMENT") }}</h1>
         <p style="text-align: justify;">
-            Pixart Real Estate supports you in the management of your real estate management
-             limiting real estate unemployment, analyzes all rental leases, negotiates contracts
-              with suppliers, external stakeholders, takes protective measures
-             when they are necessary, replaces you in all your obligations inherent to the lessor. 
-
-
+           {{ $t("CorporateComponant.MANAGEMENTText") }}
         </p>
       </div>
       

@@ -6,7 +6,7 @@
           class="font-bold text-l md:text-xl text-center	m-0 mt-8 mb-6 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex"
           v-if="showMsg"
         >
-          Thank you for subscribing. We will contact you as soon as possible.
+         {{ $t("Contact.SuccessMessage") }}
         </p>
       </div>
       <h3 class="text-center font-semibold text-3xl mt-4">{{ $t("Contact.ContactUs") }}</h3>
@@ -14,7 +14,7 @@
       <form @submit.prevent="addContact()" class="mt-12">
         <div class="grid grid-cols-2 gap-6">
           <div>
-            <label class="text-gray-600">First Name *</label>
+            <label class="text-gray-600">{{ $t("Contact.FirstName") }} *</label>
             <div class="flex items-center my-2 shadow-all">
               <input
                 required
@@ -26,7 +26,7 @@
             </div>
           </div>
           <div>
-            <label class="text-gray-600">Last Name *</label>
+            <label class="text-gray-600">{{ $t("Contact.LastName") }} *</label>
             <div class="flex items-center my-2 shadow-all">
               <input
                 required
@@ -38,7 +38,7 @@
             </div>
           </div>
           <div>
-            <label class="text-gray-600">E-mail *</label>
+            <label class="text-gray-600">{{ $t("Contact.Email") }} *</label>
             <div class="flex items-center my-2 shadow-all">
               <input
                 required
@@ -50,7 +50,7 @@
             </div>
           </div>
           <div>
-            <label class="text-gray-600">Phone Number *</label>
+            <label class="text-gray-600">{{ $t("Contact.PhoneNumber") }} *</label>
             <div class="flex items-center my-2 shadow-all">
               <input
                 required
@@ -62,7 +62,7 @@
             </div>
           </div>
           <div class="col-span-2">
-            <label class="text-gray-600">Message</label>
+            <label class="text-gray-600">{{ $t("Contact.Message")}}</label>
             <textarea
               required
               type="text"
@@ -84,7 +84,7 @@
             class=" check h-4 w-4 text-gray-500 border rounded mr-2"
             v-model="contact.AgreementMailingCampaign"
           />
-          <label class="text-gray-600 font-meduim" for="register">Register for news letter</label>
+          <label class="text-gray-600 font-meduim" for="register">{{ $t("Contact.Register") }}</label>
         </div>
         <div class="flex items-center mt-2">
           <input
@@ -94,19 +94,19 @@
             class=" check h-4 w-4 text-gray-500 border rounded mr-2"
             v-model="contact.Newsletter"
           />
-          <label class="  text-gray-600 font-meduim" for="accept_terms">Accept our terms </label>
+          <label class="  text-gray-600 font-meduim" for="accept_terms">{{ $t("Contact.Accept") }} </label>
         </div>
         <div class="text-center mt-4">
           <button
             class="text-center px-24 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ..."
           >
-            Send
+            {{ $t("Contact.Send") }}
           </button>
         </div>
       </form>
     </div>
     <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px">
-      <h1 style="font-size:2rem">OUR ADRESSES</h1>
+      <h1 style="font-size:2rem">{{ $t("Contact.OURADRESSES") }}</h1>
     </div>
     <div class="grid lg:grid-cols-3 gap-10 px-16 py-8 mt-10 infos">
        <div>
