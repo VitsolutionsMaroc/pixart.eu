@@ -9,29 +9,25 @@
         id="menue">
          
         <span class="mb-2 md:mb-0">
-          <router-link to="/" class=" other lg:mx-4 mx-2 ">HOME</router-link>
+          <router-link to="/" class=" other lg:mx-4 mx-2 ">{{ $t("Header.Home") }}</router-link>
         </span>
         <span class="mb-2 md:mb-0 ">
-          <router-link to="/about" class=" other lg:mx-4 mx-2">ABOUT</router-link>
+          <router-link to="/about" class=" other lg:mx-4 mx-2">{{ $t("Header.About") }}</router-link>
         </span>
         <span class="mb-6 md:mb-0">
           <router-link to="/properties" class=" other lg:mx-4 mx-2"
-            >PROPERTIES
+            > {{ $t("Header.Properties") }}
           </router-link>
         </span>
         <span class="mb-6 md:mb-0">
           <router-link to="/evaluation" class=" other lg:mx-4 mx-2"
-            >EVALUATION
+            > {{ $t("Header.evaluation") }}
           </router-link>
         </span>
-         <span class="mb-6 md:mb-0">
-          <router-link to="/golden" class=" other lg:mx-4 mx-2"
-            >GOLDEN VISA
-          </router-link>
-        </span>
+       
         <span class="mb-6 md:mb-0">
           <router-link to="/contact" class=" other lg:mx-4 mx-2 font-thin"
-            >CONTACT
+            >{{ $t("Header.Contact") }}
           </router-link>
         </span>
         
@@ -39,11 +35,9 @@
        </div>
        <div class="form_footer">
           <input type="text" placeholder="Search..." class="px-2 py-2 border" />
-          <button class="bg-yellow-500 p-3 py-2" style="outline: none;">Submit</button>
+          <button class="bg-yellow-500 p-3 py-2" style="outline: none;">{{ $t("FooterComponant.Submit") }}</button>
           <p class="mt-5" style="line-height:1.6">
-            PIXART is committed to delivering a high level of expertise, customer
-            Service, and attention to details to the marketing and sales of luxury
-            real Estate, and rental properties.
+           {{ $t("FooterComponant.FooterText") }}
           </p>
        </div>
      </div>

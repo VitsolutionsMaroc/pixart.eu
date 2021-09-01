@@ -1,7 +1,7 @@
 <template>
      <div>
         <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px;margin-bottom:50px">
-           <h1 style="font-size:2rem">OUR EXPERTS</h1>
+           <h1 style="font-size:2rem">{{ $t("expertComponant.Expert")}}</h1>
         </div>
          <div class="caroussel_footer md:container md:mx-auto">
            <div class="owl-carousel owl-theme footer_owl">
