@@ -19,7 +19,7 @@
               <input
                 required
                 type="text"
-                placeholder="Your first name..."
+                :placeholder="$t('Contact.PlaceHolderName')"
                 class="name w-full pr-10 pl-4 py-3 text-gray-700"
                 v-model="contact.FirstName"
               />
@@ -31,7 +31,7 @@
               <input
                 required
                 type="text"
-                placeholder="Your last name..."
+               :placeholder="$t('Contact.PlaceHolderLast')"
                 class="w-full pr-10 pl-4 py-3 text-gray-700"
                 v-model="contact.Name"
               />
@@ -43,7 +43,7 @@
               <input
                 required
                 type="email"
-                placeholder="Your E-mail address..."
+                :placeholder="$t('Contact.EmailHolder')"
                 class="w-full pr-10 pl-4 py-3 text-gray-700"
                 v-model="contact.PrivateEmail"
               />
@@ -55,7 +55,7 @@
               <input
                 required
                 type="number"
-                placeholder="Your phone number ..."
+                :placeholder="$t('Contact.textTel')"
                 class="w-full pr-10 pl-4 py-3 text-gray-700"
                 v-model="contact.PrivateMobile"
               />
@@ -66,7 +66,7 @@
             <textarea
               required
               type="text"
-              placeholder="Write your message here..."
+              :placeholder="$t('Contact.placeHolderms')"
               class="my-2 shadow-all w-full pr-10 pl-4 py-3 text-gray-700"
               name=""
               id=""
@@ -183,7 +183,7 @@
         ></iframe>
         <div class="shadow-all bg-white absolute w-70 m-24 top-0 left-0">
           <h3 class="bg-gray-200 font-bold text-xl w-full px-4 py-6 text-center border-b">
-            Contact
+            {{ $t("Contact.Contact") }}
           </h3>
           <ul class="p-5 border-b ml-8">
             <div class="flex just ">

@@ -26,28 +26,30 @@
                 :show-labels="false"
                 :searchable="false"
                 :options="$t('transactions')"
-                placeholder="Transaction *"
+                :placeholder="$t('EsatateFilter.Transaction')"
                 :close-on-select="true"
               >
               </multiselect>
             </div>
             <div>
-              <label class="text-gray-600">{{ $t("EsatateFilter.MinPrice") }} </label>
+             
               <div class="flex items-center mt-2 mb-6  bg-white priceInput">
                 <input
                   required
                   type="number"
+                  :placeholder="$t('EsatateFilter.MinPrice')"
                   class="w-full pr-10 pl-4 py-3  shadow-all text-gray-700 h-11 "
                   v-model="contact.PriceMin"
                 />
               </div>
             </div>
             <div>
-              <label class="text-gray-600">{{ $t("EsatateFilter.MaxPrice") }} </label>
+              
               <div class="flex items-center mt-2 mb-6  priceInput">
                 <input
                   required
                   type="number"
+                  :placeholder="$t('EsatateFilter.MaxPrice')"
                   class="w-full pr-10 pl-4 py-3 shadow-all text-gray-700 h-11"
                   v-model="contact.PriceMax"
                 />
@@ -61,7 +63,7 @@
                 type="number"
                 class="w-full pr-10 pl-4 py-3 shadow-all text-gray-700 h-11  ring-4	"
                 v-model="contact.ZipCodes"
-                placeholder="Zip Code *"
+                :placeholder="$t('EsatateFilter.zipCodes')"
               />
             </div>
 
@@ -75,7 +77,7 @@
                 item-value="id"
                 :show-labels="false"
                 :options="$t('countries')"
-                placeholder="Countries..."
+               :placeholder="$t('FilterHome.Countries')"
                 :close-on-select="true"
                 open-direction="bottom"
               >
@@ -119,7 +121,7 @@
                   <input
                     required
                     type="text"
-                    placeholder="Your first name..."
+                    :placeholder="$t('Contact.PlaceHolderName')"
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
                     v-model="contact.FirstName"
                   />
@@ -131,7 +133,7 @@
                   <input
                     required
                     type="text"
-                    placeholder="Your last name..."
+                   :placeholder="$t('Contact.PlaceHolderLast')"
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
                     v-model="contact.Name"
                   />
@@ -143,7 +145,7 @@
                   <input
                     required
                     type="email"
-                    placeholder="Your E-mail address..."
+                    :placeholder="$t('Contact.EmailHolder')"
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
                     v-model="contact.PrivateEmail"
                   />
@@ -155,7 +157,7 @@
                   <input
                     required
                     type="number"
-                    placeholder="Your phone number ..."
+                    :placeholder="$t('Contact.textTel')"
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
                     v-model="contact.PrivateMobile"
                   />

@@ -278,6 +278,7 @@
   },
   "Contact":{
     "ContactUs":"Contact Us",
+    "Contact":"Contact",
     "SuccessMessage":"Thank you for subscribing. We will contact you as soon as possible.",
    "FirstName":"First Name",
    "PlaceHolderName":"Your first name...",
@@ -288,6 +289,7 @@
    "PhoneNumber":"Phone Number",
    "textTel":"Your phone number ...",
    "Message":"Message",
+   "placeHolderms":"Write your message here...",
    "Register":"Register for news letter",
    "Accept":"Accept our terms",
    "Send":"Send",
@@ -335,7 +337,7 @@
     "Rentale":"Rentale",
     "Search":"Search",
     "Categories":"Categories",
-    "Counteries":"Counteries"
+    "Countries":"Countries"
     
  },
  "FooterComponant":{
@@ -384,7 +386,7 @@
        "More":"More",
        "Apply":"Apply",
       "zipCodes":"zipCodes",
-      "subcategories":"subcategories",
+      "Subcategories":"subcategories",
       "MinArea":"Min Area",
       "MaxArea":"Max Area",
       "Numberrooms":"Number rooms",
@@ -394,10 +396,13 @@
       "Furnished":"Furnished",
       "Garden":"Garden",
       "Rooms":"Rooms",
+      "Garage":"Garage",
       "Bathrooms":"Bathrooms",
       "Results":"Results",
       "Price":"Price",
-       "Update":"Update"
+       "Update":"Update",
+       "Transaction":"Transaction *",
+       "Cancel":"Cancel"
 },
 "Evaluation":{
   "EVALUATION":"EVALUATION",
@@ -408,10 +413,6 @@
   "Gender":"Gender",
    "FullName":"Full Name",
      "PlaceHolderLast":"Your last Full name...",
-     "Email":"E-mail",
-     "EmailHolder":"Your E-mail address...",
-     "PhoneNumber":"Phone Number",
-     "textTel":"Your phone number ...",
      "Address":"Address",
      "Street":"Street",
      "Number":"Number",
@@ -432,6 +433,18 @@
      "PlaceHolderCountry":"Countries...",
      "Comments":"Comments",
      "Submit":"Submit"
+},
+"Details":{
+  "Print":"Print",
+   "Reference":"Reference",
+   "Yes":"yes",
+   "No":"No",
+   "Description":"Description",
+   "YouWillLike":"You Will Like Also",
+  "Details":"Details",
+  "SendTo":"Send To a Friend",
+  "propertieDet":"Property details",
+  "GroundArea":"Ground Area",
+  "GardenArea":"Garden Area"
 }
-
 }
