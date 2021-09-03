@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="slide md:h-screen p-4 lg:px-16 relative">
+    <div class="slide md:h-screen p-4 lg:px-16 ">
       <div class="info_line text-white xl:text-6xl text-center mt-4">
         <p class="mt-20 mb-20" style="line-height: 1.6; padding:0 15px;">
          
