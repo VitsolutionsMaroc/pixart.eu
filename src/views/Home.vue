@@ -53,13 +53,13 @@
             <input
               class="w-full rounded mr-4 "
               type="text"
-              placeholder="Search..."
+              :placeholder="$t('FilterHome.Search')"
               v-model="filters.keyword"
             />
           </div>
           <div class="xl:col-span-2">
             <multiselect
-              placeholder=" Categories"
+              :placeholder="$t('FilterHome.Categories')"
               label="name"
               track-by="name"
               :multiple="true"
@@ -93,7 +93,7 @@
           </div>
           <div class="xl:col-span-2">
             <multiselect
-              placeholder="Countries"
+              :placeholder="$t('FilterHome.Countries')"
               label="name"
               track-by="name"
               :multiple="true"

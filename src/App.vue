@@ -199,7 +199,9 @@ option:focus{
 }
 .dropdown-menu li a:hover{
   background-color:#df9523;
-   color:white!important
+   color:white!important;
+   z-index: 999999;
+
 }
 
 .dropdown button:focus {
@@ -207,8 +209,13 @@ option:focus{
    
 }
 @media (max-width:767px) {
-.dropdown{
-  padding-bottom: 81px;
-  }
+// .dropdown{
+//   padding-bottom: 81px;
+//   }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+ #menu li a{
+   font-size:14px!important;
+ }
 }
 </style>
