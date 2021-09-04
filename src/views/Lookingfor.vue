@@ -13,7 +13,7 @@
       <div class="mt-2 mx-auto w-12 h-2 bg-yellow-600"></div>
       <form @submit.prevent="addContact()" class="mt-5" ref="clear">
         <div>
-          <div class="grid grid-cols-4 gap-6">
+          <div class="grid md:grid-cols-4 sm:grid-cols-3 gap-6">
             <div class="col-span-2">
               <label class="text-gray-600 text-transparent"></label>
               <multiselect

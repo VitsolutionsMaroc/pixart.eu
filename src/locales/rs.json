@@ -6,7 +6,7 @@
     "transactions": [
       { "id": 1, "name": "Продается" },
       { "id": 2, "name": "В аренду" },
-      { "id": 3, "name": "Life annuity sale" }
+      { "id": 3, "name": "Распродажа пожизненного аннуитета" }
     ],
     "categories": [
       { "id": 1, "name": "дом" },

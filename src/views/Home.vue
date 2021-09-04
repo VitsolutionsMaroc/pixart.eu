@@ -65,7 +65,7 @@
               :multiple="true"
               value="id"
               v-model="filters.categories"
-              :options="categories"
+              :options="$t('categories')"
               :close-on-select="true"
               :show-labels="false"
               :clear-on-select="false"
