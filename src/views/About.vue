@@ -27,8 +27,8 @@
     <!-- about section -->
     <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">{{ $t("About.Investyourmoney") }}</h1>
-        <p style="text-align: justify;">
+        <h1 class="text-4xl md:text-2xl mb-6" >{{ $t("About.Investyourmoney") }}</h1>
+        <p  style="text-align: initial;">
          {{ $t("About.MoneyText") }}
         </p>
       </div>
@@ -42,7 +42,7 @@
       </div>
       <div>
         <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">{{ $t("About.Greese") }}</h1>
-        <p style="text-align: justify;">
+        <p  style="text-align: initial;">
           {{ $t("About.GreesetEXT") }}
         </p>
       </div>
@@ -56,8 +56,8 @@
     <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
       
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">{{ $t("About.iBPGreese") }}</h1>
-        <p style="text-align: justify;">
+        <h1 class="text-4xl md:text-2xl mb-6" >{{ $t("About.iBPGreese") }}</h1>
+        <p style="text-align: initial;">
             {{ $t("About.IBPText") }}
         </p>
       </div>
