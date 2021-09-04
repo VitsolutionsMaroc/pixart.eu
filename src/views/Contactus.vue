@@ -442,4 +442,9 @@ textarea:focus,
   margin-bottom:10px;
  font-size: 1.25rem;
 }
+@media (max-width:767px) {
+label{
+  font-size: 14px;
+}
+}
 </style>
