@@ -335,6 +335,8 @@
   "FilterHome":{
     "Buy":"Buy",
     "Rentale":"Rentale",
+    "Rent":"Rent",
+    "sale":"Sale",
     "Search":"Search",
     "Categories":"Categories",
     "Countries":"Countries"
@@ -437,6 +439,7 @@
 "Details":{
   "Print":"Print",
    "Reference":"Reference",
+   "Share":"Share on Facebook",
    "Yes":"yes",
    "No":"No",
    "Description":"Description",
@@ -446,5 +449,51 @@
   "propertieDet":"Property details",
   "GroundArea":"Ground Area",
   "GardenArea":"Garden Area"
+},
+"ComponantAssurance":{
+  "ComponatAssuranceTitle":"We assist all your needs by providing insurances for",
+   "ADDITIONALSERVICES":"ADDITIONAL SERVICES",
+   "ADDITIONAL":"• WARRANTY SECURITY<br>• PUBLIC TENDER SECURITY<br> • LEGAL PROTECTION<br>• CIVIL LIABILITY OF DIVING SCHOOLS<br> • TRANSPORT",
+   "Self":"SELF-EMPLOYED",
+  "SELFEMPLOYED":" • WARRANTY SECURITY<br>• GROUP HEALTH PROGRAMS<br>• PROFESSIONAL LIABILITY INSURANCE FOR HAIRDRESSERS<br>• LIABILITY<br>• LEGAL PROTECTION<br>• LEGAL INTERNET USER PROTECTION ARAG CYBER PROTECTION<br>",
+ "GREENHOUSE":"GREEN HOUSE",
+ "GreenHouseText":"• WARRANTY SECURITY<br>• PHOTOVOLTAICS<br>• ENERGY<br>• ΒΙΟΜΑΖΑ<br>• ENERGY SAVING<br> • FREE ALTERNATIVE HEATING<br>• POLLUTANTS EXCHANGE<br>• HOUSEHOLD GENERATORS<br>",
+  "Small":"SMALL AND MEDIUM ENTERPRISES",
+  "SmallText":"• WARRANTY SECURITY<br> • CYBER INSURANCE<br> • LIABILITY<br> • LEGAL PROTECTION<br> • LEGAL PROTECTION OF HEALTH PROFESSIONS<br>  • LEGAL PROTECTION OF PHOTOVOLTAICAL OWNERS<br>  • LEGAL PROTECTION OF MANAGERS<br>  • LEGAL PROTECTION OF CIVIL SERVANTS<br>  • LEGAL PROTECTION OF PRIVATE EMPLOYEES<br> • LEGAL PROTECTION OF ACCOUNTANTS<br>",
+  "Big":"BIG COMPANIES",
+  "BigText":"   • WARRANTY SECURITY<br>  • CYBER INSURANCE<br>  • GROUP HEALTH PROGRAMS<br>  • LIABILITY<br>  • LEGAL PROTECTION<br>  • TRAVEL INSURANCE<br>  • ENVIRONMENTAL RISKS - WASTE TRANSPORT<br>  • PHARMACEUTICAL - PARAPARMACEUTICAL PRODUCTS - CLINICAL STUDIES<br>  • SHIP INSURANCE<br>",
+ "BUSINESS":"BUSINESS",
+ "BusnessText":" • WARRANTY SECURITY<br> • GROUP HEALTH PROGRAMS<br> • MEDICINE<br> • HOTELS<br> • AIRBNB RENTAL INSURANCE<br> • INSURANCE OF RENTED ROOMS<br> • industries<br> • CONSTRUCTION<br> • TRAVEL INSURANCE<br> • GROUP INSURANCE<br> • GROUP TRAVEL INSURANCE<br>",
+  "PETINSURANCE":"PET INSURANCE",
+  "PetText":" • PETFirst PRODUCT<br>  • PRIVATE BIRTH INSURANCE<br>  • GROUP INSURANCE<br>  • WISE ACT<br>  • WISE DENTAL<br> • WISE DAEDALUS<br>  • A 'AESTHETIC<br>  • KIOSK SECURITY<br>  • CYBER INSURANCE<br> • Pet Insurance (in the car)<br> • Pet Insurance (in a home or business)<br> • CIVIL VETERINARY LIABILITY<br>• LIMITED LIABILITY OF PET OWNER<br>  • LEGAL PROTECTION OF A PET OWNER<br> • LOVE ME BACK<br>• STAND BY ME<br> • HORSE INSURANCE - BLOODSTOCK<br>  • HOOLIE ANIMAL COVER<br>  • EUROPEAN PET PASSPORT<br>  • LIMITED LIABILITY OF PET OWNER<br>",
+  "HEALTH":"HEALTH",
+  "HEALTHText":"• health card<br>  • AIRCRAFT COVER DUE TO COVID-19<br>  • Health Insurance<br>  • PRIMARY CARE<br>  • LIFE INSURANCE<br>  • SECURITY OF ABROAD STUDENTS (ERASMUS)<br>  • GROUP INSURANCE FOR AMATEUR ATHLETES<br>  • TRAVEL SAFETY<br>  • SAFETY OF FOREIGNERS<br>  • General Liability Program 'SCHOOL COVER'<br>• ESTATE<br> • WARRANTY SECURITY<br>  • insurance<br>  • TOURISM AND INTERRUPT BUS INSURANCE<br>  • BICYCLE SAFETY<br>  • E-SCOOTER SECURITY<br>• LEATHER BOAT INSURANCE<br>  • ART SAFETY<br>  • ELECTRIC CAR SAFETY<br>  • SECURITY DRONE<br>  • SAVINGS & INVESTMENTS<br>  • PENSION<br>  • INVESTMENT PROGRAMS<br> • INCOME INSURANCE<br>  • ADDITIONAL SERVICES<br>  • PERSONAL ACCIDENT INSURANCE<br>  • LEGAL PROTECTION DRONE<br>  • LEGAL FAMILY PROTECTION<br>• LEGAL PROTECTION OF PROPERTY OWNER<br>  • INDIVIDUAL LEGAL PROTECTION<br>  • CONSUMER LEGAL PROTECTION<br> • LEGAL PROTECTION OF A BUILDING MANAGER<br> • LEGAL PROTECTION OF ORDERS<br>  • LEGAL INTERNET USER PROTECTION ARAG CYBER PROTECTION<br> "
+
+},
+"GoldenVisa":{
+  "Title":"The Ultimate Guide To Greece Golden Visa",
+  "Golden":"GOLDEN VISA",
+  "TextGolden":"The Golden Visa program, or investment visa proposed and implemented by Greece is available in connection with the acquisition of real estate in Greece. By making one or more real estateinvestments on Greek soil, up to a minimum amount of 250 000 €, we will assist you in obtaining the Golden Visa within 2 months. The Golden Visa is valid for a period of 5 years and is renewable. No residency obligation exists to date.  Hence, you become the owner of real estate in Greece, and enjoy a rental yield guaranteed by us. We also take care of the rental management.",
+ "CreateVisa":"Create Your Golden Visa",
+ "TitleYoutube":"YOUR PROPERTY INVESTMENT, OUR COMMITMENT",
+ "Validity":"Validity: 5 years",
+ "Property":"property owners",
+"Spouse":"spouse",
+ "Children":"children under the age of 21",
+"Parents":"parents of the property owner",
+"Parentsofthespouse":"parents of the spouse of the owner of the property",
+"DOCUMENTS":"DOCUMENTS REQUIRED FOR OBTAINING A RESIDENCE PERMIT",
+"Propertyowner":"Property owner",
+"OwnerText":" • Contract of sale<br>• Certificate of registration of the object in the real estate registry<br>• Photos<br>• Health insurance contract in Greece<br>• Photocopies of all pages of the passport<br>• Birth certificate, certified by the Apostille stamp (if in the passport no specific place<br>of birth is indicated - city / settlement) with an official translation into Greek<br>• State fees<br>",
+"SpouseGolden":"  • Certificate of marriage, certified by the Apostille stamp with an official translation into Greek<br>• Photos<br>• Health insurance contract in Greece<br>• Photocopies of all pages of the passport<br>• Birth certificate, certified by the Apostille stamp (if in the passport or in the<br>certificate no specific place of birth is indicated on the marriage - city / settlement)<br>with an official translation into Greek<br>• State fees<br>",
+"ChildrenGolden":" • Birth certificate, certified by the Apostille stamp with an official translation into Greek<br>• Photos<br>• Health insurance contract in Greece<br>• Photocopies of all pages of the passport<br>• State fees<br>",
+"ParentsGolden":"  • Birth certificate of the owner of the property / spouse, certified by the Apostille stamp<br>with an official translation into Greek - serves as a confirmation of kinship<br>• Photos<br>• Health insurance contract in Greece<br>• Photocopies of all pages of the passport<br>• State fees<br>",
+"RESIDENCE":"RESIDENCE PERMIT PROCEDURE",
+"Appointment":"Appointment for the submission of documents at the Authorized Department of the Migration<br>",
+"Submission":"Submission of documents and collection of biometric data<br>",
+"Reviewing":"Reviewing of a package of documents<br>",
+"Issuance":"Issuance of a residence permit - within 2 months from the date of submission of documents<br>",
+"Thepresence":"* The presence of a person applying for a residence permit in Greece is required once - in order to collect biometric data<br>",
+"GREECE365":"GREECE 365 DAYS DESTINATION !!!"
 }
 }
