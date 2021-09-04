@@ -41,7 +41,7 @@
               class="float-right px-2 py-1 rounded-full font-bold text-sm block text-white"
               style="background:#fbf0df;color:#df9639"
             >
-              Details
+              {{ $t("Details.Details") }}
             </button>
           </div>
           <div>

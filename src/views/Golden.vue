@@ -1,6 +1,6 @@
 <template>
  <div class="fond_greece">
-    <div class="greece  p-4 lg:px-16 relative">
+    <div class="greece  p-4 lg:px-16 ">
       <div class="text-white xl:text-6xl text-center mt-4 pt-20 pb-20">
        <p class="" style="font-size:2rem;">           
             {{ $t("GoldenVisa.Title") }}
