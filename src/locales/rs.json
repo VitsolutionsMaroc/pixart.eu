@@ -4,18 +4,18 @@
       { "id": 5, "name": "Potential tenant" }
     ],
     "transactions": [
-      { "id": 1, "name": "For sale" },
-      { "id": 2, "name": "For rent" },
+      { "id": 1, "name": "Продается" },
+      { "id": 2, "name": "В аренду" },
       { "id": 3, "name": "Life annuity sale" }
     ],
     "categories": [
-      { "id": 1, "name": "House" },
-      { "id": 2, "name": "Flat" },
-      { "id": 5, "name": "Commercial" },
-      { "id": 7, "name": "Garage / Parking" },
-      { "id": 3, "name": "Plot" },
-      { "id": 4, "name": "Office" },
-      { "id": 6, "name": "Industrial" }
+      { "id": 1, "name": "дом" },
+      { "id": 2, "name": "Плоский" },
+      { "id": 5, "name": "Коммерческий" },
+      { "id": 7, "name": "Гараж / Парковка" },
+      { "id": 3, "name": "участок" },
+      { "id": 4, "name": " Офис" },
+      { "id": 6, "name": "Промышленное" }
     ],
     "countries": [
       { "id": 1, "name": "Belgium" },
