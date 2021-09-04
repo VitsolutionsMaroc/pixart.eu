@@ -86,7 +86,7 @@
           </div>
           <div class="mt-6">
             <h4 class="text-lg font-meduim mb-4">{{ $t("LookingFor.Type") }}</h4>
-            <div class="px-9 grid grid-cols-4 gap-3">
+            <div class="px-9 grid md:grid-cols-4 md:gap-3 sm:grid-cols-3">
               <div
                 class="flex items-center"
                 v-for="category in $t('categories')"
@@ -456,5 +456,10 @@ button:focus,
   outline: 0;
   -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
   box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+}
+@media (max-width:767px) {
+label{
+  font-size :13px !important;;
+}
 }
 </style>
