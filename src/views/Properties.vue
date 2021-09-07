@@ -10,7 +10,7 @@
               'bg-yellow-500 border-yellow-500': filters.purpose == 'for sale'
             }"
           >
-            Buy
+            {{ $t("FilterHome.Buy") }}
           </button>
           <button
             class="border-2 px-5 p-1 text-black"
@@ -19,7 +19,7 @@
               'bg-yellow-500 border-yellow-500': filters.purpose == 'for rent'
             }"
           >
-            Rental
+            {{ $t("FilterHome.Rentale") }}
           </button>
         </div>
         <!-- search input -->
@@ -48,7 +48,7 @@
           <input
             class="w-full rounded mr-4"
             type="text"
-            placeholder="Search..."
+            :placeholder="$t('FilterHome.Search')"
             v-model="filters.keyword"
             @keyup="getEstates()"
           />
@@ -59,13 +59,13 @@
           <div class="grid md:grid-cols-2  xl:grid-cols-7 xl:gap-3 gap-2">
             <div class="xl:col-span-2">
               <multiselect
-                placeholder="Categories"
+                 :placeholder="$t('FilterHome.Categories')"
                 label="name"
                 track-by="name"
                 :multiple="true"
                 value="id"
                 v-model="filters.categories"
-                :options="categories"
+                :options="$t('categories')"
                 :close-on-select="true"
                 :show-labels="false"
                 :clear-on-select="false"
@@ -93,7 +93,7 @@
             </div>
             <div class="xl:col-span-2">
               <multiselect
-                placeholder="Countries"
+                :placeholder="$t('FilterHome.Countries')"
                 label="name"
                 track-by="name"
                 :multiple="true"
@@ -129,15 +129,15 @@
               <input
                 type="text"
                 v-model="filters.minPrice"
-                placeholder=" Min Price"
+                :placeholder="$t('EsatateFilter.MinPrice')"
                 class="px-3 py-2 mr-1 border"
               />
 
               <input
                 type="text"
                 v-model="filters.maxPrice"
-                placeholder=" Max Price"
-                class="md:px-3 py-2 border"
+                :placeholder="$t('EsatateFilter.MaxPrice')"
+                class="px-3 py-2 mr-1 border"
               />
             </div>
             <div class="grid grid-cols-2 gap-4">
@@ -145,14 +145,14 @@
                 @click="getEstates()"
                 class="py-2 border-yellow-500 text-white bg-yellow-500 font-bold"
               >
-                Apply
+               {{ $t("EsatateFilter.Apply") }} 
               </button>
               <button
                 @click="messagePopup = !messagePopup"
                 class=" py-2 border-yellow-500 text-white bg-yellow-500 font-bold"
               >
                 <!--<i class="far fa-plus-circle font-bold text-4xl text-yellow-500"></i>-->
-                More
+                  {{ $t("EsatateFilter.More") }}
               </button>
             </div>
           </div>
@@ -176,7 +176,7 @@
                   class="px-3 py-2 border"
                 /> -->
                   <multiselect
-                    placeholder="zipCodes"
+                    :placeholder="$t('EsatateFilter.zipCodes')"
                     label="Zip"
                     track-by="Zip"
                     :multiple="true"
@@ -210,7 +210,7 @@
                   </multiselect>
                   <!--<input type="text" placeholder="SubCategory" class="px-3 py-2 border" />-->
                   <multiselect
-                    placeholder="subcategories"
+                    :placeholder="$t('EsatateFilter.Subcategories')"
                     label="name"
                     track-by="name"
                     :multiple="true"
@@ -247,31 +247,31 @@
                   <input
                     type="text"
                     v-model="filters.minArea"
-                    placeholder="Min Area"
+                    :placeholder="$t('EsatateFilter.MinArea')"
                     class="px-3 py-2 border"
                   />
                   <input
                     type="text"
                     v-model="filters.maxArea"
-                    placeholder="Max Area"
+                    :placeholder="$t('EsatateFilter.MaxArea')"
                     class="px-3 py-2 border"
                   />
                   <input
                     type="text"
                     v-model="filters.rooms"
-                    placeholder="Number rooms"
+                    :placeholder="$t('EsatateFilter.Numberrooms')"
                     class="px-3 py-2 border"
                   />
                   <input
                     type="text"
                     v-model="filters.bathrooms"
-                    placeholder="Number bathrooms"
+                   :placeholder="$t('EsatateFilter.Numberbathrooms')"
                     class="px-3 py-2 border"
                   />
                 </div>
                 <div class="grid md:grid-cols-4 mb-12">
                   <span
-                    ><label class="m-2"> Parking</label>
+                    ><label class="m-2"> {{ $t("EsatateFilter.Parking") }}</label>
                     <input
                       type="checkbox"
                       value="1"
@@ -279,7 +279,7 @@
                       class="px-3 py-2 border"
                   /></span>
                   <span
-                    ><label class="m-2"> Terrace</label>
+                    ><label class="m-2"> {{ $t("EsatateFilter.Terrace") }}</label>
                     <input
                       type="checkbox"
                       value="1"
@@ -287,7 +287,7 @@
                       class="px-3 py-2 border"
                   /></span>
                   <span
-                    ><label class="m-2"> Furnished</label>
+                    ><label class="m-2"> {{ $t("EsatateFilter.Furnished") }}</label>
                     <input
                       type="checkbox"
                       value="1"
@@ -295,7 +295,7 @@
                       class="px-3 py-2 border"
                   /></span>
                   <span
-                    ><label class="m-2"> Garden</label>
+                    ><label class="m-2"> {{ $t("EsatateFilter.Garden") }}</label>
                     <input
                       type="checkbox"
                       value="1"
@@ -308,13 +308,13 @@
                     @click="messagePopup = false"
                     class="bg-gray-300 px-6 py-2 text-center cursor-pointer mr-2 rounded"
                   >
-                    Cancel
+                    {{ $t("EsatateFilter.Cancel") }}
                   </button>
                   <button
                     @click="applyExtraFilters()"
                     class="bg-yellow-500 px-8 py-2 text-center cursor-pointer rounded"
                   >
-                    Apply
+                   {{ $t("EsatateFilter.Apply") }}
                   </button>
                 </div>
               </div>
@@ -459,7 +459,7 @@
       <div class="p-2">
         <div class="w-full md:grid grid-cols-2">
           <div class="sm:mb-0 mb-2 xl:text-xl">
-            Results ({{ totalEstates }})
+            {{ $t("EsatateFilter.Results") }} ({{ totalEstates }})
           </div>
           <div class="flex md:justify-end sm:mt-2">
             <!--<span class="mr-6 cursor-pointer xl:text-xl"
@@ -472,12 +472,12 @@
               <span
                 class="text-sm sm:text-base xl:text-xl"
                 v-if="filters.sortByPrice == 'asc'"
-                >Price <i class="fas fa-arrow-down text-yellow-500 "></i
+                >{{ $t("EsatateFilter.Price") }} <i class="fas fa-arrow-down text-yellow-500 "></i
               ></span>
               <span
                 class="text-sm sm:text-base xl:text-xl"
                 v-if="filters.sortByPrice == 'desc'"
-                >Price <i class="fas fa-arrow-up text-yellow-500"></i
+                >{{ $t("EsatateFilter.Price") }} <i class="fas fa-arrow-up text-yellow-500"></i
               ></span>
             </button>
             <!--<div class="dropdown">-->
@@ -489,13 +489,13 @@
                 class="text-sm sm:text-base xl:text-xl"
                 v-if="filters.sortByDate == 'asc'"
               >
-                <i class="far fa-clock text-yellow-500"></i> Update</span
+                <i class="far fa-clock text-yellow-500"></i> {{ $t("EsatateFilter.Update") }}</span
               >
               <span
                 class="text-sm sm:text-base xl:text-xl"
                 v-if="filters.sortByDate == 'desc'"
               >
-                <i class="far fa-clock text-yellow-500"></i> Update</span
+                <i class="far fa-clock text-yellow-500"></i> {{ $t("EsatateFilter.Update") }}</span
               >
             </button>
 
@@ -622,7 +622,7 @@ export default {
       );
     },
     zipCodes() {
-      debugger;
+      // debugger
       return _.flatten(this.filters.countries.map(country => country.zipCodes));
     }
   },

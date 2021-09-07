@@ -6,16 +6,16 @@
           class="font-bold text-l md:text-xl text-center	m-0 mt-5 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex mb-5"
           v-if="showMsg"
         >
-          Thank you for subscribing. We will contact you as soon as possible.
+           {{ $t("Contact.SuccessMessage") }}
         </p>
       </div>
-      <h3 class="text-center font-semibold text-3xl">Search</h3>
+      <h3 class="text-center font-semibold text-3xl">{{ $t("FilterHome.Search") }}</h3>
       <div class="mt-2 mx-auto w-12 h-2 bg-yellow-600"></div>
       <form @submit.prevent="addContact()" class="mt-5" ref="clear">
         <div>
-          <div class="grid grid-cols-4 gap-6">
+          <div class="grid md:grid-cols-4 sm:grid-cols-3 gap-6">
             <div class="col-span-2">
-              <label class="text-gray-600 text-transparent">.</label>
+              <label class="text-gray-600 text-transparent"></label>
               <multiselect
                 required
                 class="flex items-center mt-2 mb-6 shadow-all bg-white "
@@ -26,28 +26,30 @@
                 :show-labels="false"
                 :searchable="false"
                 :options="$t('transactions')"
-                placeholder="Transaction *"
+                :placeholder="$t('EsatateFilter.Transaction')"
                 :close-on-select="true"
               >
               </multiselect>
             </div>
             <div>
-              <label class="text-gray-600">Min Price *</label>
+             
               <div class="flex items-center mt-2 mb-6  bg-white priceInput">
                 <input
                   required
                   type="number"
+                  :placeholder="$t('EsatateFilter.MinPrice')"
                   class="w-full pr-10 pl-4 py-3  shadow-all text-gray-700 h-11 "
                   v-model="contact.PriceMin"
                 />
               </div>
             </div>
             <div>
-              <label class="text-gray-600">Max Price *</label>
+              
               <div class="flex items-center mt-2 mb-6  priceInput">
                 <input
                   required
                   type="number"
+                  :placeholder="$t('EsatateFilter.MaxPrice')"
                   class="w-full pr-10 pl-4 py-3 shadow-all text-gray-700 h-11"
                   v-model="contact.PriceMax"
                 />
@@ -61,7 +63,7 @@
                 type="number"
                 class="w-full pr-10 pl-4 py-3 shadow-all text-gray-700 h-11  ring-4	"
                 v-model="contact.ZipCodes"
-                placeholder="Zip Code *"
+                :placeholder="$t('EsatateFilter.zipCodes')"
               />
             </div>
 
@@ -75,7 +77,7 @@
                 item-value="id"
                 :show-labels="false"
                 :options="$t('countries')"
-                placeholder="Countries..."
+               :placeholder="$t('FilterHome.Countries')"
                 :close-on-select="true"
                 open-direction="bottom"
               >
@@ -83,8 +85,8 @@
             </div>
           </div>
           <div class="mt-6">
-            <h4 class="text-lg font-meduim mb-4">Type : *</h4>
-            <div class="px-9 grid grid-cols-4 gap-3">
+            <h4 class="text-lg font-meduim mb-4">{{ $t("LookingFor.Type") }}</h4>
+            <div class="px-9 grid md:grid-cols-4 md:gap-3 sm:grid-cols-3">
               <div
                 class="flex items-center"
                 v-for="category in $t('categories')"
@@ -110,54 +112,54 @@
         </div>
         <div>
           <h3 class="text-center font-semibold text-3xl mt-12">
-            Your Contact Details
+            {{ $t("LookingFor.YourContactDetails") }}
           </h3>
           <div class="mt-2 mx-auto w-16 h-2 bg-yellow-600"></div>
           <div class="mt-5">
             <div class="grid grid-cols-2 gap-6">
               <div>
-                <label class="text-gray-600">First Name *</label>
+                <label class="text-gray-600">{{ $t("Contact.FirstName") }} *</label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
                     required
                     type="text"
-                    placeholder="Your first name..."
+                    :placeholder="$t('Contact.PlaceHolderName')"
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
                     v-model="contact.FirstName"
                   />
                 </div>
               </div>
               <div>
-                <label class="text-gray-600">Last Name *</label>
+                <label class="text-gray-600">{{ $t("Contact.LastName") }} *</label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
                     required
                     type="text"
-                    placeholder="Your last name..."
+                   :placeholder="$t('Contact.PlaceHolderLast')"
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
                     v-model="contact.Name"
                   />
                 </div>
               </div>
               <div>
-                <label class="text-gray-600">E-mail *</label>
+                <label class="text-gray-600">{{ $t("Contact.Email") }} </label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
                     required
                     type="email"
-                    placeholder="Your E-mail address..."
+                    :placeholder="$t('Contact.EmailHolder')"
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
                     v-model="contact.PrivateEmail"
                   />
                 </div>
               </div>
               <div>
-                <label class="text-gray-600">Phone Number *</label>
+                <label class="text-gray-600">{{ $t("Contact.PhoneNumber") }} </label>
                 <div class="flex items-center my-2 shadow-all">
                   <input
                     required
                     type="number"
-                    placeholder="Your phone number ..."
+                    :placeholder="$t('Contact.textTel')"
                     class="w-full pr-10 pl-4 py-3 text-gray-700"
                     v-model="contact.PrivateMobile"
                   />
@@ -168,7 +170,7 @@
               <button
                 class="text-center px-24 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ..."
               >
-                Send
+               {{ $t("FooterComponant.Submit") }}
               </button>
               <!-- <button type="button" class="bg-rose-600 ..." v-if="isLoaded">
                   <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
@@ -470,5 +472,10 @@ button:focus,
     0 0 5px rgba(223, 149, 35, 0.75);
   box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
     0 0 5px rgba(223, 149, 35, 0.75);
+}
+@media (max-width:767px) {
+label{
+  font-size :13px !important;;
+}
 }
 </style>

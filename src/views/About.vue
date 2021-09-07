@@ -5,47 +5,31 @@
         class="textHeader text-white text-lg md:text-4xl lg:text-6xl text-center "
       >
         <p style="font-size:2rem;padding:30px 20px;">
-          Your real estate investment, our commitment !<br>
-          Our professionals are ready to assist you through our <br>
-          offices in Belgium, Luxembourg, Greece, Dubai and Miami. 
-
+          <section v-html="$t('About.titleAbout')"></section>
         </p>
       </div>
     </div>
     <!-- Vision section -->
     <div class="text-center py-4 px-4 md:px-32 mt-20 mb-20">
-      <h2 class="text-xl md:text-4xl font-bold my-2 mb-10">{{$t("Apropos.OUR_TEAM")}}</h2>
+      <h2 class="text-xl md:text-4xl font-bold my-2 mb-10">{{ $t("About.OURTEAM")}}</h2>
       <p class="text-sm text-justify md:text-center" style="font-size:1.3rem;line-height: 1.6">
-        Pixart Real Estate consists of licensed real estate professionals with a
-         common denominator : passion & expertise in real estate. For several years
-          on the Benelux market, offers a real realty advisory service and legal 
-          assistance supported by lawyers specializing in real estate law,  for the
-           residential real estate and  business real estate. Company is supported
-            by a local, multilingual, Belgian, Greek, Luxembourg, Russian, Chinese or 
-          Dubai team
+      {{ $t("About.Team") }}
       </p>
     </div>
     <!-- Vision section -->
     <!-- fees -->
       <div class="text-center py-4 px-4 md:px-32 mt-20 mb-20" style="background:rgb(207 206 206)">
         <div>
-          <h2 class="text-xl md:text-4xl font-bold my-2 mb-10">OUR FEES</h2>
-        <p>Pixart Real Estate makes a point of reserving preferential fees for its clients, investors, buyers, and sellers. 
-        We are much more than an intermediary, we are your real estate partner !</p>
+          <h2 class="text-xl md:text-4xl font-bold my-2 mb-10">{{ $t("About.OURFEES") }}</h2>
+        <p>{{ $t("About.FeesText") }}</p>
         </div>
          
     <!-- about section -->
     <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">Looking for a way to invest your money?</h1>
-        <p style="text-align: justify;">
-       For most investors, the real estate market is the preferred choice as it is a 
-       tangible asset that cannot be stolen or hacked. Everyone needs a property to live in,
-        whether they rent or own a home, this is a basic human need.
-        Reading the presentation below, you can find out why the demand for investment in Greek real 
-        estate is increasing by attracting continuously, investors from all over the world.
-
-
+        <h1 class="text-4xl md:text-2xl mb-6" >{{ $t("About.Investyourmoney") }}</h1>
+        <p  style="text-align: initial;">
+         {{ $t("About.MoneyText") }}
         </p>
       </div>
       <div>
@@ -57,18 +41,9 @@
         <img class="w-full" src="../assets/img/investers.jpg" alt="<a href='https://fr.freepik.com/photos/carte-visite'>Carte de visite photo créé par rawpixel.com - fr.freepik.com</a>" />
       </div>
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">Why invest in Greece?</h1>
-        <p style="text-align: justify;">
-       The Greek real estate market is a safe and promising sector with unique opportunities in
-        real estate development, especially in areas such as tourism, culture, entrepreneurship, 
-        holiday homes, logistics services and more.
-The Greek real estate market is one of the few remaining markets in Europe where there are still
- high-profit margins. Suffice it to say that 2020 real estate prices in Greece are on average 21% 
- lower in comparison with 2007 prices. This, coupled with the steady increase in tourism, and the 
- generous incentives designed for the development of the construction sector, pledge the maximum return on investment.
-
-
-
+        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">{{ $t("About.Greese") }}</h1>
+        <p  style="text-align: initial;">
+          {{ $t("About.GreesetEXT") }}
         </p>
       </div>
       
@@ -81,11 +56,9 @@ The Greek real estate market is one of the few remaining markets in Europe where
     <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
       
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">WHY I.B.P.Greece ?</h1>
-        <p style="text-align: justify;">
-      I.B.P.Greece is here to help you make your next successful investment in the real estate market, starting from scratch, by covering all stages, from design and implementation to delivery and utilization.
-      Our team is staffed by highly experienced executives (engineers, accountants, lawyers, economists, notaries, brokers), and works with a network of trusted associates to cover extra services that may be required.
-      We stand by you every step of the way, providing the best solutions for every emerging need.
+        <h1 class="text-4xl md:text-2xl mb-6" >{{ $t("About.iBPGreese") }}</h1>
+        <p style="text-align: initial;">
+            {{ $t("About.IBPText") }}
         </p>
       </div>
       <div>

@@ -32,7 +32,7 @@
             class="mt-6 text-center m-auto text-white p-2 py-4 w-full text-lg font-bold"
             style="background:#fbf0df;color:#df9639"
           >
-            Contact us
+            {{ $t("Contact.ContactUs") }}
           </button>
         </div>
         <v-modal
@@ -48,9 +48,9 @@
           <hr>
           <div class="p-10">
             <ul>
-              <li><a target="_blank" :href="'https://www.facebook.com/sharer.php?u='+ getURL()"  rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"><i class="fa fa-facebook-square mr-5"></i> Share on Facebook </a></li>
-              <li><i class="fas fa-envelope  mr-5"></i><a :href="'mailto:?body='+getURL()">Send To a Friend</a></li>
-              <li onclick="window.print()" class="curser_print"><i class="fas fa-print  mr-5"></i>Print</li>
+              <li><a target="_blank" :href="'https://www.facebook.com/sharer.php?u='+ getURL()"  rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"><i class="fa fa-facebook-square mr-5"></i> {{ $t("Details.Share") }}</a></li>
+              <li><i class="fas fa-envelope  mr-5"></i><a :href="'mailto:?body='+getURL()">{{ $t("Details.SendTo") }}</a></li>
+              <li onclick="window.print()" class="curser_print"><i class="fas fa-print  mr-5"></i>{{ $t("Details.Print") }}</li>
             </ul>
           </div>
           <hr>
@@ -91,14 +91,14 @@
         <div class="section-right p-4">
           <div class="font-bold text-xl py-2 mb-8">
             <span v-if="estate.Price" class="">
-              Price : {{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}
+              {{ $t("EsatateFilter.Price") }} : {{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}
             </span>
             <span class="float-right capitalize" style="color:#39D47A">{{
               estate.purpose
             }}</span>
           </div>
           <div class="ref">
-            <span>Reference : {{estate.EstateID}}</span>
+            <span>{{ $t("Details.Reference") }}: {{estate.EstateID}}</span>
           </div>
 
           <span class="my-2 block text-black font-bold text-xl"
@@ -128,33 +128,33 @@
           </div>
 
           <h2 class="block text-black font-bold md:text-xl my-4">
-            Property details
+            {{ $t("Details.propertieDet") }}
           </h2>
           <div class="grid grid-cols-2 md:grid-cols-4 mb-2">
             <div>
-              <span class="text-gray-600 font-bold mb-1 block">Parking</span>
-              <span v-if="estate.Parking">Yes</span>
-              <span v-else>No</span>
+              <span class="text-gray-600 font-bold mb-1 block">{{ $t("EsatateFilter.Parking") }}</span>
+              <span v-if="estate.Parking">{{ $t("Details.Yes") }}</span>
+              <span v-else>{{ $t("Details.No") }}</span>
             </div>
             <div>
-              <span class="text-gray-600 font-bold mb-1 block">Garage</span>
-              <span v-if="estate.Garage">Yes</span>
-              <span v-else>No</span>
+              <span class="text-gray-600 font-bold mb-1 block">{{ $t("EsatateFilter.Garage") }}</span>
+              <span v-if="estate.Garage">{{ $t("Details.Yes") }}</span>
+              <span v-else>{{ $t("Details.No") }}</span>
             </div>
             <div>
-              <span class="text-gray-600 font-bold mb-1 block">Terrace</span>
-              <span v-if="estate.Terrace">Yes</span>
-              <span v-else>No</span>
+              <span class="text-gray-600 font-bold mb-1 block">{{ $t("EsatateFilter.Terrace") }}</span>
+              <span v-if="estate.Terrace">{{ $t("Details.Yes") }}</span>
+              <span v-else>{{ $t("Details.No") }}</span>
             </div>
             <div>
-              <span class="text-gray-600 font-bold mb-1 block">Furnished</span>
-              <span v-if="estate.Furnished">Yes</span>
-              <span v-else>No</span>
+              <span class="text-gray-600 font-bold mb-1 block">{{ $t("EsatateFilter.Furnished") }}</span>
+              <span v-if="estate.Furnished">{{ $t("Details.Yes") }}</span>
+              <span v-else>{{ $t("Details.No") }}</span>
             </div>
           </div>
           <div class="grid grid-cols-2">
-            <span class="text-gray-600 font-bold mb-1">Ground Area</span>
-            <span class="text-gray-600 font-bold mb-1">Garden Area</span>
+            <span class="text-gray-600 font-bold mb-1">{{ $t("Details.GroundArea") }}</span>
+            <span class="text-gray-600 font-bold mb-1">{{ $t("Details.GardenArea") }}</span>
             <div class="mb-2">
               {{ estate.GroundArea }}<span v-if="estate.GroundArea"> m²</span>
             </div>
@@ -165,7 +165,7 @@
           </div>
 
           <h2 class="my-2 font-bold text-lg" v-if="estate.Description">
-            Description
+            {{ $t("Details.Description") }}
           </h2>
           <p>
             {{ estate.Description }}
@@ -173,7 +173,7 @@
         </div>
         <!-- Property details -->
          <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px;margin-bottom:50px">
-            <h1 style="font-size:2rem">You Will Like Also</h1>
+            <h1 style="font-size:2rem"> {{ $t("Details.YouWillLike") }}</h1>
         </div>
         <!-- Related Estates -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
@@ -221,7 +221,7 @@
                 class="float-right px-2 py-1 rounded-full font-bold text-sm block text-white"
                 style="background:#fbf0df;color:#df9639"
               >
-                Details
+                {{ $t("Details.Details") }}
               </button>
             </div>
             <h2 class="text-black text-sm font-bold mb-4 block">

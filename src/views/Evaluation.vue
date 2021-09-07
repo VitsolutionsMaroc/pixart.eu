@@ -5,26 +5,26 @@
         class="font-bold text-l md:text-xl text-center	m-0 mt-10 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex"
         v-if="showMsg"
       >
-        Thank you for subscribing. We will contact you as soon as possible.
+       {{ $t("Contact.SuccessMessage") }}
       </p>
     </div>
     <h2 class="font-bold text-xl md:text-4xl text-center p-10 py-10 md:py-16">
-      EVALUATION
+      {{ $t("Evaluation.EVALUATION") }}
     </h2>
     <div class="px-4 md:px-16 lg:px-36 text-base lg:text-lg">
-      <p>Do you want to sell your property ?</p>
+      <p>{{ $t("Evaluation.Q1") }}</p>
       <p>
-        Our experts provide an accurate evaluation based on the market trends and their experience
+        {{ $t("Evaluation.R") }}
       </p>
-      <p>Fill out the form below and we will contact you promptly</p>
+      <p>{{ $t("Evaluation.R2") }}</p>
     </div>
     <!-- form -->
     <form @submit.prevent="addContact()" class="px-4 md:px-16 lg:px-36 my-4 text-sm">
      
-      <h2 class="text-center font-bold text-xl my-4">Contact</h2>
+      <h2 class="text-center font-bold text-xl my-4">{{ $t("Evaluation.Contact") }}</h2>
       <div class="grid grid-cols-2 gap-4">
         <div>
-          <label class="my-2">Gender</label>
+          <label class="my-2">{{ $t("Evaluation.Gender") }}</label>
           <multiselect
             class="mt-2 mb-3"
             required
@@ -55,30 +55,30 @@
           </select> -->
         </div>
         <div>
-          <label class="my-2">Full Name *</label>
+          <label class="my-2">{{ $t("Evaluation.FullName") }} *</label>
           <input
             type="text"
-            placeholder="Your Full name .."
+            :placeholder="$t('Evaluation.PlaceHolderLast')"
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.Name"
             required
           />
         </div>
         <div>
-          <label class="my-2">Email *</label>
+          <label class="my-2">{{ $t("Contact.Email") }} *</label>
           <input
             type="email"
-            placeholder="Your Email address .."
+            :placeholder="$t('Contact.EmailHolder')"
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.PrivateEmail"
             required
           />
         </div>
         <div>
-          <label class="my-2">Phone Number *</label>
+          <label class="my-2">{{ $t("Contact.PhoneNumber") }} *</label>
           <input
             type="text"
-            placeholder="Your Phone Number .."
+            :placeholder="$t('Contact.textTel')"
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.PrivateMobile"
             required
@@ -86,43 +86,43 @@
         </div>
       </div>
 
-      <h2 class="text-center font-bold text-xl my-4">Address</h2>
+      <h2 class="text-center font-bold text-xl my-4">{{ $t("Evaluation.Address") }}</h2>
       <div class="grid grid-cols-2 gap-4">
         <div>
-          <label class="my-2">Address *</label>
+          <label class="my-2">{{ $t("Evaluation.Address") }} *</label>
           <input
             type="text"
-            placeholder="Street"
+            :placeholder="$t('Evaluation.Street')"
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.Address1"
             required
           />
         </div>
         <div class>
-          <label class="my-2">Number *</label>
+          <label class="my-2">{{ $t("Evaluation.Number") }} *</label>
           <input
             type="number"
-            placeholder="Number .."
+            :placeholder="$t('Evaluation.NumberText')"
             class="px-3 py-2 my-2 border block w-full "
             v-model="contact.Number"
             required
           />
         </div>
         <div>
-          <label class="my-2">City *</label>
+          <label class="my-2">{{ $t("Evaluation.City") }} *</label>
           <input
             type="text"
-            placeholder="City .."
+            :placeholder="$t('Evaluation.CityText')"
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.City"
             required
           />
         </div>
         <div>
-          <label class="my-2">PostCode *</label>
+          <label class="my-2">{{ $t("Evaluation.City") }} *</label>
           <input
             type="text"
-            placeholder="Postcode .."
+            :placeholder="$t('Evaluation.PostCodeText')"
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.Zip"
             required
@@ -131,11 +131,11 @@
       </div>
 
       <h2 class="text-center font-bold text-xl my-4 gap-4">
-        Property description
+        {{ $t("Evaluation.Propertydescription") }}
       </h2>
       <div class="grid grid-cols-2 gap-2">
         <div>
-          <label class="my-2">Transaction type</label>
+          <label class="my-2">{{ $t("Evaluation.Transactiontype") }}</label>
           <multiselect
             class="mt-2 mb-3"
             required
@@ -146,7 +146,7 @@
             :show-labels="false"
             :searchable="false"
             :options="$t('transactions')"
-            placeholder="For Sale / For Rent"
+           :placeholder="$t('Evaluation.ForSaleOrForRent')"
             :close-on-select="true"
           >
           </multiselect>
@@ -166,7 +166,7 @@
           </select> -->
         </div>
         <div>
-          <label class="my-2">Property type</label>
+          <label class="my-2">{{ $t("Evaluation.Propertytype") }}</label>
           <multiselect
             class="mt-2 mb-3"
             required
@@ -177,7 +177,7 @@
             :show-labels="false"
             :searchable="false"
             :options="$t('categories')"
-            placeholder="Your Property type"
+             :placeholder="$t('Evaluation.PlaceHolderMsg')"
             :close-on-select="true"
           >
           </multiselect>
@@ -198,16 +198,16 @@
         </div>
 
         <div>
-          <label class="my-2">Construction Year</label>
+          <label class="my-2">{{ $t("Evaluation.ConstructionYear") }}</label>
           <input
             type="text"
-            placeholder="Year"
+             :placeholder="$t('Evaluation.Year')"
             class="px-3 py-2 my-2 border block w-full"
             v-model="contact.ConstructionYear"
           />
         </div>
         <div>
-          <label class="my-2">Surface</label>
+          <label class="my-2">{{ $t("Evaluation.Surface") }}</label>
           <input
             type="text"
             placeholder="m²"
@@ -216,7 +216,7 @@
           />
         </div>
         <div>
-          <label class="my-2">Country</label>
+          <label class="my-2">{{ $t("Evaluation.Country") }}</label>
           <multiselect
             class="mt-2 mb-3"
             required
@@ -226,7 +226,7 @@
             item-value="id"
             :show-labels="false"
             :options="$t('countries')"
-            placeholder="Countries..."
+            :placeholder="$t('Evaluation.PlaceHolderCountry')"
             :close-on-select="true"
             open-direction="bottom"
           >
@@ -252,14 +252,14 @@
           </v-select> -->
         </div>
         <div class="col-span-2 my-2">
-          <label>Comments</label>
+          <label>{{ $t("Evaluation.Comments") }}</label>
           <textarea class="w-full border border-2 h-32 px-3 py-2 mt-3" v-model="Comments"></textarea>
         </div>
       </div>
       <div class="text-center mt-4 mb-12">
          <button 
             class="text-center px-24 py-2 font-semibold bg-yellow-500 text-white transition duration-500 ease-in-out  hover:bg-yellow-600 transform hover:-translate-y-1  ...">
-        Submit
+        {{ $t("Evaluation.Submit") }}
       </button>
       </div>
      

@@ -230,24 +230,161 @@
             ><img class="m-auto mb-4" src="../assets/img/icon12.png"
           /></router-link>
 
-          <h4 class="text-xl font-bold">
-            We assist all your needs by providing insurances for
-          </h4>
-          <p class="m-auto mt-8" style="text-align:justify">
-            • Legal Protection is provided to apartment, shop and plot owners to
-            resolve disputes, including with their tenants,arising from rent
-            adjustment, non-payment of rent, damage to the apartment or shop,
-            eviction lawsuit.<br />
-            Protection of your home against all dangers.<br />
-            • Civil Liability Insurance.<br />
-            <span v-if="readMore3 == true">
-              • Moreover we protect our little friends with Pet insurance.<br />
-              • Ofcourse we protect your car with Car insurance solution, which
-              covers every need with unique flexibility.<br />
-              • We secure full coverage in all the sectors of Hospital Care, Out
-              of Hospital Care and Prevention.<br />
-            </span>
-          </p>
+        <div class="testimonial md:container md:mx-auto">
+            <div class="owl-carousel owl-theme box-slide">
+              <div>
+                  <div class="item">
+                      <img class="m-auto mb-4" src="../assets/img/icon10.png" />
+                      <h4 class="text-xl font-bold">{{$t("Home.ASSESSMENT")}}</h4>
+                      <p class="m-auto mt-8">
+                     {{$t("Home.assessmentText")}}
+                      </p>
+                  </div>
+              </div>
+              <div>
+                     <div class="item" style=" overflow:auto;">
+                        <img class="m-auto mb-4" src="../assets/img/icon5.png" />
+                        <h4 class="text-xl font-bold">  {{ $t("Home.REALTYANALYSIS") }}</h4>
+                        <p class="m-auto mt-8">
+                           <section v-html="$t('Home.TextRealityAnalise')"></section>
+                           <span v-if="readMore1==true">
+                           <section v-html="$t('Home.TextRealityAnalise2')"></section>
+                           </span><br>
+                           <span v-if="readMore1==false" @click="readMoreEvent(1)" style="color:orange;curser:pointer">{{ $t("Home.ReadMore") }}</span>
+                           <span  v-if="readMore1==true" @click="readMoreEvent(1)" style="color:orange;curser:pointer">{{ $t("Home.ReadLess") }}</span>
+                        </p>
+                    </div>
+              </div>
+              <div>
+                <div class="item">
+                    <img class="m-auto mb-4" src="../assets/img/icon8.png" />
+                    <h4 class="text-xl font-bold">{{ $t("Home.RELOCATION") }} </h4>
+                    <p class="m-auto mt-8">
+
+                     {{ $t("Home.TextRELOCATION") }}
+                    </p>
+                    <div class="mt-5">
+                          <router-link
+                    to="/lookingfor"
+                    class="lookingFor  p-2 md:p-4 lg:mx-4 mx-2 text-yellow-500"
+                    >{{$t("Home.MoreInfo")}}</router-link>
+                        </div>
+                 </div>
+              </div>
+              <div>
+                <div class="item">
+                      <img class="m-auto mb-4" src="../assets/img/icon4.png" />
+                      <h4 class="text-xl font-bold"> {{ $t("Home.STRATEGY") }}</h4>
+                      <p class="m-auto mt-8">
+                      {{$t("Home.STRATEGYText")}}
+                      </p>
+                      <div>
+                            <router-link
+                              to="/strategy"
+                              class="strategy  p-2 md:p-4 lg:mx-4 mx-2 text-yellow-500"
+                              >{{ $t("Home.ReadMore") }}</router-link>
+                          </div>
+                </div>
+              </div>
+              <div>
+                <div class="item">
+                    <img class="m-auto mb-4" src="../assets/img/icon6.png" />
+                    <h4 class="text-xl font-bold">{{ $t("Home.PROPERTYSALES") }}</h4>
+                    <p class="m-auto mt-8">
+                      {{ $t("Home.PROPERTYSALESText") }}
+                    </p>
+                </div>
+              </div>
+              <div>
+                <div class="item">
+                    <img class="m-auto mb-4" src="../assets/img/icon7.png" />
+                    <h4 class="text-xl font-bold">{{ $t("Home.RENOVATION") }}</h4>
+                    <p class="m-auto mt-8">
+                   {{ $t("Home.RENOVATIOnText") }}
+                    </p>
+                 </div>
+              </div>
+              <div>
+                <div class="item">
+                    <img class="m-auto mb-4" src="../assets/img/icon9.png" />
+                    <h4 class="text-xl font-bold">{{ $t("Home.CORPORATE") }}</h4>
+                    <p class="m-auto mt-8">
+                   {{ $t("Home.CorporateText") }}
+
+                    </p>
+                    <div>
+                          <router-link
+                    to="/corporate"
+                    class="Corporate  p-2 md:p-4 lg:mx-4 mx-2 text-yellow-500"
+                    >{{ $t("Home.ReadMore") }}</router-link>
+                    </div>
+                 </div>
+              </div>
+              <div>
+                  <div class="item">
+                    <img class="m-auto mb-4" src="../assets/img/icon2.png" />
+                    <h4 class="text-xl font-bold"> {{ $t("Home.RESIDENTIAL") }}</h4>
+                    <p class="m-auto mt-8">
+                    {{ $t("Home.ResidentialText") }}
+                    </p>
+                </div>
+              </div>
+              <div>
+                 <div class="item">
+                      <img class="m-auto mb-4" src="../assets/img/icon3.png" />
+                      <h4 class="text-xl font-bold">{{ $t("Home.NEWPROJECTS") }}</h4>
+                      <p class="m-auto mt-8">
+                         {{ $t("Home.ProjectText") }}
+                      </p>
+                  </div>
+              </div>
+               <div>
+                 <div class="item" style=" overflow:auto;">
+                   <router-link
+                              to="/Golden"
+                              class="golden text-yellow-500"
+                              > <img class="m-auto mb-4" src="../assets/img/icon11.png" /></router-link>
+                     
+                      <h4 class="text-xl font-bold"> {{$t("Home.GOLDEn")}}</h4>
+                      <h6>{{$t("Home.GOLDEnt")}}</h6>
+                      <p class="m-auto mt-8" style="text-align:justify;">
+                        <section v-html="$t('Home.GoldenText')"></section>
+                        <span v-if="readMore2 == true">
+                          <section v-html="$t('Home.GoldenText2')"></section>
+                       
+                        </span>
+                         
+                      </p>
+                     <br>
+                           <span v-if="readMore2==false" @click="readMoreEvent(2)" style="color:orange;curser:pointer">{{ $t("Home.ReadMore") }}</span>
+                      <span  v-if="readMore2==true" @click="readMoreEvent(2)" style="color:brown;curser:pointer">{{ $t("Home.ReadLess") }}</span>
+                  </div>
+              </div>
+              <div>
+                  <div class="item" style=" overflow:auto;">
+                     <router-link
+                              to="/Assurance"
+                              class="assurance text-yellow-500"
+                              ><img class="m-auto mb-4" src="../assets/img/icon12.png" /></router-link>
+                    
+                    <h4 class="text-xl font-bold"> {{$t("Home.insurances")}}</h4>
+                    <p class="m-auto mt-8" style="text-align:justify">
+                       <section v-html="$t('Home.insurancesText')"></section>
+                      
+                        <span  v-if="readMore3==true">
+                           <section v-html="$t('Home.insurancesText2')"></section>
+                       
+                      </span>
+                         
+                    </p>
+                 
+                          <span v-if="readMore3==false" @click="readMoreEvent(3)" style="color:orange;curser:pointer">{{ $t("Home.ReadMore") }}</span>
+                      <span  v-if="readMore3==true" @click="readMoreEvent(3)" style="color:brown;curser:pointer;text-align:justify">{{ $t("Home.ReadLess") }}</span>
+                </div>
+              </div>
+
+            </div>
+
 
           <span
             v-if="readMore3 == false"

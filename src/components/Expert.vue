@@ -1,73 +1,7 @@
 <template>
-  <div>
-    <div
-      style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px;margin-bottom:50px"
-    >
-      <h1 style="font-size:2rem">OUR EXPERTS</h1>
-    </div>
-    <div class="caroussel_footer md:container md:mx-auto">
-      <div class="owl-carousel owl-theme footer_owl">
-        <div>
-          <div class="item">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              style="margin-bottom:20px"
-              href="https://www.ibp.be/en/List/Abroad/27 "
-            >
-              <img
-                class="m-auto mb-4"
-                style="margin-bottom:55px"
-                src="../assets/img/ibp.png"
-            /></a>
-            <h4 class="text-xl font-bold">BELGIUM | IBP</h4>
-          </div>
-        </div>
-        <div>
-          <div class="item">
-            <img class="m-auto mb-4" src="../assets/img/favicone.png" />
-            <h4 class="text-xl font-bold">Luxembourg | Pixart</h4>
-          </div>
-        </div>
-        <div>
-          <div class="item">
-            <img
-              class="m-auto mb-4"
-              style="margin-bottom:33px"
-              src="../assets/img/dubai.png"
-            />
-            <h4 class="text-xl font-bold">Dubai - UAE</h4>
-          </div>
-        </div>
-        <div>
-          <div class="item">
-            <img
-              class="m-auto mb-4"
-              style="margin-bottom:58px"
-              src="../assets/img/alfa.png"
-            />
-            <h4 class="text-xl font-bold">ALPHA</h4>
-          </div>
-        </div>
-        <div>
-          <div class="item" id="ideal">
-            <img
-              class="m-auto mb-4"
-              style="margin-bottom:58px"
-              src="../assets/img/ideal.png"
-            />
-            <h4 class="text-xl font-bold">IDEAL ASSURANCE<br />REAL ESTATE</h4>
-          </div>
-        </div>
-        <div>
-          <div class="item" id="manelis">
-            <img
-              class="m-auto mb-4"
-              style="margin-bottom:45px"
-              src="../assets/img/logo_footer.png"
-            />
-            <h4 class="text-xl font-bold">GREECE</h4>
-          </div>
+     <div>
+        <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px;margin-bottom:50px">
+           <h1 style="font-size:2rem">{{ $t("expertComponant.Expert")}}</h1>
         </div>
         <div>
           <div class="item">

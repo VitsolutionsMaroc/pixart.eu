@@ -7,7 +7,7 @@
     <div class="grid lg:grid-cols-3 gap-10 px-16 py-8 mt-10 infos">
        <div>
         <i class="fas fa-concierge-bell"></i>
-         <h1>ADDITIONAL SERVICES</h1>
+         <h1>{{ $t("ComponantAssurance.ADDITIONALSERVICES") }}</h1>
         <p>
           
             <!-- • WARRANTY SECURITY <br>
@@ -24,69 +24,36 @@
 
       <div>
         <i class="fas fa-user-shield"></i>
-        <h1>SELF-EMPLOYED</h1>
+        <h1><h1>{{ $t("ComponantAssurance.Self") }}</h1></h1>
         <p>
         
-      • WARRANTY SECURITY<br>
-      • GROUP HEALTH PROGRAMS<br>
-      • PROFESSIONAL LIABILITY INSURANCE FOR HAIRDRESSERS<br>
-      • LIABILITY<br>
-      • LEGAL PROTECTION<br>
-      • LEGAL INTERNET USER PROTECTION ARAG CYBER PROTECTION<br>
-
+      <section v-html="$t('ComponantAssurance.SELFEMPLOYED')"></section>
         
         </p>
       </div>
-      
+     
       <div>
         <i class="fas fa-house-user"></i>
-         <h1> GREEN HOUSE</h1>
+         <h1> {{ $t("ComponantAssurance.GREENHOUSE") }}</h1>
         <p>
          
-            • WARRANTY SECURITY<br>
-            • PHOTOVOLTAICS<br>
-            • ENERGY<br>
-            • ΒΙΟΜΑΖΑ<br>
-            • ENERGY SAVING<br>
-            • FREE ALTERNATIVE HEATING<br>
-            • POLLUTANTS EXCHANGE<br>
-            • HOUSEHOLD GENERATORS<br>
+         <section v-html="$t('ComponantAssurance.GreenHouseText')"></section>
 
          
         </p>
       </div>
       <div>
         <i class="fas fa-building"></i>
-         <h1>SMALL AND MEDIUM ENTERPRISES</h1>
+         <h1>{{ $t("ComponantAssurance.Small") }}</h1>
         <p>
-       
-          • WARRANTY SECURITY<br>
-          • CYBER INSURANCE<br>
-          • LIABILITY<br>
-          • LEGAL PROTECTION<br>
-          • LEGAL PROTECTION OF HEALTH PROFESSIONS<br>
-          • LEGAL PROTECTION OF PHOTOVOLTAICAL OWNERS<br>
-          • LEGAL PROTECTION OF MANAGERS<br>
-          • LEGAL PROTECTION OF CIVIL SERVANTS<br>
-          • LEGAL PROTECTION OF PRIVATE EMPLOYEES<br>
-          • LEGAL PROTECTION OF ACCOUNTANTS<br>
-
-       
+       <section v-html="$t('ComponantAssurance.SmallText')"></section>
         </p>
       </div>
       <div>
         <i class="fas fa-city"></i>
-        <h1>BIG COMPANIES</h1>
+        <h1>{{ $t("ComponantAssurance.Big") }}</h1>
         <p>    
-        • WARRANTY SECURITY<br>
-        • CYBER INSURANCE<br>
-        • GROUP HEALTH PROGRAMS<br>
-        • LIABILITY<br>
-        • LEGAL PROTECTION<br>
-        • TRAVEL INSURANCE<br>
-        • ENVIRONMENTAL RISKS - WASTE TRANSPORT<br>
-        • PHARMACEUTICAL - PARAPARMACEUTICAL PRODUCTS - CLINICAL STUDIES<br>
-        • SHIP INSURANCE<br>
+       <section v-html="$t('ComponantAssurance.BigText')"></section>
 
 
     
@@ -94,90 +61,25 @@
       </div>
       <div>
         <i class="fas fa-briefcase"></i>
-        <h1>BUSINESS</h1>
+        <h1> {{ $t("ComponantAssurance.BUSINESS") }}</h1>
         <p>    
-          • WARRANTY SECURITY<br>
-          • GROUP HEALTH PROGRAMS<br>
-          • MEDICINE<br>
-          • HOTELS<br>
-          • AIRBNB RENTAL INSURANCE<br>
-          • INSURANCE OF RENTED ROOMS<br>
-          • industries<br>
-          • CONSTRUCTION<br>
-          • TRAVEL INSURANCE<br>
-          • GROUP INSURANCE<br>
-          • GROUP TRAVEL INSURANCE<br>
+          <section v-html="$t('ComponantAssurance.BusnessText')"></section>
 
         </p>
       </div>
        <div style="overflow:auto;height:330px">
         <i class="fas fa-paw"></i>
-         <h1>PET INSURANCE</h1>
+         <h1>{{ $t("ComponantAssurance.PETINSURANCE") }}</h1>
         <p>
-         
-           • PETFirst PRODUCT<br>
-           • PRIVATE BIRTH INSURANCE<br>
-           • GROUP INSURANCE<br>
-           • WISE ACT<br>
-           • WISE DENTAL<br>
-           • WISE DAEDALUS<br>
-           • A 'AESTHETIC<br>
-           • KIOSK SECURITY<br>
-           • CYBER INSURANCE<br>
-           • Pet Insurance (in the car)<br>
-           • Pet Insurance (in a home or business)<br>
-           • CIVIL VETERINARY LIABILITY<br>
-           • LIMITED LIABILITY OF PET OWNER<br>
-           • LEGAL PROTECTION OF A PET OWNER<br>
-           • LOVE ME BACK<br>
-           • STAND BY ME<br>
-           • HORSE INSURANCE - BLOODSTOCK<br>
-           • HOOLIE ANIMAL COVER<br>
-           • EUROPEAN PET PASSPORT<br>
-           • LIMITED LIABILITY OF PET OWNER<br>
+         <section v-html="$t('ComponantAssurance.PetText')"></section>
          
         </p>
       </div>
         <div style="overflow:auto;height:330px">
         <i class="fas fa-heartbeat"></i>
-        <h1>HEALTH</h1>
+        <h1>{{ $t("ComponantAssurance.HEALTH") }}</h1>
         <p>    
-          • health card<br>
-          • GROUP HEALTH PROGRAMS<br>
-          • AIRCRAFT COVER DUE TO COVID-19<br>
-          • Health Insurance<br>
-          • PRIMARY CARE<br>
-          • LIFE INSURANCE<br>
-          • SECURITY OF ABROAD STUDENTS (ERASMUS)<br>
-          • GROUP INSURANCE FOR AMATEUR ATHLETES<br>
-          • TRAVEL SAFETY<br>
-          • SAFETY OF FOREIGNERS<br>
-          • General Liability Program "SCHOOL COVER"<br>
-          • ESTATE<br>
-          • WARRANTY SECURITY<br>
-          • insurance<br>
-          • TOURISM AND INTERRUPT BUS INSURANCE<br>
-          • BICYCLE SAFETY<br>
-          • E-SCOOTER SECURITY<br>
-          • LEATHER BOAT INSURANCE<br>
-          • ART SAFETY<br>
-          • ELECTRIC CAR SAFETY<br>
-          • SECURITY DRONE<br>
-          • SAVINGS & INVESTMENTS<br>
-          • PENSION<br>
-          • INVESTMENT PROGRAMS<br>
-          • INCOME INSURANCE<br>
-          • ADDITIONAL SERVICES<br>
-          • PERSONAL ACCIDENT INSURANCE<br>
-          • LEGAL PROTECTION DRONE<br>
-          • LEGAL FAMILY PROTECTION<br>
-          • LEGAL PROTECTION OF PROPERTY OWNER<br>
-          • INDIVIDUAL LEGAL PROTECTION<br>
-          • CONSUMER LEGAL PROTECTION<br>
-          • LEGAL PROTECTION OF A BUILDING MANAGER<br>
-          • LEGAL PROTECTION OF ORDERS<br>
-          • LEGAL INTERNET USER PROTECTION ARAG CYBER PROTECTION<br>
-
+          <section v-html="$t('ComponantAssurance.HEALTHText')"></section>
     
         </p>
       </div>

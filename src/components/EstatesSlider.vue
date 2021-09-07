@@ -41,7 +41,7 @@
               class="float-right px-2 py-1 rounded-full font-bold text-sm block text-white"
               style="background:#fbf0df;color:#df9639"
             >
-              Details
+              {{ $t("Details.Details") }}
             </button>
           </div>
           <div>
@@ -88,8 +88,8 @@
         <div
           class="bg-gray-200 text-green-700 text-xs font-bold rounded-full absolute top-0 ml-2 mt-2 px-2 py-1 text-base"
         >
-          <span v-if="estate.purpose === 'for rent'">Rent</span>
-          <span v-else-if="estate.purpose === 'for sale'">Sale</span>
+          <span v-if="estate.purpose === 'for rent'">{{ $t("FilterHome.Rentale") }}</span>
+          <span v-else-if="estate.purpose === 'for sale'">{{ $t("FilterHome.sale") }}</span>
         </div>
       </div>
     </div>
