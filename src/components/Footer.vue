@@ -1,43 +1,50 @@
 <template>
   <div>
-    <div class="bg-gray-900 p-10 text-white footer_main" style="position:relative;z-index:99999;">
-     <div class="grid md:grid-cols-3 bg-gray-900 p-10 text-white">
-       <div class="logo">
-         <div  class="mt-10 mb-20"> <img class="" src="../assets/img/logo.png"  /></div>
-       </div>
-       <div  class=" mt-2 md:mt-0 bg-gray-900"
-        id="menue">
-         
-        <span class="mb-2 md:mb-0">
-          <router-link to="/" class=" other lg:mx-4 mx-2 ">{{ $t("Header.Home") }}</router-link>
-        </span>
-        <span class="mb-2 md:mb-0 ">
-          <router-link to="/about" class=" other lg:mx-4 mx-2">{{ $t("Header.About") }}</router-link>
-        </span>
-        <span class="mb-6 md:mb-0">
-          <router-link to="/properties" class=" other lg:mx-4 mx-2"
-            > {{ $t("Header.Properties") }}
-          </router-link>
-        </span>
-        <span class="mb-6 md:mb-0">
-          <router-link to="/evaluation" class=" other lg:mx-4 mx-2"
-            > {{ $t("Header.evaluation") }}
-          </router-link>
-        </span>
-       
-        <span class="mb-6 md:mb-0">
-          <router-link to="/contact" class=" other lg:mx-4 mx-2 font-thin"
-            >{{ $t("Header.Contact") }}
-          </router-link>
-        </span>
-        
- 
-       </div>
-       <div class="form_footer">
+    <div
+      class="bg-gray-900 p-10 text-white footer_main"
+      style="position:relative;z-index:99999;"
+    >
+      <div class="grid md:grid-cols-3 bg-gray-900 p-10 text-white">
+        <div class="logo">
+          <div class="mt-10 mb-20">
+            <img class="" src="../assets/img/logo.png" />
+          </div>
+        </div>
+        <div class=" mt-2 md:mt-0 bg-gray-900" id="menue">
+          <span class="mb-2 md:mb-0">
+            <router-link to="/" class=" other lg:mx-4 mx-2 ">{{
+              $t("Header.Home")
+            }}</router-link>
+          </span>
+          <span class="mb-2 md:mb-0 ">
+            <router-link to="/about" class=" other lg:mx-4 mx-2">{{
+              $t("Header.About")
+            }}</router-link>
+          </span>
+          <span class="mb-6 md:mb-0">
+            <router-link to="/properties" class=" other lg:mx-4 mx-2">
+              {{ $t("Header.Properties") }}
+            </router-link>
+          </span>
+          <span class="mb-6 md:mb-0">
+            <router-link to="/evaluation" class=" other lg:mx-4 mx-2">
+              {{ $t("Header.evaluation") }}
+            </router-link>
+          </span>
+
+          <span class="mb-6 md:mb-0">
+            <router-link to="/contact" class=" other lg:mx-4 mx-2 font-thin"
+              >{{ $t("Header.Contact") }}
+            </router-link>
+          </span>
+        </div>
+        <div class="form_footer">
           <input type="text" placeholder="Search..." class="px-2 py-2 border" />
-          <button class="bg-yellow-500 p-3 py-2" style="outline: none;">{{ $t("FooterComponant.Submit") }}</button>
+          <button class="bg-yellow-500 p-3 py-2" style="outline: none;">
+            {{ $t("FooterComponant.Submit") }}
+          </button>
           <p class="mt-5" style="line-height:1.6">
-           {{ $t("FooterComponant.FooterText") }}
+            {{ $t("FooterComponant.FooterText") }}
           </p>
         </div>
       </div>

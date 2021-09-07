@@ -1,29 +1,38 @@
 <template>
   <div>
-   <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
+    <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">{{ $t("CorporateComponant.titleREALESTATESTRATEGY") }}</h1>
+        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">
+          {{ $t("CorporateComponant.titleREALESTATESTRATEGY") }}
+        </h1>
         <p style="text-align: justify;">
-        {{ $t("CorporateComponant.StrategyText") }}
-
-
+          {{ $t("CorporateComponant.StrategyText") }}
         </p>
       </div>
       <div>
-        <img class="w-full" src="../../assets/img/managment.jpg" alt="<a href='https://fr.freepik.com/photos/ordinateur'>Ordinateur photo créé par pch.vector - fr.freepik.com</a>" />
+        <img
+          class="w-full"
+          src="../../assets/img/managment.jpg"
+          alt="<a href='https://fr.freepik.com/photos/ordinateur'>Ordinateur photo créé par pch.vector - fr.freepik.com</a>"
+        />
       </div>
     </div>
     <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10">
-        <div>
-        <img class="w-full" src="../../assets/img/residance.jpg" alt="<a href='https://fr.freepik.com/photos/ordinateur'>Ordinateur photo créé par pch.vector - fr.freepik.com</a>" />
+      <div>
+        <img
+          class="w-full"
+          src="../../assets/img/residance.jpg"
+          alt="<a href='https://fr.freepik.com/photos/ordinateur'>Ordinateur photo créé par pch.vector - fr.freepik.com</a>"
+        />
       </div>
       <div>
-        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">{{ $t("CorporateComponant.PROPERTYMANAGEMENT") }}</h1>
+        <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">
+          {{ $t("CorporateComponant.PROPERTYMANAGEMENT") }}
+        </h1>
         <p style="text-align: justify;">
-           {{ $t("CorporateComponant.MANAGEMENTText") }}
+          {{ $t("CorporateComponant.MANAGEMENTText") }}
         </p>
       </div>
-      
     </div>
     <Footer />
   </div>
@@ -38,16 +47,16 @@ export default {
   name: "Corporate",
   components: {
     Multiselect,
-    Footer,
+    Footer
   },
   data() {
     return {
       filters: {
         keyword: "",
-        countries: [],
+        countries: []
       },
       styleOption: {
-        color: "black",
+        color: "black"
       },
       showMsg: false,
 
@@ -71,7 +80,7 @@ export default {
         StatusId: 1,
         LanguageId: "fr-BE",
         PrivateEmail: "",
-        selected: "",
+        selected: ""
       },
       ContactTitleId: "",
       Comments: "",
@@ -80,16 +89,15 @@ export default {
       transactions: [],
       categories: [],
       genders: [],
-      countries: [],
+      countries: []
     };
   },
 
   methods: {
-   
     getGenders() {
       let authCredentials = {
         ClientId: 4668,
-        OfficeId: 6644,
+        OfficeId: 6644
       };
 
       let apiToken =
@@ -97,38 +105,46 @@ export default {
       const config = {
         headers: {
           Authorization: `Bearer ${apiToken}`,
-          "Content-Type": "application/json",
-        },
+          "Content-Type": "application/json"
+        }
       };
       axios
-        .post("https://api.whise.eu/v1/admin/clients/token", authCredentials, config)
-        .then((response) => {
+        .post(
+          "https://api.whise.eu/v1/admin/clients/token",
+          authCredentials,
+          config
+        )
+        .then(response => {
           let token = response.data.token;
           const config = {
             headers: {
               Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
-              "Content-Type": "application/json",
-            },
+              "Content-Type": "application/json"
+            }
           };
 
           axios
-            .post("https://api.whise.eu/v1/contacts/titles/list", authCredentials, config)
-            .then((response) => {
+            .post(
+              "https://api.whise.eu/v1/contacts/titles/list",
+              authCredentials,
+              config
+            )
+            .then(response => {
               this.genders = response.data.contactTitles;
             })
-            .catch((error) => {
+            .catch(error => {
               console.log(error);
             });
         })
 
-        .catch((error) => {
+        .catch(error => {
           console.log(error);
         });
     },
     addContact() {
       let authCredentials = {
         ClientId: 4668,
-        OfficeId: 6644,
+        OfficeId: 6644
       };
 
       let apiToken =
@@ -137,19 +153,23 @@ export default {
       const config = {
         headers: {
           Authorization: `Bearer ${apiToken}`,
-          "Content-Type": "application/json",
-        },
+          "Content-Type": "application/json"
+        }
       };
 
       axios
-        .post("https://api.whise.eu/v1/admin/clients/token", authCredentials, config)
-        .then((response) => {
+        .post(
+          "https://api.whise.eu/v1/admin/clients/token",
+          authCredentials,
+          config
+        )
+        .then(response => {
           let token = response.data.token;
           const config = {
             headers: {
               Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTYxMjMzOTA2Mn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4fQ.mXvm76zTWTrgba9mGU8ny_I4ZZvmXGaRfnpO7mfMhBo`,
-              "Content-Type": "application/json",
-            },
+              "Content-Type": "application/json"
+            }
           };
 
           let contact = {
@@ -181,12 +201,12 @@ export default {
             PrivateEmail: this.contact.PrivateEmail,
             AgreementEmail: true,
             AgreementSms: true,
-            AgreementMailingCampaign: true,
+            AgreementMailingCampaign: true
           };
           console.log(contact);
           axios
             .post("https://api.whise.eu/v1/contacts/create", contact, config)
-            .then((response) => {
+            .then(response => {
               this.showMsg = true;
 
               (this.contact.ContactTitleId = ""),
@@ -206,31 +226,26 @@ export default {
               this.contact.Year = "";
               this.contact.Surface = "";
             })
-            .catch((error) => {
+            .catch(error => {
               console.log(error);
             });
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error);
         });
       window.scrollTo(0, 0);
-
-
-      
-    },
-    
+    }
   },
 
   mounted() {
     this.getGenders();
-  },
+  }
 };
 </script>
 <style scoped>
-
-span{
-    color:orange;
-    font-weight:bold;
+span {
+  color: orange;
+  font-weight: bold;
 }
 @media (min-width: 1024px) {
   .textHeader {

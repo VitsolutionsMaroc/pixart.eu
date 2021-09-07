@@ -6,7 +6,7 @@
           class="font-bold text-l md:text-xl text-center	m-0 mt-8 mb-6 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex"
           v-if="showMsg"
         >
-         {{ $t("Contact.SuccessMessage") }}
+          {{ $t("Contact.SuccessMessage") }}
         </p>
       </div>
       <h3 class="text-center font-semibold text-3xl mt-4">
@@ -33,7 +33,7 @@
               <input
                 required
                 type="text"
-               :placeholder="$t('Contact.PlaceHolderLast')"
+                :placeholder="$t('Contact.PlaceHolderLast')"
                 class="w-full pr-10 pl-4 py-3 text-gray-700"
                 v-model="contact.Name"
               />
@@ -52,7 +52,9 @@
             </div>
           </div>
           <div>
-            <label class="text-gray-600">{{ $t("Contact.PhoneNumber") }} *</label>
+            <label class="text-gray-600"
+              >{{ $t("Contact.PhoneNumber") }} *</label
+            >
             <div class="flex items-center my-2 shadow-all">
               <input
                 required
@@ -64,7 +66,7 @@
             </div>
           </div>
           <div class="col-span-2">
-            <label class="text-gray-600">{{ $t("Contact.Message")}}</label>
+            <label class="text-gray-600">{{ $t("Contact.Message") }}</label>
             <textarea
               required
               type="text"
@@ -86,7 +88,9 @@
             class=" check h-4 w-4 text-gray-500 border rounded mr-2"
             v-model="contact.AgreementMailingCampaign"
           />
-          <label class="text-gray-600 font-meduim" for="register">{{ $t("Contact.Register") }}</label>
+          <label class="text-gray-600 font-meduim" for="register">{{
+            $t("Contact.Register")
+          }}</label>
         </div>
         <div class="flex items-center mt-2">
           <input
@@ -96,7 +100,9 @@
             class=" check h-4 w-4 text-gray-500 border rounded mr-2"
             v-model="contact.Newsletter"
           />
-          <label class="  text-gray-600 font-meduim" for="accept_terms">{{ $t("Contact.Accept") }} </label>
+          <label class="  text-gray-600 font-meduim" for="accept_terms"
+            >{{ $t("Contact.Accept") }}
+          </label>
         </div>
         <div class="text-center mt-4">
           <button
@@ -107,7 +113,9 @@
         </div>
       </form>
     </div>
-    <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px">
+    <div
+      style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px"
+    >
       <h1 style="font-size:2rem">{{ $t("Contact.OURADRESSES") }}</h1>
     </div>
     <div class="grid lg:grid-cols-3 gap-10 px-16 py-8 mt-10 infos">
@@ -177,7 +185,9 @@
           tabindex="0"
         ></iframe>
         <div class="shadow-all bg-white absolute w-70 m-24 top-0 left-0">
-          <h3 class="bg-gray-200 font-bold text-xl w-full px-4 py-6 text-center border-b">
+          <h3
+            class="bg-gray-200 font-bold text-xl w-full px-4 py-6 text-center border-b"
+          >
             {{ $t("Contact.Contact") }}
           </h3>
           <ul class="p-5 border-b ml-8">
@@ -448,9 +458,9 @@ textarea:focus,
   margin-bottom: 10px;
   font-size: 1.25rem;
 }
-@media (max-width:767px) {
-label{
-  font-size: 14px;
-}
+@media (max-width: 767px) {
+  label {
+    font-size: 14px;
+  }
 }
 </style>
