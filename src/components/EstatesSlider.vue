@@ -59,7 +59,7 @@
           </div>
           <div v-else>{{ estate.Name }}</div>
           </h2>  -->
-             <div v-if="estate.Description.length > 110" >
+             <div v-if="estate.Description != null && estate.Description.length > 110" >
                  <p style="font-size:0.8rem"> {{ estate.Description.substr(0, 90) }} ...</p>
             </div>
            <div v-else>{{ estate.Description }}</div>
