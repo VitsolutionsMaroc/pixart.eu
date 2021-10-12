@@ -277,7 +277,7 @@ export default {
     },
     getCategories() {
       axios
-        .get(`https://vitexportapi.azurewebsites.net/api/categories`)
+        .get(`http://46.226.104.87:8084/api/categories`)
         .then(response => {
           this.categories = response.data.data;
         })
@@ -287,7 +287,7 @@ export default {
     },
     getCountries() {
       axios
-        .get(`https://vitexportapi.azurewebsites.net/api/countries`)
+        .get(`http://46.226.104.87:8084/api/countries`)
         .then(response => {
           this.countries = response.data.data;
         })
@@ -367,7 +367,7 @@ export default {
       let _self_ = this;
       axios
         .get(
-          `https://vitexportapi.azurewebsites.net/api/estatesOfTheMonth?${filtersQueryString}`
+          `http://46.226.104.87:8084/api/estatesOfTheMonth?${filtersQueryString}`
         )
         .then(response => {
           _self_.estates = response.data.data;

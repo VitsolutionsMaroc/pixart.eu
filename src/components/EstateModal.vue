@@ -191,7 +191,7 @@ export default {
     return {
       loadingRelatedEstates: false,
       relatedEstates: [],
-      relatedEstateApiUrl: `https://vitexportapi.azurewebsites.net/api/estates/${this.estate.EstateID}/related-estates`,
+      relatedEstateApiUrl: `http://46.226.104.87:8084/api/estates/${this.estate.EstateID}/related-estates`,
       bookTour: false,
       date: "2019-01-01",
       picSwiper: null,

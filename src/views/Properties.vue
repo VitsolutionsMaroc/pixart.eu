@@ -717,7 +717,7 @@ export default {
       let _self_ = this;
       axios
         .get(
-          //  `https://vitexportapi.azurewebsites.net/api/estates?${filtersQueryString}`
+          //  `http://46.226.104.87:8084/api/estates?${filtersQueryString}`
           DefaultdataJson.VitExportApi.Url + `estates?${filtersQueryString}`
         )
         .then(response => {
