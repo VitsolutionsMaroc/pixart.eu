@@ -277,7 +277,7 @@ export default {
     },
     getCategories() {
       axios
-        .get(`http://46.226.104.87:8084/api/categories`)
+        .get(`https://xvm-104-87.dc0.ghst.net:8084/api/categories`)
         .then(response => {
           this.categories = response.data.data;
         })
@@ -287,7 +287,7 @@ export default {
     },
     getCountries() {
       axios
-        .get(`http://46.226.104.87:8084/api/countries`)
+        .get(`https://xvm-104-87.dc0.ghst.net:8084/api/countries`)
         .then(response => {
           this.countries = response.data.data;
         })
@@ -367,7 +367,7 @@ export default {
       let _self_ = this;
       axios
         .get(
-          `http://46.226.104.87:8084/api/estatesOfTheMonth?${filtersQueryString}`
+          `https://xvm-104-87.dc0.ghst.net:8084/api/estatesOfTheMonth?${filtersQueryString}`
         )
         .then(response => {
           _self_.estates = response.data.data;

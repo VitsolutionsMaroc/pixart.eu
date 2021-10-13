@@ -4,6 +4,6 @@
         "AuthToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlhdCI6MTU4ODI1ODE1Nn0.eyJzZXJ2aWNlQ29uc3VtZXJJZCI6MjMzLCJ0eXBlSWQiOjQsImNsaWVudElkIjo0NjY4LCJvZmZpY2VJZCI6NjY0NH0.BwBcypTeClgnB6CtSkGMjQQQf0nDGjIeIZh2JiDhBX0"
     },
     "VitExportApi":{
-        "Url": "http://46.226.104.87:8084/api/"
+        "Url": "https://xvm-104-87.dc0.ghst.net:8084/api/"
     }
 }
