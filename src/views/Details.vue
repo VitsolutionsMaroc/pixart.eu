@@ -423,14 +423,23 @@ export default {
         .get(DefaultdataJson.VitExportApi.Url + `estates/${estateId}`)
         .then(response => {
           this.estate = response.data;
+
+          if(this.estate.estate_description != null){
+            //let langCode="fr-BE";
+            //if(_self_.$i18n.locale=="en") langCode="en-GB";
+            //if(_self_.$i18n.locale=="fr") langCode="fr-BE";
+          //let des=element.estate_description.find(x=>x.LanguageID==langCode);
+          this.estate.Description=this.estate.estate_description.ShortDescription;
+          }
+
         })
         .catch(error => {
           console.log(error);
         });
     },
     loadRelatedEstates() {
-      console.log("loadRelatedEstates");
-      console.log("loadRelatedEstates");
+      // console.log("loadRelatedEstates");
+      // console.log("loadRelatedEstates");
       this.loadingRelatedEstates = true;
       axios
         .get(this.relatedEstateApiUrl)

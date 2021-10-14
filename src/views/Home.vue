@@ -371,6 +371,17 @@ export default {
         )
         .then(response => {
           _self_.estates = response.data.data;
+
+          _self_.estates.forEach(element =>{
+              if(element.estate_description != null){
+                //let langCode="fr-BE";
+                //if(_self_.$i18n.locale=="en") langCode="en-GB";
+                //if(_self_.$i18n.locale=="fr") langCode="fr-BE";
+              //let des=element.estate_description.find(x=>x.LanguageID==langCode);
+              element.Description=element.estate_description.ShortDescription;
+              }
+          });
+
           _self_.pagination = {
             current_page: response.data.current_page,
             first_page_url: response.data.first_page_url,
