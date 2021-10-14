@@ -13,7 +13,7 @@
             class="border-2 px-7 p-1 text-black bg-white"
             @click="togglePurpose()"
             :class="{
-              'bg-yellow-500 border-yellow-500': filters.purpose == 'for sale'
+              'bg-yellow-500 border-yellow-500': filters.purpose == 'Vente'
             }"
           >
             {{ $t("FilterHome.Buy") }}
@@ -22,7 +22,7 @@
             class="border-2 px-5 p-1 text-black bg-white"
             @click="togglePurpose()"
             :class="{
-              'bg-yellow-500 border-yellow-500': filters.purpose == 'for rent'
+              'bg-yellow-500 border-yellow-500': filters.purpose == 'Location'
             }"
           >
           {{ $t("FilterHome.Rentale") }}
@@ -229,7 +229,7 @@ export default {
       sortBy: "date",
       filters: {
         keyword: "",
-        purpose: "for sale",
+        purpose: "Vente",
         minPrice: "",
         maxPrice: "",
         countries: [],
@@ -273,7 +273,7 @@ export default {
   methods: {
     togglePurpose() {
       this.filters.purpose =
-        this.filters.purpose == "for rent" ? "for sale" : "for rent";
+        this.filters.purpose == "Location" ? "Vente" : "Location";
     },
     getCategories() {
       axios

@@ -165,7 +165,7 @@
             required
             v-model="contact.TransactionType"
           >
-            <option value="undefined" disabled selected hidden>For Sale/ For Rent </option>
+            <option value="undefined" disabled selected hidden>Vente/ Location </option>
             <option v-for="transaction in $t('transactions')" :key="transaction.id">{{
               transaction.name
             }}</option>

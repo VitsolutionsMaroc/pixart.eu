@@ -5,18 +5,18 @@
         <div class="RentBuy flex justify-start mb-2">
           <button
             class="border-2 px-7 p-1 text-black"
-            @click="togglePurpose('for sale')"
+            @click="togglePurpose('Vente')"
             :class="{
-              'bg-yellow-500 border-yellow-500': filters.purpose == 'for sale'
+              'bg-yellow-500 border-yellow-500': filters.purpose == 'Vente'
             }"
           >
             {{ $t("FilterHome.Buy") }}
           </button>
           <button
             class="border-2 px-5 p-1 text-black"
-            @click="togglePurpose('for rent')"
+            @click="togglePurpose('Location')"
             :class="{
-              'bg-yellow-500 border-yellow-500': filters.purpose == 'for rent'
+              'bg-yellow-500 border-yellow-500': filters.purpose == 'Location'
             }"
           >
             {{ $t("FilterHome.Rentale") }}
@@ -593,7 +593,7 @@ export default {
       sortBy: "date",
       filters: {
         keyword: "",
-        purpose: "for sale",
+        purpose: "Vente",
         minPrice: "",
         maxPrice: "",
         countries: [],
@@ -646,7 +646,7 @@ export default {
     },
     togglePurpose(name) {
       this.filters.purpose = name;
-      // this.filters.purpose == "for rent" ? "for rent" : "for sale";
+      // this.filters.purpose == "Location" ? "Location" : "Vente";
 
       this.getEstates();
     },

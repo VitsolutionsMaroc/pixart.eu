@@ -88,8 +88,8 @@
         <div
           class="bg-gray-200 text-green-700 text-xs font-bold rounded-full absolute top-0 ml-2 mt-2 px-2 py-1 text-base"
         >
-          <span v-if="estate.purpose === 'for rent'">{{ $t("FilterHome.Rentale") }}</span>
-          <span v-else-if="estate.purpose === 'for sale'">{{ $t("FilterHome.sale") }}</span>
+          <span v-if="estate.purpose === 'Location'">{{ $t("FilterHome.Rentale") }}</span>
+          <span v-else-if="estate.purpose === 'Vente'">{{ $t("FilterHome.sale") }}</span>
         </div>
       </div>
     </div>
