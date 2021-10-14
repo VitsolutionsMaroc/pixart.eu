@@ -362,7 +362,7 @@ export default {
       }&purpose=${
         this.filters.purpose
       }&estatesOfTheMonth=${(this.filters.estatesOfTheMonth = 3)}
-      &sort_by_date= desc
+      &sort_by_date=desc
       &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
       let _self_ = this;
       axios

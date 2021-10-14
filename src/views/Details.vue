@@ -230,7 +230,7 @@
                 relatedEstate.categoryName.charAt(0).toUpperCase() +
                   relatedEstate.categoryName.slice(1)
               }} -->
-               <div v-if="relatedEstate.Name.length > 40">
+               <div v-if="relatedEstate.Name != null && relatedEstate.Name.length > 40">
             {{ relatedEstate.Name.substr(0, 30) }} ...
           </div>
           <div v-else>{{ relatedEstate.Name }}</div>
