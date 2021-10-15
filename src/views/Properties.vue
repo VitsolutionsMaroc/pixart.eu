@@ -725,12 +725,9 @@ export default {
           _self_.estates = response.data.data;
           
            _self_.estates.forEach(element =>{
-              if(element.estate_description != null){
-                //let langCode="fr-BE";
-                //if(_self_.$i18n.locale=="en") langCode="en-GB";
-                //if(_self_.$i18n.locale=="fr") langCode="fr-BE";
-              //let des=element.estate_description.find(x=>x.LanguageID==langCode);
-              element.Description=element.estate_description.ShortDescription;
+              if(element.estate_description.length > 0){
+              let des=element.estate_description.find(x=>x.LanguageID.includes(_self_.$i18n.locale));
+              element.Description=des.ShortDescription;
               }
           });
 
