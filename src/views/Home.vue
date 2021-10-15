@@ -375,7 +375,7 @@ export default {
           _self_.estates.forEach(element =>{
               if(element.estate_description.length > 0){
               let des=element.estate_description.find(x=>x.LanguageID.includes(_self_.$i18n.locale));
-              element.Description=des.ShortDescription;
+              element.Description=(des != null ) ? des.ShortDescription : '';
               }
           });
 

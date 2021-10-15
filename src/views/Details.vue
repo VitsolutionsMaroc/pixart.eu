@@ -426,7 +426,7 @@ export default {
           _this.estate = response.data;
           if(_this.estate.estate_description.length > 0){
           let des=_this.estate.estate_description.find(x=>x.LanguageID.includes(_this.$i18n.locale));
-          _this.estate.Description=des.ShortDescription;
+          _this.estate.Description= (des != null ) ? des.ShortDescription : '';
           }
 
         })
