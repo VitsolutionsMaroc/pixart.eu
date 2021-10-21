@@ -178,8 +178,7 @@ export default {
             items: 4,
             nav: true
           },
-          onInitialized: setDots,
-          onChanged: setDots
+
         }
       });
     });
