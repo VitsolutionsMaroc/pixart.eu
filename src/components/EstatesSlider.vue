@@ -59,7 +59,7 @@
           </div>
           <div v-else>{{ estate.Name }}</div>
           </h2>  -->
-             <div v-if="estate.Description.length > 110" >
+             <div v-if="estate.Description != null && estate.Description.length > 110"  >
                  <p style="font-size:0.8rem"> {{ estate.Description.substr(0, 90) }} ...</p>
             </div>
            <div v-else>{{ estate.Description }}</div>
@@ -88,7 +88,7 @@
         <div
           class="bg-gray-200 text-green-700 text-xs font-bold rounded-full absolute top-0 ml-2 mt-2 px-2 py-1 text-base"
         >
-          <span v-if="estate.purpose === 'for rent'">{{ $t("FilterHome.Rentale") }}</span>
+          <span v-if="estate.purpose === 'for rent'">{{ $t("FilterHome.Rent") }}</span>
           <span v-else-if="estate.purpose === 'for sale'">{{ $t("FilterHome.sale") }}</span>
         </div>
       </div>
@@ -178,8 +178,7 @@ export default {
             items: 4,
             nav: true
           },
-          onInitialized: setDots,
-          onChanged: setDots
+
         }
       });
     });

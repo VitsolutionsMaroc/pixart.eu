@@ -29,7 +29,7 @@
                   </div>
               </div>
                <div>
-                  <div class="item">
+                  <div class="item" id="alfa">
                       <img class="m-auto mb-4"  style="margin-bottom:58px" src="../assets/img/alfa.png" />
                       <h4 class="text-xl font-bold"> ALPHA </h4>
                   </div>
@@ -43,7 +43,21 @@
                <div>
                   <div class="item" id="manelis">
 
-                      <img class="m-auto mb-4"  style="margin-bottom:45px" src="../assets/img/logo_footer.png" />
+                      <img class="m-auto mb-4"  style="margin-bottom:27px" src="../assets/img/EEA.jpg" />
+                      <h4 class="text-xl font-bold"> GREECE</h4>
+                  </div>
+              </div>
+               <div>
+                  <div class="item" id="manelis">
+
+                      <img class="m-auto mb-4"  style="margin-bottom:33px" src="../assets/img/PHD.png" />
+                      <h4 class="text-xl font-bold"> GREECE</h4>
+                  </div>
+              </div>
+               <div>
+                  <div class="item" id="manelis">
+
+                      <img class="m-auto mb-4"  style="margin-bottom:45px" src="../assets/img/polinoe.png" />
                       <h4 class="text-xl font-bold"> GREECE</h4>
                   </div>
               </div>
@@ -115,9 +129,12 @@ mounted(){
   top: 190px !important;
 }
 #manelis img{
-  width:150px!important;
+  width:100px!important;
 }
 #ideal img{
    width:150px!important;
+}
+#alfa img{
+  width:150px!important;
 }
 </style>
