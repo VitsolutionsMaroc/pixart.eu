@@ -12,7 +12,7 @@
     <!-- Vision section -->
     <div class="text-center py-4 px-4 md:px-32 mt-20 mb-20">
       <h2 class="text-xl md:text-4xl font-bold my-2 mb-10">{{ $t("About.OURTEAM")}}</h2>
-      <p class="text-sm text-justify md:text-center" style="font-size:1.3rem;line-height: 1.6">
+      <p class="text-sm  md:text-center" style="font-size:1.3rem;line-height: 1.6;text-align: initial;">
       {{ $t("About.Team") }}
       </p>
     </div>
