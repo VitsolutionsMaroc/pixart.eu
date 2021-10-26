@@ -191,7 +191,7 @@ export default {
     return {
       loadingRelatedEstates: false,
       relatedEstates: [],
-      relatedEstateApiUrl: `https://xvm-104-87.dc0.ghst.net:8084/api/estates/${this.estate.EstateID}/related-estates`,
+      relatedEstateApiUrl: `https://xvm-105-191.dc0.ghst.net:8084/api/estates/${this.estate.EstateID}/related-estates`,
       bookTour: false,
       date: "2019-01-01",
       picSwiper: null,
