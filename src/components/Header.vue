@@ -78,11 +78,17 @@ export default {
     if(this.languageId == null)
         this.languageId="en";
   },
+  watch: {
+    "languageId": function (value,oldvalue) {
+      debugger
+    },
+  },
   methods: {
       switchLanguage() {
       let locale = this.languageId.toLowerCase();
       if (this.$i18n.locale !== locale) {
         this.$i18n.locale = locale;
+        this.$router.go()
       }
     },
   }
