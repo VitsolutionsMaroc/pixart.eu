@@ -171,18 +171,12 @@ export default {
   created() {
     if (this.languageId == null) this.languageId = "en";
   },
-    watch: {
-    "$i18n.locale": function (value,oldvalue) {
-      debugger
-    },
-  },
   methods: {
     switchLanguage(code) {
       this.languageId = code;
       let locale = this.languageId.toLowerCase();
       if (this.$i18n.locale !== locale) {
         this.$i18n.locale = locale;
-        this.$router.go();
       }
     }
   }

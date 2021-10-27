@@ -756,7 +756,6 @@ export default {
       const response = await axios.get(
         DefaultdataJson.VitExportApi.Url + `countries`
       );
-      debugger;
       this.countries = response.data.data;
     },
     applyExtraFilters() {
@@ -886,6 +885,11 @@ export default {
     }
   },
   watch: {
+    "$i18n.locale": function (value,oldvalue) {
+      if(value!=oldvalue){
+        this.getEstates();
+      }
+    },
     "filters.keyword"() {
       console.log("keyword");
       const newQueryString = {

@@ -270,6 +270,13 @@ export default {
     };
   },
   computed: {},
+  watch: {
+    "$i18n.locale": function (value,oldvalue) {
+      if(value!=oldvalue){
+        this.getEstates();
+      }
+    },
+  },
   methods: {
     togglePurpose() {
       this.filters.purpose =

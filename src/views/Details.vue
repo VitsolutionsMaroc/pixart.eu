@@ -469,6 +469,11 @@ export default {
     }
   },
   watch: {
+    "$i18n.locale": function (value,oldvalue) {
+      if(value!=oldvalue){
+        location.reload();
+      }
+    },
     "$route.params": {
       handler(params) {
         this.loadEstate();
