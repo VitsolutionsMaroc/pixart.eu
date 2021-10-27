@@ -230,7 +230,7 @@
                 relatedEstate.categoryName.charAt(0).toUpperCase() +
                   relatedEstate.categoryName.slice(1)
               }} -->
-               <div v-if="relatedEstate.Name.length > 40">
+               <div v-if="relatedEstate.Name != null && relatedEstate.Name.length > 40">
             {{ relatedEstate.Name.substr(0, 30) }} ...
           </div>
           <div v-else>{{ relatedEstate.Name }}</div>
@@ -419,18 +419,24 @@ export default {
     },
     loadEstate() {
       let estateId = this.$route.params.estateId;
+      let _this=this;
       axios
         .get(DefaultdataJson.VitExportApi.Url + `estates/${estateId}`)
         .then(response => {
-          this.estate = response.data;
+          _this.estate = response.data;
+          if(_this.estate.estate_description.length > 0){
+          let des=_this.estate.estate_description.find(x=>x.LanguageID.includes(_this.$i18n.locale));
+          _this.estate.Description= (des != null ) ? des.ShortDescription : '';
+          }
+
         })
         .catch(error => {
           console.log(error);
         });
     },
     loadRelatedEstates() {
-      console.log("loadRelatedEstates");
-      console.log("loadRelatedEstates");
+      // console.log("loadRelatedEstates");
+      // console.log("loadRelatedEstates");
       this.loadingRelatedEstates = true;
       axios
         .get(this.relatedEstateApiUrl)
@@ -463,6 +469,11 @@ export default {
     }
   },
   watch: {
+    "$i18n.locale": function (value,oldvalue) {
+      if(value!=oldvalue){
+        location.reload();
+      }
+    },
     "$route.params": {
       handler(params) {
         this.loadEstate();

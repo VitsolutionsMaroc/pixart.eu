@@ -13,7 +13,7 @@
             class="border-2 px-7 p-1 text-black bg-white"
             @click="togglePurpose()"
             :class="{
-              'bg-yellow-500 border-yellow-500': filters.purpose == 'for sale'
+              'bg-yellow-500 border-yellow-500': filters.purpose == 'Vente'
             }"
           >
             {{ $t("FilterHome.Buy") }}
@@ -22,7 +22,7 @@
             class="border-2 px-5 p-1 text-black bg-white"
             @click="togglePurpose()"
             :class="{
-              'bg-yellow-500 border-yellow-500': filters.purpose == 'for rent'
+              'bg-yellow-500 border-yellow-500': filters.purpose == 'Location'
             }"
           >
           {{ $t("FilterHome.Rentale") }}
@@ -191,7 +191,7 @@
         />
       </div>
     </div>
-     
+
     <!-- about section -->
     <Expert />
     <FooterCompt />
@@ -204,7 +204,7 @@ import EstatePagination from "@/components/EstatePagination.vue";
 import { Carousel, Slide } from "vue-carousel";
 import utils from "@/helpers/utils";
 import FooterCompt from "@/components/Footer.vue";
-import  Expert from "@/components/Expert.vue";
+import Expert from "@/components/Expert.vue";
 import ServiceOwl from "@/views/serviceCarl.vue";
 import axios from "axios";
 import Multiselect from "vue-multiselect";
@@ -229,7 +229,7 @@ export default {
       sortBy: "date",
       filters: {
         keyword: "",
-        purpose: "for sale",
+        purpose: "Vente",
         minPrice: "",
         maxPrice: "",
         countries: [],
@@ -270,14 +270,21 @@ export default {
     };
   },
   computed: {},
+  watch: {
+    "$i18n.locale": function (value,oldvalue) {
+      if(value!=oldvalue){
+        this.getEstates();
+      }
+    },
+  },
   methods: {
     togglePurpose() {
       this.filters.purpose =
-        this.filters.purpose == "for rent" ? "for sale" : "for rent";
+        this.filters.purpose == "Location" ? "Vente" : "Location";
     },
     getCategories() {
       axios
-        .get(`https://vitexportapi.azurewebsites.net/api/categories`)
+        .get(`https://xvm-105-191.dc0.ghst.net:8084/api/categories`)
         .then(response => {
           this.categories = response.data.data;
         })
@@ -287,7 +294,7 @@ export default {
     },
     getCountries() {
       axios
-        .get(`https://vitexportapi.azurewebsites.net/api/countries`)
+        .get(`https://xvm-105-191.dc0.ghst.net:8084/api/countries`)
         .then(response => {
           this.countries = response.data.data;
         })
@@ -362,15 +369,23 @@ export default {
       }&purpose=${
         this.filters.purpose
       }&estatesOfTheMonth=${(this.filters.estatesOfTheMonth = 3)}
-      &sort_by_date= desc
+      &sort_by_date=desc
       &${countriesQueryString}&${categoriesQueryString}&${subcategoriesQueryString}&${zipCodesQueryString}`;
       let _self_ = this;
       axios
         .get(
-          `https://vitexportapi.azurewebsites.net/api/estatesOfTheMonth?${filtersQueryString}`
+          `https://xvm-105-191.dc0.ghst.net:8084/api/estatesOfTheMonth?${filtersQueryString}`
         )
         .then(response => {
           _self_.estates = response.data.data;
+
+          _self_.estates.forEach(element =>{
+              if(element.estate_description.length > 0){
+              let des=element.estate_description.find(x=>x.LanguageID.includes(_self_.$i18n.locale));
+              element.Description=(des != null ) ? des.ShortDescription : '';
+              }
+          });
+
           _self_.pagination = {
             current_page: response.data.current_page,
             first_page_url: response.data.first_page_url,

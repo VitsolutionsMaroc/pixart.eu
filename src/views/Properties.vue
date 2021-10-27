@@ -5,18 +5,18 @@
         <div class="RentBuy flex justify-start mb-2">
           <button
             class="border-2 px-7 p-1 text-black"
-            @click="togglePurpose('for sale')"
+            @click="togglePurpose('Vente')"
             :class="{
-              'bg-yellow-500 border-yellow-500': filters.purpose == 'for sale'
+              'bg-yellow-500 border-yellow-500': filters.purpose == 'Vente'
             }"
           >
             {{ $t("FilterHome.Buy") }}
           </button>
           <button
             class="border-2 px-5 p-1 text-black"
-            @click="togglePurpose('for rent')"
+            @click="togglePurpose('Location')"
             :class="{
-              'bg-yellow-500 border-yellow-500': filters.purpose == 'for rent'
+              'bg-yellow-500 border-yellow-500': filters.purpose == 'Location'
             }"
           >
             {{ $t("FilterHome.Rentale") }}
@@ -59,7 +59,7 @@
           <div class="grid md:grid-cols-2  xl:grid-cols-7 xl:gap-3 gap-2">
             <div class="xl:col-span-2">
               <multiselect
-                 :placeholder="$t('FilterHome.Categories')"
+                :placeholder="$t('FilterHome.Categories')"
                 label="name"
                 track-by="name"
                 :multiple="true"
@@ -145,14 +145,14 @@
                 @click="getEstates()"
                 class="py-2 border-yellow-500 text-white bg-yellow-500 font-bold"
               >
-               {{ $t("EsatateFilter.Apply") }} 
+                {{ $t("EsatateFilter.Apply") }}
               </button>
               <button
                 @click="messagePopup = !messagePopup"
                 class=" py-2 border-yellow-500 text-white bg-yellow-500 font-bold"
               >
                 <!--<i class="far fa-plus-circle font-bold text-4xl text-yellow-500"></i>-->
-                  {{ $t("EsatateFilter.More") }}
+                {{ $t("EsatateFilter.More") }}
               </button>
             </div>
           </div>
@@ -265,22 +265,25 @@
                   <input
                     type="text"
                     v-model="filters.bathrooms"
-                   :placeholder="$t('EsatateFilter.Numberbathrooms')"
+                    :placeholder="$t('EsatateFilter.Numberbathrooms')"
                     class="px-3 py-2 border"
                   />
                 </div>
                 <div class="grid md:grid-cols-4 mb-12">
                   <span
-                    ><label class="m-2"> {{ $t("EsatateFilter.Parking") }}</label>
+                    ><label class="m-2">
+                      {{ $t("EsatateFilter.Parking") }}</label
+                    >
                     <input
-                    
                       type="checkbox"
                       value="1"
                       v-model="filters.parking"
                       class="px-3 py-2 border"
                   /></span>
                   <span
-                    ><label class="m-2"> {{ $t("EsatateFilter.Terrace") }}</label>
+                    ><label class="m-2">
+                      {{ $t("EsatateFilter.Terrace") }}</label
+                    >
                     <input
                       type="checkbox"
                       value="1"
@@ -288,7 +291,9 @@
                       class="px-3 py-2 border"
                   /></span>
                   <span
-                    ><label class="m-2"> {{ $t("EsatateFilter.Furnished") }}</label>
+                    ><label class="m-2">
+                      {{ $t("EsatateFilter.Furnished") }}</label
+                    >
                     <input
                       type="checkbox"
                       value="1"
@@ -296,7 +301,9 @@
                       class="px-3 py-2 border"
                   /></span>
                   <span
-                    ><label class="m-2"> {{ $t("EsatateFilter.Garden") }}</label>
+                    ><label class="m-2">
+                      {{ $t("EsatateFilter.Garden") }}</label
+                    >
                     <input
                       type="checkbox"
                       value="1"
@@ -315,7 +322,7 @@
                     @click="applyExtraFilters()"
                     class="bg-yellow-500 px-8 py-2 text-center cursor-pointer rounded"
                   >
-                   {{ $t("EsatateFilter.Apply") }}
+                    {{ $t("EsatateFilter.Apply") }}
                   </button>
                 </div>
               </div>
@@ -473,12 +480,14 @@
               <span
                 class="text-sm sm:text-base xl:text-xl"
                 v-if="filters.sortByPrice == 'asc'"
-                >{{ $t("EsatateFilter.Price") }} <i class="fas fa-arrow-down text-yellow-500 "></i
+                >{{ $t("EsatateFilter.Price") }}
+                <i class="fas fa-arrow-down text-yellow-500 "></i
               ></span>
               <span
                 class="text-sm sm:text-base xl:text-xl"
                 v-if="filters.sortByPrice == 'desc'"
-                >{{ $t("EsatateFilter.Price") }} <i class="fas fa-arrow-up text-yellow-500"></i
+                >{{ $t("EsatateFilter.Price") }}
+                <i class="fas fa-arrow-up text-yellow-500"></i
               ></span>
             </button>
             <!--<div class="dropdown">-->
@@ -490,13 +499,15 @@
                 class="text-sm sm:text-base xl:text-xl"
                 v-if="filters.sortByDate == 'asc'"
               >
-                <i class="far fa-clock text-yellow-500"></i> {{ $t("EsatateFilter.Update") }}</span
+                <i class="far fa-clock text-yellow-500"></i>
+                {{ $t("EsatateFilter.Update") }}</span
               >
               <span
                 class="text-sm sm:text-base xl:text-xl"
                 v-if="filters.sortByDate == 'desc'"
               >
-                <i class="far fa-clock text-yellow-500"></i> {{ $t("EsatateFilter.Update") }}</span
+                <i class="far fa-clock text-yellow-500"></i>
+                {{ $t("EsatateFilter.Update") }}</span
               >
             </button>
 
@@ -582,7 +593,7 @@ export default {
       sortBy: "date",
       filters: {
         keyword: "",
-        purpose: "for sale",
+        purpose: "Vente",
         minPrice: "",
         maxPrice: "",
         countries: [],
@@ -635,7 +646,7 @@ export default {
     },
     togglePurpose(name) {
       this.filters.purpose = name;
-        // this.filters.purpose == "for rent" ? "for rent" : "for sale";
+      // this.filters.purpose == "Location" ? "Location" : "Vente";
 
       this.getEstates();
     },
@@ -706,12 +717,20 @@ export default {
       let _self_ = this;
       axios
         .get(
-          //  `https://vitexportapi.azurewebsites.net/api/estates?${filtersQueryString}`
+          //  `https://xvm-105-191.dc0.ghst.net:8084/api/estates?${filtersQueryString}`
           DefaultdataJson.VitExportApi.Url + `estates?${filtersQueryString}`
         )
         .then(response => {
           // debugger
           _self_.estates = response.data.data;
+          
+           _self_.estates.forEach(element =>{
+              if(element.estate_description.length > 0){
+              let des=element.estate_description.find(x=>x.LanguageID.includes(_self_.$i18n.locale));
+              element.Description= (des != null ) ? des.ShortDescription : '';
+              }
+          });
+
           _self_.pagination = {
             current_page: response.data.current_page,
             first_page_url: response.data.first_page_url,
@@ -737,7 +756,6 @@ export default {
       const response = await axios.get(
         DefaultdataJson.VitExportApi.Url + `countries`
       );
-      debugger
       this.countries = response.data.data;
     },
     applyExtraFilters() {
@@ -867,6 +885,11 @@ export default {
     }
   },
   watch: {
+    "$i18n.locale": function (value,oldvalue) {
+      if(value!=oldvalue){
+        this.getEstates();
+      }
+    },
     "filters.keyword"() {
       console.log("keyword");
       const newQueryString = {

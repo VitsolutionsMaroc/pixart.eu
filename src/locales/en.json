@@ -4,8 +4,8 @@
     { "id": 5, "name": "Potential tenant" }
   ],
   "transactions": [
-    { "id": 1, "name": "For sale" },
-    { "id": 2, "name": "For rent" },
+    { "id": 1, "name": "Vente" },
+    { "id": 2, "name": "Location" },
     { "id": 3, "name": "Life annuity sale" }
   ],
   "categories": [
@@ -425,7 +425,7 @@
      "PostCodeText":"PostCode ..",
      "Propertydescription":"Property description",
      "Transactiontype":"Transaction type",
-     "ForSaleOrForRent":"For Sale / For Rent",
+     "ForSaleOrForRent":"Vente / Location",
      "Propertytype":"Property type",
      "PlaceHolderMsg":"Your Property type",
      "ConstructionYear":"Construction Year",
