@@ -10,10 +10,11 @@ import i18n from "./i18n";
 import PrettyCheckbox from "pretty-checkbox-vue";
 import './assets/css/owl.carousel.min.css';
 import './assets/css/owl.theme.default.min.css';
-import './assets/js/owl.carousel.js';
-import './assets/js/owl.carousel.min.js';
+// import './assets/js/owl.carousel.js';
+// import './assets/js/owl.carousel.min.js';
   
-
+let owl_carousel = require('./assets/js/owl.carousel');
+window.fn = owl_carousel;
 
 // import animate.css for slide transition
 import "animate.css";

@@ -34,7 +34,11 @@
     <!-- end_exemple_models -->
     <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mb-10 info">
       <div>
-        <img class="w-full" src="../assets/img/investers.jpg" alt="<a href='https://fr.freepik.com/photos/carte-visite'>Carte de visite photo créé par rawpixel.com - fr.freepik.com</a>" />
+        <img
+          class="w-full"
+          src="../assets/img/investers.jpg"
+          alt="<a href='https://fr.freepik.com/photos/carte-visite'>Carte de visite photo créé par rawpixel.com - fr.freepik.com</a>"
+        />
       </div>
       <div class="grid lg:grid-cols-3 gap-3 gap-y-2 pl-16 py-8 mt-10 benefits">
         <div class="inline-flex space-x-4 ">
@@ -55,14 +59,12 @@
         <div class="inline-flex space-x-4 ">
          <i class="fas fa-check-circle mt-2"></i><p>{{ $t("GoldenVisa.Parentsofthespouse") }}</p>
         </div>
-           
       </div>
     </div>
     <div style="text-align:center;font-size:1.5rem;font-weight:bold">
       <h1>{{ $t("GoldenVisa.DOCUMENTS") }}</h1>
     </div>
     <div class="grid lg:grid-cols-4 gap-10 px-16 py-8 mt-10 info">
-      
       <div>
         <h1>{{ $t("GoldenVisa.Propertyowner") }}</h1>
         <p>
@@ -88,7 +90,7 @@
         </p>
       </div>
     </div>
-<div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10 needs">
+    <div class="grid lg:grid-cols-2 gap-10 px-16 py-8 mt-10 needs">
       <div class=" mt-20">
         <h1 class="text-4xl md:text-2xl mb-6" style="text-align: justify;">{{ $t("GoldenVisa.RESIDENCE") }}</h1>
          <div class="inline-flex space-x-4 ">
@@ -106,7 +108,11 @@
           <span><section v-html="$t('GoldenVisa.Thepresence')"></section></span>
       </div>
       <div>
-        <img class="w-full" src="../assets/img/residance.jpg" alt="<a href='https://fr.freepik.com/photos/affaires'>Affaires photo créé par tirachardz - fr.freepik.com</a>" />
+        <img
+          class="w-full"
+          src="../assets/img/residance.jpg"
+          alt="<a href='https://fr.freepik.com/photos/affaires'>Affaires photo créé par tirachardz - fr.freepik.com</a>"
+        />
       </div>
     </div>
     
@@ -123,8 +129,8 @@ import Footer from "@/components/Footer.vue";
 export default {
   name: "Golden",
   components: {
-    Footer,
-  }, 
+    Footer
+  }
 };
 </script>
 <style scoped>
@@ -133,55 +139,55 @@ export default {
     url("../assets/img/background2.jpg");
   background-size: cover;
 }
-span{
-    color:orange;
-    font-weight:bold;
+span {
+  color: orange;
+  font-weight: bold;
 }
-.document span{
-color:orange;
+.document span {
+  color: orange;
 }
 .greece {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
     url("../assets/img/fond_greec.jpg");
   background-size: cover;
-  background-position:center;
-  height:400px;
+  background-position: center;
+  height: 400px;
 }
-.info h1{
-  color:orange;
+.info h1 {
+  color: orange;
   font-weight: bold;
   text-align: center;
   margin-bottom: 10px;
 }
 
-.benefits i{
-  color:orange;
-  font-size:2rem;
+.benefits i {
+  color: orange;
+  font-size: 2rem;
 }
-.needs i{
- color:orange;
-  font-size:1rem;
-}
-.needs span{
-  font-size:0.8rem;
-  color:gray;
- padding-top: 15px;
-}
-.needs p{
+.needs i {
+  color: orange;
   font-size: 1rem;
 }
-.Creat{
-  color:orange;
-  font-weight:bold;
-   margin-top:20px;
+.needs span {
+  font-size: 0.8rem;
+  color: gray;
+  padding-top: 15px;
+}
+.needs p {
+  font-size: 1rem;
+}
+.Creat {
+  color: orange;
+  font-weight: bold;
+  margin-top: 20px;
   font-size: 1.25rem;
 }
 @media (min-width: 1024px) {
   .textHeader {
     line-height: 6.5rem;
   }
-  iframe{
-    height:360px;
+  iframe {
+    height: 360px;
   }
 }
 </style>

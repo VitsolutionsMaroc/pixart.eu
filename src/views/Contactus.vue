@@ -6,10 +6,12 @@
           class="font-bold text-l md:text-xl text-center	m-0 mt-8 mb-6 text-center bg-green-200	bg-opacity-70 p-4 w-70 flex"
           v-if="showMsg"
         >
-         {{ $t("Contact.SuccessMessage") }}
+          {{ $t("Contact.SuccessMessage") }}
         </p>
       </div>
-      <h3 class="text-center font-semibold text-3xl mt-4">{{ $t("Contact.ContactUs") }}</h3>
+      <h3 class="text-center font-semibold text-3xl mt-4">
+        {{ $t("Contact.ContactUs") }}
+      </h3>
       <div class="mt-2 mx-auto w-12 h-2 bg-yellow-600"></div>
       <form @submit.prevent="addContact()" class="mt-12">
         <div class="grid grid-cols-2 gap-6">
@@ -31,7 +33,7 @@
               <input
                 required
                 type="text"
-               :placeholder="$t('Contact.PlaceHolderLast')"
+                :placeholder="$t('Contact.PlaceHolderLast')"
                 class="w-full pr-10 pl-4 py-3 text-gray-700"
                 v-model="contact.Name"
               />
@@ -50,7 +52,9 @@
             </div>
           </div>
           <div>
-            <label class="text-gray-600">{{ $t("Contact.PhoneNumber") }} *</label>
+            <label class="text-gray-600"
+              >{{ $t("Contact.PhoneNumber") }} *</label
+            >
             <div class="flex items-center my-2 shadow-all">
               <input
                 required
@@ -62,7 +66,7 @@
             </div>
           </div>
           <div class="col-span-2">
-            <label class="text-gray-600">{{ $t("Contact.Message")}}</label>
+            <label class="text-gray-600">{{ $t("Contact.Message") }}</label>
             <textarea
               required
               type="text"
@@ -84,7 +88,9 @@
             class=" check h-4 w-4 text-gray-500 border rounded mr-2"
             v-model="contact.AgreementMailingCampaign"
           />
-          <label class="text-gray-600 font-meduim" for="register">{{ $t("Contact.Register") }}</label>
+          <label class="text-gray-600 font-meduim" for="register">{{
+            $t("Contact.Register")
+          }}</label>
         </div>
         <div class="flex items-center mt-2">
           <input
@@ -94,7 +100,9 @@
             class=" check h-4 w-4 text-gray-500 border rounded mr-2"
             v-model="contact.Newsletter"
           />
-          <label class="  text-gray-600 font-meduim" for="accept_terms">{{ $t("Contact.Accept") }} </label>
+          <label class="  text-gray-600 font-meduim" for="accept_terms"
+            >{{ $t("Contact.Accept") }}
+          </label>
         </div>
         <div class="text-center mt-4">
           <button
@@ -105,74 +113,69 @@
         </div>
       </form>
     </div>
-    <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px">
+    <div
+      style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px"
+    >
       <h1 style="font-size:2rem">{{ $t("Contact.OURADRESSES") }}</h1>
     </div>
     <div class="grid lg:grid-cols-3 gap-10 px-16 py-8 mt-10 infos">
-       <div>
-       <i class="fas fa-map-marker-alt"></i>
-         <h1> IBP sa</h1>
+      <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <h1>IBP sa</h1>
         <p>
-           277 Av. d’Auderghem – 1040 Brussels <br>
-             <i
-                class="fas fa-mobile"
-                style="color:orange; margin-right:10px"
-              ></i>
-              +3227430380
+          277 Av. d’Auderghem – 1040 Brussels <br />
+          <i class="fas fa-mobile" style="color:orange; margin-right:10px"></i>
+          +3227430380
         </p>
-         <a
-              target="_blank"
-              rel="noopener noreferrer"
-              class=" text-base-2 text-yellow-500"
-              style="font-size:0.8rem"
-              href="https://www.ibp.be/"
-              >www.ibp.be</a
-            >
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          class=" text-base-2 text-yellow-500"
+          style="font-size:0.8rem"
+          href="https://www.ibp.be/"
+          >www.ibp.be</a
+        >
       </div>
 
-     
-      
       <div>
-       <i class="fas fa-map-marker-alt"></i>
-         <h1>IBPG</h1>
+        <i class="fas fa-map-marker-alt"></i>
+        <h1>IBPG</h1>
         <p>
-          Kolokotroni 9 –Kifisia 14562 & Agiou Alexandrou 7 –Paleo Faliro
-            17561–  Kολοκοτρώνη 9 -Kηφισιά 14562 & Αγίου Αλεξάνδρου 7,
-            175 61 Παλαιό Φάληρο<br />
-            <span
-              ><i
-                class="fas fa-mobile"
-                style="color:orange; margin-right:10px"
-              ></i>
-              +30 2106918330</span
-            >
+          Kolokotroni 9 –Kifisia 14562 & Agiou Alexandrou 7 –Paleo Faliro 17561–
+          Kολοκοτρώνη 9 -Kηφισιά 14562 & Αγίου Αλεξάνδρου 7, 175 61 Παλαιό
+          Φάληρο<br />
+          <span
+            ><i
+              class="fas fa-mobile"
+              style="color:orange; margin-right:10px"
+            ></i>
+            +30 2106918330</span
+          >
         </p>
       </div>
       <div>
-       <i class="fas fa-map-marker-alt"></i>
-         <h1>Pixart</h1>
+        <i class="fas fa-map-marker-alt"></i>
+        <h1>Pixart</h1>
         <p>
-        8 Grand Rue Clervaux - L -9711 Luxembourg<br />
-            <span
-              ><i
-                class="fas fa-mobile"
-                style="color:orange; margin-right:10px"
-              ></i
-              >+352661373707</span
-            >
+          8 Grand Rue Clervaux - L -9711 Luxembourg<br />
+          <span
+            ><i
+              class="fas fa-mobile"
+              style="color:orange; margin-right:10px"
+            ></i
+            >+352661373707</span
+          >
         </p>
       </div>
       <div>
         <i class="fas fa-map-marker-alt"></i>
         <h1>Dubai - UAE</h1>
         <p>
-         ICON TOWER - Office 1003<br />
-            AL Thanyah First
+          ICON TOWER - Office 1003<br />
+          AL Thanyah First
         </p>
       </div>
-      
-      
-      </div>
+    </div>
     <div class="my-6">
       <div class="w-full relative" style="height: 600px;">
         <iframe
@@ -182,7 +185,9 @@
           tabindex="0"
         ></iframe>
         <div class="shadow-all bg-white absolute w-70 m-24 top-0 left-0">
-          <h3 class="bg-gray-200 font-bold text-xl w-full px-4 py-6 text-center border-b">
+          <h3
+            class="bg-gray-200 font-bold text-xl w-full px-4 py-6 text-center border-b"
+          >
             {{ $t("Contact.Contact") }}
           </h3>
           <ul class="p-5 border-b ml-8">
@@ -205,18 +210,15 @@
                 class=" mb-4 mr-4 w-5 h-5 md:w-10 md:h-10"
                 src="../assets/img/iconmonstr-building-18-96.png"
               />
-              <li class="mb-2 mt-2">8  Grand Rue Clervaux   -   L -9711 Luxembourg</li>
+              <li class="mb-2 mt-2">
+                8 Grand Rue Clervaux - L -9711 Luxembourg
+              </li>
             </div>
           </ul>
-          
-         
         </div>
       </div>
     </div>
-     <div>
-   
-     
-    </div>
+    <div></div>
     <Footer />
   </main>
 </template>
@@ -234,23 +236,23 @@ import axios from "axios";
 import Multiselect from "vue-multiselect";
 import _ from "lodash";
 import JQuery from "jquery";
-let DefaultdataJson = require('../config/default.json');
+let DefaultdataJson = require("../config/default.json");
 
 export default {
   name: "Contactus",
   components: {
     Multiselect,
     Footer,
-    JQuery,
+    JQuery
   },
-  
+
   data() {
     return {
       filters: {
-        keyword: "",
+        keyword: ""
       },
       styleOption: {
-        color: "black",
+        color: "black"
       },
       showMsg: false,
       isLoaded: false,
@@ -271,12 +273,12 @@ export default {
         PrivateEmail: "",
         selected: "",
         checked: "",
-        Comments: "",
+        Comments: ""
       },
       selected: "",
       options: [],
       transactions: [],
-      checked: "",
+      checked: ""
     };
   },
 
@@ -284,7 +286,7 @@ export default {
     addContact: function() {
       let authCredentials = {
         ClientId: 4668,
-        OfficeId: 6644,
+        OfficeId: 6644
       };
 
       // let apiToken =
@@ -292,14 +294,18 @@ export default {
 
       const config = {
         headers: {
-          Authorization: `Bearer `+  DefaultdataJson.Whise.AuthToken,
-          "Content-Type": "application/json",
-        },
+          Authorization: `Bearer ` + DefaultdataJson.Whise.AuthToken,
+          "Content-Type": "application/json"
+        }
       };
 
       axios
-        .post( DefaultdataJson.Whise.Url + "admin/clients/token", authCredentials, config)
-        .then((response) => {
+        .post(
+          DefaultdataJson.Whise.Url + "admin/clients/token",
+          authCredentials,
+          config
+        )
+        .then(response => {
           let token = response.data.token;
           // const config = {
           //   headers: {
@@ -320,14 +326,18 @@ export default {
             PrivateEmail: this.contact.PrivateEmail,
             AgreementEmail: this.contact.Newsletter,
             AgreementSms: this.contact.Newsletter,
-            AgreementMailingCampaign: true,
+            AgreementMailingCampaign: true
           };
 
           console.log(contact);
 
           axios
-            .post(DefaultdataJson.Whise.Url + "contacts/create", contact, config)
-            .then((response) => {
+            .post(
+              DefaultdataJson.Whise.Url + "contacts/create",
+              contact,
+              config
+            )
+            .then(response => {
               this.isLoaded = true;
               this.showMsg = true;
               (this.contact = {
@@ -343,20 +353,20 @@ export default {
                 LanguageId: "fr-BE",
                 PrivateEmail: "",
                 selected: "",
-                checked: "",
+                checked: ""
               }),
                 console.log(this.contact.AgreementMailingCampaign);
             })
-            .catch((error) => {
+            .catch(error => {
               console.log(error);
             });
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error);
         });
       window.scrollTo(0, 0);
-    },
-  },
+    }
+  }
 };
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
@@ -413,8 +423,10 @@ input:focus,
 .input.active,
 .input:focus:active {
   outline: 0;
-  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
-  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
+    0 0 5px rgba(223, 149, 35, 0.75);
+  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
+    0 0 5px rgba(223, 149, 35, 0.75);
 }
 
 button:focus,
@@ -422,8 +434,10 @@ button:focus,
 .button.active,
 .button:focus:active {
   outline: 0;
-  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
-  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
+    0 0 5px rgba(223, 149, 35, 0.75);
+  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
+    0 0 5px rgba(223, 149, 35, 0.75);
 }
 
 textarea:focus,
@@ -431,20 +445,22 @@ textarea:focus,
 .textarea.active,
 .textarea:focus:active {
   outline: 0;
-  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
-  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 5px rgba(223, 149, 35, 0.75);
+  -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
+    0 0 5px rgba(223, 149, 35, 0.75);
+  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075),
+    0 0 5px rgba(223, 149, 35, 0.75);
 }
 
-.infos p{
+.infos p {
   line-height: 1.8;
 }
-.infos i{
-  margin-bottom:10px;
- font-size: 1.25rem;
+.infos i {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
 }
-@media (max-width:767px) {
-label{
-  font-size: 14px;
-}
+@media (max-width: 767px) {
+  label {
+    font-size: 14px;
+  }
 }
 </style>
