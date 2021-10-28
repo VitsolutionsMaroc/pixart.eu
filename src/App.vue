@@ -72,6 +72,7 @@
                    <li v-if="languageId=='en'"><img src="./assets/img/united-kingdom.png"  style="width:20px;margin-right:1rem" alt=""></li>
                     <li v-if="languageId=='fr'"><img src="./assets/img/france.png" style="width:20px;margin-right:1rem" alt=""></li>
                     <li v-if="languageId=='rs'"><img src="./assets/img/russie.png"  style="width:20px;margin-right:1rem" alt=""></li>
+                    <li v-if="languageId=='gr'"><img src="./assets/img/greece.png"  style="width:20px;margin-right:1rem" alt=""></li>
 
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
               </button>
@@ -80,6 +81,7 @@
                     <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('fr')"><img src="./assets/img/france.png" style="width:20px;margin-right:1rem" alt="">
                  <i class="hover:text-gray-100"> Fr</i></a></li>
                 <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('rs')"><img src="./assets/img/russie.png" style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">Rs</i></a></li>
+                <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('gr')"><img src="./assets/img/greece.png" style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">Gr</i></a></li>
 
               </ul>
             </div>

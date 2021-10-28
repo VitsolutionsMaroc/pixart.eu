@@ -62,6 +62,13 @@
                   </div>
               </div>
               <div>
+                  <div class="item" id="manelis">
+
+                      <img class="m-auto mb-4"  style="margin-bottom:45px" src="../assets/img/tekton.png" />
+                      <h4 class="text-xl font-bold"> GREECE</h4>
+                  </div>
+              </div>
+              <div>
                   <div class="item">
                       <a
                       target="_blank"
