@@ -73,31 +73,13 @@
          </div> -->
           <div class="text-gray-100">
             <div class="dropdown inline-block relative">
-              <button
-                class=" py-2 px-4 rounded inline-flex items-center"
-                style="overflow:auto"
-              >
-                <li v-if="languageId == 'en'">
-                  <img
-                    src="./assets/img/united-kingdom.png"
-                    style="width:20px;margin-right:1rem"
-                    alt=""
-                  />
-                </li>
-                <li v-if="languageId == 'fr'">
-                  <img
-                    src="./assets/img/france.png"
-                    style="width:20px;margin-right:1rem"
-                    alt=""
-                  />
-                </li>
-                <li v-if="languageId == 'rs'">
-                  <img
-                    src="./assets/img/russie.png"
-                    style="width:20px;margin-right:1rem"
-                    alt=""
-                  />
-                </li>
+
+              <button class=" py-2 px-4 rounded inline-flex items-center" style="overflow:auto">
+                   <li v-if="languageId=='en'"><img src="./assets/img/united-kingdom.png"  style="width:20px;margin-right:1rem" alt=""></li>
+                    <li v-if="languageId=='fr'"><img src="./assets/img/france.png" style="width:20px;margin-right:1rem" alt=""></li>
+                    <li v-if="languageId=='rs'"><img src="./assets/img/russie.png"  style="width:20px;margin-right:1rem" alt=""></li>
+                    <li v-if="languageId=='gr'"><img src="./assets/img/greece.png"  style="width:20px;margin-right:1rem" alt=""></li>
+
 
                 <svg
                   class="fill-current h-4 w-4"
@@ -109,47 +91,15 @@
                   />
                 </svg>
               </button>
-              <ul
-                class="dropdown-menu absolute hidden text-gray-700  pt-1"
-                style="background-color:#111827"
-              >
-                <li class="">
-                  <a
-                    class=" px-4 py-2  block whitespace-no-wrap inline-flex"
-                    href="#"
-                    @click="switchLanguage('en')"
-                    ><img
-                      src="./assets/img/united-kingdom.png"
-                      style="width:20px;margin-right:1rem"
-                      alt=""
-                    /><i class="hover:text-gray-100">En</i></a
-                  >
-                </li>
-                <li class="">
-                  <a
-                    class="py-2 px-4 block whitespace-no-wrap inline-flex"
-                    href="#"
-                    @click="switchLanguage('fr')"
-                    ><img
-                      src="./assets/img/france.png"
-                      style="width:20px;margin-right:1rem"
-                      alt=""
-                    />
-                    <i class="hover:text-gray-100"> Fr</i></a
-                  >
-                </li>
-                <li class="">
-                  <a
-                    class="py-2 px-4 block whitespace-no-wrap inline-flex"
-                    href="#"
-                    @click="switchLanguage('rs')"
-                    ><img
-                      src="./assets/img/russie.png"
-                      style="width:20px;margin-right:1rem"
-                      alt=""
-                    /><i class="hover:text-gray-100">Rs</i></a
-                  >
-                </li>
+
+                 <ul class="dropdown-menu absolute hidden text-gray-700  pt-1" style="background-color:#111827" >
+                    <li class=""><a class=" px-4 py-2  block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('en')"><img src="./assets/img/united-kingdom.png"  style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">En</i></a></li>
+                    <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('fr')"><img src="./assets/img/france.png" style="width:20px;margin-right:1rem" alt="">
+                 <i class="hover:text-gray-100"> Fr</i></a></li>
+                <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('rs')"><img src="./assets/img/russie.png" style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">Rs</i></a></li>
+                <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('gr')"><img src="./assets/img/greece.png" style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">Gr</i></a></li>
+
+
               </ul>
             </div>
           </div>
