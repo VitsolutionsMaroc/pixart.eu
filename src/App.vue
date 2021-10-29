@@ -119,14 +119,20 @@ export default {
   },
   props: {},
   created() {
-    if (this.languageId == null) this.languageId = "en";
+    let lang=localStorage.getItem("languageId") ? localStorage.getItem("languageId") : null;
+    if(lang != null) {
+      this.languageId=lang;
+      this.$i18n.locale=lang;
+      }
+    else if (this.languageId == null) this.languageId = "en";
   },
   methods: {
-    switchLanguage(code) {
+  switchLanguage(code) {
       this.languageId = code;
       let locale = this.languageId.toLowerCase();
       if (this.$i18n.locale !== locale) {
         this.$i18n.locale = locale;
+        localStorage.setItem("languageId", locale);
       }
     }
   }
