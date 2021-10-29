@@ -448,7 +448,8 @@
   "SendTo":"Send To a Friend",
   "propertieDet":"Property details",
   "GroundArea":"Ground Area",
-  "GardenArea":"Garden Area"
+  "GardenArea":"Garden Area",
+  "related":" More related Estates"
 },
 "ComponantAssurance":{
   "ComponatAssuranceTitle":"We assist all your needs by providing insurances for",
