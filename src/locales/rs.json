@@ -447,7 +447,8 @@
   "SendTo":"Отправить другу",
   "propertieDet":"Детали недвижимости",
   "GroundArea":"Земельный участок",
-  "GardenArea":"Садовая зона"
+  "GardenArea":"Садовая зона",
+  "related":" Больше родственных имений"
 },
 "ComponantAssurance":{
   "ComponatAssuranceTitle":"Мы поможем вам во всех ваших нуждах, предоставив страховку для ",

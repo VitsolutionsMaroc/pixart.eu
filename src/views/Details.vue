@@ -1,5 +1,5 @@
 <template>
-  <div class="xl:px-48">
+  <div class="xl:px-48" id="detailpart">
     <loader class="py-10" v-if="!estate" />
     <div v-else class="grid md:grid-cols-3 xl:gap-10">
       <!-- Contact section -->
@@ -261,7 +261,8 @@
           @click="loadRelatedEstates()"
           style="background:#fbf0df;color:#df9639"
         >
-          More related Estates
+         
+          {{ $t("Details.related") }}
         </div>
         <!-- Related Estates -->
       </div>
@@ -486,6 +487,13 @@ export default {
   },
   mounted() {
     this.initSwiper();
+    $( "#detailpart" ).hover(function() {
+  //debugger
+  let d=document.getElementsByClassName('VueCarousel-inner');
+  if(d != [] && d.length>0){
+  d[0].style.maxHeight='33em';
+  }
+});
   },
 };
 </script>
@@ -508,8 +516,7 @@ export default {
   height: 400px !important;
   background-size: cover;
 }
-.slideDetails {
-}
+
 .img-responsive {
   display: block;
   max-width: 100%;
@@ -517,6 +524,10 @@ export default {
 }
 .curser_print:hover{
 cursor: pointer;
+}
+
+.VueCarousel-inner{
+  max-height:33em !important;
 }
 
 .peb_details{

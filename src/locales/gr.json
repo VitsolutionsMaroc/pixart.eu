@@ -144,10 +144,11 @@
           "MaxArea":" Μέγιστη Περιοχή ",
           "Numberrooms":" Αριθμός δωματίων ",
           "Numberbathrooms":" Αριθμός μπάνιων ",
-          "Parking":"Parking",
+          "Parking":"Στάθμευση",
           "Terrace":" Βεράντα ",
           "Furnished":"Επιπλωμένο ",
           "Garden":"Κήπος ",
+          "Garage":"Γκαράζ",
           "Rooms":" Δωμάτια",
           "Bathrooms":"Μπάνια",
           "Results":"Αποτελέσματα",
@@ -198,7 +199,8 @@
       "SendTo":"Αποστολή σε φίλο",
       "propertieDet":"Στοιχεία ιδιοκτησίας",
       "GroundArea":"Επίγειο Χώρο",
-      "GardenArea":"Περιοχή Κήπου"
+      "GardenArea":"Περιοχή Κήπου",
+      "related":"Περισσότερα σχετικά κτήματα"
     },
     "ComponantAssurance":{
       "ComponatAssuranceTitle":"Εξυπηρετούμε όλες τις ανάγκες σας παρέχοντας ασφάλειες για",
