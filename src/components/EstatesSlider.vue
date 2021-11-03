@@ -33,8 +33,10 @@
 
         <div class=" p-3 relative" style="height:280px;margin-bottom:20px">
           <div class="mb-4 truncate">
-            <span v-if="estate.Price" class="text-black font-bold text-lg"
-              >{{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}</span
+            <span
+              v-if="estate.Price && estate.DisplayPrice == 1"
+              class="text-black font-bold text-lg"
+              >{{ formatPrice(estate.Price) }} {{ estate.Currency }}</span
             >
             <button
               @click="displayDetails(estate)"
@@ -45,7 +47,9 @@
             </button>
           </div>
           <div>
-            <span style="font-size:0.77rem"> {{ estate.City }}  - {{ estate.countryName }}</span>
+            <span style="font-size:0.77rem">
+              {{ estate.City }} - {{ estate.countryName }}</span
+            >
           </div>
           <!-- <h2 class="text-black text-sm lg:text-base font-bold block"
           style="font-size:0.7rem">
@@ -54,17 +58,21 @@
               estate.categoryName.charAt(0).toUpperCase() +
                 estate.categoryName.slice(1)
             }} -->
-             <!-- <div v-if="estate.Name.length > 40">
+          <!-- <div v-if="estate.Name.length > 40">
             {{ estate.Name.substr(0, 30) }} ...
           </div>
           <div v-else>{{ estate.Name }}</div>
           </h2>  -->
-             <div v-if="estate.Description != null && estate.Description.length > 110" >
-                 <p style="font-size:0.8rem"> {{ estate.Description.substr(0, 90) }} ...</p>
-            </div>
-           <div v-else>{{ estate.Description }}</div>
+          <div
+            v-if="estate.Description != null && estate.Description.length > 110"
+          >
+            <p style="font-size:0.8rem">
+              {{ estate.Description.substr(0, 90) }} ...
+            </p>
+          </div>
+          <div v-else>{{ estate.Description }}</div>
           <section class="peb_slide">
-             <Peb v-bind:EnergyClassName="estate.EnergyClass" />
+            <Peb v-bind:EnergyClassName="estate.EnergyClass" />
           </section>
           <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
           <div
@@ -88,8 +96,12 @@
         <div
           class="bg-gray-200 text-green-700 text-xs font-bold rounded-full absolute top-0 ml-2 mt-2 px-2 py-1 text-base"
         >
-          <span v-if="estate.purpose === 'Location'">{{ $t("FilterHome.Rentale") }}</span>
-          <span v-else-if="estate.purpose === 'Vente'">{{ $t("FilterHome.sale") }}</span>
+          <span v-if="estate.purpose === 'Location'">{{
+            $t("FilterHome.Rentale")
+          }}</span>
+          <span v-else-if="estate.purpose === 'Vente'">{{
+            $t("FilterHome.sale")
+          }}</span>
         </div>
       </div>
     </div>
@@ -126,7 +138,7 @@ export default {
     await this.$nextTick(() => {
       var $owlCar = $("#owlmycar").owlCarousel({
         loop: false,
-       
+
         nav: false,
         items: 4,
         center: false,
@@ -140,12 +152,12 @@ export default {
           },
           600: {
             items: 1,
-             nav: true,
+            nav: true
           },
           1000: {
             items: 1,
-             nav:true,
-            stagePadding: 20,
+            nav: true,
+            stagePadding: 20
           }
         }
       });
@@ -154,7 +166,7 @@ export default {
       $owlCar.owlCarousel({
         loop: false,
         stagePadding: 20,
-      
+
         nav: true,
         center: false,
         dots: true,
@@ -164,21 +176,17 @@ export default {
           0: {
             items: 1,
             nav: true,
-            stagePadding: 0,
-
-
+            stagePadding: 0
           },
           600: {
             items: 1,
             nav: false,
-            stagePadding: 0,
-
+            stagePadding: 0
           },
           1000: {
             items: 4,
             nav: true
-          },
-
+          }
         }
       });
     });
@@ -188,7 +196,7 @@ export default {
     this.$nextTick(() => {
       $("#owlmycar").owlCarousel({
         loop: false,
-        
+
         nav: true,
         navText: [
           "<i class='fa fa-chevron-left'></i>",
@@ -211,7 +219,7 @@ export default {
           1000: {
             items: 4,
             nav: true,
-            stagePadding: 50,
+            stagePadding: 50
           }
         }
       });
@@ -225,6 +233,9 @@ export default {
     }
   },
   methods: {
+    formatPrice(d) {
+      return d.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    },
     displayDetails(estate) {
       //this.$modal.hide("estate-details");
       // this.selectedEstate = estate;
@@ -266,13 +277,13 @@ h2 {
   background-size: cover;
   background-position: center;
 }*/
-.peb_slide{
+.peb_slide {
   position: absolute;
   bottom: 20px;
   margin: 10px 0;
 }
 .peb_slide img {
-  width: 66px!important;
+  width: 66px !important;
 }
 .multiselect__option--highlight {
   background: #df9523 !important;

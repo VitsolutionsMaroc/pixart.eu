@@ -32,8 +32,10 @@
 
       <div class="p-3 relative" style="height:250px">
         <div class="mb-4 truncate">
-          <span v-if="estate.Price" class="text-black font-bold text-lg"
-            >{{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}</span
+          <span
+            v-if="estate.Price && estate.DisplayPrice == 1"
+            class="text-black font-bold text-lg"
+            >{{ formatPrice(estate.Price) }} {{ estate.Currency }}</span
           >
           <button
             @click="displayDetails(estate)"
@@ -47,9 +49,11 @@
           <img :src="estate.EnergyClass" alt="" style=" width:30px;">
        
         </div> -->
-          <div>
-            <span style="font-size:0.77rem"> {{ estate.City }}  - {{ estate.countryName }}</span>
-          </div>
+        <div>
+          <span style="font-size:0.77rem">
+            {{ estate.City }} - {{ estate.countryName }}</span
+          >
+        </div>
         <!-- <h2
           class="text-black text-sm lg:text-base font-bold block"
           style="font-size:0.7rem"
@@ -59,19 +63,21 @@
           </div>
           <div v-else>{{ estate.Name }}</div> -->
 
-          <!-- {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
+        <!-- {{ estate.Name }} <span v-if="estate.Name && estate.Name">-</span>
           {{ estate.categoryName.slice(1) + estate.categoryName.slice(1) }} -->
         <!-- </h2> -->
-        <section v-if="estate.Description!= null || estate.Description!= undefined ">
-          <div v-if="estate.Description.length > 110" >
-            <p  class="des-cole"> {{ estate.Description.substr(0, 70) }} ...</p>
+        <section
+          v-if="estate.Description != null || estate.Description != undefined"
+        >
+          <div v-if="estate.Description.length > 110">
+            <p class="des-cole">{{ estate.Description.substr(0, 70) }} ...</p>
           </div>
           <div class="des-cole" v-else>{{ estate.Description }}</div>
         </section>
-       
-       <div class="peb_slide">
+
+        <div class="peb_slide">
           <Peb v-bind:EnergyClassName="estate.EnergyClass" />
-       </div>
+        </div>
         <!--<span class="">{{ estate.City }} - {{ estate.countryName }}</span>-->
         <div
           class="grid grid-cols-3 gap-2 block text-black text-sm md:text-base mb-2 absolute bottom-0 ms:mt-20"
@@ -93,8 +99,12 @@
       <div
         class="bg-gray-200 text-green-700 text-xs font-bold rounded-full absolute top-0 ml-2 mt-2 px-2 py-1 text-base"
       >
-        <span v-if="estate.purpose === 'Location'">{{ $t("FilterHome.Rent") }}</span>
-        <span v-else-if="estate.purpose === 'Vente'">{{ $t("FilterHome.sale") }}</span>
+        <span v-if="estate.purpose === 'Location'">{{
+          $t("FilterHome.Rent")
+        }}</span>
+        <span v-else-if="estate.purpose === 'Vente'">{{
+          $t("FilterHome.sale")
+        }}</span>
       </div>
     </div>
 
@@ -164,6 +174,9 @@ export default {
     }
   },
   methods: {
+    formatPrice(d) {
+      return d.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    },
     displayDetails(estate) {
       //this.$modal.hide("estate-details");
       // this.selectedEstate = estate;
@@ -202,16 +215,16 @@ h2 {
   background-size: cover;
   background-position: center;
 }*/
-.peb_slide{
+.peb_slide {
   position: absolute;
   bottom: 33px;
   margin: 10px 0;
 }
 .peb_slide img {
-  width: 66px!important;
+  width: 66px !important;
 }
-.des-cole{
-font-size:0.8rem!important;
+.des-cole {
+  font-size: 0.8rem !important;
 }
 .multiselect__option--highlight {
   background: #df9523 !important;
