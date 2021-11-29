@@ -79,7 +79,9 @@
                     <li v-if="languageId=='fr'"><img src="./assets/img/france.png" style="width:20px;margin-right:1rem" alt=""></li>
                     <li v-if="languageId=='rs'"><img src="./assets/img/russie.png"  style="width:20px;margin-right:1rem" alt=""></li>
                     <li v-if="languageId=='gr'"><img src="./assets/img/greece.png"  style="width:20px;margin-right:1rem" alt=""></li>
-
+                    <li v-if="languageId=='ar'"><img src="./assets/img/egypt.png"  style="width:20px;margin-right:1rem" alt=""></li>
+                    <li v-if="languageId=='hb'"><img src="./assets/img/israel.png"  style="width:20px;margin-right:1rem" alt=""></li>
+                    <li v-if="languageId=='sp'"><img src="./assets/img/spain.png"  style="width:20px;margin-right:1rem" alt=""></li>
 
                 <svg
                   class="fill-current h-4 w-4"
@@ -98,6 +100,11 @@
                  <i class="hover:text-gray-100"> Fr</i></a></li>
                 <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('rs')"><img src="./assets/img/russie.png" style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">Rs</i></a></li>
                 <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('gr')"><img src="./assets/img/greece.png" style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">Gr</i></a></li>
+                <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('ar')"><img src="./assets/img/egypt.png" style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">Ar</i></a></li>
+                <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('hb')"><img src="./assets/img/israel.png" style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">Hb</i></a></li>
+                <li class=""><a class="py-2 px-4 block whitespace-no-wrap inline-flex" href="#" @click="switchLanguage('sp')"><img src="./assets/img/spain.png" style="width:20px;margin-right:1rem" alt=""><i class="hover:text-gray-100">Sp</i></a></li>
+
+
 
 
               </ul>
