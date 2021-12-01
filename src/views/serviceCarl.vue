@@ -12,6 +12,7 @@
                       </p>
                   </div>
               </div>
+               
               <div>
                      <div class="item" style=" overflow:auto;">
                         <img class="m-auto mb-4" src="../assets/img/icon5.png" />
@@ -26,7 +27,24 @@
                         </p>
                     </div>
               </div>
-              <div>
+                <div>
+                     <div class="item" style=" overflow:auto;">
+                      <router-link
+                              to="/lookingfor"
+                              class="golden text-yellow-500"
+                              > <img class="m-auto mb-4" src="../assets/img/icon8.png" /></router-link>
+                        <h4 class="text-xl font-bold">  {{ $t("Home.RELOCATION") }}</h4>
+                        <p class="m-auto mt-8">
+                           <section v-html="$t('Home.TextRELOCATION1')"></section>
+                           <span v-if="readMore5==true">
+                           <section v-html="$t('Home.TextRELOCATION2')"></section>
+                           </span><br>
+                           <span v-if="readMore5==false" @click="readMoreEvent(5)" style="color:orange;curser:pointer">{{ $t("Home.ReadMore") }}</span>
+                           <span  v-if="readMore5==true" @click="readMoreEvent(5)" style="color:orange;curser:pointer">{{ $t("Home.ReadLess") }}</span>
+                        </p>
+                    </div>
+              </div>
+              <!-- <div>
                 <div class="item">
                     <img class="m-auto mb-4" src="../assets/img/icon8.png" />
                     <h4 class="text-xl font-bold">{{ $t("Home.RELOCATION") }} </h4>
@@ -41,7 +59,7 @@
                     >{{$t("Home.MoreInfo")}}</router-link>
                         </div>
                  </div>
-              </div>
+              </div> -->
               <div>
                 <div class="item">
                       <img class="m-auto mb-4" src="../assets/img/icon4.png" />
@@ -153,6 +171,20 @@
                       <span  v-if="readMore3==true" @click="readMoreEvent(3)" style="color:brown;curser:pointer;text-align:justify">{{ $t("Home.ReadLess") }}</span>
                 </div>
               </div>
+               <div>
+                     <div class="item" style=" overflow:auto;">
+                        <img class="m-auto mb-4" src="../assets/img/icon13.png" />
+                        <h4 class="text-xl font-bold">  {{ $t("Home.Recrutement") }}</h4>
+                        <p class="m-auto mt-8">
+                           <section v-html="$t('Home.RecrutementText1')"></section>
+                           <span v-if="readMore4==true">
+                           <section v-html="$t('Home.RecrutementText2')"></section>
+                           </span><br>
+                           <span v-if="readMore4==false" @click="readMoreEvent(4)" style="color:orange;curser:pointer">{{ $t("Home.ReadMore") }}</span>
+                           <span  v-if="readMore4==true" @click="readMoreEvent(4)" style="color:orange;curser:pointer">{{ $t("Home.ReadLess") }}</span>
+                        </p>
+                    </div>
+              </div>
 
             </div>
 
@@ -166,7 +198,9 @@ data(){
 return {
   readMore1:false,
   readMore2:false,
-  readMore3:false
+  readMore3:false,
+  readMore4:false,
+  readMore5:false
 }
 },
 methods:{
@@ -177,6 +211,10 @@ if(nbr==2)
 this.readMore2=!this.readMore2;
 if(nbr==3)
 this.readMore3=!this.readMore3;
+if(nbr==4)
+this.readMore4=!this.readMore4;
+if(nbr==5)
+this.readMore5=!this.readMore5;
 }
 
 },

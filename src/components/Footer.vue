@@ -39,7 +39,7 @@
           </span>
         </div>
         <div class="form_footer">
-          <input type="text" placeholder="Search..." class="px-2 py-2 border" />
+          <input type="text" :placeholder="$t('FilterHome.Search')" class="px-2 py-2 border" />
           <button class="bg-yellow-500 p-3 py-2" style="outline: none;">
             {{ $t("FooterComponant.Submit") }}
           </button>
