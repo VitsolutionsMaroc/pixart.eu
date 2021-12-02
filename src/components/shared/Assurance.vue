@@ -2,7 +2,7 @@
   <div>
    
      <div style="text-align:center;font-size:1.5rem;font-weight:bold ;margin-top:50px">
-      <h1 style="font-size:2rem">We assist all your needs by providing insurances for</h1>
+      <h1 style="font-size:2rem">{{ $t("ComponantAssurance.ComponatAssuranceTitle") }}</h1>
     </div>
     <div class="grid lg:grid-cols-3 gap-10 px-16 py-8 mt-10 infos">
        <div>
