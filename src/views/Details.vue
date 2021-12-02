@@ -90,7 +90,7 @@
         <!-- Property details -->
         <div class="section-right p-4">
           <div class="font-bold text-xl py-2 mb-8">
-            <span v-if="estate.Price" class="">
+            <span v-if="estate.Price && estate.DisplayPrice==1" class="">
               {{ $t("EsatateFilter.Price") }} : {{ estate.Price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") }} {{ estate.Currency }}
             </span>
             <span class="float-right capitalize" style="color:#39D47A">{{
@@ -109,7 +109,7 @@
               </div>
 
           <span class="my-2 block"> {{ estate.CategoryName }} </span>
-          <span class="block my-2 text-gray-400">{{ estate.Address1 }}</span>
+          <span v-if="estate.DisplayAddress==1" class="block my-2 text-gray-400">{{ estate.Address1 }}</span>
 
           <div class="grid grid-cols-3">
             <span v-if="estate.Rooms"
