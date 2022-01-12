@@ -125,7 +125,7 @@
           />
         </div>
         <div>
-          <label class="my-2">{{ $t("Evaluation.City") }} *</label>
+          <label class="my-2">{{ $t("Evaluation.PostCode") }} *</label>
           <input
             type="text"
             :placeholder="$t('Evaluation.PostCodeText')"
