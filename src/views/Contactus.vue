@@ -157,13 +157,20 @@
         <i class="fas fa-map-marker-alt"></i>
         <h1>Pixart</h1>
         <p>
-          8 Grand Rue Clervaux - L -9711 Luxembourg<br />
+            1 Rue de Turi, Livange L-3376 Luxembourg<br />
           <span
             ><i
               class="fas fa-mobile"
               style="color:orange; margin-right:10px"
             ></i
-            >+352661373707</span
+            >+352 661 373 707</span
+          ><br>
+           <span
+            ><i
+              class="fas fa-mobile"
+              style="color:orange; margin-right:10px"
+            ></i
+            >+352 28 48 41 28</span
           >
         </p>
       </div>
@@ -203,7 +210,14 @@
                 class=" mb-4 mr-4 w-5 h-5 md:w-10 md:h-10"
                 src="../assets/img/iconmonstr-phone-1-96.png"
               />
-              <li class="mb-2">+352661373707</li>
+              <li class="mb-2">+352 28 48 41 28</li>
+            </div>
+              <div class="flex just ">
+              <img
+                class=" mb-4 mr-4 w-5 h-5 md:w-10 md:h-10"
+                src="../assets/img/iconmonstr-phone-1-96.png"
+              />
+              <li class="mb-2">+352 661 373 707</li>
             </div>
             <div class="flex just ">
               <img
@@ -211,7 +225,7 @@
                 src="../assets/img/iconmonstr-building-18-96.png"
               />
               <li class="mb-2 mt-2">
-                8 Grand Rue Clervaux - L -9711 Luxembourg
+                 1 Rue de Turi, Livange L-3376 Luxembourg  
               </li>
             </div>
           </ul>
